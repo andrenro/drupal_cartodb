@@ -10,6 +10,10 @@ function main() {
     
 $(document).ready(function(){
 
+      //Creates a new chart 
+      ChartHandler.initChart();
+
+
 
       function changeLegend(start, end) {
           $('#legend').html("" + new Date(start).getDay()+"/"+new Date(start).getMonth()+"/"+new Date(start).getFullYear()+ " - "+new Date(end).getDay()+"/"+new Date(end).getMonth()+"/"+new Date(end).getFullYear());
@@ -71,7 +75,6 @@ $(document).ready(function(){
   .addTo(map)
   .on("done",function(layer){
       var sublayer = layer.getSubLayer(0);
-
       sublayers.push(sublayer);
       addTimeSlider(sublayer[0]);
   })
@@ -83,25 +86,25 @@ $(document).ready(function(){
 
 window.onload = main;
 
-function getData(queryString){
+function getData(queryString,callback){
   $(document).ready(function(){
-    
-var sql = new cartodb.SQL({ user: 'andreasroeed' });
-sql.execute(queryString)
-  .done(function(data) {
-    console.log(data.rows);
-  })
-  .error(function(errors) {
-    // errors contains a list of errors
-    console.log("errors:" + errors);
-  })
+    var data; 
+    var sql = new cartodb.SQL({ user: 'andreasroeed' });
+    sql.execute(queryString)
+      .done(function(data) {
+
+        callback(data.rows[0]);
+    })
+      .error(function(errors) {
+      // errors contains a list of errors
+      console.log("errors:" + errors);
+    })
   }); 
 }
 
 
 var layerSelections = {
   No: function(){
-   let data = getData("SELECT * FROM n2000_m_datestamps WHERE NEI > JA");
    sublayers[0].setSQL("SELECT * FROM n2000_m_datestamps WHERE NEI > JA");
    sublayers[0].setCartoCSS(cssno);
    return true;
@@ -109,19 +112,17 @@ var layerSelections = {
   Yes: function(){
    sublayers[0].setSQL("SELECT * FROM n2000_m_datestamps WHERE JA > NEI");
    sublayers[0].setCartoCSS(cssyes);
-   query = "SELECT count(JA) FROM n2000_m_datestamps WHERE JA > NEI";
   },
   byCount: function(attribute, input){
    sublayers[0].setSQL("SELECT * FROM n2000_m_datestamps WHERE "+attribute+" >= "+input+"");
    sublayers[0].setCartoCSS(cssyes);
   },
   byName: function(attribute,input){
-   var inputString = "'%"+input+"%'";
-   var query = "SELECT * FROM n2000_m_datestamps WHERE "+attribute+" ILIKE "+inputString;
-   sublayers[0].setSQL(query);
+   var inputString = "'"+input+"'";
+   var mapQuery = "SELECT * FROM n2000_m_datestamps WHERE "+attribute+" ILIKE "+inputString;
+   sublayers[0].setSQL(mapQuery);
    sublayers[0].setCartoCSS(cssyes);
   }
-
 }
 
 
@@ -139,7 +140,25 @@ $(document).ready(function(){
   });
 
   $("#byName").change(function(){
+    if($(this).val() === ""){
+      query = "SELECT ja,nei,blank,navn,deltakelse FROM n2000_m_datestamps";
+    }else{
+      query = "SELECT ja,nei,blank,navn,deltakelse FROM n2000_m_datestamps WHERE navn ILIKE '"+$(this).val()+"'";
+    }
+    getData(query, function(data){
+            console.log(data);
+            dataArray = [];
+            dataArray.push(data.ja);
+            dataArray.push(data.nei);
+            dataArray.push(data.blank);
+            dataArray.push(data.navn);
+            dataArray.push(data.deltakelse);
+            ChartHandler.updateChart(dataArray);
+    });
+
     layerSelections["byName"]("navn",$(this).val());
+
+
   });
 
   $("#Yes").click(function(){

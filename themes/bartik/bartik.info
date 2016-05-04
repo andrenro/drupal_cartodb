@@ -19,6 +19,8 @@ scripts[] = js/cartodb.js
 scripts[] = js/init_carto.js
 scripts[] = js/jquery-2.2.3.js
 scripts[] = js/jquery-ui.js
+scripts[] = js/highcharts.js
+scripts[] = js/chart_handler.js
 
 
 
