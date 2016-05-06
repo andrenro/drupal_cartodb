@@ -37,7 +37,10 @@ SliderHandler = (function(){
               	var end = endMonth+"/"+endDate.getDate()+"/"+endDate.getFullYear();
 
                 var query = "SELECT * FROM n2000_m_datestamps WHERE vedtatt_dato >="+"'"+ start +"'"+" AND vedtatt_dato <="+"'"+ end +"'";
-                console.log(query);
+
+                
+
+
                 sublayers[0].setSQL(query);
                 sublayers[0].setCartoCSS(cssyes);
               }

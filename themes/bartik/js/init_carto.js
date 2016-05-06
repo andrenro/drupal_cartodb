@@ -3,6 +3,7 @@ var map;
 var layerUrl = "https://andreasroeed.cartodb.com/api/v2/viz/b88ab2b8-1108-11e6-9018-0e674067d321/viz.json";
 var sublayers = [];
 
+
 var cssyes = "#n2000_m_datestamps{line-color: #000000;polygon-fill:#008000}";
 var cssno = "#n2000_m_datestamps{line-color: #000000;polygon-fill:#ff0000}";
 
@@ -35,7 +36,6 @@ $(document).ready(function(){
   .on("done",function(layer){
       var sublayer = layer.getSubLayer(0);
       sublayers.push(sublayer);
-
       SliderHandler.addTimeSlider(sublayer[0]);
   })
   .on("error",function(err){
@@ -53,21 +53,27 @@ var layerSelections = {
   No: function(){
    sublayers[0].setSQL("SELECT * FROM n2000_m_datestamps WHERE NEI > JA");
    sublayers[0].setCartoCSS(cssno);
-   return true;
+   sublayers[0].setInteractivity("cartodb_id","navn");
+   cartodb.vis.Vis.addInfowindow(map,sublayers[0],["ja","nei","blank","navn"]);
+  
+
   },
   Yes: function(){
    sublayers[0].setSQL("SELECT * FROM n2000_m_datestamps WHERE JA > NEI");
    sublayers[0].setCartoCSS(cssyes);
+   cartodb.vis.Vis.addInfowindow(map,sublayers[0],["ja","nei","blank","navn"]);
   },
   byCount: function(attribute, input){
    sublayers[0].setSQL("SELECT * FROM n2000_m_datestamps WHERE "+attribute+" >= "+input+"");
    sublayers[0].setCartoCSS(cssyes);
+   cartodb.vis.Vis.addInfowindow(map,sublayers[0],["ja","nei","blank","navn"]);
   },
   byName: function(attribute,input){
    var inputString = "'"+input+"'";
    var mapQuery = "SELECT * FROM n2000_m_datestamps WHERE "+attribute+" ILIKE "+inputString;
    sublayers[0].setSQL(mapQuery);
    sublayers[0].setCartoCSS(cssyes);
+   cartodb.vis.Vis.addInfowindow(map,sublayers[0],["ja","nei","blank","navn"]);
   }
 }
 
