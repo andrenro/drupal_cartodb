@@ -17,9 +17,9 @@ $(document).ready(function(){
       // Choose center and zoom level
     var options = {
         center: [63.44,10.42], // Trondheim
-        zoom: 4,
-        minZoom: 4,
-        maxZoom: 6
+        zoom: 5,
+        minZoom: 5,
+        maxZoom: 7
     }
 
     // Instantiate map on specified DOM element

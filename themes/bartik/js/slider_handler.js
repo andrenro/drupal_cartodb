@@ -43,6 +43,7 @@ SliderHandler = (function(){
 
                 sublayers[0].setSQL(query);
                 sublayers[0].setCartoCSS(cssyes);
+                cartodb.vis.Vis.addInfowindow(map,sublayers[0],["ja","nei","blank","navn"]);
               }
             });
             changeLegend(min, max);
