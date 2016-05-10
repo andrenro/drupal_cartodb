@@ -12,7 +12,7 @@ SliderHandler = (function(){
     addTimeSlider = function(sublayer) {
          var sql = cartodb.SQL({ user: 'andreasroeed' });
          // fetch time range
-         DataHandler.getData('andreasroeed','SELECT max(vedtatt_dato), min(vedtatt_dato) FROM n2000_m_datestamps', function(data) {
+         DataHandler.getData('andreasroeed','SELECT max(vedtatt_dato), min(vedtatt_dato) FROM merged_maps_data', function(data) {
            var range = data.rows[0];
            var max = new Date(range.max).getTime();
            var min = new Date(range.min).getTime();
@@ -36,14 +36,14 @@ SliderHandler = (function(){
               	var start = startMonth+"/"+startDate.getDate()+"/"+startDate.getFullYear();
               	var end = endMonth+"/"+endDate.getDate()+"/"+endDate.getFullYear();
 
-                var query = "SELECT * FROM n2000_m_datestamps WHERE vedtatt_dato >="+"'"+ start +"'"+" AND vedtatt_dato <="+"'"+ end +"'";
+                var query = "SELECT * FROM merged_maps_data WHERE vedtatt_dato >="+"'"+ start +"'"+" AND vedtatt_dato <="+"'"+ end +"'";
 
                 
 
 
                 sublayers[0].setSQL(query);
                 sublayers[0].setCartoCSS(cssyes);
-                cartodb.vis.Vis.addInfowindow(map,sublayers[0],["ja","nei","blank","navn"]);
+                cartodb.vis.Vis.addInfowindow(map,sublayers[0],["ja","nei","blank"]);
               }
             });
             changeLegend(min, max);

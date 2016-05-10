@@ -1,11 +1,11 @@
 //Global Map Object
 var map;
-var layerUrl = "https://andreasroeed.cartodb.com/api/v2/viz/b88ab2b8-1108-11e6-9018-0e674067d321/viz.json";
+var layerUrl = "https://andreasroeed.cartodb.com/api/v2/viz/12bc1e9c-16aa-11e6-9485-0ecd1babdde5/viz.json";
 var sublayers = [];
 
 
-var cssyes = "#n2000_m_datestamps{line-color: #000000;polygon-fill:#008000}";
-var cssno = "#n2000_m_datestamps{line-color: #000000;polygon-fill:#ff0000}";
+var cssyes = "#merged_maps_data{line-color: #000000;polygon-fill:#41834B}";
+var cssno = "#merged_maps_data{line-color: #000000;polygon-fill:#940E19}";
 
 function main() {
     
@@ -51,29 +51,29 @@ window.onload = main;
 
 var layerSelections = {
   No: function(){
-   sublayers[0].setSQL("SELECT * FROM n2000_m_datestamps WHERE NEI > JA");
+   sublayers[0].setSQL("SELECT * FROM merged_maps_data WHERE NEI > JA");
    sublayers[0].setCartoCSS(cssno);
-   sublayers[0].setInteractivity("cartodb_id","navn");
-   cartodb.vis.Vis.addInfowindow(map,sublayers[0],["ja","nei","blank","navn"]);
+   sublayers[0].setInteractivity("cartodb_id","name_munic");
+   cartodb.vis.Vis.addInfowindow(map,sublayers[0],["ja","nei","blank","name_munic"]);
   
 
   },
   Yes: function(){
-   sublayers[0].setSQL("SELECT * FROM n2000_m_datestamps WHERE JA > NEI");
+   sublayers[0].setSQL("SELECT * FROM merged_maps_data WHERE JA > NEI");
    sublayers[0].setCartoCSS(cssyes);
-   cartodb.vis.Vis.addInfowindow(map,sublayers[0],["ja","nei","blank","navn"]);
+   cartodb.vis.Vis.addInfowindow(map,sublayers[0],["ja","nei","blank","name_munic"]);
   },
   byCount: function(attribute, input){
-   sublayers[0].setSQL("SELECT * FROM n2000_m_datestamps WHERE "+attribute+" >= "+input+"");
+   sublayers[0].setSQL("SELECT * FROM merged_maps_data WHERE "+attribute+" >= "+input+"");
    sublayers[0].setCartoCSS(cssyes);
-   cartodb.vis.Vis.addInfowindow(map,sublayers[0],["ja","nei","blank","navn"]);
+   cartodb.vis.Vis.addInfowindow(map,sublayers[0],["ja","nei","blank","name_munic"]);
   },
   byName: function(attribute,input){
    var inputString = "'"+input+"'";
-   var mapQuery = "SELECT * FROM n2000_m_datestamps WHERE "+attribute+" ILIKE "+inputString;
+   var mapQuery = "SELECT * FROM merged_maps_data WHERE "+attribute+" ILIKE "+inputString;
    sublayers[0].setSQL(mapQuery);
    sublayers[0].setCartoCSS(cssyes);
-   cartodb.vis.Vis.addInfowindow(map,sublayers[0],["ja","nei","blank","navn"]);
+   cartodb.vis.Vis.addInfowindow(map,sublayers[0],["ja","nei","blank"]);
   }
 }
 
@@ -93,9 +93,9 @@ $(document).ready(function(){
 
   $("#byName").change(function(){
     if($(this).val() === ""){
-      query = "SELECT ja,nei,blank,navn,deltakelse FROM n2000_m_datestamps";
+      query = "SELECT ja,nei,blank,name_munic,deltakelse FROM merged_maps_data";
     }else{
-      query = "SELECT ja,nei,blank,navn,deltakelse FROM n2000_m_datestamps WHERE navn ILIKE '"+$(this).val()+"'";
+      query = "SELECT ja,nei,blank,name_munic,deltakelse FROM merged_maps_data WHERE name_munic ILIKE '"+$(this).val()+"'";
     }
 
     DataHandler.getData("andreasroeed",query, function(data){
@@ -103,13 +103,12 @@ $(document).ready(function(){
             dataArray.push(data.rows[0].ja);
             dataArray.push(data.rows[0].nei);
             dataArray.push(data.rows[0].blank);
-            dataArray.push(data.rows[0].navn);
             dataArray.push(data.rows[0].deltakelse);
 
             ChartHandler.updateChart(dataArray);
     });
 
-    layerSelections["byName"]("navn",$(this).val());
+    layerSelections["byName"]("name_munic",$(this).val());
 
 
   });

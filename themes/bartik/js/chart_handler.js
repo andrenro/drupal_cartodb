@@ -8,8 +8,10 @@ $(document).ready(function(){
 	function initChart(){
 		 $('#chart_container').highcharts({
         chart: {
-            type: 'bar'
+            type: 'bar',
+
         },
+        colors:['#003762','#940E19','#41834B'],
         title: {
             text: ''
         },
@@ -38,6 +40,7 @@ $(document).ready(function(){
         chart: {
             type: 'bar'
         },
+        colors:['#003762','#940E19','#41834B'],
         title: {
             text: ''
         },
