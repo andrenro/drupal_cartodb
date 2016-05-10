@@ -14,6 +14,7 @@ stylesheets[all][]  = css/custom.css
 stylesheets[all][] = css/bootstrap.min.css
 stylesheets[all][] = css/jquery-ui.css
 stylesheets[all][] = css/bootstrap-slider.css
+stylesheets[all][] = css/lightbox.css
 
 scripts[] = js/cartodb.js
 scripts[] = js/init_carto.js
@@ -24,6 +25,10 @@ scripts[] = js/chart_handler.js
 scripts[] = js/data_handler.js
 scripts[] = js/slider_handler.js
 scripts[] = js/date.js
+scripts[] = js/lightbox.js
+scripts[] = js/bootstrap.min.js
+scripts[] = js/get_node_content.js
+
 
 
 
