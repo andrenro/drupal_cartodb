@@ -45,12 +45,36 @@ $(document).ready(function(){
         },
         yAxis: {
             title: {
-                text: 'Nasjonale resultater (oppgitt i %)we'
+                text: 'Nasjonale Resultater(%)'
             }
         },
         series: [{
-            name: "(32% Nasjonal Deltakelse)",
-            data: [{y:data[0],color:"#41834B"},{y:data[1],color:"#940E19"},{y:data[2],color:"#ACACAC"}]
+            name: " (32 % Deltakelse)",
+            data: [{y:data[0],color:"#003762"},{y:data[1],color:"#940E19"},{y:data[2],color:"#41834B"}]
+        }]
+    });
+    }
+
+    function decidedChart(data){
+        $('#chart_container').highcharts({
+        chart: {
+            type: 'bar'
+        },
+        colors:['#003762','#940E19','#41834B'],
+        title: {
+            text: "Topp 3 kommuner der'"+data[0].resultat+"' ble resultatet"
+        },
+        xAxis: {
+            categories: [data[0].name_munic,data[1].name_munic,data[2].name_munic]
+        },
+        yAxis: {
+            series:{
+                text:"Kommune"
+            }
+        },
+        series: [{
+            name: "Flertall: "+data[0].resultat+" (oppgitt i %)",
+            data: [{y:data[0].percentage,color:"#003762"},{y:data[1].percentage,color:"#940E19"},{y:data[2].percentage,color:"#41834B"}]
         }]
     });
     }
@@ -85,7 +109,8 @@ $(document).ready(function(){
 	return {
 		initChart: initChart,
 		updateChart: updateChart,
-        showTotal: showTotal
+        showTotal: showTotal,
+        decidedChart: decidedChart
 	}
 
 

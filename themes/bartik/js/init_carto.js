@@ -99,6 +99,20 @@ var layerSelections = {
   No: function(){
    sublayers[0].setSQL("SELECT * FROM norge WHERE NEI > JA");
    sublayers[0].setCartoCSS(cssno);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    sublayers[0].setInteractivity("cartodb_id","name_munic");
    cartodb.vis.Vis.addInfowindow(map,sublayers[0],["ja","nei","blank","name_munic"]);
   
@@ -107,6 +121,28 @@ var layerSelections = {
   Yes: function(){
    sublayers[0].setSQL("SELECT * FROM norge WHERE JA > NEI");
    sublayers[0].setCartoCSS(cssyes);
+
+
+    DataHandler.getData("andreasroeed","SELECT nei,ja,blank,resultat,name_munic,deltakelse FROM norge WHERE ja > nei ORDER BY ja DESC",function(data){
+
+
+      var total = 0;
+      var datas = [];
+
+      for (var x = 0; x < 3;x++){
+        var tmp = 0;
+        let tot = (data.rows[x].ja + data.rows[x].nei + data.rows[x].blank);
+        tmp = data.rows[x].ja * 100 / tot;
+        data.rows[x].percentage = tmp;
+      }
+
+      //Sorted
+      var data = [data.rows[0],data.rows[1],data.rows[2]];
+
+      ChartHandler.decidedChart(data);
+
+    });
+
    sublayers[0].setInteractivity("cartodb_id","name_munic");
    cartodb.vis.Vis.addInfowindow(map,sublayers[0],["ja","nei","blank","name_munic"]);
   },
