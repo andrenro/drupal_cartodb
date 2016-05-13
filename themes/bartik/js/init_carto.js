@@ -1,24 +1,28 @@
 //Global Map Object
 var map;
-var layerUrl = "https://andreasroeed.cartodb.com/api/v2/viz/12bc1e9c-16aa-11e6-9485-0ecd1babdde5/viz.json";
+var layerUrl = "https://andreasroeed.cartodb.com/api/v2/viz/f1c11650-18fe-11e6-90db-0e787de82d45/viz.json";
 var sublayers = [];
 
 
-var cssyes = "#merged_maps_data{line-color: #000000;polygon-fill:#41834B}";
-var cssno = "#merged_maps_data{line-color: #000000;polygon-fill:#940E19}";
+var cssyes = "#norge{line-color: #000000;polygon-fill:#41834B}";
+var cssno = "#norge{line-color: #000000;polygon-fill:#940E19}";
 
 function main() {
     
 $(document).ready(function(){
+    //Check if DOM-element exists on this page
+    if($("#map").length == 0){
+      return false;
+    }
 
-      //Creates a new chart 
-      ChartHandler.initChart();
+    //Creates a new chart 
+    ChartHandler.initChart();
 
       // Choose center and zoom level
     var options = {
         center: [63.44,10.42], // Trondheim
-        zoom: 5,
-        minZoom: 5,
+        zoom: 4,
+        minZoom: 4,
         maxZoom: 7
     }
 
@@ -50,8 +54,50 @@ window.onload = main;
 
 
 var layerSelections = {
+
+  Total : function(){
+    sublayers[0].setSQL("SELECT * FROM norge");
+    sublayers[0].setCartoCSS("#norge[resultat='ja']{line-color: #000000;polygon-fill:#41834B} #norge[resultat='nei']{line-color: #000000;polygon-fill:#940E19} #norge[resultat='N/A']{line-color: #000000;polygon-fill:#ACACAC}");
+    cartodb.vis.Vis.addInfowindow(map,sublayers[0],["ja","nei","blank","name_munic"]);
+
+    var ja_count = 0;
+    var nei_count = 0;
+    var na_count = 0;
+    var total = 0;
+
+    DataHandler.getData("andreasroeed","SELECT * FROM norge",function(data){
+
+      for(var x = 0; x < data.rows.length;x++){
+        if(data.rows[x].resultat == "ja"){
+          ja_count++;
+        }else if(data.rows[x].resultat == "nei"){
+          nei_count++;
+        }else if(data.rows[x].resultat == "N/A"){
+          na_count++;
+        }else{
+          continue;
+        }
+      }
+
+      total = ja_count + nei_count + na_count;
+
+      var percent_ja = (ja_count*100)/total;
+      var percent_nei = (nei_count *100)/total;
+      var percent_na = (na_count*100)/total;
+
+      var data = [percent_ja,percent_nei,percent_na];
+
+      ChartHandler.showTotal(data);
+
+
+
+
+    });
+
+  },
+
   No: function(){
-   sublayers[0].setSQL("SELECT * FROM merged_maps_data WHERE NEI > JA");
+   sublayers[0].setSQL("SELECT * FROM norge WHERE NEI > JA");
    sublayers[0].setCartoCSS(cssno);
    sublayers[0].setInteractivity("cartodb_id","name_munic");
    cartodb.vis.Vis.addInfowindow(map,sublayers[0],["ja","nei","blank","name_munic"]);
@@ -59,21 +105,22 @@ var layerSelections = {
 
   },
   Yes: function(){
-   sublayers[0].setSQL("SELECT * FROM merged_maps_data WHERE JA > NEI");
+   sublayers[0].setSQL("SELECT * FROM norge WHERE JA > NEI");
    sublayers[0].setCartoCSS(cssyes);
+   sublayers[0].setInteractivity("cartodb_id","name_munic");
    cartodb.vis.Vis.addInfowindow(map,sublayers[0],["ja","nei","blank","name_munic"]);
   },
   byCount: function(attribute, input){
-   sublayers[0].setSQL("SELECT * FROM merged_maps_data WHERE "+attribute+" >= "+input+"");
+   sublayers[0].setSQL("SELECT * FROM norge WHERE "+attribute+" >= "+input+"");
    sublayers[0].setCartoCSS(cssyes);
    cartodb.vis.Vis.addInfowindow(map,sublayers[0],["ja","nei","blank","name_munic"]);
   },
   byName: function(attribute,input){
    var inputString = "'"+input+"'";
-   var mapQuery = "SELECT * FROM merged_maps_data WHERE "+attribute+" ILIKE "+inputString;
+   var mapQuery = "SELECT * FROM norge WHERE "+attribute+" ILIKE "+inputString;
    sublayers[0].setSQL(mapQuery);
    sublayers[0].setCartoCSS(cssyes);
-   cartodb.vis.Vis.addInfowindow(map,sublayers[0],["ja","nei","blank"]);
+   cartodb.vis.Vis.addInfowindow(map,sublayers[0],["name_munic","ja","nei","blank"]);
   }
 }
 
@@ -82,6 +129,11 @@ var layerSelections = {
 
 //Handle click events
 $(document).ready(function(){
+
+
+  $("#total").click(function(){
+    layerSelections["Total"]();
+  });
 
   $("#No").click(function(){
     layerSelections["No"]();
@@ -93,9 +145,9 @@ $(document).ready(function(){
 
   $("#byName").change(function(){
     if($(this).val() === ""){
-      query = "SELECT ja,nei,blank,name_munic,deltakelse FROM merged_maps_data";
+      query = "SELECT ja,nei,blank,name_munic,deltakelse FROM norge";
     }else{
-      query = "SELECT ja,nei,blank,name_munic,deltakelse FROM merged_maps_data WHERE name_munic ILIKE '"+$(this).val()+"'";
+      query = "SELECT ja,nei,blank,name_munic,deltakelse FROM norge WHERE name_munic ILIKE '"+$(this).val()+"'";
     }
 
     DataHandler.getData("andreasroeed",query, function(data){

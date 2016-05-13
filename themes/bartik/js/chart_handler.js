@@ -31,6 +31,29 @@ $(document).ready(function(){
 
 	}
 
+    function showTotal(data){
+        $('#chart_container').highcharts({
+        chart: {
+            type: 'bar'
+        },
+        colors:['#003762','#940E19','#41834B'],
+        title: {
+            text: 'Nasjonal totaloversikt'
+        },
+        xAxis: {
+            categories: ['Ja','Nei','Avstemning ikke avholdt']
+        },
+        yAxis: {
+            title: {
+                text: 'Nasjonale resultater (oppgitt i %)we'
+            }
+        },
+        series: [{
+            name: "(32% Nasjonal Deltakelse)",
+            data: [{y:data[0],color:"#41834B"},{y:data[1],color:"#940E19"},{y:data[2],color:"#ACACAC"}]
+        }]
+    });
+    }
 
 	//Data[0] = ja
 	//Data[1] = nei
@@ -61,7 +84,8 @@ $(document).ready(function(){
 
 	return {
 		initChart: initChart,
-		updateChart: updateChart
+		updateChart: updateChart,
+        showTotal: showTotal
 	}
 
 
