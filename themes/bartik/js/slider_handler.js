@@ -44,7 +44,7 @@ SliderHandler = (function(){
                 
                 sublayers[0].setSQL(query);
                 sublayers[0].setCartoCSS(cssyes);
-                cartodb.vis.Vis.addInfowindow(map,sublayers[0],["name_munic","ja","nei","blank"]);
+                cartodb.vis.Vis.addInfowindow(map,sublayers[0],["kommunenavn","ja","nei","blank"]);
               }
             });
             changeLegend(min, max);

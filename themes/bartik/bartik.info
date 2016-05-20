@@ -24,7 +24,7 @@ scripts[] = js/highcharts.js
 scripts[] = js/chart_handler.js
 scripts[] = js/data_handler.js
 scripts[] = js/slider_handler.js
-scripts[] = js/date.js
+scripts[] = js/layers_handler.js
 scripts[] = js/bootstrap.min.js
 scripts[] = js/get_node_content.js
 

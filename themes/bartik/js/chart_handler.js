@@ -8,7 +8,7 @@ $(document).ready(function(){
 	function initChart(){
 		 $('#chart_container').highcharts({
         chart: {
-            type: 'bar',
+            type: 'column',
 
         },
         colors:['#003762','#940E19','#41834B'],
@@ -31,10 +31,11 @@ $(document).ready(function(){
 
 	}
 
+    //TODO: where "Avstemning ikke avholdt" include comments
     function showTotal(data){
         $('#chart_container').highcharts({
         chart: {
-            type: 'bar'
+            type: 'column'
         },
         colors:['#003762','#940E19','#41834B'],
         title: {
@@ -45,36 +46,53 @@ $(document).ready(function(){
         },
         yAxis: {
             title: {
-                text: 'Nasjonale Resultater(%)'
+                text: 'Nasjonale Resultater (%)'
             }
         },
         series: [{
-            name: " (32 % Deltakelse)",
-            data: [{y:data[0],color:"#003762"},{y:data[1],color:"#940E19"},{y:data[2],color:"#41834B"}]
+            name: "(32 % Deltakelse)",
+            data: [{y:data[0],color:"#41834B"},{y:data[1],color:"#940E19"},{y:data[2],color:"#ACACAC"}]
         }]
     });
     }
 
-    function decidedChart(data){
+    function decidedChart(data,result){
+        var columnColor = {};
+
+        switch(result){
+            case "ja":
+                columnColor.first = "#41834b";
+                columnColor.second = "#4c9a57";
+                columnColor.third = "#65b371";
+                break;
+            case "nei":
+                columnColor.first = "#940E19";
+                columnColor.second= "#bb111f";
+                columnColor.third = "#e91627";
+                break;
+            default:
+                break;
+        }
+
         $('#chart_container').highcharts({
         chart: {
-            type: 'bar'
+            type: 'column'
         },
-        colors:['#003762','#940E19','#41834B'],
+        colors:[],
         title: {
-            text: "Topp 3 kommuner der'"+data[0].resultat+"' ble resultatet"
+            text: "De tre kommunene med høyest valgdeltakelse"
         },
         xAxis: {
-            categories: [data[0].name_munic,data[1].name_munic,data[2].name_munic]
+            categories: [data[0].kommunenavn,data[1].kommunenavn,data[2].kommunenavn]
         },
         yAxis: {
-            series:{
-                text:"Kommune"
+            title:{
+                text: "Prosentvis deltakelse"
             }
         },
         series: [{
-            name: "Flertall: "+data[0].resultat+" (oppgitt i %)",
-            data: [{y:data[0].percentage,color:"#003762"},{y:data[1].percentage,color:"#940E19"},{y:data[2].percentage,color:"#41834B"}]
+            name: "Valgdeltakelse (oppgitt i %)",
+            data: [{y:data[0].deltakelse,color:columnColor.first},{y:data[1].deltakelse,color:columnColor.second},{y:data[2].deltakelse,color:columnColor.third}]
         }]
     });
     }
@@ -85,22 +103,22 @@ $(document).ready(function(){
 	function updateChart(data){
 		$('#chart_container').highcharts({
         chart: {
-            type: 'bar'
+            type: 'column'
         },
         colors:['#003762','#940E19','#41834B'],
         title: {
-            text: ''
+            text: null
         },
         xAxis: {
             categories: ['Ja','Nei','Blank']
         },
         yAxis: {
             title: {
-                text: 'Antall Stemmer'
+                text: 'Prosent antall stemmer'
             }
         },
         series: [{
-	        name: data[3] + " ("+data[4]+"% Deltakelse)",
+	        name: data[3] + " ("+data[4]+"% Total Deltakelse)",
             data: [data[0],data[1],data[2]]
         }]
     });

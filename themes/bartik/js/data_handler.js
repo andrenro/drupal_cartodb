@@ -20,9 +20,10 @@ DataHandler = (function(){
     	});
 		
     }
-	
+
+
 	return {
-		getData: getData
+		getData: getData,
 	}
 
 
