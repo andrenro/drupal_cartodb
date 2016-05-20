@@ -1,11 +1,13 @@
 //Global Map Object
 var map;
-var layerUrl = "https://andreasroeed.cartodb.com/api/v2/viz/f1c11650-18fe-11e6-90db-0e787de82d45/viz.json";
+// var layerUrl = "https://andreasroeed.cartodb.com/api/v2/viz/f1c11650-18fe-11e6-90db-0e787de82d45/viz.json";4
+var layerUrl = "https://andreasroeed.cartodb.com/api/v2/viz/568b03f2-1e86-11e6-ac51-0e5db1731f59/viz.json";
+
 var sublayers = [];
 
 
-var cssyes = "#norge{line-color: #000000;polygon-fill:#41834B}";
-var cssno = "#norge{line-color: #000000;polygon-fill:#940E19}";
+var cssyes = "#random_results{line-color: #000000;polygon-fill:#41834B}";
+var cssno = "#random_results{line-color: #000000;polygon-fill:#940E19}";
 
 function main() {
 
@@ -71,16 +73,16 @@ $(document).ready(function() {
 
   $("#byName").change(function() {
     if ($(this).val() === "") {
-      query = "SELECT ja,nei,blank,kommunenavn,deltakelse FROM norge";
+      query = "SELECT ja,nei,blankt,kommunenavn,deltakelse FROM random_results";
     } else {
-      query = "SELECT ja,nei,blank,kommunenavn,deltakelse FROM norge WHERE kommunenavn ILIKE '" + $(this).val() + "'";
+      query = "SELECT ja,nei,blankt,kommunenavn,deltakelse FROM random_results WHERE kommunenavn ILIKE '" + $(this).val() + "'";
     }
 
     DataHandler.getData("andreasroeed", query, function(data) {
       dataArray = [];
       dataArray.push(data.rows[0].ja);
       dataArray.push(data.rows[0].nei);
-      dataArray.push(data.rows[0].blank);
+      dataArray.push(data.rows[0].blankt);
       dataArray.push(data.rows[0].deltakelse);
 
       ChartHandler.updateChart(dataArray);

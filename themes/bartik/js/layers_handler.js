@@ -8,16 +8,16 @@ $(document).ready(function() {
 
 
     function showTotal() {
-      sublayers[0].setSQL("SELECT * FROM norge");
-      sublayers[0].setCartoCSS("#norge[resultat='ja']{line-color: #000000;polygon-fill:#41834B} #norge[resultat='nei']{line-color: #000000;polygon-fill:#940E19} #norge[resultat='N/A']{line-color: #000000;polygon-fill:#ACACAC}");
-      cartodb.vis.Vis.addInfowindow(map, sublayers[0], ["ja", "nei", "blank", "kommunenavn"]);
+      sublayers[0].setSQL("SELECT * FROM random_results");
+      sublayers[0].setCartoCSS("#random_results[resultat='ja']{line-color: #000000;polygon-fill:#41834B} #random_results[resultat='nei']{line-color: #000000;polygon-fill:#940E19} #random_results[resultat='N/A']{line-color: #000000;polygon-fill:#ACACAC}");
+      cartodb.vis.Vis.addInfowindow(map, sublayers[0], ["ja", "nei", "blankt", "kommunenavn"]);
 
       var ja_count = 0;
       var nei_count = 0;
       var na_count = 0;
       var total = 0;
 
-      DataHandler.getData("andreasroeed", "SELECT * FROM norge", function(data) {
+      DataHandler.getData("andreasroeed", "SELECT * FROM random_results", function(data) {
 
         for (var x = 0; x < data.rows.length; x++) {
           if (data.rows[x].resultat == "ja") {
@@ -50,19 +50,19 @@ $(document).ready(function() {
      * @return {undefined} 
      */
     function showResults(css, bigger, smaller) {
-      sublayers[0].setSQL("SELECT * FROM norge WHERE " + bigger + " > " + smaller + "");
+      sublayers[0].setSQL("SELECT * FROM random_results WHERE " + bigger + " > " + smaller + "");
       console.log(css);
       sublayers[0].setCartoCSS(css);
       var bigger = bigger;
 
-      DataHandler.getData("andreasroeed", "SELECT nei,ja,blank,resultat,kommunenavn,deltakelse FROM norge WHERE " + bigger + " > " + smaller + " ORDER BY deltakelse DESC", function(data) {
+      DataHandler.getData("andreasroeed", "SELECT nei,ja,blankt,resultat,kommunenavn,deltakelse FROM random_results WHERE " + bigger + " > " + smaller + " ORDER BY deltakelse DESC", function(data) {
         var data = [data.rows[0], data.rows[1], data.rows[2]];
         ChartHandler.decidedChart(data, bigger);
 
       });
 
       sublayers[0].setInteractivity("cartodb_id", "kommunenavn");
-      cartodb.vis.Vis.addInfowindow(map, sublayers[0], ["ja", "nei", "blank", "kommunenavn"]);
+      cartodb.vis.Vis.addInfowindow(map, sublayers[0], ["ja", "nei", "blankt", "kommunenavn"]);
     };
     /**
      * @param  {string} attribute - The attribute to check
@@ -70,9 +70,9 @@ $(document).ready(function() {
      * @return {undefined} 
      */
     function byCount(attribute, input) {
-      sublayers[0].setSQL("SELECT * FROM norge WHERE " + attribute + " >= " + input + "");
+      sublayers[0].setSQL("SELECT * FROM random_results WHERE " + attribute + " >= " + input + "");
       sublayers[0].setCartoCSS(cssyes);
-      cartodb.vis.Vis.addInfowindow(map, sublayers[0], ["ja", "nei", "blank", "kommunenavn"]);
+      cartodb.vis.Vis.addInfowindow(map, sublayers[0], ["ja", "nei", "blankt", "kommunenavn"]);
     };
     /**
      * @param  {string} attribute
@@ -81,14 +81,14 @@ $(document).ready(function() {
      */
     function byName(attribute, input) {
       var inputString = "'" + input + "'";
-      var mapQuery = "SELECT * FROM norge WHERE " + attribute + " ILIKE " + inputString;
+      var mapQuery = "SELECT * FROM random_results WHERE " + attribute + " ILIKE " + inputString;
 
       console.log(mapQuery);
 
 
       sublayers[0].setSQL(mapQuery);
       sublayers[0].setCartoCSS(cssyes);
-      cartodb.vis.Vis.addInfowindow(map, sublayers[0], ["kommunenavn", "ja", "nei", "blank"]);
+      cartodb.vis.Vis.addInfowindow(map, sublayers[0], ["kommunenavn", "ja", "nei", "blankt"]);
     };
 
     return {

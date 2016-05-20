@@ -15,7 +15,7 @@ $(document).ready(function() {
                     text: ''
                 },
                 xAxis: {
-                    categories: ['Ja', 'Nei', 'Blank']
+                    categories: ['Ja', 'Nei', 'blankt']
                 },
                 yAxis: {
                     title: {
@@ -116,7 +116,7 @@ $(document).ready(function() {
 
         //Data[0] = ja
         //Data[1] = nei
-        //Data[2] = blank
+        //Data[2] = blankt
         function updateChart(data) {
             $('#chart_container').highcharts({
                 chart: {
@@ -127,7 +127,7 @@ $(document).ready(function() {
                     text: null
                 },
                 xAxis: {
-                    categories: ['Ja', 'Nei', 'Blank']
+                    categories: ['Ja', 'Nei', 'blankt']
                 },
                 yAxis: {
                     title: {
@@ -135,7 +135,7 @@ $(document).ready(function() {
                     }
                 },
                 series: [{
-                    name: data[3] + " (" + data[4] + "% Total Deltakelse)",
+                    name: data[3] + "% Deltakelse)",
                     data: [data[0], data[1], data[2]]
                 }]
             });
