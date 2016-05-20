@@ -10,7 +10,7 @@ $(document).ready(function() {
                     type: 'column',
 
                 },
-                colors: ['#003762', '#940E19', '#41834B'],
+                colors: ['#003762', '#940E19', '#003762'],
                 title: {
                     text: ''
                 },
@@ -36,7 +36,7 @@ $(document).ready(function() {
                 chart: {
                     type: 'column'
                 },
-                colors: ['#003762', '#940E19', '#41834B'],
+                colors: ['#003762', '#940E19', '#003762'],
                 title: {
                     text: 'Nasjonal totaloversikt'
                 },
@@ -52,7 +52,7 @@ $(document).ready(function() {
                     name: "(32 % Deltakelse)",
                     data: [{
                         y: data[0],
-                        color: "#41834B"
+                        color: "#003762"
                     }, {
                         y: data[1],
                         color: "#940E19"
@@ -69,9 +69,9 @@ $(document).ready(function() {
 
             switch (result) {
                 case "ja":
-                    columnColor.first = "#41834b";
-                    columnColor.second = "#4c9a57";
-                    columnColor.third = "#65b371";
+                    columnColor.first = "#003762";
+                    columnColor.second = "#00457c";
+                    columnColor.third = "#0062af";
                     break;
                 case "nei":
                     columnColor.first = "#940E19";
@@ -122,7 +122,7 @@ $(document).ready(function() {
                 chart: {
                     type: 'column'
                 },
-                colors: ['#003762', '#940E19', '#41834B'],
+                colors: ['#003762', '#940E19', '#003762'],
                 title: {
                     text: null
                 },

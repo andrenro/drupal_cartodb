@@ -6,7 +6,7 @@ var layerUrl = "https://andreasroeed.cartodb.com/api/v2/viz/568b03f2-1e86-11e6-a
 var sublayers = [];
 
 
-var cssyes = "#random_results{line-color: #000000;polygon-fill:#41834B}";
+var cssyes = "#random_results{line-color: #000000;polygon-fill:#003762}";
 var cssno = "#random_results{line-color: #000000;polygon-fill:#940E19}";
 
 function main() {

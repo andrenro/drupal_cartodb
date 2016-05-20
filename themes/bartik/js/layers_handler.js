@@ -9,7 +9,7 @@ $(document).ready(function() {
 
     function showTotal() {
       sublayers[0].setSQL("SELECT * FROM random_results");
-      sublayers[0].setCartoCSS("#random_results[resultat='ja']{line-color: #000000;polygon-fill:#41834B} #random_results[resultat='nei']{line-color: #000000;polygon-fill:#940E19} #random_results[resultat='N/A']{line-color: #000000;polygon-fill:#ACACAC}");
+      sublayers[0].setCartoCSS("#random_results[resultat='ja']{line-color: #000000;polygon-fill:#003762} #random_results[resultat='nei']{line-color: #000000;polygon-fill:#940E19} #random_results[resultat='N/A']{line-color: #000000;polygon-fill:#ACACAC}");
       cartodb.vis.Vis.addInfowindow(map, sublayers[0], ["ja", "nei", "blankt", "kommunenavn"]);
 
       var ja_count = 0;
