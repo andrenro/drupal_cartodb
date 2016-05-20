@@ -1,32 +1,33 @@
-$(document).ready(function(){
+$(document).ready(function() {
 
 
-DataHandler = (function(){
-	
+  DataHandler = (function() {
 
 
 
-	getData = function(user,queryString,callback){
+    getData = function(user, queryString, callback) {
 
-    	var data; 
-    	var sql = new cartodb.SQL({ user: user });
-    	sql.execute(queryString)
-      	.done(function(data) {
-	        callback(data);
-    	})
-      	.error(function(errors) {
-      	// errors contains a list of errors
-      	console.log("errors:" + errors);
-    	});
-		
+      var data;
+      var sql = new cartodb.SQL({
+        user: user
+      });
+      sql.execute(queryString)
+        .done(function(data) {
+          callback(data);
+        })
+        .error(function(errors) {
+          // errors contains a list of errors
+          console.log("errors:" + errors);
+        });
+
     }
 
 
-	return {
-		getData: getData,
-	}
+    return {
+      getData: getData,
+    }
 
 
-})();
+  })();
 
 });
