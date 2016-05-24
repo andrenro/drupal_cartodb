@@ -42,3 +42,13 @@ html, body {
   line-height: 1.42;
   display: inline-block;
 }
+
+.def{
+  padding:8px 14px;
+  border-radius:2px;
+  text-align: center;
+  font-size:14px;
+  vertical-align: middle;
+  line-height: 1.42;
+  display: inline-block;
+}

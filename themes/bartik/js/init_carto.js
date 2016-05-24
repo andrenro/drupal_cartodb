@@ -1,13 +1,11 @@
 //Global Map Object
 var map;
-// var layerUrl = "https://andreasroeed.cartodb.com/api/v2/viz/f1c11650-18fe-11e6-90db-0e787de82d45/viz.json";4
-var layerUrl = "https://andreasroeed.cartodb.com/api/v2/viz/568b03f2-1e86-11e6-ac51-0e5db1731f59/viz.json";
-
+var layerUrl = "https://andreasroeed.cartodb.com/api/v2/viz/5a3ebec4-219e-11e6-9a90-0ea31932ec1d/viz.json";
 var sublayers = [];
 
 
-var cssyes = "#random_results{line-color: #000000;polygon-fill:#003762}";
-var cssno = "#random_results{line-color: #000000;polygon-fill:#940E19}";
+var cssyes = "#partial_results{line-color: #000000;polygon-fill:#003762}";
+var cssno = "#partial_results{line-color: #000000;polygon-fill:#940E19}";
 
 function main() {
 
@@ -60,30 +58,30 @@ $(document).ready(function() {
   });
 
   $("#No").click(function() {
-    LayersHandler.showResults(cssno, "nei", "ja");
+    LayersHandler.showResults(cssno, "prosent_nei", "prosent_ja");
   });
 
   $("#Yes").click(function() {
-    LayersHandler.showResults(cssyes, "ja", "nei");
+    LayersHandler.showResults(cssyes, "prosent_ja", "prosent_nei");
   });
 
   $("#byCount").change(function() {
-    LayersHandler.byCount("NEI", $(this).val());
+    LayersHandler.byCount("prosent_nei", $(this).val());
   });
 
   $("#byName").change(function() {
     if ($(this).val() === "") {
-      query = "SELECT ja,nei,blankt,kommunenavn,deltakelse FROM random_results";
+      query = "SELECT prosent_ja,prosent_nei,prosent_blankt,kommunenavn,valgdeltakelse FROM partial_results";
     } else {
-      query = "SELECT ja,nei,blankt,kommunenavn,deltakelse FROM random_results WHERE kommunenavn ILIKE '" + $(this).val() + "'";
+      query = "SELECT prosent_ja,prosent_nei,prosent_blankt,kommunenavn,valgdeltakelse FROM partial_results WHERE kommunenavn ILIKE '" + $(this).val() + "'";
     }
 
     DataHandler.getData("andreasroeed", query, function(data) {
       dataArray = [];
-      dataArray.push(data.rows[0].ja);
-      dataArray.push(data.rows[0].nei);
-      dataArray.push(data.rows[0].blankt);
-      dataArray.push(data.rows[0].deltakelse);
+      dataArray.push(data.rows[0].prosent_ja);
+      dataArray.push(data.rows[0].prosent_nei);
+      dataArray.push(data.rows[0].prosent_blankt);
+      dataArray.push(data.rows[0].valgdeltakelse);
 
       ChartHandler.updateChart(dataArray);
     });

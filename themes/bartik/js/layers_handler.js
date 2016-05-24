@@ -8,36 +8,44 @@ $(document).ready(function() {
 
 
     function showTotal() {
-      sublayers[0].setSQL("SELECT * FROM random_results");
-      sublayers[0].setCartoCSS("#random_results[resultat='ja']{line-color: #000000;polygon-fill:#003762} #random_results[resultat='nei']{line-color: #000000;polygon-fill:#940E19} #random_results[resultat='N/A']{line-color: #000000;polygon-fill:#ACACAC}");
-      cartodb.vis.Vis.addInfowindow(map, sublayers[0], ["ja", "nei", "blankt", "kommunenavn"]);
+      sublayers[0].setSQL("SELECT * FROM partial_results");
+      sublayers[0].setCartoCSS("#partial_results[resultat='ja']{line-color: #000000;polygon-fill:#003762} #partial_results[resultat='nei']{line-color: #000000;polygon-fill:#940E19} #partial_results[resultat='']{line-color: #000000;polygon-fill:#ACACAC}");
+      cartodb.vis.Vis.addInfowindow(map, sublayers[0], ["valgdeltakelse","prosent_ja", "prosent_nei", "prosent_blankt", "kommunenavn"]);
 
       var ja_count = 0;
       var nei_count = 0;
-      var na_count = 0;
+      var no_results = 0;
       var total = 0;
 
-      DataHandler.getData("andreasroeed", "SELECT * FROM random_results", function(data) {
+      DataHandler.getData("andreasroeed", "SELECT resultat,valgdeltakelse,prosent_ja,prosent_nei,prosent_blankt FROM partial_results", function(data) {
+        var has_results = 0;
+        var mean_participation = 0;
 
         for (var x = 0; x < data.rows.length; x++) {
+
+          mean_participation += data.rows[x].valgdeltakelse;
           if (data.rows[x].resultat == "ja") {
+            has_results++;
             ja_count++;
           } else if (data.rows[x].resultat == "nei") {
             nei_count++;
-          } else if (data.rows[x].resultat == "N/A") {
-            na_count++;
+            has_results++;
+          } else if (data.rows[x].resultat == "") {
+            no_results++;
           } else {
             continue;
           }
         }
 
-        total = ja_count + nei_count + na_count;
+        total = ja_count + nei_count + no_results;
 
-        var percent_ja = (ja_count * 100) / total;
-        var percent_nei = (nei_count * 100) / total;
-        var percent_na = (na_count * 100) / total;
+        var percent_ja = ((ja_count * 100) / has_results)
+        var percent_nei = ((nei_count * 100) / has_results)
+        //var percent_na = (no_results * 100) / total;
 
-        var data = [percent_ja, percent_nei, percent_na];
+
+        mean_participation = (mean_participation/ has_results);
+        var data = [percent_ja,percent_nei,mean_participation];
 
         ChartHandler.showTotal(data);
 
@@ -50,29 +58,27 @@ $(document).ready(function() {
      * @return {undefined} 
      */
     function showResults(css, bigger, smaller) {
-      sublayers[0].setSQL("SELECT * FROM random_results WHERE " + bigger + " > " + smaller + "");
-      console.log(css);
+      sublayers[0].setSQL("SELECT * FROM partial_results WHERE " + bigger + " > " + smaller + "");
       sublayers[0].setCartoCSS(css);
       var bigger = bigger;
 
-      DataHandler.getData("andreasroeed", "SELECT nei,ja,blankt,resultat,kommunenavn,deltakelse FROM random_results WHERE " + bigger + " > " + smaller + " ORDER BY deltakelse DESC", function(data) {
+      DataHandler.getData("andreasroeed", "SELECT prosent_nei,prosent_ja,prosent_blankt,resultat,kommunenavn,valgdeltakelse FROM partial_results WHERE " + bigger + " > " + smaller + " ORDER BY valgdeltakelse DESC", function(data) {
         var data = [data.rows[0], data.rows[1], data.rows[2]];
         ChartHandler.decidedChart(data, bigger);
 
       });
 
       sublayers[0].setInteractivity("cartodb_id", "kommunenavn");
-      cartodb.vis.Vis.addInfowindow(map, sublayers[0], ["ja", "nei", "blankt", "kommunenavn"]);
     };
     /**
+     * NOT in USE
      * @param  {string} attribute - The attribute to check
      * @param  {string} input - The input value to compare with @param attribute
      * @return {undefined} 
      */
     function byCount(attribute, input) {
-      sublayers[0].setSQL("SELECT * FROM random_results WHERE " + attribute + " >= " + input + "");
+      sublayers[0].setSQL("SELECT * FROM partial_results WHERE " + attribute + " >= " + input + "");
       sublayers[0].setCartoCSS(cssyes);
-      cartodb.vis.Vis.addInfowindow(map, sublayers[0], ["ja", "nei", "blankt", "kommunenavn"]);
     };
     /**
      * @param  {string} attribute
@@ -80,15 +86,21 @@ $(document).ready(function() {
      * @return {[undefined]}
      */
     function byName(attribute, input) {
+
+      var result = "";
+      var color = "";
+      console.log(sublayers[0]);
+
       var inputString = "'" + input + "'";
-      var mapQuery = "SELECT * FROM random_results WHERE " + attribute + " ILIKE " + inputString;
+      var mapQuery = "SELECT * FROM partial_results WHERE " + attribute + " ILIKE " + inputString;
 
-      console.log(mapQuery);
+      DataHandler.getData("andreasroeed",mapQuery,function(data){
+        mapQuery = "SELECT * FROM partial_results WHERE " + attribute + " ILIKE " + inputString;
+        sublayers[0].setSQL(mapQuery);
+        sublayers[0].setCartoCSS(cssyes);
 
 
-      sublayers[0].setSQL(mapQuery);
-      sublayers[0].setCartoCSS(cssyes);
-      cartodb.vis.Vis.addInfowindow(map, sublayers[0], ["kommunenavn", "ja", "nei", "blankt"]);
+      });    
     };
 
     return {

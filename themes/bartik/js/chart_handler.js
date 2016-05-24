@@ -15,7 +15,7 @@ $(document).ready(function() {
                     text: ''
                 },
                 xAxis: {
-                    categories: ['Ja', 'Nei', 'blankt']
+                    categories: ['Ja', 'Nei', 'Blankt']
                 },
                 yAxis: {
                     title: {
@@ -36,12 +36,11 @@ $(document).ready(function() {
                 chart: {
                     type: 'column'
                 },
-                colors: ['#003762', '#940E19', '#003762'],
                 title: {
-                    text: 'Nasjonal totaloversikt'
+                    text: 'Nasjonale resultater: ' + data[2].toFixed(2) + " % gjennomsnittlig valgdeltakelse"
                 },
                 xAxis: {
-                    categories: ['Ja', 'Nei', 'Avstemning ikke avholdt']
+                    categories: ['Ja', 'Nei']
                 },
                 yAxis: {
                     title: {
@@ -49,16 +48,15 @@ $(document).ready(function() {
                     }
                 },
                 series: [{
-                    name: "(32 % Deltakelse)",
+                    name:"Nasjonale resultater",
                     data: [{
-                        y: data[0],
+                        name:"% av kommunene der resultatet ble ja",
+                        y: parseInt(data[0].toFixed(2)),
                         color: "#003762"
                     }, {
-                        y: data[1],
+                        name:"% av kommunene der resultatet ble nei",
+                        y: parseInt(data[1].toFixed(2)),
                         color: "#940E19"
-                    }, {
-                        y: data[2],
-                        color: "#ACACAC"
                     }]
                 }]
             });
@@ -66,14 +64,13 @@ $(document).ready(function() {
 
         function decidedChart(data, result) {
             var columnColor = {};
-
             switch (result) {
-                case "ja":
+                case "prosent_ja":
                     columnColor.first = "#003762";
                     columnColor.second = "#00457c";
                     columnColor.third = "#0062af";
                     break;
-                case "nei":
+                case "prosent_nei":
                     columnColor.first = "#940E19";
                     columnColor.second = "#bb111f";
                     columnColor.third = "#e91627";
@@ -88,26 +85,26 @@ $(document).ready(function() {
                 },
                 colors: [],
                 title: {
-                    text: "De tre kommunene med høyest valgdeltakelse"
+                    text: "De tre kommunene med størst valgdeltakelse"
                 },
                 xAxis: {
                     categories: [data[0].kommunenavn, data[1].kommunenavn, data[2].kommunenavn]
                 },
                 yAxis: {
                     title: {
-                        text: "Prosentvis deltakelse"
+                        text: "Prosentvis valgdeltakelse"
                     }
                 },
                 series: [{
                     name: "Valgdeltakelse (oppgitt i %)",
                     data: [{
-                        y: data[0].deltakelse,
+                        y: data[0].valgdeltakelse,
                         color: columnColor.first
                     }, {
-                        y: data[1].deltakelse,
+                        y: data[1].valgdeltakelse,
                         color: columnColor.second
                     }, {
-                        y: data[2].deltakelse,
+                        y: data[2].valgdeltakelse,
                         color: columnColor.third
                     }]
                 }]
@@ -116,7 +113,7 @@ $(document).ready(function() {
 
         //Data[0] = ja
         //Data[1] = nei
-        //Data[2] = blankt
+        //Data[2] = prosent_blankt
         function updateChart(data) {
             $('#chart_container').highcharts({
                 chart: {
@@ -127,7 +124,7 @@ $(document).ready(function() {
                     text: null
                 },
                 xAxis: {
-                    categories: ['Ja', 'Nei', 'blankt']
+                    categories: ['Ja', 'Nei', 'Blankt']
                 },
                 yAxis: {
                     title: {
@@ -135,7 +132,7 @@ $(document).ready(function() {
                     }
                 },
                 series: [{
-                    name: data[3] + "% Deltakelse)",
+                    name: data[3] + "% valgdeltakelse",
                     data: [data[0], data[1], data[2]]
                 }]
             });
