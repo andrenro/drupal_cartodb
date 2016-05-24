@@ -41,8 +41,6 @@ $(document).ready(function() {
 
         var percent_ja = ((ja_count * 100) / has_results)
         var percent_nei = ((nei_count * 100) / has_results)
-        //var percent_na = (no_results * 100) / total;
-
 
         mean_participation = (mean_participation/ has_results);
         var data = [percent_ja,percent_nei,mean_participation];
@@ -61,9 +59,9 @@ $(document).ready(function() {
       sublayers[0].setSQL("SELECT * FROM partial_results WHERE " + bigger + " > " + smaller + "");
       sublayers[0].setCartoCSS(css);
       var bigger = bigger;
-
+      //TODO: show 10 best?
       DataHandler.getData("andreasroeed", "SELECT prosent_nei,prosent_ja,prosent_blankt,resultat,kommunenavn,valgdeltakelse FROM partial_results WHERE " + bigger + " > " + smaller + " ORDER BY valgdeltakelse DESC", function(data) {
-        var data = [data.rows[0], data.rows[1], data.rows[2]];
+        var data = [data.rows[0], data.rows[1], data.rows[2],data.rows[3],data.rows[4]];
         ChartHandler.decidedChart(data, bigger);
 
       });
@@ -89,18 +87,22 @@ $(document).ready(function() {
 
       var result = "";
       var color = "";
-      console.log(sublayers[0]);
 
       var inputString = "'" + input + "'";
       var mapQuery = "SELECT * FROM partial_results WHERE " + attribute + " ILIKE " + inputString;
 
       DataHandler.getData("andreasroeed",mapQuery,function(data){
         mapQuery = "SELECT * FROM partial_results WHERE " + attribute + " ILIKE " + inputString;
+
+        var css = data.rows[0].resultat == "ja" ? cssyess : cssno;
+
+        console.log(css);
+
         sublayers[0].setSQL(mapQuery);
-        sublayers[0].setCartoCSS(cssyes);
+        sublayers[0].setCartoCSS(css);
+      });
 
 
-      });    
     };
 
     return {

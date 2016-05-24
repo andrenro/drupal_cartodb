@@ -30,11 +30,10 @@ $(document).ready(function() {
 
         }
 
-        //TODO: where "Avstemning ikke avholdt" include comments
         function showTotal(data) {
             $('#chart_container').highcharts({
                 chart: {
-                    type: 'column'
+                    type: 'bar'
                 },
                 title: {
                     text: 'Nasjonale resultater: ' + data[2].toFixed(2) + " % gjennomsnittlig valgdeltakelse"
@@ -48,7 +47,7 @@ $(document).ready(function() {
                     }
                 },
                 series: [{
-                    name:"Nasjonale resultater",
+                    name:"Resultat",
                     data: [{
                         name:"% av kommunene der resultatet ble ja",
                         y: parseInt(data[0].toFixed(2)),
@@ -81,14 +80,14 @@ $(document).ready(function() {
 
             $('#chart_container').highcharts({
                 chart: {
-                    type: 'column'
+                    type: 'bar'
                 },
                 colors: [],
                 title: {
-                    text: "De tre kommunene med størst valgdeltakelse"
+                    text: "Topp "+ data.length+ " kommuner med størst valgdeltakelse"
                 },
                 xAxis: {
-                    categories: [data[0].kommunenavn, data[1].kommunenavn, data[2].kommunenavn]
+                    categories: [data[0].kommunenavn, data[1].kommunenavn, data[2].kommunenavn,data[3].kommunenavn,data[4].kommunenavn]
                 },
                 yAxis: {
                     title: {
@@ -96,16 +95,24 @@ $(document).ready(function() {
                     }
                 },
                 series: [{
-                    name: "Valgdeltakelse (oppgitt i %)",
+                    name: "Valgdeltakelse",
                     data: [{
                         y: data[0].valgdeltakelse,
-                        color: columnColor.first
+                        color: columnColor.third
                     }, {
                         y: data[1].valgdeltakelse,
                         color: columnColor.second
                     }, {
                         y: data[2].valgdeltakelse,
-                        color: columnColor.third
+                        color: columnColor.second
+                    },
+                    {
+                        y: data[3].valgdeltakelse,
+                        color: columnColor.first
+                    },
+                    {
+                        y: data[4].valgdeltakelse,
+                        color: columnColor.first
                     }]
                 }]
             });
@@ -117,11 +124,11 @@ $(document).ready(function() {
         function updateChart(data) {
             $('#chart_container').highcharts({
                 chart: {
-                    type: 'column'
+                    type: 'bar'
                 },
-                colors: ['#003762', '#940E19', '#003762'],
+                colors: [],
                 title: {
-                    text: null
+                    text: data[4] +"<br>"+" (" +data[3] +" % deltakelse)"
                 },
                 xAxis: {
                     categories: ['Ja', 'Nei', 'Blankt']
@@ -132,8 +139,17 @@ $(document).ready(function() {
                     }
                 },
                 series: [{
-                    name: data[3] + "% valgdeltakelse",
-                    data: [data[0], data[1], data[2]]
+                    name: "Resultat",
+                    data: [{
+                        y:data[0],
+                        color: "#003762"
+                    },{
+                        y:data[1],
+                        color: "#940E19"
+                    },{
+                        y:data[2],
+                        color: "#ACACAC"
+                    }]
                 }]
             });
         }

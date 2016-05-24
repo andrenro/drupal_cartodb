@@ -4,8 +4,8 @@ var layerUrl = "https://andreasroeed.cartodb.com/api/v2/viz/5a3ebec4-219e-11e6-9
 var sublayers = [];
 
 
-var cssyes = "#partial_results{line-color: #000000;polygon-fill:#003762}";
-var cssno = "#partial_results{line-color: #000000;polygon-fill:#940E19}";
+cssyes = "#partial_results{line-color: #000000;polygon-fill:#003762}";
+cssno = "#partial_results{line-color: #000000;polygon-fill:#940E19}";
 
 function main() {
 
@@ -71,7 +71,7 @@ $(document).ready(function() {
 
   $("#byName").change(function() {
     if ($(this).val() === "") {
-      query = "SELECT prosent_ja,prosent_nei,prosent_blankt,kommunenavn,valgdeltakelse FROM partial_results";
+      return false;
     } else {
       query = "SELECT prosent_ja,prosent_nei,prosent_blankt,kommunenavn,valgdeltakelse FROM partial_results WHERE kommunenavn ILIKE '" + $(this).val() + "'";
     }
@@ -82,7 +82,7 @@ $(document).ready(function() {
       dataArray.push(data.rows[0].prosent_nei);
       dataArray.push(data.rows[0].prosent_blankt);
       dataArray.push(data.rows[0].valgdeltakelse);
-
+      dataArray.push(data.rows[0].kommunenavn);
       ChartHandler.updateChart(dataArray);
     });
 
