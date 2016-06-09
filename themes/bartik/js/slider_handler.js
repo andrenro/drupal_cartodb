@@ -13,7 +13,7 @@ $(document).ready(function() {
         user: 'andreasroeed'
       });
       // fetch time range
-      DataHandler.getData('andreasroeed', 'SELECT max(vedtatt_dato), min(vedtatt_dato) FROM partial_results', function(data) {
+      DataHandler.getData('andreasroeed', 'SELECT max(vedtatt_dato), min(vedtatt_dato) FROM table_1_merge', function(data) {
         var range = data.rows[0];
         var max = new Date(range.max).getTime();
         var min = new Date(range.min).getTime();
@@ -40,12 +40,12 @@ $(document).ready(function() {
             var start = startMonth + "/" + startDate.getDate() + "/" + startDate.getFullYear();
             var end = endMonth + "/" + endDate.getDate() + "/" + endDate.getFullYear();
 
-            var query = "SELECT * FROM partial_results WHERE vedtatt_dato >=" + "'" + start + "'" + " AND vedtatt_dato <=" + "'" + end + "'";
+            var query = "SELECT * FROM table_1_merge WHERE vedtatt_dato >=" + "'" + start + "'" + " AND vedtatt_dato <=" + "'" + end + "'";
 
 
             sublayers[0].setSQL(query);
             sublayers[0].setCartoCSS(cssyes);
-            cartodb.vis.Vis.addInfowindow(map, sublayers[0], ["kommunenavn", "ja", "nei", "prosent_blankt"]);
+            cartodb.vis.Vis.addInfowindow(map, sublayers[0], ["kommune", "ja", "nei", "prosent_blankt"]);
           }
         });
         changeLegend(min, max);

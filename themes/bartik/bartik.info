@@ -27,6 +27,9 @@ scripts[] = js/slider_handler.js
 scripts[] = js/layers_handler.js
 scripts[] = js/bootstrap.min.js
 scripts[] = js/get_node_content.js
+scripts[] = js/folketall/json-stat.js
+scripts[] = js/folketall/json-stat.utils.js
+scripts[] = js/folketall/ssb_handler.js
 
 
 

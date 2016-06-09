@@ -36,24 +36,24 @@ $(document).ready(function() {
                     type: 'bar'
                 },
                 title: {
-                    text: 'Nasjonale resultater: ' + data[2].toFixed(2) + " % gjennomsnittlig valgdeltakelse"
+                    text:  "Nasjonal oversikt over resultatene fra folkeavstemningene: <br><strong>"+data[0].toFixed(1)+"% 'Ja'</strong><br><strong>"+data[1].toFixed(1)+"% 'Nei'</strong><br><strong>"+data[2].toFixed(1) + "%</strong> gjennomsnittlig valgdeltakelse"
                 },
                 xAxis: {
-                    categories: ['Ja', 'Nei']
+                    categories: ["Resultatet ble 'Ja'", "Resultatet ble 'Nei'"]
                 },
                 yAxis: {
                     title: {
-                        text: 'Nasjonale Resultater (%)'
+                        text: 'Nasjonale resultater (%)'
                     }
                 },
                 series: [{
                     name:"Resultat",
                     data: [{
-                        name:"% av kommunene der resultatet ble ja",
+                        name: "Prosentandel av kommunene der resultatet ble Ja",
                         y: parseInt(data[0].toFixed(2)),
                         color: "#003762"
                     }, {
-                        name:"% av kommunene der resultatet ble nei",
+                        name: "Prosentandel av kommunene der resultatet ble Nei",
                         y: parseInt(data[1].toFixed(2)),
                         color: "#940E19"
                     }]
@@ -87,7 +87,7 @@ $(document).ready(function() {
                     text: "Topp "+ data.length+ " kommuner med størst valgdeltakelse"
                 },
                 xAxis: {
-                    categories: [data[0].kommunenavn, data[1].kommunenavn, data[2].kommunenavn,data[3].kommunenavn,data[4].kommunenavn]
+                    categories: [data[0].kommune, data[1].kommune, data[2].kommune,data[3].kommune,data[4].kommune,data[5].kommune, data[6].kommune, data[7].kommune,data[8].kommune,data[9].kommune]
                 },
                 yAxis: {
                     title: {
@@ -98,13 +98,13 @@ $(document).ready(function() {
                     name: "Valgdeltakelse",
                     data: [{
                         y: data[0].valgdeltakelse,
-                        color: columnColor.third
+                        color: columnColor.first
                     }, {
                         y: data[1].valgdeltakelse,
-                        color: columnColor.second
+                        color: columnColor.first
                     }, {
                         y: data[2].valgdeltakelse,
-                        color: columnColor.second
+                        color: columnColor.first
                     },
                     {
                         y: data[3].valgdeltakelse,
@@ -113,7 +113,28 @@ $(document).ready(function() {
                     {
                         y: data[4].valgdeltakelse,
                         color: columnColor.first
-                    }]
+                    },
+                    {
+                        y: data[5].valgdeltakelse,
+                        color: columnColor.first
+                    },
+                      {
+                        y: data[6].valgdeltakelse,
+                        color: columnColor.first
+                    },
+                      {
+                        y: data[7].valgdeltakelse,
+                        color: columnColor.first
+                    },
+                      {
+                        y: data[8].valgdeltakelse,
+                        color: columnColor.first
+                    },
+                      {
+                        y: data[9].valgdeltakelse,
+                        color: columnColor.first
+                    }
+                    ]
                 }]
             });
         }
@@ -121,14 +142,17 @@ $(document).ready(function() {
         //Data[0] = ja
         //Data[1] = nei
         //Data[2] = prosent_blankt
-        function updateChart(data) {
+        function updateChart(data,callback) {
+            var deltakelse = data[3] > 0 ? data[3] : "N/A";
+            var result = data[1] > data[0] ? "Nei" : "Ja";
+
             $('#chart_container').highcharts({
                 chart: {
                     type: 'bar'
                 },
                 colors: [],
                 title: {
-                    text: data[4] +"<br>"+" (" +data[3] +" % deltakelse)"
+                    text: "<strong><h3>"+data[4]+"</h3></strong><br>Resultat: <strong>'"+result+"'</strong><br><strong>Ja: "+data[0]+"%</strong><br><strong>Nei: "+data[1]+"%</strong><br><strong>Blankt "+data[2]+"%</strong><br> (<strong>"+deltakelse+"</strong> % valgdeltakelse)"
                 },
                 xAxis: {
                     categories: ['Ja', 'Nei', 'Blankt']
@@ -152,8 +176,11 @@ $(document).ready(function() {
                     }]
                 }]
             });
-        }
 
+            if(callback){
+                callback();
+            }
+        }
         return {
             initChart: initChart,
             updateChart: updateChart,
