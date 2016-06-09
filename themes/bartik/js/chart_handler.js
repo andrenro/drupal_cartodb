@@ -5,8 +5,10 @@ $(document).ready(function() {
     ChartHandler = (function() {
 
         function initChart() {
-            $('#chart_container').highcharts({
+
+            new Highcharts.Chart({
                 chart: {
+                    renderTo: "chart_container",
                     type: 'column',
 
                 },
@@ -31,8 +33,9 @@ $(document).ready(function() {
         }
 
         function showTotal(data) {
-            $('#chart_container').highcharts({
+            new Highcharts.Chart({
                 chart: {
+                    renderTo:"chart_container",
                     type: 'bar'
                 },
                 title: {
@@ -78,8 +81,9 @@ $(document).ready(function() {
                     break;
             }
 
-            $('#chart_container').highcharts({
+            new Highcharts.Chart({
                 chart: {
+                    renderTo:"chart_container",
                     type: 'bar'
                 },
                 colors: [],
@@ -146,8 +150,9 @@ $(document).ready(function() {
             var deltakelse = data[3] > 0 ? data[3] : "N/A";
             var result = data[1] > data[0] ? "Nei" : "Ja";
 
-            $('#chart_container').highcharts({
+            new Highcharts.Chart({
                 chart: {
+                    renderTo:"chart_container",
                     type: 'bar'
                 },
                 colors: [],

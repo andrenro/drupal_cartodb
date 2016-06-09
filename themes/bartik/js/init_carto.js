@@ -4,8 +4,6 @@ var layerUrl = "https://andreasroeed.cartodb.com/api/v2/viz/a2f54382-2e0e-11e6-8
 var sublayers = [];
 
 
-
-
 function main() {
 
   $(document).ready(function() {
@@ -86,6 +84,7 @@ $(document).ready(function() {
       dataArray = [];
       if(data.rows[0] === undefined){
         $("#warning_").html("Beklager, fant ingen kommuner med det navnet..");
+        $("#byName").val("");
         $("#warning_").show();
         setTimeout(function(){$("#warning_").hide();
           return undefined;
@@ -103,6 +102,7 @@ $(document).ready(function() {
 
         
       }else{
+
         var search_value = data.rows[0].kommune;
         dataArray.push(data.rows[0].prosent_ja);
         dataArray.push(data.rows[0].prosent_nei);
@@ -112,6 +112,7 @@ $(document).ready(function() {
 
         ChartHandler.updateChart(dataArray,function(){
           LayersHandler.byName("kommune", search_value);
+          $("#byName").val("");
         });
 
 

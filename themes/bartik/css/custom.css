@@ -18,6 +18,7 @@ html, body {
 
 
 .yes{
+  margin-top:0.6em;
   background-color:#003762 !important;
   padding:8px 14px;
   color:white;
@@ -31,6 +32,7 @@ html, body {
 }
 
 .no{
+  margin-top:0.6em;
   background-color: #940E19 !important;
   padding:8px 14px;
   color:white;
@@ -44,6 +46,7 @@ html, body {
 }
 
 .def{
+  margin-top:0.6em;
   padding:8px 14px;
   border-radius:2px;
   text-align: center;
