@@ -53,8 +53,6 @@ window.onload = main;
 $(document).ready(function() {
 
 
-
-
   $("#total").click(function() {
     LayersHandler.showTotal();
   });
@@ -77,11 +75,12 @@ $(document).ready(function() {
     if ($(this).val() === "") {
       return false;
     } else {
-      query = "SELECT prosent_ja,prosent_nei,prosent_blankt,kommune,valgdeltakelse FROM table_1_merge WHERE kommune ILIKE '" + $(this).val() + "'";
+      query = "SELECT prosent_ja,prosent_nei,prosent_blankt,kommune,valgdeltakelse,kommentar,kommentar_2,kommentar_3 FROM table_1_merge WHERE kommune ILIKE '" + $(this).val() + "'";
     }
 
     DataHandler.getData("andreasroeed", query, function(data) {
       dataArray = [];
+
       if(data.rows[0] === undefined){
         $("#warning_").html("Beklager, fant ingen kommuner med det navnet..");
         $("#byName").val("");
@@ -89,11 +88,7 @@ $(document).ready(function() {
         setTimeout(function(){$("#warning_").hide();
           return undefined;
          }, 3000);
-      }
-      
-
-      
-      if(data.rows[0].prosent_nei < 1 || data.rows[0].prosent_ja < 1){
+      }else if(data.rows[0].prosent_nei < 1 || data.rows[0].prosent_ja < 1 || data.rows[0].resultat === ""){
         $("#warning_").html("Ingen, eller manglende data for denne kommunen");
         $("#warning_").show();
         setTimeout(function(){$("#warning_").hide();

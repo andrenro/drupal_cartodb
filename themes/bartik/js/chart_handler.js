@@ -39,14 +39,14 @@ $(document).ready(function() {
                     type: 'bar'
                 },
                 title: {
-                    text:  "Nasjonal oversikt over resultatene fra folkeavstemningene: <br><strong>"+data[0].toFixed(1)+"% 'Ja'</strong><br><strong>"+data[1].toFixed(1)+"% 'Nei'</strong><br><strong>"+data[2].toFixed(1) + "%</strong> gjennomsnittlig valgdeltakelse"
+                    text:  "Prosentvis oversikt over resultatene fra folkeavstemningene: <br><strong>"+data[0].toFixed(1)+"% 'Ja'</strong><br><strong>"+data[1].toFixed(1)+"% 'Nei'</strong><br><strong>"+data[2].toFixed(1) + "% Deltakelse</strong> (snitt)"
                 },
                 xAxis: {
                     categories: ["Resultatet ble 'Ja'", "Resultatet ble 'Nei'"]
                 },
                 yAxis: {
                     title: {
-                        text: 'Nasjonale resultater (%)'
+                        text: '% som endte "Ja"/"Nei"'
                     }
                 },
                 series: [{
@@ -88,7 +88,7 @@ $(document).ready(function() {
                 },
                 colors: [],
                 title: {
-                    text: "Topp "+ data.length+ " kommuner med størst valgdeltakelse"
+                    text: "Topp "+ data.length+ " kommuner med høyest prosentvis deltakelse"
                 },
                 xAxis: {
                     categories: [data[0].kommune, data[1].kommune, data[2].kommune,data[3].kommune,data[4].kommune,data[5].kommune, data[6].kommune, data[7].kommune,data[8].kommune,data[9].kommune]
@@ -102,13 +102,13 @@ $(document).ready(function() {
                     name: "Valgdeltakelse",
                     data: [{
                         y: data[0].valgdeltakelse,
-                        color: columnColor.first
+                        color: columnColor.third
                     }, {
                         y: data[1].valgdeltakelse,
-                        color: columnColor.first
+                        color: columnColor.second
                     }, {
                         y: data[2].valgdeltakelse,
-                        color: columnColor.first
+                        color: columnColor.second
                     },
                     {
                         y: data[3].valgdeltakelse,
@@ -157,7 +157,7 @@ $(document).ready(function() {
                 },
                 colors: [],
                 title: {
-                    text: "<strong><h3>"+data[4]+"</h3></strong><br>Resultat: <strong>'"+result+"'</strong><br><strong>Ja: "+data[0]+"%</strong><br><strong>Nei: "+data[1]+"%</strong><br><strong>Blankt "+data[2]+"%</strong><br> (<strong>"+deltakelse+"</strong> % valgdeltakelse)"
+                    text: "<strong><h3>"+data[4]+"</h3></strong><br>Resultat: <strong>'"+result+"'</strong><br><strong>Ja: "+data[0]+"%</strong><br><strong>Nei: "+data[1]+"%</strong><br><strong>Blankt "+data[2]+"%</strong><br> (<strong>"+deltakelse+"%</strong> deltakelse)"
                 },
                 xAxis: {
                     categories: ['Ja', 'Nei', 'Blankt']

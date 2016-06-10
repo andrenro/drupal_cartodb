@@ -10,14 +10,14 @@ $(document).ready(function() {
     function showTotal() {
       sublayers[0].setSQL("SELECT * FROM table_1_merge");
       sublayers[0].setCartoCSS("#table_1_merge[resultat='ja']{line-color: #000000;polygon-fill:#003762} #table_1_merge[resultat='nei']{line-color: #000000;polygon-fill:#940E19} #table_1_merge[resultat='']{line-color: #000000;polygon-fill:#ACACAC}");
-      cartodb.vis.Vis.addInfowindow(map, sublayers[0], ["valgdeltakelse","prosent_ja", "prosent_nei", "prosent_blankt", "kommune"]);
+      cartodb.vis.Vis.addInfowindow(map, sublayers[0], ["valgdeltakelse","prosent_ja", "prosent_nei", "prosent_blankt", "kommune","kommentar","kommentar_2","kommentar_3"]);
 
       var ja_count = 0;
       var nei_count = 0;
       var no_results = 0;
       var total = 0;
 
-      DataHandler.getData("andreasroeed", "SELECT resultat,valgdeltakelse,prosent_ja,prosent_nei,prosent_blankt FROM table_1_merge", function(data) {
+      DataHandler.getData("andreasroeed", "SELECT resultat,valgdeltakelse,prosent_ja,prosent_nei,prosent_blankt,kommentar,kommentar_2,kommentar_3 FROM table_1_merge", function(data) {
         var has_results = 0;
         var mean_participation = 0;
         var has_participation = 0;
@@ -25,7 +25,7 @@ $(document).ready(function() {
         for (var x = 0; x < data.rows.length; x++) {
 
           //Do not calculate stats from objects without valgdeltakelse set.
-          if(data.rows[x].valgdeltakelse !== null){
+          if(data.rows[x].valgdeltakelse !== null && data.rows[x].valgdeltakelse > 0){
             has_participation++;
             mean_participation += data.rows[x].valgdeltakelse;
           }
@@ -103,7 +103,7 @@ $(document).ready(function() {
       sublayers[0].setCartoCSS(css);
       var bigger = bigger;
 
-      var query = "SELECT prosent_nei,prosent_ja,prosent_blankt,resultat,kommune,valgdeltakelse FROM table_1_merge WHERE (" + bigger + " > " + smaller + ") AND resultat='"+result+"'";
+      var query = "SELECT prosent_nei,prosent_ja,prosent_blankt,resultat,kommune,valgdeltakelse,kommentar,kommentar_2,kommentar_3 FROM table_1_merge WHERE (" + bigger + " > " + smaller + ") AND resultat='"+result+"'";
       DataHandler.getData("andreasroeed",query, function(data) {
         var topRated = [];
         var sorted = mergeSort(data.rows);
