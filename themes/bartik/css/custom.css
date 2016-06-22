@@ -56,10 +56,7 @@ html, body {
   display: inline-block;
 }
 
-* {
-  font-family: verdana;
-  font-size: 12px;
-}
+
 .datalist {
   width: 100%;
   border-width: 0 1px 1px 1px;

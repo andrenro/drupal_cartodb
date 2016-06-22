@@ -20,11 +20,25 @@ $(document).ready(function() {
           console.log("errors:" + errors);
         });
 
-    }
+    };
+
+
+    exportJSON = function(queryString){
+      var data;
+      $.getJSON('https://andreasroeed.cartodb.com/api/v2/sql/?q='+queryString, function(data) {
+        $.each(data.rows, function(key, val) {
+          "https://andreasroeed.cartodb.com/api/v2/sql?filename=export.csv&q=SELECT * FROM table_1_merge";
+          // console.log(key);
+          // console.log(val);
+          // do something!
+        });
+      });
+    };
 
 
     return {
       getData: getData,
+      exportJSON: exportJSON
     }
 
 
