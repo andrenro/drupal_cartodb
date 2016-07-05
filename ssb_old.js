@@ -8,6 +8,7 @@ $(document).ready(function() {
   var dd = JSONstat(datasets["folketall_aarlig_alder"]).Dataset(0);
 
 	console.log(dataset);
+	console.log(dd);
 
 	var kommuner = dataset.Dimension("Region").Category();
 	var koder = dataset.Dimension("Region");
@@ -38,7 +39,6 @@ $(document).ready(function() {
 	getIndex = function(query) {
 		if (dataset) {
 			for (var l = 0; l < kommuner.length; l++) {
-				console.log(kommuner[l].label);
 				if (kommuner[l].label.toLowerCase() === query.toLowerCase()) {
 					let index = kommuner[l].index;
 					return index;
@@ -59,11 +59,11 @@ $(document).ready(function() {
 			let values = dataset.Data({"Region":code});
 
 			//Array of values "0 år..n År"
-			let categories = dataset.Dimension('ContentsCode').Category();
+			let ages = dataset.Dimension('Alder').Category();
 			let total = 0;
-			if(values.length === categories.length)	{
+			if(values.length === ages.length)	{
 				for(let x = 0; x < values.length;x++){
-					objects[x] = {"category":categories[x].label,"value":values[x].value};
+					objects[x] = {"age":ages[x].label,"value":values[x].value};
 					total += values[x].value;
 				}
 			}
@@ -84,23 +84,21 @@ $(document).ready(function() {
 	appendToHTML = function(data,elemId){
 		var element = document.getElementById(elemId);
 		var div = document.getElementById("summary");
+		var p = document.createElement('p');
 		var totalt = 0
 		for(let x = 0; x < data.length;x++){
 			var li = document.createElement('li');
-			li.appendChild(document.createTextNode("Nøkkeltall: "+data[x].category+" - Antall Personer: "+data[x].value+" "));
+			li.appendChild(document.createTextNode("Alder: "+data[x].age+" Antall Personer: "+data[x].value+" "));
 			element.appendChild(li);
 			totalt += data[x].value;
 
 		}
+		p.appendChild(document.createTextNode("Totalt: "+totalt));
+		div.appendChild(p);
 
-	}
-
-	getRandomArbitrary = function(min, max) {
-    return Math.random() * (max - min) + min;
 	}
 
 	var searchField = document.getElementById('search');
-
 
 	searchField.addEventListener('change', function(e) {
 		formValue = e.target.value;

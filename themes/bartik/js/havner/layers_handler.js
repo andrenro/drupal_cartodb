@@ -14,13 +14,12 @@ $(document).ready(function() {
      */
     function showResults(css) {
 
-      sublayers[0].setSQL("SELECT * FROM oversikt_havner_data WHERE driftsinntekter_i_mill_kr IS NOT NULL");
+      sublayers[0].setSQL("SELECT * FROM oversikt_havner_data_2 WHERE driftsinntekter_i_mill_kr IS NOT NULL");
       sublayers[0].setCartoCSS(css);
 
-      var query = "SELECT * FROM oversikt_havner_data WHERE driftsinntekter_i_mill_kr IS NOT NULL";
-      // DataHandler.getData("andreasroeed",query, function(data) {
-      //
-      // });
+      var query = "SELECT * FROM oversikt_havner_data_2 WHERE driftsinntekter_i_mill_kr IS NOT NULL";
+      DataHandler.getData("andreasroeed",query, function(data) {
+      });
     };
 
     return {
