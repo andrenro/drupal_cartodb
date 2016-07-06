@@ -3,16 +3,26 @@ $(document).ready(function(){
 
     MathHandler = (function(){
 
+     function percentage(num1,num2){
+      return num1 * num2 / 100;
+    }
 
-     function calculator(params){
-
+     function percentageOf(num1,num2){
+       return num1 * 100 / num2;
+     }
+     /*
+     indexedEN = indexed expenditure needs
+     eNeeds = calculated expenditure needs
+     iRate = inhabitant rate
+     should return million kroner
+     */
+     function frameFunding(indexedEN,eNeeds,iRate){
+       return 0;
      }
 
-        
-
-
       return {
-        calculator:calculator
+        percentageOf: percentageOf,
+        percentage: percentage
       }
   })();
 

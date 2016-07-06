@@ -7,12 +7,16 @@ $(document).ready(function() {
 	var dataset = JSONstat("https://cdn.rawgit.com/andrenro/project_source_files/ssb_api/folketall/kvartalstall.json").Dataset(0);
   var dd = JSONstat(datasets["folketall_aarlig_alder"]).Dataset(0);
 
-	console.log(dataset);
-
 	var kommuner = dataset.Dimension("Region").Category();
 	var koder = dataset.Dimension("Region");
 	formValue = "";
 
+
+
+  //Return quasi-random array index, rounded to whole integer
+	getRandomArbitrary = function(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+	}
 
 
 	/**
@@ -84,21 +88,15 @@ $(document).ready(function() {
 	appendToHTML = function(data,elemId){
 		var element = document.getElementById(elemId);
 		var div = document.getElementById("summary");
-		var totalt = 0
 		for(let x = 0; x < data.length;x++){
 			var li = document.createElement('li');
 			li.appendChild(document.createTextNode("Nøkkeltall: "+data[x].category+" - Antall Personer: "+data[x].value+" "));
 			element.appendChild(li);
-			totalt += data[x].value;
 
 		}
-
 	}
 
-	getRandomArbitrary = function(min, max) {
-    return Math.random() * (max - min) + min;
-	}
-
+  getValues(getRandomArbitrary(0,dataset.Dimension('Region').id.length));
 	var searchField = document.getElementById('search');
 
 
