@@ -79,22 +79,20 @@ $(document).ready(function() {
 		}
 	}
 
-	//Fetch data from external source
-	getJSONdata = function(url){
-		$.getJSON(url, function( data ) {
-		 	if(data){
-				return data;
-			}else{
-				return undefined;
-			}
-		});
-	}
 
 
 	economicStats = function(data){
-		document.getElementById("economics").innerHTML ="";
+		console.log(data);
+		var economicData = {
+			"expenditure_needs" : parseFloat(data["expenditure_needs"]),
+			"expenditure_needs_mean" : parseFloat(data["expenditure_needs_mean"]),
+			"fundingPerInhabitant": 0.0,
+			"totalFunding":0.0,
+			"percentageOfNationalMean": ((parseFloat(data["indexed_value"]) -1 ) * 100).toFixed(2)
+
+		};
     economics = document.getElementById("economics");
-		elem = document.createElement("div");
+		var fundingPerInhabitant = 0.0;
 		//Yearly regulated values that will be updated every year by SSB
 		let offsetPerInhabitant = 22668;
 	  let thisYearsTotal = parseFloat(data["years"][0]); //Fetch this quarters
@@ -102,24 +100,52 @@ $(document).ready(function() {
 		let meanExpenditureNeeds = parseFloat(data["expenditure_needs_mean"]);
 		let indexedNeed = parseFloat(data["indexed_value"]);
 
-		let difference = ((realExpenditureNeeds + meanExpenditureNeeds) - meanExpenditureNeeds);
-		
-		let fundingPerInhabitant = offsetPerInhabitant - difference;
-		economics.appendChild(document.createTextNode("Tilskudd totalt: "+fundingPerInhabitant * thisYearsTotal));
+		let difference = (realExpenditureNeeds - meanExpenditureNeeds);
+		console.log(difference);
+		if(difference < 0){
+			fundingPerInhabitant = parseFloat((offsetPerInhabitant - (Math.abs(difference))).toFixed(2));
+		}else{
+			fundingPerInhabitant = parseFloat((offsetPerInhabitant + difference).toFixed(2));
+		}
+
+		var percentageDiff = MathHandler.indexedToPercentageRemainder(data["indexed_value"]);
+		var diff = percentageDiff < 0 ? Math.abs(percentageDiff.toFixed(2)) + "% lavere enn nasjonalt snitt" : Math.abs(percentageDiff.toFixed(2))+"% høyere enn nasjonalt snitt";
 
 
+		// let meanDiff = (fundingPerInhabitant - offsetPerInhabitant) < 0 ? ((fundingPerInhabitant - offsetPerInhabitant) * -1)+" kroner under nasjonalt gjennomsnitt" : (fundingPerInhabitant - offsetPerInhabitant)+" kroner over nasjonalt gjennomsnitt";
+		// console.log(meanDiff);
+		economicData["fundingPerInhabitant"] = fundingPerInhabitant;
+		economicData["totalFunding"] = ((fundingPerInhabitant * thisYearsTotal) / 1000000).toFixed(2);
+		$("#offsetFunding").html("Fastsatt inntekt per innbygger i 2016: <strong>"+offsetPerInhabitant+"</strong> kr");
+		$("#totalFunding").html("Kommunens totalinntekter for 2016: <strong>"+economicData["totalFunding"]+" millioner </strong> kr");
+		$("#perInhabitant").html("Behovsjustert inntekt per innbygger: <strong>"+economicData["fundingPerInhabitant"]+"</strong> kr");
+		$("#meanExpenditureNeeds").html("Utgiftsbehov per innbygger 2016 (nasjonalt snitt): <strong>"+meanExpenditureNeeds+"</strong> kr");
+		$("#realExpenditureNeeds").html("Utgiftsbehov per innbygger for kommunen: <strong>"+realExpenditureNeeds+"</strong> kr ("+diff+")");
 
+		let chartData = [];
+		chartData.push(fundingPerInhabitant);
+		chartData.push(offsetPerInhabitant);
+		PopulationChartHandler.fundingPerInhabitantChart(chartData);
 	}
 
-	populateList = function(htmlID,data){
-		document.getElementById(htmlID).innerHTML ="";
-		list = document.getElementById(htmlID);
-		var offsetYear = 2016;
-		for(let x = 0; x < data["years"].length;x++){
-			var li = document.createElement('li');
-			li.appendChild(document.createTextNode("Antall personer i "+(offsetYear + x)+": " +data["years"][x]));
-			list.appendChild(li);
-		}
+	populationList = function(htmlID,data){
+
+		PopulationChartHandler.populationGraph(data["years"]);
+		// document.getElementById(htmlID).innerHTML = "";
+		// list = document.getElementById(htmlID);
+		// var offsetYear = 2016;
+		// for(let x = 0; x < data["years"].length;x++){
+		// 	var li = document.createElement('li');
+		// 	li.innerHTML = "Antall personer i "+(offsetYear + x)+": <strong>" +data["years"][x]+"</strong>";
+		// 	list.appendChild(li);
+		// }
+		// var start = data["years"][0];
+		// var end = data["years"][data["years"].length -1];
+		// var growth = MathHandler.percentageOf(start,end);
+		// var li = document.createElement('li');
+		// var growthStr =  (end - start) < 0 ? (end - start) : "+" + (end - start);
+		// li.innerHTML = "<strong>Estimert vekst i løpet av de neste 10 årene: "+ growthStr +" personer ("+ (100 - growth).toFixed(2)+ "%)</strong>";
+		// list.appendChild(li);
 	}
 
 	appendToHTML = function(title,data,elemId){
@@ -130,21 +156,20 @@ $(document).ready(function() {
 		var headerText = document.createTextNode(title);
 		header.appendChild(headerText);
 
+
 		var div = document.getElementById("summary");
 		for(let x = 0; x < data.length;x++){
 			var li = document.createElement('li');
-			li.appendChild(document.createTextNode(data[x].category+", antall personer: "+data[x].value+" "));
+			li.innerHTML = data[x].category+", antall personer: <strong>"+data[x].value+"</strong>";
 			element.appendChild(li);
 		}
 	}
 
 	//Init with random municipality
-
-
 	initRandomStats = function(){
-		let index = randomIndex(getRandomArbitrary(0,dataset.Dimension('Region').id.length));
-		let municipality = findMunicipality(next_ten_years,index["title"]);
-		populateList("next_ten_years",municipality);
+		var index = randomIndex(getRandomArbitrary(0,dataset.Dimension('Region').id.length));
+		var municipality = findMunicipality(next_ten_years,index["title"]);
+		populationList("next_ten_years",municipality);
 		economicStats(municipality);
 		getValues(index);
 	}
@@ -157,9 +182,9 @@ $(document).ready(function() {
 		formValue = e.target.value;
 		var index = searchIndex(formValue);
 
-		let municipality = findMunicipality(next_ten_years,formValue);
-		populateList("next_ten_years",municipality);
-
+		var municipality = findMunicipality(next_ten_years,formValue);
+		populationList("next_ten_years",municipality);
+		economicStats(municipality);
 		var values = getValues(index);
 	});
 });

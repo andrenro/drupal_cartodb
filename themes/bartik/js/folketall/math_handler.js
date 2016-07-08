@@ -10,6 +10,10 @@ $(document).ready(function(){
      function percentageOf(num1,num2){
        return num1 * 100 / num2;
      }
+
+     function indexedToPercentageRemainder(index){
+       return ((index * 100) - 100);
+     }
      /*
      indexedEN = indexed expenditure needs
      eNeeds = calculated expenditure needs
@@ -22,7 +26,8 @@ $(document).ready(function(){
 
       return {
         percentageOf: percentageOf,
-        percentage: percentage
+        percentage: percentage,
+        indexedToPercentageRemainder:indexedToPercentageRemainder
       }
   })();
 

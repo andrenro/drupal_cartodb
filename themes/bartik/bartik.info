@@ -16,17 +16,17 @@ stylesheets[all][] = css/jquery-ui.css
 stylesheets[all][] = css/bootstrap-slider.css
 stylesheets[all][]  = css/custom.css
 
-scripts[] = js/cartodb.js
-scripts[] = js/init_carto.js
+#scripts[] = js/cartodb.js
+#scripts[] = js/init_carto.js
 scripts[] = js/jquery-2.2.3.js
-scripts[] = js/jquery-ui.js
+#scripts[] = js/jquery-ui.js
 scripts[] = js/highcharts.js
-scripts[] = js/chart_handler.js
-scripts[] = js/data_handler.js
-scripts[] = js/slider_handler.js
-scripts[] = js/layers_handler.js
+#scripts[] = js/chart_handler.js
+#scripts[] = js/data_handler.js
+#scripts[] = js/slider_handler.js
+#scripts[] = js/layers_handler.js
 scripts[] = js/bootstrap.min.js
-scripts[] = js/get_node_content.js
+#scripts[] = js/get_node_content.js
 scripts[] = js/folketall/json-stat.js
 scripts[] = js/folketall/json-stat.utils.js
 scripts[] = js/folketall/next_ten_years.js
@@ -34,9 +34,9 @@ scripts[] = js/folketall/math_handler.js
 scripts[] = js/folketall/stat_charts.js
 scripts[] = js/folketall/ssb_handler.js
 
-scripts[] = js/havner/data_handler.js
-scripts[] = js/havner/layers_handler.js
-scripts[] = js/havner/init_carto.js
+#scripts[] = js/havner/data_handler.js
+#scripts[] = js/havner/layers_handler.js
+#scripts[] = js/havner/init_carto.js
 
 
 
