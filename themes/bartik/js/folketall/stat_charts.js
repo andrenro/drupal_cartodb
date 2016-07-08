@@ -5,7 +5,6 @@ $(document).ready(function() {
 
 
         function populationGraph(data) {
-            console.log(data);
             new Highcharts.Chart({
                 chart: {
                     renderTo: "population_graph",
