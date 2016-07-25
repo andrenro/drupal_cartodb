@@ -11,13 +11,41 @@ $(document).ready(function() {
 	var koder = dataset.Dimension("Region");
 	formValue = "";
 
- getTopList = function(){
-	 //TODO: implement
+
+  //Returns a sorted list of elements based on the expenditure_needs value
+	getSortedList = function(data){
+
+		var temp = data.sort(function(a,b){
+			if(parseFloat(a["expenditure_needs"]) > parseFloat(b["expenditure_needs"])){
+				return 1;
+			}if(parseFloat(a["expenditure_needs"]) < parseFloat(b["expenditure_needs"])){
+				return -1;
+			}
+				return 0;
+		});
+		return temp;
+	}
+
+ var sorted  = getSortedList(next_ten_years);
+
+ //returns a sorted top list, based on values related to expenditure needs
+ getTopList = function(data){
+	 return data.slice(0,10);
  }
 
- getBottomList = function(){
-	 //TODO: implement
+ //returns a sorted bottom list, based on values related to expenditure needs
+ getBottomList = function(data){
+	 var bottom = data.slice(-10);
+	 return bottom.reverse();
  }
+
+ var bottom = getBottomList(sorted);
+ var top = getTopList(sorted);
+
+ PopulationChartHandler.topListChart(top);
+ PopulationChartHandler.bottomListChart(bottom);
+
+
 
   //Return quasi-random array index, rounded to whole integer
 	getRandomArbitrary = function(min, max) {
@@ -94,7 +122,7 @@ $(document).ready(function() {
     economics = document.getElementById("economics");
 		var fundingPerInhabitant = 0.0;
 		//Yearly regulated values that will be updated every year by SSB
-		let offsetPerInhabitant = 22668;
+		const offsetPerInhabitant = 22668;
 	  let thisYearsTotal = parseFloat(data["years"][0]); //Fetch this quarters
 		let realExpenditureNeeds = parseFloat(data["expenditure_needs"]);
 		let meanExpenditureNeeds = parseFloat(data["expenditure_needs_mean"]);

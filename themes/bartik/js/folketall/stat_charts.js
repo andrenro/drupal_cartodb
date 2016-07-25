@@ -1,8 +1,182 @@
 $(document).ready(function() {
 
     PopulationChartHandler = (function() {
+      function bottomListChart(data){
+
+            var columnColor = {};
+            columnColor.first = "#940E19";
+            columnColor.second = "#bb111f";
+            columnColor.third = "#e91627";
 
 
+            new Highcharts.Chart({
+                chart: {
+                    renderTo:"bottom-list",
+                    type: 'bar'
+                },
+                colors: [],
+                title: {
+                    text: "De "+ data.length+ " kommunene med høyest utgiftsbehov per innbygger"
+                },
+                xAxis: {
+                    categories: [data[0]["kommune"], data[1]["kommune"], data[2]["kommune"],data[3]["kommune"],data[4]["kommune"],data[5]["kommune"], data[6]["kommune"], data[7]["kommune"],data[8]["kommune"],data[9]["kommune"]]
+                },
+                yAxis: {
+                    title: {
+                        text: "Utgiftsbehov"
+                    }
+                },
+                tooltip: {
+                      formatter : function(){
+                        let needs = this.point;
+                        return "<strong>"+this.key+"</strong><br>Kommunens inntekt per innbygger: <strong>"+ needs.z+"(NOK)</strong> <br> Beregnet utgiftsbehov per innbygger: <strong>"+needs.y+"(NOK)</strong>";
+                      },
+                      shared: false,
+                      useHTML: true
+                    },
+                series: [{
+                    name: "Beregnet utgiftsbehov, i norske kroner",
+                    data: [{
+                        y: parseFloat(data[0]["expenditure_needs"]),
+                        z: parseFloat(data[0]["calculated_income"].toFixed(2)),
+                        color: columnColor.third
+                    }, {
+                        y: parseFloat(data[1]["expenditure_needs"]),
+                        z: parseFloat(data[1]["calculated_income"].toFixed(2)),
+                        color: columnColor.second
+                    }, {
+                        y: parseFloat(data[2]["expenditure_needs"]),
+                        z: parseFloat(data[2]["calculated_income"].toFixed(2)),
+                        color: columnColor.second
+                    },
+                    {
+                        y: parseFloat(data[3]["expenditure_needs"]),
+                        z: parseFloat(data[3]["calculated_income"].toFixed(2)),
+                        color: columnColor.first
+                    },
+                    {
+                        y: parseFloat(data[4]["expenditure_needs"]),
+                        z: parseFloat(data[4]["calculated_income"].toFixed(2)),
+                        color: columnColor.first
+                    },
+                    {
+                        y: parseFloat(data[5]["expenditure_needs"]),
+                        z: parseFloat(data[5]["calculated_income"].toFixed(2)),
+                        color: columnColor.first
+                    },
+                      {
+                        y: parseFloat(data[6]["expenditure_needs"]),
+                        z: parseFloat(data[6]["calculated_income"].toFixed(2)),
+                        color: columnColor.first
+                    },
+                      {
+                        y: parseFloat(data[7]["expenditure_needs"]),
+                        z: parseFloat(data[7]["calculated_income"].toFixed(2)),
+                        color: columnColor.first
+                    },
+                      {
+                        y: parseFloat(data[8]["expenditure_needs"]),
+                        z: parseFloat(data[8]["calculated_income"].toFixed(2)),
+                        color: columnColor.first
+                    },
+                      {
+                        y: parseFloat(data[9]["expenditure_needs"]),
+                        z: parseFloat(data[9]["calculated_income"].toFixed(2)),
+                        color: columnColor.first
+                    }
+                    ]
+                }]
+            });
+        }
+
+
+        function topListChart(data){
+
+              var columnColor = {};
+              columnColor.first = "#003762";
+              columnColor.second = "#00457c";
+              columnColor.third = "#0062af";
+
+
+              new Highcharts.Chart({
+                  chart: {
+                      renderTo:"top-list",
+                      type: 'bar'
+                  },
+                  colors: [],
+                  title: {
+                      text: "De "+ data.length+ " kommunene med lavest utgiftsbehov per innbygger"
+                  },
+                  xAxis: {
+                      categories: [data[0]["kommune"], data[1]["kommune"], data[2]["kommune"],data[3]["kommune"],data[4]["kommune"],data[5]["kommune"], data[6]["kommune"], data[7]["kommune"],data[8]["kommune"],data[9]["kommune"]]
+                  },
+                  yAxis: {
+                      title: {
+                          text: "Utgiftsbehov"
+                      }
+                  },
+                  tooltip: {
+                        formatter : function(){
+                          let needs = this.point;
+                          return "<strong>"+this.key+"</strong><br>Kommunens inntekt per innbygger: <strong>"+ needs.z+" (NOK)</strong> <br> Beregnet utgiftsbehov per innbygger: <strong>"+needs.y+"(NOK)</strong>";
+                        },
+                        shared: false,
+                        useHTML: true
+                      },
+                  series: [{
+                      name: "Beregnet utgiftsbehov, i norske kroner",
+                      data: [{
+                          y: parseFloat(data[0]["expenditure_needs"]),
+                          z: parseFloat(data[0]["calculated_income"].toFixed(2)),
+                          color: columnColor.third
+                      }, {
+                          y: parseFloat(data[1]["expenditure_needs"]),
+                          z: parseFloat(data[1]["calculated_income"].toFixed(2)),
+                          color: columnColor.second
+                      }, {
+                          y: parseFloat(data[2]["expenditure_needs"]),
+                          z: parseFloat(data[2]["calculated_income"].toFixed(2)),
+                          color: columnColor.second
+                      },
+                      {
+                          y: parseFloat(data[3]["expenditure_needs"]),
+                          z: parseFloat(data[3]["calculated_income"].toFixed(2)),
+                          color: columnColor.first
+                      },
+                      {
+                          y: parseFloat(data[4]["expenditure_needs"]),
+                          z: parseFloat(data[4]["calculated_income"].toFixed(2)),
+                          color: columnColor.first
+                      },
+                      {
+                          y: parseFloat(data[5]["expenditure_needs"]),
+                          z: parseFloat(data[5]["calculated_income"].toFixed(2)),
+                          color: columnColor.first
+                      },
+                        {
+                          y: parseFloat(data[6]["expenditure_needs"]),
+                          z: parseFloat(data[6]["calculated_income"].toFixed(2)),
+                          color: columnColor.first
+                      },
+                        {
+                          y: parseFloat(data[7]["expenditure_needs"]),
+                          z: parseFloat(data[7]["calculated_income"].toFixed(2)),
+                          color: columnColor.first
+                      },
+                        {
+                          y: parseFloat(data[8]["expenditure_needs"]),
+                          z: parseFloat(data[8]["calculated_income"].toFixed(2)),
+                          color: columnColor.first
+                      },
+                        {
+                          y: parseFloat(data[9]["expenditure_needs"]),
+                          z: parseFloat(data[9]["calculated_income"].toFixed(2)),
+                          color: columnColor.first
+                      }
+                      ]
+                  }]
+              });
+          }
 
         function populationGraph(data) {
             new Highcharts.Chart({
@@ -12,7 +186,7 @@ $(document).ready(function() {
 
                 },
                 title: {
-                    text: 'Årlig endring i befolkning neste 10 år',
+                    text: '',
                     x: "" //center
                 },
                 xAxis: {
@@ -38,38 +212,11 @@ $(document).ready(function() {
                     borderWidth: 0
                 },
                 series: [{
-                    name: 'Årlig endring i befolkning neste 10 år',
+                    name: '',
                     data: data
                 }]
             });
 
-        }
-
-        function initChart() {
-
-            new Highcharts.Chart({
-                chart: {
-                    renderTo: "chart_container",
-                    type: 'column',
-
-                },
-                colors: ['#003762', '#940E19'],
-                title: {
-                    text: ''
-                },
-                xAxis: {
-                    categories: ["Inngangen av kvartalet", "Utgangen av kvartalet"]
-                },
-                yAxis: {
-                    title: {
-                        text: 'Antall personer'
-                    }
-                },
-                series: [{
-                    name: 'Antall',
-                    data: [1, 2]
-                }]
-            });
         }
 
         function fundingPerInhabitantChart(data) {
@@ -77,7 +224,7 @@ $(document).ready(function() {
             new Highcharts.Chart({
                 chart: {
                     renderTo: "funding_chart_container",
-                    type: 'bar',
+                    type: 'column',
 
                 },
                 colors: ['#003762', '#940E19'],
@@ -93,7 +240,7 @@ $(document).ready(function() {
                     }
                 },
                 series: [{
-                    name: "Antall Personer",
+                    name: "Norske Kroner",
                     data: [{
                         name: "Vedtatt inntekt per innbygger",
                         y: parseFloat(data[1].toFixed(2)),
@@ -106,9 +253,7 @@ $(document).ready(function() {
                 }]
             });
         }
-
-
-
+        //Due to the fact that the general case only shows small changes, a chart seems to be redundant.
         function showQuarterlyDelta(data) {
             var diff = (data[1] - data[0]) < 0 ? +(data[1] - data[0]) : "+" + (data[1] - data[0]);
             var cal = MathHandler.percentageOf(data[1], data[0]);
@@ -117,44 +262,50 @@ $(document).ready(function() {
             var delta = deltaVal < 0 ? deltaVal : "+" + deltaVal
 
 
+            $("#entrance-quarter").html("Inngangen av kvartalet: <strong>"+parseInt(data[0])+"</strong>");
+            $("#exit-quarter").html("Utgangen av kvartalet: <strong>"+parseInt(data[1])+"</strong>");
+            $("#delta").html("Antall personer: <strong>"+diff+"</strong>");
+            $("#delta-percentage").html("Prosentvis endring: <strong>"+delta+"%</strong>");
 
 
-            new Highcharts.Chart({
-                chart: {
-                    renderTo: "chart_container",
-                    type: 'column'
-                },
-                title: {
-                    text: "Kvartalsmessig endring i folketall: " + diff + " personer<br>(" + delta + " %)"
-                },
-                xAxis: {
-                    categories: ["Inngangen av kvartalet", "Utgangen av kvartalet"]
-                },
-                yAxis: {
-                    title: {
-                        text: 'Antall personer'
-                    }
-                },
-                series: [{
-                    name: "Antall Personer",
-                    data: [{
-                        name: "Inngangen av kvartalet",
-                        y: parseInt(data[0].toFixed(2)),
-                        color: "#003762"
-                    }, {
-                        name: "Utgangen av kvartalet",
-                        y: parseInt(data[1].toFixed(2)),
-                        color: "#940E19"
-                    }]
-                }]
-            });
+
+            // new Highcharts.Chart({
+            //     chart: {
+            //         renderTo: "chart_container",
+            //         type: 'column'
+            //     },
+            //     title: {
+            //         text: "Kvartalsmessig endring i folketall: " + diff + " personer<br>(" + delta + " %)"
+            //     },
+            //     xAxis: {
+            //         categories: ["Inngangen av kvartalet", "Utgangen av kvartalet"]
+            //     },
+            //     yAxis: {
+            //         title: {
+            //             text: 'Antall personer'
+            //         }
+            //     },
+            //     series: [{
+            //         name: "Antall Personer",
+            //         data: [{
+            //             name: "Inngangen av kvartalet",
+            //             y: parseInt(data[0].toFixed(2)),
+            //             color: "#003762"
+            //         }, {
+            //             name: "Utgangen av kvartalet",
+            //             y: parseInt(data[1].toFixed(2)),
+            //             color: "#940E19"
+            //         }]
+            //     }]
+            // });
         }
 
         return {
-            initChart: initChart,
             showQuarterlyDelta: showQuarterlyDelta,
             fundingPerInhabitantChart: fundingPerInhabitantChart,
-            populationGraph: populationGraph
+            populationGraph: populationGraph,
+            topListChart:topListChart,
+            bottomListChart:bottomListChart,
         }
 
     })();
