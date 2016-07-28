@@ -1,7 +1,8 @@
 $(document).ready(function() {
 	//Links to CDN-stored json-data
 	var datasets = {
-		"folketall_kvartal": "https://cdn.rawgit.com/andrenro/project_source_files/ssb_api/folketall/kvartalstall.json",
+		// "folketall_kvartal": "https://cdn.rawgit.com/andrenro/project_source_files/ssb_api/folketall/kvartalstall.json",
+		"folketall_kvartal": "http://data.ssb.no/api/v0/dataset/1108.json?lang=no",
 		"framskrevet_folketall_2026": "https://cdn.rawgit.com/andrenro/project_source_files/ssb_api/folketall/framskrevet_2026.json",
 		"folketall_aarlig_alder": 'http://data.ssb.no/api/v0/dataset/1080.json?lang=no'
 	};
@@ -13,14 +14,12 @@ $(document).ready(function() {
 	formValue = "";
 
 
-
-
 	//Return quasi-random array index, rounded to whole integer
 	getRandomArbitrary = function(min, max) {
 		return Math.floor(Math.random() * (max - min) + min);
 	}
 
-	//Helper function
+	//Helper function for search field
 	//Takes input from web form, returns the index if a match is found
 	searchIndex = function(query) {
 			if (dataset) {
@@ -33,8 +32,11 @@ $(document).ready(function() {
 						};
 					}
 				}
-
-				alert(query+" ga ingen resultater!");
+				$("#no-results").css("visibility", "visible");
+				setTimeout(function() {
+					$("#no-results").css("visibility", "hidden");
+					return undefined;
+				}, 2000);
 
 			} else {
 				console.error("Dataset not present");
@@ -93,60 +95,97 @@ $(document).ready(function() {
 
 	//Creates output showing some key economic stats for a given municipality
 	economicStats = function(data) {
-		var economicData = {
-			"expenditure_needs": parseFloat(data["expenditure_needs"]),
-			"expenditure_needs_mean": parseFloat(data["expenditure_needs_mean"]),
-			"fundingPerInhabitant": 0.0,
-			"totalFunding": 0.0,
-			"percentageOfNationalMean": ((parseFloat(data["indexed_value"]) - 1) * 100).toFixed(2)
+			var chartData = [];
+			var fundingPerInhabitant = 0.0;
+			//Yearly regulated values that will be updated every year by SSB
+			const offsetPerInhabitant = 22668;
+			if (data) {
+				var economicData = {
+					"expenditure_needs": parseFloat(data["expenditure_needs"]),
+					"expenditure_needs_mean": parseFloat(data["expenditure_needs_mean"]),
+					"fundingPerInhabitant": 0.0,
+					"totalFunding": 0.0,
+					"percentageOfNationalMean": ((parseFloat(data["indexed_value"]) - 1) * 100).toFixed(2)
 
-		};
-		document.getElementById("economics-title").innerHTML = "Økonomi i "+data["kommune"];
-		economics = document.getElementById("economics");
-		var fundingPerInhabitant = 0.0;
-		//Yearly regulated values that will be updated every year by SSB
-		const offsetPerInhabitant = 22668;
-		var thisYearsTotal = parseFloat(data["years"][0]); //Fetch this quarters
-		var realExpenditureNeeds = parseFloat(data["expenditure_needs"]);
-		var meanExpenditureNeeds = parseFloat(data["expenditure_needs_mean"]);
-		var indexedNeed = parseFloat(data["indexed_value"]);
+				};
 
-		var difference = (realExpenditureNeeds - meanExpenditureNeeds);
-		if (difference < 0) {
-			fundingPerInhabitant = parseFloat((offsetPerInhabitant - (Math.abs(difference))).toFixed(2));
-		} else {
-			fundingPerInhabitant = parseFloat((offsetPerInhabitant + difference).toFixed(2));
+				document.getElementById("economics-title").innerHTML = "Økonomi i " + data["kommune"];
+				economics = document.getElementById("economics");
+
+				var thisYearsTotal = parseFloat(data["years"][0]); //Fetch this quarters
+				var realExpenditureNeeds = parseFloat(data["expenditure_needs"]);
+				var meanExpenditureNeeds = parseFloat(data["expenditure_needs_mean"]);
+				var indexedNeed = parseFloat(data["indexed_value"]);
+
+				var difference = (realExpenditureNeeds - meanExpenditureNeeds);
+				if (difference < 0) {
+					fundingPerInhabitant = parseFloat((offsetPerInhabitant - (Math.abs(difference))).toFixed(2));
+				} else {
+					fundingPerInhabitant = parseFloat((offsetPerInhabitant + difference).toFixed(2));
+				}
+
+				var percentageDiff = MathHandler.indexedToPercentageRemainder(data["indexed_value"]);
+				var diff = percentageDiff < 0 ? "<strong>" + Math.abs(percentageDiff.toFixed(2)) + "%</strong> lavere enn nasjonalt gjennomsnitt" : "<strong>" + Math.abs(percentageDiff.toFixed(2)) + "%</strong> høyere enn nasjonalt gjennomsnitt";
+
+				// var meanDiff = (fundingPerInhabitant - offsetPerInhabitant) < 0 ? ((fundingPerInhabitant - offsetPerInhabitant) * -1)+" kroner under nasjonalt gjennomsnitt" : (fundingPerInhabitant - offsetPerInhabitant)+" kroner over nasjonalt gjennomsnitt";
+				// console.log(meanDiff);
+				economicData["fundingPerInhabitant"] = fundingPerInhabitant;
+				economicData["totalFunding"] = ((fundingPerInhabitant * thisYearsTotal) / 1000000).toFixed(2);
+
+				//PercentageDifferencePerInhabitant
+				var pdph = (parseFloat(economicData["fundingPerInhabitant"]) - offsetPerInhabitant);
+				var percentageIncome = 0.0;
+				var tempPercentage = Math.abs(pdph);
+				var res = MathHandler.percentageOf(tempPercentage, offsetPerInhabitant);
+				var incomeDiff = pdph < 0 ? "<strong>" + Math.round(res.toFixed(2)) + "%</strong> mindre enn vedtatt innbyggertilskudd" : "<strong>" + Math.round(res.toFixed(2)) + "%</strong> mer enn vedtatt innbyggertilskudd";
+
+				$("#meanExpenditureNeeds").html("Utgiftsbehov per innbygger 2016 (nasjonalt gjennomsnitt): <strong>" + meanExpenditureNeeds + "</strong> NOK");
+				$("#realExpenditureNeeds").html("Utgiftsbehov per innbygger for kommunen: <strong>" + realExpenditureNeeds + "</strong> NOK (" + diff + ")");
+				$("#offsetFunding").html("Vedtatt innbyggertilskudd for 2016 (nasjonalt gjennomsnitt): <strong>" + offsetPerInhabitant + "</strong> NOK");
+				$("#perInhabitant").html("Behovsjustert innbyggertilskudd for <strong>" + data["kommune"] + "</strong>: <strong>" + economicData["fundingPerInhabitant"] + "</strong> NOK (" + incomeDiff + ")");
+				//TODO: is this including or excluding special deductions?
+				$("#totalFunding").html("Kommunens inntekter (basert på innbyggertall) for 2016: <strong>" + economicData["totalFunding"] + " millioner </strong> NOK");
+
+
+
+				chartData.push(fundingPerInhabitant);
+				chartData.push(offsetPerInhabitant);
+				PopulationChartHandler.fundingPerInhabitantChart(chartData);
+			}
+
 		}
-
-		var percentageDiff = MathHandler.indexedToPercentageRemainder(data["indexed_value"]);
-		var diff = percentageDiff < 0 ? Math.abs(percentageDiff.toFixed(2)) + "% lavere enn nasjonalt snitt" : Math.abs(percentageDiff.toFixed(2)) + "% høyere enn nasjonalt snitt";
-
-
-		// var meanDiff = (fundingPerInhabitant - offsetPerInhabitant) < 0 ? ((fundingPerInhabitant - offsetPerInhabitant) * -1)+" kroner under nasjonalt gjennomsnitt" : (fundingPerInhabitant - offsetPerInhabitant)+" kroner over nasjonalt gjennomsnitt";
-		// console.log(meanDiff);
-		economicData["fundingPerInhabitant"] = fundingPerInhabitant;
-		economicData["totalFunding"] = ((fundingPerInhabitant * thisYearsTotal) / 1000000).toFixed(2);
-		$("#offsetFunding").html("Fastsatt inntekt per innbygger i 2016: <strong>" + offsetPerInhabitant + "</strong> kr");
-		$("#totalFunding").html("Kommunens totalinntekter for 2016: <strong>" + economicData["totalFunding"] + " millioner </strong> kr");
-		$("#perInhabitant").html("Behovsjustert inntekt per innbygger: <strong>" + economicData["fundingPerInhabitant"] + "</strong> kr");
-		$("#meanExpenditureNeeds").html("Utgiftsbehov per innbygger 2016 (nasjonalt snitt): <strong>" + meanExpenditureNeeds + "</strong> kr");
-		$("#realExpenditureNeeds").html("Utgiftsbehov per innbygger for kommunen: <strong>" + realExpenditureNeeds + "</strong> kr (" + diff + ")");
-
-		var chartData = [];
-		chartData.push(fundingPerInhabitant);
-		chartData.push(offsetPerInhabitant);
-		PopulationChartHandler.fundingPerInhabitantChart(chartData);
+		//Generate population list and populate the graph, showing an overview for the next 10 years
+	populationList = function(data) {
+		if (data) {
+			PopulationChartHandler.populationGraph(data["years"]);
+		}
 	}
-	//Generate population list and populate the graph, showing an overview for the next 10 years
-	populationList = function(htmlID, data) {
-		PopulationChartHandler.populationGraph(data["years"]);
+
+
+	//Prints out comments related to the graph showing the population curve for the next 10 years
+	populationComments = function(data) {
+		var offset;
+		var end;
+		var delta;
+		var percentageDiff = 0.0;
+		if (data) {
+			offset = data["years"][0];
+			end = data["years"].slice(-1)[0];
+			delta = (end - offset);
+
+			if (delta < 0) {
+				document.getElementById("population-comments").innerHTML = "Folketallet i <strong>" + data["kommune"] + "</strong> er beregnet til å synke med <strong>" + Math.abs(delta) + "</strong> personer i løpet av de neste ti årene. Det tilsvarer en nedgang på <strong>" + MathHandler.percentageOf(Math.abs(delta), offset).toFixed(1) + "%</strong>.";
+			} else {
+				document.getElementById("population-comments").innerHTML = "Folketallet i <strong>" + data["kommune"] + "</strong> er beregnet til å stige med <strong>" + Math.abs(delta) + "</strong> personer i løpet av de neste ti årene. Det tilsvarer en økning med <strong>" + MathHandler.percentageOf(Math.abs(delta), offset).toFixed(1) + "%</strong>.";
+			}
+		}
 	}
 
 	//Creates html output 
 	appendToHTML = function(title, data, elemId) {
 		document.getElementById(elemId).innerHTML = "";
 		document.getElementById("title").innerHTML = "";
-		document.getElementById("misc-stats").innerHTML = "Andre kvartalstall knyttet til folkemengde i "+title;
+		document.getElementById("misc-stats").innerHTML = "Andre kvartalstall knyttet til folkemengde i " + title;
 		var element = document.getElementById(elemId);
 		var header = document.getElementById("title");
 		var headerText = document.createTextNode(title);
@@ -156,9 +195,12 @@ $(document).ready(function() {
 		var div = document.getElementById("summary");
 		for (let x = 0; x < data.length; x++) {
 			var li = document.createElement('li');
-			li.innerHTML = data[x].category + ", antall personer: <strong>" + data[x].value + "</strong>";
+			li.innerHTML = data[x].category + ": <strong>" + data[x].value + "</strong>";
 			element.appendChild(li);
 		}
+
+		//Pass in movement in and out.
+		PopulationChartHandler.populationMovement(data);
 	}
 
 	//Init the evergreen-article with random municipality
@@ -167,11 +209,42 @@ $(document).ready(function() {
 		var municipality = findMunicipality(next_ten_years, index["title"]);
 
 		//Create the output
-		populationList("next_ten_years", municipality);
+		populationList(municipality);
+		populationComments(municipality);
 		economicStats(municipality);
 		getValues(index);
 	}
 
+	//Calculates the percentage for all growth numbers, and generates a mean value for all the municipalities that had a positive population growth, and the same for all the municipalities which had a decline in population.
+	function globalMeanPercentages() {
+
+		var mean = {};
+		mean.negatives = 0.0;
+		mean.negativeCount = 0;
+		mean.negativeMean = 0.0;
+		mean.positives = 0.0;
+		mean.positiveCount = 0;
+		mean.positiveMean = 0;
+		//TODO: write a function for showing the mean percentages
+		for (let x = 0; x < next_ten_years.length; x++) {
+			let diff = next_ten_years[x]["years"].slice(-1)[0] - next_ten_years[x]["years"][0];
+			let percentage = MathHandler.percentageOf(Math.abs(diff), next_ten_years[x]["years"][0]);
+			if (diff < 0) {
+				mean.negatives += percentage;
+				mean.negativeCount++;
+			} else {
+				mean.positives += percentage;
+				mean.positiveCount++;
+			}
+		}
+		mean.positiveMean = MathHandler.meanValue(mean.positives, mean.positiveCount).toFixed(2);
+		mean.negativeMean = MathHandler.meanValue(mean.negatives, mean.negativeCount).toFixed(2);
+
+		console.log(mean);
+		return mean; 
+	}
+
+	globalMeanPercentages();
 
 	//Handle input from web search field
 	var searchField = document.getElementById('search');
@@ -179,14 +252,18 @@ $(document).ready(function() {
 	searchField.addEventListener('change', function(e) {
 		formValue = e.target.value;
 		var index = searchIndex(formValue);
-
-		var municipality = findMunicipality(next_ten_years, formValue);
-		populationList("next_ten_years", municipality);
-		economicStats(municipality);
 		var values = getValues(index);
+
+		//Searches the array for numbers..
+		var municipality = findMunicipality(next_ten_years, formValue);
+		populationList(municipality);
+		populationComments(municipality);
+		economicStats(municipality);
 	});
 
-	//INITIALIZE the whole thing
+	//Hide search field warnings..
+	$("#no-results").css("visibility", "hidden")
+		//INITIALIZE the whole thing
 	RankingsHandler.init();
 	initRandomStats();
 
