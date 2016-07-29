@@ -142,7 +142,7 @@ $(document).ready(function() {
 				$("#meanExpenditureNeeds").html("Utgiftsbehov per innbygger 2016 (nasjonalt gjennomsnitt): <strong>" + meanExpenditureNeeds + "</strong> NOK");
 				$("#realExpenditureNeeds").html("Utgiftsbehov per innbygger for kommunen: <strong>" + realExpenditureNeeds + "</strong> NOK (" + diff + ")");
 				$("#offsetFunding").html("Vedtatt innbyggertilskudd for 2016 (nasjonalt gjennomsnitt): <strong>" + offsetPerInhabitant + "</strong> NOK");
-				$("#perInhabitant").html("Behovsjustert innbyggertilskudd for <strong>" + data["kommune"] + "</strong>: <strong>" + economicData["fundingPerInhabitant"] + "</strong> NOK (" + incomeDiff + ")");
+				$("#perInhabitant").html("Behovsjustert innbyggertilskudd for <strong>" + data["kommune"] + "</strong>: <strong>" + economicData["fundingPerInhabitant"].toFixed(2) + "</strong> NOK (" + incomeDiff + ")");
 				//TODO: is this including or excluding special deductions?
 				$("#totalFunding").html("Kommunens inntekter (basert på innbyggertall) for 2016: <strong>" + economicData["totalFunding"] + " millioner </strong> NOK");
 
