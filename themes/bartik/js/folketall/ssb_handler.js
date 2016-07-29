@@ -166,17 +166,25 @@ $(document).ready(function() {
 	populationComments = function(data) {
 		var offset;
 		var end;
+		var firstFourYears;
+		var lastFourYears;
 		var delta;
 		var percentageDiff = 0.0;
 		if (data) {
 			offset = data["years"][0];
-			end = data["years"].slice(-1)[0];
+			//The dataset is size 11
+			end = data["years"][7]
+
+			console.log(data["years"]);
+
+			firstFourYears = MathHandler.percentageIncrease(data["years"][0],data["years"][3]);
+			lastFourYears = MathHandler.percentageIncrease(data["years"][3],data["years"][7]);
 			delta = (end - offset);
 
 			if (delta < 0) {
-				document.getElementById("population-comments").innerHTML = "Folketallet i <strong>" + data["kommune"] + "</strong> er beregnet til å synke med <strong>" + Math.abs(delta) + "</strong> personer i løpet av de neste ti årene. Det tilsvarer en nedgang på <strong>" + MathHandler.percentageOf(Math.abs(delta), offset).toFixed(1) + "%</strong>.";
+				document.getElementById("population-comments").innerHTML = "Folketallet i <strong>" + data["kommune"] + "</strong> er beregnet til å synke med <strong>" + Math.abs(delta) + "</strong> personer i løpet av en 8-års periode. Nedgangen de første fire årene er <strong>"+firstFourYears.toFixed(1)+"%</strong>, og <strong>"+lastFourYears.toFixed(1)+"%</strong> de siste fire årene av perioden. Dette tilsvarer en total nedgang på ca <strong>" + Math.abs(MathHandler.percentageIncrease(offset,end).toFixed(0)) + "%</strong>." 
 			} else {
-				document.getElementById("population-comments").innerHTML = "Folketallet i <strong>" + data["kommune"] + "</strong> er beregnet til å stige med <strong>" + Math.abs(delta) + "</strong> personer i løpet av de neste ti årene. Det tilsvarer en økning med <strong>" + MathHandler.percentageOf(Math.abs(delta), offset).toFixed(1) + "%</strong>.";
+				document.getElementById("population-comments").innerHTML = "Folketallet i <strong>" + data["kommune"] + "</strong> er beregnet til å stige med <strong>" + delta + "</strong> personer i løpet av en 8-års periode. Økningen de første fire årene er <strong>"+firstFourYears.toFixed(1)+"%</strong>, og <strong>"+lastFourYears.toFixed(1)+"%</strong> de fire siste årene av perioden. Dette tilsvarer en total økning  med ca <strong>" + MathHandler.percentageIncrease(offset,end).toFixed(0) + "%</strong>."; 
 			}
 		}
 	}
@@ -214,7 +222,8 @@ $(document).ready(function() {
 		economicStats(municipality);
 		getValues(index);
 	}
-
+	//TODO: double check the calculations
+	//TODO: Refactor this function to be a part of the dataset
 	//Calculates the percentage for all growth numbers, and generates a mean value for all the municipalities that had a positive population growth, and the same for all the municipalities which had a decline in population.
 	function globalMeanPercentages() {
 
@@ -227,9 +236,8 @@ $(document).ready(function() {
 		mean.positiveMean = 0;
 		//TODO: write a function for showing the mean percentages
 		for (let x = 0; x < next_ten_years.length; x++) {
-			let diff = next_ten_years[x]["years"].slice(-1)[0] - next_ten_years[x]["years"][0];
-			let percentage = MathHandler.percentageOf(Math.abs(diff), next_ten_years[x]["years"][0]);
-			if (diff < 0) {
+			let percentage = MathHandler.percentageIncrease(next_ten_years[x]["years"][0], next_ten_years[x]["years"].slice(-4)[0]);
+			if (percentage < 0) {
 				mean.negatives += percentage;
 				mean.negativeCount++;
 			} else {
@@ -239,9 +247,7 @@ $(document).ready(function() {
 		}
 		mean.positiveMean = MathHandler.meanValue(mean.positives, mean.positiveCount).toFixed(2);
 		mean.negativeMean = MathHandler.meanValue(mean.negatives, mean.negativeCount).toFixed(2);
-
-		console.log(mean);
-		return mean; 
+		document.getElementById("population-percentages").innerHTML = "<strong>Hele landet:</strong><br> Gjennomsnittlig endring 8 år fremover i kommunene som har positiv befolkningsvekst : <strong>"+mean.positiveMean+"%</strong>.</br> Snittet for kommunene som har en negativ befolkningsvekst: <strong>"+mean.negativeMean+"%</strong>";
 	}
 
 	globalMeanPercentages();

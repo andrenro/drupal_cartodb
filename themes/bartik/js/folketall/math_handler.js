@@ -8,7 +8,13 @@ $(document).ready(function(){
     //How many percentage is num1 of num2?
     function percentageOf(num1,num2){
        return num1 * 100 / num2;
-     }
+    }
+
+    function percentageIncrease(offset, end){
+      var diff = (end - offset);
+      return (diff / offset) * 100;
+    }
+
     function indexedToPercentageRemainder(index){
        return ((index * 100) - 100);
     }
@@ -20,7 +26,8 @@ $(document).ready(function(){
         percentageOf: percentageOf,
         percentage: percentage,
         indexedToPercentageRemainder:indexedToPercentageRemainder,
-        meanValue: meanValue
+        meanValue: meanValue,
+        percentageIncrease: percentageIncrease
       }
   })();
 

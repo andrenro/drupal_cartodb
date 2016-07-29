@@ -191,7 +191,7 @@ $(document).ready(function() {
           x: "" //center
         },
         xAxis: {
-          categories: ["2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"]
+          categories: ["2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"]
         },
         yAxis: {
           title: {
@@ -214,7 +214,7 @@ $(document).ready(function() {
         },
         series: [{
           name: '',
-          data: data
+          data: data.slice(0,8)
         }]
       });
 
