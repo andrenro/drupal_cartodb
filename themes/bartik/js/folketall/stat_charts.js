@@ -221,6 +221,7 @@ $(document).ready(function() {
     }
 
     function fundingPerInhabitantChart(data) {
+      console.log(data);
 
       new Highcharts.Chart({
         chart: {
@@ -244,11 +245,11 @@ $(document).ready(function() {
           name: "Norske Kroner",
           data: [{
             name: "Vedtatt inntekt per innbygger",
-            y: parseFloat(data[1].toFixed(2)),
+            y: data[1],
             color: "#003762"
           }, {
             name: "Inntekt per innbygger (justert etter behov)",
-            y: parseFloat(data[0].toFixed(2)),
+            y: data[0],
             color: "#940E19"
           }]
         }]
@@ -287,10 +288,10 @@ $(document).ready(function() {
     function getSortedList(data) {
 
       var temp = data.sort(function(a, b) {
-        if (parseFloat(a["calculated_income"]) > parseFloat(b["calculated_income"])) {
+        if (a["calculated_income"] > b["calculated_income"]){
           return 1;
         }
-        if (parseFloat(a["calculated_income"]) < parseFloat(b["calculated_income"])) {
+        if (a["calculated_income"] < b["calculated_income"]){
           return -1;
         }
         return 0;
@@ -300,8 +301,8 @@ $(document).ready(function() {
     //Taks the first element in the top-list and the first in the bottom-list, which represents the low/high municipalities
     function populationComments(top, bottom) {
 
-      document.getElementById("top-comment").innerHTML = "<strong>" + top[0]["kommune"] + "</strong> har landets laveste utgiftsbehov i <strong>" + date.getFullYear() + "</strong>, beregnet til <strong>" + parseFloat(top[0]["expenditure_needs"]).toFixed(1) + "</strong> NOK (per innbygger). Kommunen får dermed også det laveste innbyggertilskuddet, beregnet til <strong>" + top[0]["calculated_income"].toFixed(1) + "</strong> NOK per innbygger. Dette forteller oss at <strong>" + top[0]["kommune"] + "</strong> (isolert sett) er den kommunen som er billigst i drift dette året.";
-      document.getElementById("bottom-comment").innerHTML = "<strong>" + bottom[0]["kommune"] + "</strong> har landets høyeste utgiftsbehov i <strong>" + date.getFullYear() + "</strong>, beregnet til <strong>" + parseFloat(bottom[0]["expenditure_needs"]).toFixed(1) + "</strong> NOK (per innbygger). Kommunen får dermed også det høyeste innbyggertilskuddet, beregnet til <strong>" + bottom[0]["calculated_income"].toFixed(1) + "</strong> NOK per innbygger. Dette forteller oss at <strong>" + bottom[0]["kommune"] + "</strong> (isolert sett) er den kommunen som er dyrest i drift dette året.";
+      document.getElementById("top-comment").innerHTML = "<strong>" + top[0]["kommune"] + "</strong> har landets laveste utgiftsbehov i <strong>" + date.getFullYear() + "</strong>, beregnet til <strong>" + top[0]["expenditure_needs"]+ "</strong> NOK (per innbygger). Kommunen får dermed også det laveste innbyggertilskuddet, beregnet til <strong>" + top[0]["calculated_income"].toFixed(1) + "</strong> NOK per innbygger. Dette forteller oss at <strong>" + top[0]["kommune"] + "</strong> (isolert sett) er den kommunen som er billigst i drift dette året.";
+      document.getElementById("bottom-comment").innerHTML = "<strong>" + bottom[0]["kommune"] + "</strong> har landets høyeste utgiftsbehov i <strong>" + date.getFullYear() + "</strong>, beregnet til <strong>" + bottom[0]["expenditure_needs"] + "</strong> NOK (per innbygger). Kommunen får dermed også det høyeste innbyggertilskuddet, beregnet til <strong>" + bottom[0]["calculated_income"].toFixed(1) + "</strong> NOK per innbygger. Dette forteller oss at <strong>" + bottom[0]["kommune"] + "</strong> (isolert sett) er den kommunen som er dyrest i drift dette året.";
 
     }
 
@@ -354,44 +355,44 @@ $(document).ready(function() {
         series: [{
           name: "Beregnet innbyggertilskudd, i NOK",
           data: [{
-            z: parseFloat(data[0]["expenditure_needs"]),
-            y: parseFloat(data[0]["calculated_income"].toFixed(2)),
+            z: data[0]["expenditure_needs"],
+            y: data[0]["calculated_income"],
             color: columnColor.third
           }, {
-            z: parseFloat(data[1]["expenditure_needs"]),
-            y: parseFloat(data[1]["calculated_income"].toFixed(2)),
+            z: data[1]["expenditure_needs"],
+            y: data[1]["calculated_income"],
             color: columnColor.second
           }, {
-            z: parseFloat(data[2]["expenditure_needs"]),
-            y: parseFloat(data[2]["calculated_income"].toFixed(2)),
+            z: data[2]["expenditure_needs"],
+            y: data[2]["calculated_income"],
             color: columnColor.second
           }, {
-            z: parseFloat(data[3]["expenditure_needs"]),
-            y: parseFloat(data[3]["calculated_income"].toFixed(2)),
+            z: data[3]["expenditure_needs"],
+            y: data[3]["calculated_income"],
             color: columnColor.first
           }, {
-            z: parseFloat(data[4]["expenditure_needs"]),
-            y: parseFloat(data[4]["calculated_income"].toFixed(2)),
+            z: data[4]["expenditure_needs"],
+            y: data[4]["calculated_income"],
             color: columnColor.first
           }, {
-            z: parseFloat(data[5]["expenditure_needs"]),
-            y: parseFloat(data[5]["calculated_income"].toFixed(2)),
+            z: data[5]["expenditure_needs"],
+            y: data[5]["calculated_income"],
             color: columnColor.first
           }, {
-            z: parseFloat(data[6]["expenditure_needs"]),
-            y: parseFloat(data[6]["calculated_income"].toFixed(2)),
+            z: data[6]["expenditure_needs"],
+            y: data[6]["calculated_income"],
             color: columnColor.first
           }, {
-            z: parseFloat(data[7]["expenditure_needs"]),
-            y: parseFloat(data[7]["calculated_income"].toFixed(2)),
+            z: data[7]["expenditure_needs"],
+            y: data[7]["calculated_income"],
             color: columnColor.first
           }, {
-            z: parseFloat(data[8]["expenditure_needs"]),
-            y: parseFloat(data[8]["calculated_income"].toFixed(2)),
+            z: data[8]["expenditure_needs"],
+            y: data[8]["calculated_income"],
             color: columnColor.first
           }, {
-            z: parseFloat(data[9]["expenditure_needs"]),
-            y: parseFloat(data[9]["calculated_income"].toFixed(2)),
+            z: data[9]["expenditure_needs"],
+            y: data[9]["calculated_income"],
             color: columnColor.first
           }]
         }]
@@ -435,44 +436,44 @@ $(document).ready(function() {
         series: [{
           name: "Beregnet utgiftsbehov, i norske kroner",
           data: [{
-            z: parseFloat(data[0]["expenditure_needs"]),
-            y: parseFloat(data[0]["calculated_income"].toFixed(2)),
+            z: data[0]["expenditure_needs"],
+            y: data[0]["calculated_income"],
             color: columnColor.third
           }, {
-            z: parseFloat(data[1]["expenditure_needs"]),
-            y: parseFloat(data[1]["calculated_income"].toFixed(2)),
+            z: data[1]["expenditure_needs"],
+            y: data[1]["calculated_income"],
             color: columnColor.second
           }, {
-            z: parseFloat(data[2]["expenditure_needs"]),
-            y: parseFloat(data[2]["calculated_income"].toFixed(2)),
+            z: data[2]["expenditure_needs"],
+            y: data[2]["calculated_income"],
             color: columnColor.second
           }, {
-            z: parseFloat(data[3]["expenditure_needs"]),
-            y: parseFloat(data[3]["calculated_income"].toFixed(2)),
+            z: data[3]["expenditure_needs"],
+            y: data[3]["calculated_income"],
             color: columnColor.first
           }, {
-            z: parseFloat(data[4]["expenditure_needs"]),
-            y: parseFloat(data[4]["calculated_income"].toFixed(2)),
+            z: data[4]["expenditure_needs"],
+            y: data[4]["calculated_income"],
             color: columnColor.first
           }, {
-            z: parseFloat(data[5]["expenditure_needs"]),
-            y: parseFloat(data[5]["calculated_income"].toFixed(2)),
+            z: data[5]["expenditure_needs"],
+            y: data[5]["calculated_income"],
             color: columnColor.first
           }, {
-            z: parseFloat(data[6]["expenditure_needs"]),
-            y: parseFloat(data[6]["calculated_income"].toFixed(2)),
+            z: data[6]["expenditure_needs"],
+            y: data[6]["calculated_income"],
             color: columnColor.first
           }, {
-            z: parseFloat(data[7]["expenditure_needs"]),
-            y: parseFloat(data[7]["calculated_income"].toFixed(2)),
+            z: data[7]["expenditure_needs"],
+            y: data[7]["calculated_income"],
             color: columnColor.first
           }, {
-            z: parseFloat(data[8]["expenditure_needs"]),
-            y: parseFloat(data[8]["calculated_income"].toFixed(2)),
+            z: data[8]["expenditure_needs"],
+            y: data[8]["calculated_income"],
             color: columnColor.first
           }, {
-            z: parseFloat(data[9]["expenditure_needs"]),
-            y: parseFloat(data[9]["calculated_income"].toFixed(2)),
+            z: data[9]["expenditure_needs"],
+            y: data[9]["calculated_income"],
             color: columnColor.first
           }]
         }]

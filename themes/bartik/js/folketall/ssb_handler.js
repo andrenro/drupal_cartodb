@@ -101,27 +101,27 @@ $(document).ready(function() {
 			const offsetPerInhabitant = 22668;
 			if (data) {
 				var economicData = {
-					"expenditure_needs": parseFloat(data["expenditure_needs"]),
-					"expenditure_needs_mean": parseFloat(data["expenditure_needs_mean"]),
+					"expenditure_needs": data["expenditure_needs"],
+					"expenditure_needs_mean": data["expenditure_needs_mean"],
 					"fundingPerInhabitant": 0.0,
 					"totalFunding": 0.0,
-					"percentageOfNationalMean": ((parseFloat(data["indexed_value"]) - 1) * 100).toFixed(2)
+					"percentageOfNationalMean": (((data["indexed_value"]) - 1) * 100).toFixed(2)
 
 				};
 
 				document.getElementById("economics-title").innerHTML = "Økonomi i " + data["kommune"];
 				economics = document.getElementById("economics");
 
-				var thisYearsTotal = parseFloat(data["years"][0]); //Fetch this quarters
-				var realExpenditureNeeds = parseFloat(data["expenditure_needs"]);
-				var meanExpenditureNeeds = parseFloat(data["expenditure_needs_mean"]);
-				var indexedNeed = parseFloat(data["indexed_value"]);
+				var thisYearsTotal = data["years"][0]; //Fetch this quarters
+				var realExpenditureNeeds = data["expenditure_needs"];
+				var meanExpenditureNeeds = data["expenditure_needs_mean"];
+				var indexedNeed = data["indexed_value"];
 
 				var difference = (realExpenditureNeeds - meanExpenditureNeeds);
 				if (difference < 0) {
-					fundingPerInhabitant = parseFloat((offsetPerInhabitant - (Math.abs(difference))).toFixed(2));
+					fundingPerInhabitant = (offsetPerInhabitant - (Math.abs(difference)))
 				} else {
-					fundingPerInhabitant = parseFloat((offsetPerInhabitant + difference).toFixed(2));
+					fundingPerInhabitant = (offsetPerInhabitant + difference);
 				}
 
 				var percentageDiff = MathHandler.indexedToPercentageRemainder(data["indexed_value"]);
@@ -133,7 +133,7 @@ $(document).ready(function() {
 				economicData["totalFunding"] = ((fundingPerInhabitant * thisYearsTotal) / 1000000).toFixed(2);
 
 				//PercentageDifferencePerInhabitant
-				var pdph = (parseFloat(economicData["fundingPerInhabitant"]) - offsetPerInhabitant);
+				var pdph = (economicData["fundingPerInhabitant"]) - offsetPerInhabitant;
 				var percentageIncome = 0.0;
 				var tempPercentage = Math.abs(pdph);
 				var res = MathHandler.percentageOf(tempPercentage, offsetPerInhabitant);
@@ -173,9 +173,7 @@ $(document).ready(function() {
 		if (data) {
 			offset = data["years"][0];
 			//The dataset is size 11
-			end = data["years"][7]
-
-			console.log(data["years"]);
+			end = data["years"][7];
 
 			firstFourYears = MathHandler.percentageIncrease(data["years"][0],data["years"][3]);
 			lastFourYears = MathHandler.percentageIncrease(data["years"][3],data["years"][7]);
@@ -236,7 +234,7 @@ $(document).ready(function() {
 		mean.positiveMean = 0;
 		//TODO: write a function for showing the mean percentages
 		for (let x = 0; x < next_ten_years.length; x++) {
-			let percentage = MathHandler.percentageIncrease(next_ten_years[x]["years"][0], next_ten_years[x]["years"].slice(-4)[0]);
+			let percentage = MathHandler.percentageIncrease(next_ten_years[x]["years"][0], next_ten_years[x]["years"][7]);
 			if (percentage < 0) {
 				mean.negatives += percentage;
 				mean.negativeCount++;
