@@ -221,7 +221,6 @@ $(document).ready(function() {
     }
 
     function fundingPerInhabitantChart(data) {
-      console.log(data);
 
       new Highcharts.Chart({
         chart: {
@@ -434,7 +433,7 @@ $(document).ready(function() {
           useHTML: true
         },
         series: [{
-          name: "Beregnet utgiftsbehov, i norske kroner",
+          name: "Beregnet innbyggertilskudd, i NOK",
           data: [{
             z: data[0]["expenditure_needs"],
             y: data[0]["calculated_income"],

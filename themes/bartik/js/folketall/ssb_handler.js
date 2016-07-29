@@ -10,8 +10,12 @@ $(document).ready(function() {
 
 	var dataset = JSONstat(datasets["folketall_kvartal"]).Dataset(0);
 	var kommuner = dataset.Dimension("Region").Category();
+	//Which quarter are we in?
+	var kvartal = dataset.Dimension("Tid").Category(0).label;
 	var koder = dataset.Dimension("Region");
+	//Input form
 	formValue = "";
+
 
 
 	//Return quasi-random array index, rounded to whole integer
@@ -99,6 +103,9 @@ $(document).ready(function() {
 			var fundingPerInhabitant = 0.0;
 			//Yearly regulated values that will be updated every year by SSB
 			const offsetPerInhabitant = 22668;
+			$("#inhabitant-funding-offset").html("<strong>"+offsetPerInhabitant+"</strong>");
+			$("#expenditure_needs_mean").html("<strong>"+data["expenditure_needs_mean"]+"</strong>");
+			
 			if (data) {
 				var economicData = {
 					"expenditure_needs": data["expenditure_needs"],
@@ -127,12 +134,9 @@ $(document).ready(function() {
 				var percentageDiff = MathHandler.indexedToPercentageRemainder(data["indexed_value"]);
 				var diff = percentageDiff < 0 ? "<strong>" + Math.abs(percentageDiff.toFixed(2)) + "%</strong> lavere enn nasjonalt gjennomsnitt" : "<strong>" + Math.abs(percentageDiff.toFixed(2)) + "%</strong> høyere enn nasjonalt gjennomsnitt";
 
-				// var meanDiff = (fundingPerInhabitant - offsetPerInhabitant) < 0 ? ((fundingPerInhabitant - offsetPerInhabitant) * -1)+" kroner under nasjonalt gjennomsnitt" : (fundingPerInhabitant - offsetPerInhabitant)+" kroner over nasjonalt gjennomsnitt";
-				// console.log(meanDiff);
 				economicData["fundingPerInhabitant"] = fundingPerInhabitant;
 				economicData["totalFunding"] = ((fundingPerInhabitant * thisYearsTotal) / 1000000).toFixed(2);
 
-				//PercentageDifferencePerInhabitant
 				var pdph = (economicData["fundingPerInhabitant"]) - offsetPerInhabitant;
 				var percentageIncome = 0.0;
 				var tempPercentage = Math.abs(pdph);
@@ -143,10 +147,9 @@ $(document).ready(function() {
 				$("#realExpenditureNeeds").html("Utgiftsbehov per innbygger for kommunen: <strong>" + realExpenditureNeeds + "</strong> NOK (" + diff + ")");
 				$("#offsetFunding").html("Vedtatt innbyggertilskudd for 2016 (nasjonalt gjennomsnitt): <strong>" + offsetPerInhabitant + "</strong> NOK");
 				$("#perInhabitant").html("Behovsjustert innbyggertilskudd for <strong>" + data["kommune"] + "</strong>: <strong>" + economicData["fundingPerInhabitant"].toFixed(2) + "</strong> NOK (" + incomeDiff + ")");
+
 				//TODO: is this including or excluding special deductions?
 				$("#totalFunding").html("Kommunens inntekter (basert på innbyggertall) for 2016: <strong>" + economicData["totalFunding"] + " millioner </strong> NOK");
-
-
 
 				chartData.push(fundingPerInhabitant);
 				chartData.push(offsetPerInhabitant);
@@ -220,8 +223,8 @@ $(document).ready(function() {
 		economicStats(municipality);
 		getValues(index);
 	}
-	//TODO: double check the calculations
-	//TODO: Refactor this function to be a part of the dataset
+
+	//TODO: Refactor this function to be a part of the creation of the data-file
 	//Calculates the percentage for all growth numbers, and generates a mean value for all the municipalities that had a positive population growth, and the same for all the municipalities which had a decline in population.
 	function globalMeanPercentages() {
 
