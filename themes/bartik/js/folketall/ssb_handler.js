@@ -15,9 +15,30 @@ $(document).ready(function() {
 	var koder = dataset.Dimension("Region");
 	//Input form
 	formValue = "";
+	//Indexed data
+	var searchableData = null;
 
+	//Matches indices to kommuner-array.
+	setupLunrSearch = function(data) {
+		var index = lunr(function() {
+			this.field("kommune");
+			this.field("kode");
+		});
 
+		if (index) {
+			for (let x = 0; x < data.length; x++) {
+				let temp = {
+					"id": x,
+					"kommune": data[x].label,
+					"index": data[x].index
+				}
+				index.add(temp);
+			}
+		}
+		return index;
+	}
 
+	searchableData = setupLunrSearch(kommuner);
 	//Return quasi-random array index, rounded to whole integer
 	getRandomArbitrary = function(min, max) {
 		return Math.floor(Math.random() * (max - min) + min);
@@ -27,15 +48,25 @@ $(document).ready(function() {
 	//Takes input from web form, returns the index if a match is found
 	searchIndex = function(query) {
 			if (dataset) {
-				for (var l = 0; l < kommuner.length; l++) {
-					if (kommuner[l].label.toLowerCase() === query.toLowerCase()) {
-						let index = kommuner[l].index;
-						return {
-							"title": kommuner[l].label,
-							"index": index
-						};
+				var idx = searchableData.search(query);
+
+				if(idx.length > 0){
+					//Only return first result
+					return {
+						"title":kommuner[idx[0].ref].label,
+						"index":idx[0].ref
 					}
 				}
+
+				// for (var l = 0; l < kommuner.length; l++) {
+				// 	if (kommuner[l].label.toLowerCase() === query.toLowerCase()) {
+				// 		let index = kommuner[l].index;
+				// 		return {
+				// 			"title": kommuner[l].label,
+				// 			"index": index
+				// 		};
+				// 	}
+				// }
 				$("#no-results").css("visibility", "visible");
 				setTimeout(function() {
 					$("#no-results").css("visibility", "hidden");
@@ -47,8 +78,9 @@ $(document).ready(function() {
 				return -1;
 			}
 		}
-		//Helper function
-		//Returns the dataset-index of a random 'kommune' to show in the article
+
+	//Helper function
+	//Returns the dataset-index of a random 'kommune' to show in the article
 	randomIndex = function(randInt) {
 		if (dataset) {
 			return {
@@ -62,6 +94,7 @@ $(document).ready(function() {
 	findMunicipality = function(array, input) {
 		for (let x = 0; x < array.length; x++) {
 			if (array[x]["kommune"].toLowerCase() === input.toLowerCase()) {
+				console.log(array[x]);
 				return array[x];
 			}
 		}
@@ -103,10 +136,11 @@ $(document).ready(function() {
 			var fundingPerInhabitant = 0.0;
 			//Yearly regulated values that will be updated every year by SSB
 			const offsetPerInhabitant = 22668;
-			$("#inhabitant-funding-offset").html("<strong>"+offsetPerInhabitant+"</strong>");
-			$("#expenditure_needs_mean").html("<strong>"+data["expenditure_needs_mean"]+"</strong>");
-			
+			console.log(data);
+
 			if (data) {
+				$("#inhabitant-funding-offset").html("<strong>" + offsetPerInhabitant + "</strong>");
+				$("#expenditure_needs_mean").html("<strong>" + data["expenditure_needs_mean"] + "</strong>");
 				var economicData = {
 					"expenditure_needs": data["expenditure_needs"],
 					"expenditure_needs_mean": data["expenditure_needs_mean"],
@@ -178,14 +212,14 @@ $(document).ready(function() {
 			//The dataset is size 11
 			end = data["years"][7];
 
-			firstFourYears = MathHandler.percentageIncrease(data["years"][0],data["years"][3]);
-			lastFourYears = MathHandler.percentageIncrease(data["years"][3],data["years"][7]);
+			firstFourYears = MathHandler.percentageIncrease(data["years"][0], data["years"][3]);
+			lastFourYears = MathHandler.percentageIncrease(data["years"][3], data["years"][7]);
 			delta = (end - offset);
 
 			if (delta < 0) {
-				document.getElementById("population-comments").innerHTML = "Folketallet i <strong>" + data["kommune"] + "</strong> er beregnet til å synke med <strong>" + Math.abs(delta) + "</strong> personer i løpet av en 8-års periode. Nedgangen de første fire årene er <strong>"+firstFourYears.toFixed(1)+"%</strong>, og <strong>"+lastFourYears.toFixed(1)+"%</strong> de siste fire årene av perioden. Dette tilsvarer en total nedgang på ca <strong>" + Math.abs(MathHandler.percentageIncrease(offset,end).toFixed(0)) + "%</strong>." 
+				document.getElementById("population-comments").innerHTML = "Folketallet i <strong>" + data["kommune"] + "</strong> er beregnet til å synke med <strong>" + Math.abs(delta) + "</strong> personer i løpet av en 8-års periode. Nedgangen de første fire årene er <strong>" + firstFourYears.toFixed(1) + "%</strong>, og <strong>" + lastFourYears.toFixed(1) + "%</strong> de siste fire årene av perioden. Dette tilsvarer en total nedgang på ca <strong>" + Math.abs(MathHandler.percentageIncrease(offset, end).toFixed(0)) + "%</strong>."
 			} else {
-				document.getElementById("population-comments").innerHTML = "Folketallet i <strong>" + data["kommune"] + "</strong> er beregnet til å stige med <strong>" + delta + "</strong> personer i løpet av en 8-års periode. Økningen de første fire årene er <strong>"+firstFourYears.toFixed(1)+"%</strong>, og <strong>"+lastFourYears.toFixed(1)+"%</strong> de fire siste årene av perioden. Dette tilsvarer en total økning  med ca <strong>" + MathHandler.percentageIncrease(offset,end).toFixed(0) + "%</strong>."; 
+				document.getElementById("population-comments").innerHTML = "Folketallet i <strong>" + data["kommune"] + "</strong> er beregnet til å stige med <strong>" + delta + "</strong> personer i løpet av en 8-års periode. Økningen de første fire årene er <strong>" + firstFourYears.toFixed(1) + "%</strong>, og <strong>" + lastFourYears.toFixed(1) + "%</strong> de fire siste årene av perioden. Dette tilsvarer en total økning  med ca <strong>" + MathHandler.percentageIncrease(offset, end).toFixed(0) + "%</strong>.";
 			}
 		}
 	}
@@ -248,7 +282,7 @@ $(document).ready(function() {
 		}
 		mean.positiveMean = MathHandler.meanValue(mean.positives, mean.positiveCount).toFixed(2);
 		mean.negativeMean = MathHandler.meanValue(mean.negatives, mean.negativeCount).toFixed(2);
-		document.getElementById("population-percentages").innerHTML = "<strong>Hele landet:</strong><br> Gjennomsnittlig endring 8 år fremover i kommunene som har positiv befolkningsvekst : <strong>"+mean.positiveMean+"%</strong>.</br> Snittet for kommunene som har en negativ befolkningsvekst: <strong>"+mean.negativeMean+"%</strong>";
+		document.getElementById("population-percentages").innerHTML = "<strong>Hele landet:</strong><br> Gjennomsnittlig endring 8 år fremover i kommunene som har positiv befolkningsvekst : <strong>" + mean.positiveMean + "%</strong>.</br> Snittet for kommunene som har en negativ befolkningsvekst: <strong>" + mean.negativeMean + "%</strong>";
 	}
 
 	globalMeanPercentages();
@@ -260,6 +294,7 @@ $(document).ready(function() {
 		formValue = e.target.value;
 		var index = searchIndex(formValue);
 		var values = getValues(index);
+		console.log(index);
 
 		//Searches the array for numbers..
 		var municipality = findMunicipality(next_ten_years, formValue);

@@ -27,8 +27,10 @@ scripts[] = js/highcharts.js
 #scripts[] = js/layers_handler.js
 scripts[] = js/bootstrap.min.js
 #scripts[] = js/get_node_content.js
+
 scripts[] = js/folketall/json-stat.js
 scripts[] = js/folketall/json-stat.utils.js
+scripts[] = js/folketall/lunr.min.js
 scripts[] = js/folketall/next_ten_years.js
 scripts[] = js/folketall/math_handler.js
 scripts[] = js/folketall/stat_charts.js
