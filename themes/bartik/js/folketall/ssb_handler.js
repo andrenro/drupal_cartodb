@@ -47,37 +47,40 @@ $(document).ready(function() {
 	//Helper function for search field
 	//Takes input from web form, returns the index if a match is found
 	searchIndex = function(query) {
-			if (dataset) {
-				var idx = searchableData.search(query);
+		if (dataset) {
 
-				if(idx.length > 0){
-					//Only return first result
-					return {
-						"title":kommuner[idx[0].ref].label,
-						"index":idx[0].ref
-					}
+			if (document.getElementById("lunr-index").innerHTML != ""){
+				document.getElementById("lunr-index").innerHTML = "";
+			}
+			var idx = searchableData.search(query);
+			if (idx.length > 1) {
+			document.getElementById("lunr-index").innerHTML = "Fant flere treff på søket,vennligst prøv et av disse søkeordene: <ul style='font-weight:bold;list-style-type:none' id='lunr-list'></ul>";
+				for (let x = 0; x < idx.length; x++) {
+					console.log(kommuner[idx[x].ref].label);
+					var node = document.createElement("li");
+					var textnode = document.createTextNode(kommuner[idx[x].ref].label);
+					node.appendChild(textnode);
+					document.getElementById("lunr-list").appendChild(node);
 				}
-
-				// for (var l = 0; l < kommuner.length; l++) {
-				// 	if (kommuner[l].label.toLowerCase() === query.toLowerCase()) {
-				// 		let index = kommuner[l].index;
-				// 		return {
-				// 			"title": kommuner[l].label,
-				// 			"index": index
-				// 		};
-				// 	}
-				// }
+			} else if (idx.length == 1) {
+				//Only return first result
+				return {
+					"title": kommuner[idx[0].ref].label,
+					"index": idx[0].ref
+				}
+			} else {
 				$("#no-results").css("visibility", "visible");
 				setTimeout(function() {
 					$("#no-results").css("visibility", "hidden");
 					return undefined;
 				}, 2000);
-
-			} else {
-				console.error("Dataset not present");
-				return -1;
 			}
+
+		} else {
+			console.error("Dataset not present");
+			return -1;
 		}
+	}
 
 	//Helper function
 	//Returns the dataset-index of a random 'kommune' to show in the article
@@ -90,14 +93,17 @@ $(document).ready(function() {
 		}
 	}
 
-	//Search array for municipality
+	//Search array for municipality.
+	//Hacky solution that splits name and returns the muncipality based on string split
 	findMunicipality = function(array, input) {
+		console.log(input);
 		for (let x = 0; x < array.length; x++) {
-			if (array[x]["kommune"].toLowerCase() === input.toLowerCase()) {
+			if (array[x]["kommune"].toLowerCase() === input.split(" ")[0].toLowerCase()) {
 				console.log(array[x]);
 				return array[x];
 			}
 		}
+
 	}
 
 	//Get raw json-stat values, based on municipality name -> code
@@ -136,11 +142,14 @@ $(document).ready(function() {
 			var fundingPerInhabitant = 0.0;
 			//Yearly regulated values that will be updated every year by SSB
 			const offsetPerInhabitant = 22668;
-			console.log(data);
 
 			if (data) {
-				$("#inhabitant-funding-offset").html("<strong>" + offsetPerInhabitant + "</strong>");
-				$("#expenditure_needs_mean").html("<strong>" + data["expenditure_needs_mean"] + "</strong>");
+				$(".inhabitant-funding-offset").html("<strong>" + offsetPerInhabitant + "</strong>");
+				$(".expenditure_needs_mean").html("<strong>" + data["expenditure_needs_mean"] + "</strong>");
+				$(".this_year").html("<strong>"+new Date().getFullYear()+"</strong>");
+				var exampleCalculated = offsetPerInhabitant + (data["expenditure_needs_mean"] * 0.9 - data["expenditure_needs_mean"]);
+				$(".ninety_percent").html("<strong>"+exampleCalculated+"</strong>");
+
 				var economicData = {
 					"expenditure_needs": data["expenditure_needs"],
 					"expenditure_needs_mean": data["expenditure_needs_mean"],
@@ -260,7 +269,7 @@ $(document).ready(function() {
 
 	//TODO: Refactor this function to be a part of the creation of the data-file
 	//Calculates the percentage for all growth numbers, and generates a mean value for all the municipalities that had a positive population growth, and the same for all the municipalities which had a decline in population.
-	function globalMeanPercentages() {
+	globalMeanPercentages = function() {
 
 		var mean = {};
 		mean.negatives = 0.0;
@@ -294,10 +303,9 @@ $(document).ready(function() {
 		formValue = e.target.value;
 		var index = searchIndex(formValue);
 		var values = getValues(index);
-		console.log(index);
 
 		//Searches the array for numbers..
-		var municipality = findMunicipality(next_ten_years, formValue);
+		var municipality = findMunicipality(next_ten_years, index["title"]);
 		populationList(municipality);
 		populationComments(municipality);
 		economicStats(municipality);
@@ -305,6 +313,8 @@ $(document).ready(function() {
 
 	//Hide search field warnings..
 	$("#no-results").css("visibility", "hidden")
+	$("#needs-and-income-header").html("Utgiftsbehov og innbyggertilskudd i "+new Date().getFullYear());
+
 		//INITIALIZE the whole thing
 	RankingsHandler.init();
 	initRandomStats();

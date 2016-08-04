@@ -4,9 +4,11 @@ $(document).ready(function() {
 
 
     function populationMovement(data) {
-        Highcharts.theme = {
-        colors: ['#940e19', '#003762', '#ED561B', '#DDDF00', '#24CBE5', '#64E572',
-          '#FF9655', '#FFF263', '#6AF9C4'],
+
+
+
+      Highcharts.theme = {
+        colors: ['#940e19', '#003762'],
         chart: {
           backgroundColor: {
             linearGradient: [0, 0, 500, 500],
@@ -41,6 +43,8 @@ $(document).ready(function() {
       };
 
       Highcharts.setOptions(Highcharts.theme);
+
+
 
       new Highcharts.Chart({
         chart: {
@@ -180,6 +184,47 @@ $(document).ready(function() {
      * @return {[undefined]} 
      */
     function populationGraph(data) {
+
+      var chartColors = data[0] > data[8] ? ['#940e19','#003762'] : ['#003762','#940e19'];
+
+      Highcharts.theme = {
+        colors: chartColors,
+        chart: {
+          backgroundColor: {
+            linearGradient: [0, 0, 500, 500],
+            stops: [
+              [0, 'rgb(255, 255, 255)'],
+              [1, 'rgb(255, 255, 255)']
+            ]
+          },
+        },
+        title: {
+          style: {
+            color: '#000',
+            font: 'bold 16px "Trebuchet MS", Verdana, sans-serif'
+          }
+        },
+        subtitle: {
+          style: {
+            color: '#666666',
+            font: 'bold 12px "Trebuchet MS", Verdana, sans-serif'
+          }
+        },
+
+        legend: {
+          itemStyle: {
+            font: '9pt Trebuchet MS, Verdana, sans-serif',
+            color: 'black'
+          },
+          itemHoverStyle: {
+            color: 'red'
+          }
+        }
+      };
+
+      Highcharts.setOptions(Highcharts.theme);
+
+
       new Highcharts.Chart({
         chart: {
           renderTo: "population_graph",
@@ -485,6 +530,7 @@ $(document).ready(function() {
       if (sorted) {
         var bottom = createBottomList(sorted);
         var top = createTopList(sorted);
+        
         topListChart(top);
         bottomListChart(bottom);
         //Generate comment about the "best" and "worst" municipality
