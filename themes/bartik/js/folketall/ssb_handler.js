@@ -1,12 +1,9 @@
 $(document).ready(function() {
 	//Links to CDN-stored json-data
 	var datasets = {
-		// "folketall_kvartal": "https://cdn.rawgit.com/andrenro/project_source_files/ssb_api/folketall/kvartalstall.json",
 		"folketall_kvartal": "http://data.ssb.no/api/v0/dataset/1108.json?lang=no",
-		"framskrevet_folketall_2026": "https://cdn.rawgit.com/andrenro/project_source_files/ssb_api/folketall/framskrevet_2026.json",
-		"folketall_aarlig_alder": 'http://data.ssb.no/api/v0/dataset/1080.json?lang=no'
+		"framskrevet_folketall_2026": "https://cdn.rawgit.com/andrenro/project_source_files/ssb_api/folketall/framskrevet_2026.json"
 	};
-	//Gront hefte: https://www.regjeringen.no/no/tema/kommuner-og-regioner/kommuneokonomi/gront-hefte/id547024/
 
 	var dataset = JSONstat(datasets["folketall_kvartal"]).Dataset(0);
 	var kommuner = dataset.Dimension("Region").Category();
