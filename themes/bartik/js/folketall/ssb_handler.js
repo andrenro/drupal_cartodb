@@ -93,10 +93,8 @@ $(document).ready(function() {
 	//Search array for municipality.
 	//Hacky solution that splits name and returns the muncipality based on string split
 	findMunicipality = function(array, input) {
-		console.log(input);
 		for (let x = 0; x < array.length; x++) {
 			if (array[x]["kommune"].toLowerCase() === input.split(" ")[0].toLowerCase()) {
-				console.log(array[x]);
 				return array[x];
 			}
 		}
