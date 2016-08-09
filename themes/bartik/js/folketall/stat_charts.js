@@ -16,7 +16,7 @@ $(document).ready(function() {
         ],
         datasets: [{
           data: [data[4].value, data[5].value],
-          backgroundColor: ["rgba(148,14,25,0.8)","rgba(0,55,98,0.8)"]
+          backgroundColor: ["rgba(148,14,25,0.8)", "rgba(0,55,98,0.8)"]
         }]
       };
 
@@ -27,7 +27,7 @@ $(document).ready(function() {
         ],
         datasets: [{
           data: [data[1].value, data[2].value],
-          backgroundColor: ["rgba(148,14,25,0.8)","rgba(0,55,98,0.8)"]
+          backgroundColor: ["rgba(148,14,25,0.8)", "rgba(0,55,98,0.8)"]
         }]
       };
 
@@ -38,7 +38,7 @@ $(document).ready(function() {
         ],
         datasets: [{
           data: [data[6].value, data[7].value],
-          backgroundColor: ["rgba(148,14,25,0.8)","rgba(0,55,98,0.8)"]
+          backgroundColor: ["rgba(148,14,25,0.8)", "rgba(0,55,98,0.8)"]
         }]
       };
 
@@ -99,13 +99,12 @@ $(document).ready(function() {
     function fundingPerInhabitantChart(data) {
 
       var barChart = document.getElementById("funding_chart_container").getContext("2d");
-
       var dataObj = {
-        labels: ["Inntekt per innbygger (justert etter behov)", "Gjennomsnittlig inntekt per innbygger"],
+        labels: ["Kommunens innbyggertilskudd", "Nasjonalt gjennomsnitt"],
         datasets: [{
-          label: "Norske kroner",
+          label: "Innbyggertilskudd, i norske kroner",
           backgroundColor: ["rgba(148,14,25,0.8)", "rgba(0,55,98,0.8)"],
-          data: data
+          data: [data[0].toFixed(2),data[1].toFixed(2)]
         }]
       };
 
