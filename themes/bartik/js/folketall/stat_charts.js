@@ -5,178 +5,60 @@ $(document).ready(function() {
 
     function populationMovement(data) {
 
+      var migration = document.getElementById("population_migration").getContext("2d");
+      var deathsBirths = document.getElementById("population_deaths_births").getContext("2d");
+      var movement = document.getElementById("population_movement").getContext("2d");
 
-
-      Highcharts.theme = {
-        colors: ['#940e19', '#003762'],
-        chart: {
-          backgroundColor: {
-            linearGradient: [0, 0, 500, 500],
-            stops: [
-              [0, 'rgb(255, 255, 255)'],
-              [1, 'rgb(255, 255, 255)']
-            ]
-          },
-        },
-        title: {
-          style: {
-            color: '#000',
-            font: 'bold 16px "Trebuchet MS", Verdana, sans-serif'
-          }
-        },
-        subtitle: {
-          style: {
-            color: '#666666',
-            font: 'bold 12px "Trebuchet MS", Verdana, sans-serif'
-          }
-        },
-
-        legend: {
-          itemStyle: {
-            font: '9pt Trebuchet MS, Verdana, sans-serif',
-            color: 'black'
-          },
-          itemHoverStyle: {
-            color: 'red'
-          }
-        }
+      var popMigration = {
+        labels: [
+          data[4].category,
+          data[5].category
+        ],
+        datasets: [{
+          data: [data[4].value, data[5].value],
+          backgroundColor: ["rgba(148,14,25,0.8)","rgba(0,55,98,0.8)"]
+        }]
       };
 
-      Highcharts.setOptions(Highcharts.theme);
-
-
-
-      new Highcharts.Chart({
-        chart: {
-          renderTo: "population_migration",
-          type: "pie",
-          plotBackgroundColor: null,
-          plotBorderWidth: null,
-          plotShadow: false,
-          type: 'pie'
-        },
-        title: {
-          text: 'Innvandring/Utvandring'
-        },
-        tooltip: {
-          pointFormat: '{series.name}: <b>{point.y}</b>'
-        },
-        plotOptions: {
-          pie: {
-            allowPointSelect: true,
-            cursor: 'pointer',
-            showInLegend:true,
-            dataLabels: {
-              enabled: true,
-              format: '{point.y}',
-              style: {
-                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-              }
-            }
-          }
-        },
-        series: [{
-          name: 'Innvandring/Utvandring',
-          colorByPoint: true,
-          data: [{
-            name: data[4].category,
-            y: data[4].value,
-          }, {
-            name: data[5].category,
-            y: data[5].value,
-          }]
+      var popDeathsBirths = {
+        labels: [
+          data[1].category,
+          data[2].category
+        ],
+        datasets: [{
+          data: [data[1].value, data[2].value],
+          backgroundColor: ["rgba(148,14,25,0.8)","rgba(0,55,98,0.8)"]
         }]
+      };
+
+      var popMovement = {
+        labels: [
+          data[6].category.split(",")[0],
+          data[7].category.split(",")[0]
+        ],
+        datasets: [{
+          data: [data[6].value, data[7].value],
+          backgroundColor: ["rgba(148,14,25,0.8)","rgba(0,55,98,0.8)"]
+        }]
+      };
+
+
+
+      var populationMigration = new Chart(migration, {
+        type: 'pie',
+        data: popMigration
       });
 
-      new Highcharts.Chart({
-        chart: {
-          renderTo: "population_deaths_borned",
-          type: "pie",
-          plotBackgroundColor: null,
-          plotBorderWidth: null,
-          plotShadow: false,
-          type: 'pie'
-        },
-        title: {
-          text: 'Fødte/Døde'
-        },
-        tooltip: {
-          pointFormat: '{series.name}: <b>{point.y}</b>'
-        },
-        plotOptions: {
-          pie: {
-            allowPointSelect: true,
-            cursor: 'pointer',
-            showInLegend:true,
-            dataLabels: {
-              enabled: true,
-              format: '{point.y}',
-              style: {
-                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-              }
-            }
-          }
-        },
-        series: [{
-          name: 'Fødte/Døde',
-          colorByPoint: true,
-          data: [{
-            name: data[1].category,
-            y: data[1].value,
-          }, {
-            name: data[2].category,
-            y: data[2].value,
-          }]
-        }]
+      var populationDeathsBirths = new Chart(deathsBirths, {
+        type: 'pie',
+        data: popDeathsBirths
       });
 
-      //Shows inland movement in population for a single municipality
-      new Highcharts.Chart({
-        chart: {
-          renderTo: "population_movement",
-          type: "pie",
-          plotBackgroundColor: null,
-          plotBorderWidth: null,
-          plotShadow: false,
-          type: 'pie'
-        },
-        title: {
-          text: 'Forflytning innenlands'
-        },
-        tooltip: {
-          pointFormat: '{series.name}: <b>{point.y}</b>'
-        },
-        plotOptions: {
-          pie: {
-            allowPointSelect: true,
-            cursor: 'pointer',
-            showInLegend:true,
-            dataLabels: {
-              enabled: true,
-              format: '{point.y}',
-              style: {
-                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-              }
-            }
-          }
-        },
-        series: [{
-          name: 'Forflytning innenlands',
-          colorByPoint: true,
-          data: [{
-            name: data[6].category.split(",")[0],
-            y: data[6].value,
-          }, {
-            name: data[7].category.split(",")[0],
-            y: data[7].value,
-          }]
-        }]
+      var populationMovement = new Chart(movement, {
+        type: 'pie',
+        data: popMovement
       });
-
-
     }
-
-
 
     /**
      * [Shows a graph of the year by year growth in population for the next ten years]
@@ -185,119 +67,65 @@ $(document).ready(function() {
      */
     function populationGraph(data) {
 
-      var chartColors = data[0] > data[8] ? ['#940e19','#003762'] : ['#003762','#940e19'];
+      var ctx = document.getElementById("population_graph").getContext("2d");
 
-      Highcharts.theme = {
-        colors: chartColors,
-        chart: {
-          backgroundColor: {
-            linearGradient: [0, 0, 500, 500],
-            stops: [
-              [0, 'rgb(255, 255, 255)'],
-              [1, 'rgb(255, 255, 255)']
-            ]
-          },
-        },
-        title: {
-          style: {
-            color: '#000',
-            font: 'bold 16px "Trebuchet MS", Verdana, sans-serif'
-          }
-        },
-        subtitle: {
-          style: {
-            color: '#666666',
-            font: 'bold 12px "Trebuchet MS", Verdana, sans-serif'
-          }
-        },
+      if (data) {
 
-        legend: {
-          itemStyle: {
-            font: '9pt Trebuchet MS, Verdana, sans-serif',
-            color: 'black'
-          },
-          itemHoverStyle: {
-            color: 'red'
-          }
-        }
-      };
+        var fillColor = data[0] > data[9] ? "rgba(148,14,25,0.8)" : "rgba(0,55,98,0.8)";
+        var strokeColor = data[0] > data[9] ? "rgba(148,14,25,1)" : "rgba(0,55,98,1)";
 
-      Highcharts.setOptions(Highcharts.theme);
-
-
-      new Highcharts.Chart({
-        chart: {
-          renderTo: "population_graph",
-          type: 'line',
-
-        },
-        title: {
-          text: '',
-          x: "" //center
-        },
-        xAxis: {
-          categories: ["2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"]
-        },
-        yAxis: {
-          title: {
-            text: ' Personer'
-          },
-          plotLines: [{
-            value: 0,
-            width: 2,
-            color: '#003762'
+        var dataObj = {
+          labels: ["2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
+          datasets: [{
+            label: "Antall personer",
+            backgroundColor: fillColor,
+            data: data.slice(0, 9)
           }]
-        },
-        tooltip: {
-          valueSuffix: 'Personer'
-        },
-        legend: {
-          layout: 'vertical',
-          align: 'right',
-          verticalAlign: 'middle',
-          borderWidth: 0
-        },
-        series: [{
-          name: '',
-          data: data.slice(0,8)
-        }]
-      });
+        };
 
+        var myLineChart = new Chart(ctx, {
+          type: 'line',
+          data: dataObj,
+          options: {
+            hover: {
+              // Overrides the global setting
+              mode: 'label'
+            }
+          }
+        });
+      }
     }
 
     function fundingPerInhabitantChart(data) {
 
-      new Highcharts.Chart({
-        chart: {
-          renderTo: "funding_chart_container",
-          type: 'column',
+      var barChart = document.getElementById("funding_chart_container").getContext("2d");
 
-        },
-        colors: ['#003762', '#940E19'],
-        title: {
-          text: ''
-        },
-        xAxis: {
-          categories: ["Vedtatt inntekt per innbygger", "Inntekt per innbygger (justert etter behov)"]
-        },
-        yAxis: {
-          title: {
-            text: 'Kroner'
-          }
-        },
-        series: [{
-          name: "Norske Kroner",
-          data: [{
-            name: "Vedtatt inntekt per innbygger",
-            y: data[1],
-            color: "#003762"
-          }, {
-            name: "Inntekt per innbygger (justert etter behov)",
-            y: data[0],
-            color: "#940E19"
-          }]
+      var dataObj = {
+        labels: ["Inntekt per innbygger (justert etter behov)", "Gjennomsnittlig inntekt per innbygger"],
+        datasets: [{
+          label: "Norske kroner",
+          backgroundColor: ["rgba(148,14,25,0.8)", "rgba(0,55,98,0.8)"],
+          data: data
         }]
+      };
+
+      var fundingBarChart = new Chart(barChart, {
+        type: "bar",
+        data: dataObj,
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                max: data[0] > data[1] ? data[0] : data[1],
+                min: 0,
+                stepSize: 5000
+              }
+            }]
+          }
+        }
+
       });
+
     }
     //Due to the fact that the general case only shows small changes, a chart seems to be redundant.
     function showQuarterlyDelta(data) {
@@ -332,10 +160,10 @@ $(document).ready(function() {
     function getSortedList(data) {
 
       var temp = data.sort(function(a, b) {
-        if (a["calculated_income"] > b["calculated_income"]){
+        if (a["calculated_income"] > b["calculated_income"]) {
           return 1;
         }
-        if (a["calculated_income"] < b["calculated_income"]){
+        if (a["calculated_income"] < b["calculated_income"]) {
           return -1;
         }
         return 0;
@@ -345,11 +173,10 @@ $(document).ready(function() {
     //Taks the first element in the top-list and the first in the bottom-list, which represents the low/high municipalities
     function populationComments(top, bottom) {
 
-      document.getElementById("top-comment").innerHTML = "<strong>" + top[0]["kommune"] + "</strong> har landets laveste utgiftsbehov i <strong>" + date.getFullYear() + "</strong>, beregnet til <strong>" + top[0]["expenditure_needs"]+ "</strong> NOK (per innbygger). Kommunen får dermed også det laveste innbyggertilskuddet, beregnet til <strong>" + top[0]["calculated_income"].toFixed(1) + "</strong> NOK per innbygger. Dette forteller oss at <strong>" + top[0]["kommune"] + "</strong> (isolert sett) er den kommunen som er billigst i drift dette året.";
+      document.getElementById("top-comment").innerHTML = "<strong>" + top[0]["kommune"] + "</strong> har landets laveste utgiftsbehov i <strong>" + date.getFullYear() + "</strong>, beregnet til <strong>" + top[0]["expenditure_needs"] + "</strong> NOK (per innbygger). Kommunen får dermed også det laveste innbyggertilskuddet, beregnet til <strong>" + top[0]["calculated_income"].toFixed(1) + "</strong> NOK per innbygger. Dette forteller oss at <strong>" + top[0]["kommune"] + "</strong> (isolert sett) er den kommunen som er billigst i drift dette året.";
       document.getElementById("bottom-comment").innerHTML = "<strong>" + bottom[0]["kommune"] + "</strong> har landets høyeste utgiftsbehov i <strong>" + date.getFullYear() + "</strong>, beregnet til <strong>" + bottom[0]["expenditure_needs"] + "</strong> NOK (per innbygger). Kommunen får dermed også det høyeste innbyggertilskuddet, beregnet til <strong>" + bottom[0]["calculated_income"].toFixed(1) + "</strong> NOK per innbygger. Dette forteller oss at <strong>" + bottom[0]["kommune"] + "</strong> (isolert sett) er den kommunen som er dyrest i drift dette året.";
 
     }
-
 
     //returns a sorted top list of municipalities, based on values related to expenditure needs
     function createTopList(data) {
@@ -365,163 +192,66 @@ $(document).ready(function() {
     //Highcharts graphics
     function bottomListChart(data) {
 
-      var columnColor = {};
-      columnColor.first = "#940E19";
-      columnColor.second = "#bb111f";
-      columnColor.third = "#e91627";
 
+      var barChart = document.getElementById("bottom-list").getContext("2d");
 
-      new Highcharts.Chart({
-        chart: {
-          renderTo: "bottom-list",
-          type: 'bar'
-        },
-        colors: [],
-        title: {
-          text: "De " + data.length + " kommunene med høyest innbyggertilskudd"
-        },
-        xAxis: {
-          categories: [data[0]["kommune"], data[1]["kommune"], data[2]["kommune"], data[3]["kommune"], data[4]["kommune"], data[5]["kommune"], data[6]["kommune"], data[7]["kommune"], data[8]["kommune"], data[9]["kommune"]]
-        },
-        yAxis: {
-          title: {
-            text: "Innbyggertilskudd"
-          }
-        },
-        tooltip: {
-          formatter: function() {
-            let needs = this.point;
-            return "<strong>" + this.key + "</strong><br>Kommunens inntekt per innbygger: <strong>" + needs.y + "(NOK)</strong> <br> Beregnet utgiftsbehov per innbygger: <strong>" + needs.z + "(NOK)</strong>";
-          },
-          shared: false,
-          useHTML: true
-        },
-        series: [{
-          name: "Beregnet innbyggertilskudd, i NOK",
-          data: [{
-            z: data[0]["expenditure_needs"],
-            y: data[0]["calculated_income"],
-            color: columnColor.third
-          }, {
-            z: data[1]["expenditure_needs"],
-            y: data[1]["calculated_income"],
-            color: columnColor.second
-          }, {
-            z: data[2]["expenditure_needs"],
-            y: data[2]["calculated_income"],
-            color: columnColor.second
-          }, {
-            z: data[3]["expenditure_needs"],
-            y: data[3]["calculated_income"],
-            color: columnColor.first
-          }, {
-            z: data[4]["expenditure_needs"],
-            y: data[4]["calculated_income"],
-            color: columnColor.first
-          }, {
-            z: data[5]["expenditure_needs"],
-            y: data[5]["calculated_income"],
-            color: columnColor.first
-          }, {
-            z: data[6]["expenditure_needs"],
-            y: data[6]["calculated_income"],
-            color: columnColor.first
-          }, {
-            z: data[7]["expenditure_needs"],
-            y: data[7]["calculated_income"],
-            color: columnColor.first
-          }, {
-            z: data[8]["expenditure_needs"],
-            y: data[8]["calculated_income"],
-            color: columnColor.first
-          }, {
-            z: data[9]["expenditure_needs"],
-            y: data[9]["calculated_income"],
-            color: columnColor.first
-          }]
+      var dataObj = {
+        labels: [data[0]["kommune"], data[1]["kommune"], data[2]["kommune"], data[3]["kommune"], data[4]["kommune"], data[5]["kommune"], data[6]["kommune"], data[7]["kommune"], data[8]["kommune"], data[9]["kommune"]],
+        datasets: [{
+          label: "Innbyggertilskudd i norske kroner",
+          backgroundColor: "rgba(148,14,25,0.8)",
+          data: [data[0]["calculated_income"], data[1]["calculated_income"], data[2]["calculated_income"], data[3]["calculated_income"], data[4]["calculated_income"], data[5]["calculated_income"], data[6]["calculated_income"], data[7]["calculated_income"], data[8]["calculated_income"], data[9]["calculated_income"]]
         }]
+      };
+
+      var fundingBarChart = new Chart(barChart, {
+        type: "horizontalBar",
+        data: dataObj,
+        options: {
+          scales: {
+            xAxes: [{
+              ticks: {
+                max: 90000,
+                min: 0,
+                stepSize: 10000
+              }
+            }]
+          }
+        }
       });
     }
 
     //Highcharts graphics
     function topListChart(data) {
+      var barChart = document.getElementById("top-list").getContext("2d");
 
-      var columnColor = {};
-      columnColor.first = "#003762";
-      columnColor.second = "#00457c";
-      columnColor.third = "#0062af";
-
-
-      new Highcharts.Chart({
-        chart: {
-          renderTo: "top-list",
-          type: 'bar'
-        },
-        colors: [],
-        title: {
-          text: "De " + data.length + " kommunene med lavest innbyggertilskudd"
-        },
-        xAxis: {
-          categories: [data[0]["kommune"], data[1]["kommune"], data[2]["kommune"], data[3]["kommune"], data[4]["kommune"], data[5]["kommune"], data[6]["kommune"], data[7]["kommune"], data[8]["kommune"], data[9]["kommune"]]
-        },
-        yAxis: {
-          title: {
-            text: "Innbyggertilskudd"
-          }
-        },
-        tooltip: {
-          formatter: function() {
-            let needs = this.point;
-            return "<strong>" + this.key + "</strong><br>Kommunens innbyggertilskudd: <strong>" + needs.y + " (NOK)</strong> <br> Beregnet utgiftsbehov per innbygger: <strong>" + needs.z + "(NOK)</strong>";
-          },
-          shared: false,
-          useHTML: true
-        },
-        series: [{
-          name: "Beregnet innbyggertilskudd, i NOK",
-          data: [{
-            z: data[0]["expenditure_needs"],
-            y: data[0]["calculated_income"],
-            color: columnColor.third
-          }, {
-            z: data[1]["expenditure_needs"],
-            y: data[1]["calculated_income"],
-            color: columnColor.second
-          }, {
-            z: data[2]["expenditure_needs"],
-            y: data[2]["calculated_income"],
-            color: columnColor.second
-          }, {
-            z: data[3]["expenditure_needs"],
-            y: data[3]["calculated_income"],
-            color: columnColor.first
-          }, {
-            z: data[4]["expenditure_needs"],
-            y: data[4]["calculated_income"],
-            color: columnColor.first
-          }, {
-            z: data[5]["expenditure_needs"],
-            y: data[5]["calculated_income"],
-            color: columnColor.first
-          }, {
-            z: data[6]["expenditure_needs"],
-            y: data[6]["calculated_income"],
-            color: columnColor.first
-          }, {
-            z: data[7]["expenditure_needs"],
-            y: data[7]["calculated_income"],
-            color: columnColor.first
-          }, {
-            z: data[8]["expenditure_needs"],
-            y: data[8]["calculated_income"],
-            color: columnColor.first
-          }, {
-            z: data[9]["expenditure_needs"],
-            y: data[9]["calculated_income"],
-            color: columnColor.first
-          }]
+      var dataObj = {
+        labels: [data[0]["kommune"], data[1]["kommune"], data[2]["kommune"], data[3]["kommune"], data[4]["kommune"], data[5]["kommune"], data[6]["kommune"], data[7]["kommune"], data[8]["kommune"], data[9]["kommune"]],
+        datasets: [{
+          label: "Innbyggertilskudd i norske kroner",
+          backgroundColor: "rgba(0,55,98,0.8)",
+          data: [data[0]["calculated_income"], data[1]["calculated_income"], data[2]["calculated_income"], data[3]["calculated_income"], data[4]["calculated_income"], data[5]["calculated_income"], data[6]["calculated_income"], data[7]["calculated_income"], data[8]["calculated_income"], data[9]["calculated_income"]]
         }]
+      };
+
+      var fundingBarChart = new Chart(barChart, {
+        type: "horizontalBar",
+        data: dataObj,
+        options: {
+          scales: {
+            xAxes: [{
+              ticks: {
+                max: 30000,
+                min: 0,
+                stepSize: 10000
+              }
+            }]
+          }
+        }
+
       });
+
+
     }
 
     //Call the relevant functions to init the two charts, showing both the top and the bottom list
@@ -530,7 +260,7 @@ $(document).ready(function() {
       if (sorted) {
         var bottom = createBottomList(sorted);
         var top = createTopList(sorted);
-        
+
         topListChart(top);
         bottomListChart(bottom);
         //Generate comment about the "best" and "worst" municipality
