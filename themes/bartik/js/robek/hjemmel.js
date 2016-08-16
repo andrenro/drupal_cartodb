@@ -1,0 +1,185 @@
+laws = [{
+	"bokstaver": "c-d",
+	"kommune": "Halden",
+	"kommunenr": 0101
+}, {
+	"bokstaver": "c-d",
+	"kommune": "Hob\u00f8l",
+	"kommunenr": 0138
+}, {
+	"bokstaver": "d",
+	"kommune": "Grue",
+	"kommunenr": 0423
+}, {
+	"bokstaver": "c-d",
+	"kommune": "\u00c5snes",
+	"kommunenr": 0425
+}, {
+	"bokstaver": "Toten-og",
+	"kommune": "Vestre",
+	"kommunenr": 0529
+}, {
+	"bokstaver": "c-d",
+	"kommune": "Hole",
+	"kommunenr": 0612
+}, {
+	"bokstaver": "Eiker-og",
+	"kommune": "Nedre",
+	"kommunenr": 0625
+}, {
+	"bokstaver": "c-d",
+	"kommune": "Svelvik",
+	"kommunenr": 0711
+},{
+	"bokstaver": "d",
+	"kommune": "Nome",
+	"kommunenr": 0819
+}, {
+	"bokstaver": "c",
+	"kommune": "B\u00f8",
+	"kommunenr": 0821
+}, {
+	"bokstaver": "c-d",
+	"kommune": "Sauherad",
+	"kommunenr": 0822
+},  {
+	"bokstaver": "a-b",
+	"kommune": "Birkenes",
+	"kommunenr": 0928
+}, {
+	"bokstaver": "d",
+	"kommune": "Tvedestrand",
+	"kommunenr": 0914
+}, {
+	"bokstaver": "c-d",
+	"kommune": "Haugesund",
+	"kommunenr": 1106
+}, {
+	"bokstaver": "d",
+	"kommune": "Hjelmeland",
+	"kommunenr": 1133
+},  {
+	"bokstaver": "c",
+	"kommune": "Gaular",
+	"kommunenr": 1430
+}, {
+	"bokstaver": "c",
+	"kommune": "Bremanger",
+	"kommunenr": 1438
+}, {
+	"bokstaver": "c-d",
+	"kommune": "Selje",
+	"kommunenr": 1441
+}, {
+	"bokstaver": "b",
+	"kommune": "Gloppen",
+	"kommunenr": 1445
+},  {
+	"bokstaver": "c-d",
+	"kommune": "\u00c5lesund",
+	"kommunenr": 1504
+}, {
+	"bokstaver": "d",
+	"kommune": "Kristiansund",
+	"kommunenr": 1505
+}, {
+	"bokstaver": "c-d",
+	"kommune": "Hareid",
+	"kommunenr": 1517
+}, {
+	"bokstaver": "d",
+	"kommune": "\u00d8rskog",
+	"kommunenr": 1523
+}, {
+	"bokstaver": "c-d",
+	"kommune": "Stranda",
+	"kommunenr": 1525
+}, {
+	"bokstaver": "c-d",
+	"kommune": "Sykkylven",
+	"kommunenr": 1528
+}, {
+	"bokstaver": "d",
+	"kommune": "Rauma",
+	"kommunenr": 1539
+}, {
+	"bokstaver": "d",
+	"kommune": "Bjugn",
+	"kommunenr": 1627
+}, {
+	"bokstaver": "c",
+	"kommune": "Roan",
+	"kommunenr": 1632
+}, {
+	"bokstaver": "d",
+	"kommune": "R\u00f8ros",
+	"kommunenr": 1640
+}, {
+	"bokstaver": "a-b",
+	"kommune": "Holt\u00e5len",
+	"kommunenr": 1644
+},  {
+	"bokstaver": "a-c",
+	"kommune": "Br\u00f8nn\u00f8y",
+	"kommunenr": 1813
+}, {
+	"bokstaver": "c",
+	"kommune": "Hemnes",
+	"kommunenr": 1832
+}, {
+	"bokstaver": "a",
+	"kommune": "Saltdal",
+	"kommunenr": 1840
+}, {
+	"bokstaver": "c",
+	"kommune": "Fauske",
+	"kommunenr": 1841
+}, {
+	"bokstaver": "c",
+	"kommune": "Steigen",
+	"kommunenr": 1848
+}, {
+	"bokstaver": "d",
+	"kommune": "Hamar\u00f8y",
+	"kommunenr": 1849
+}, {
+	"bokstaver": "c",
+	"kommune": "Tysfjord",
+	"kommunenr": 1850
+}, {
+	"bokstaver": "d",
+	"kommune": "Ballangen",
+	"kommunenr": 1854
+}, {
+	"bokstaver": "d",
+	"kommune": "Flakstad",
+	"kommunenr": 1859
+}, {
+	"bokstaver": "c",
+	"kommune": "Moskenes",
+	"kommunenr": 1874
+},  {
+	"bokstaver": "d",
+	"kommune": "Kv\u00e6fjord",
+	"kommunenr": 1911
+}, {
+	"bokstaver": "c-d",
+	"kommune": "Torsken",
+	"kommunenr": 1928
+}, {
+	"bokstaver": "c-d",
+	"kommune": "Nordreisa",
+	"kommunenr": 1942
+},  {
+	"bokstaver": "d",
+	"kommune": "Kautokeino",
+	"kommunenr": 2011
+}, {
+	"bokstaver": "c-d",
+	"kommune": "Porsanger",
+	"kommunenr": 2020
+}, {
+	"bokstaver": "d",
+	"kommune": "Gamvik",
+	"kommunenr": 2023
+}];

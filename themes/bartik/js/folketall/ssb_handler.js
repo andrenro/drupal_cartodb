@@ -53,7 +53,6 @@ $(document).ready(function() {
 			if (idx.length > 1) {
 			document.getElementById("lunr-index").innerHTML = "Fant flere treff på søket,vennligst prøv et av disse søkeordene: <ul style='font-weight:bold;list-style-type:none' id='lunr-list'></ul>";
 				for (let x = 0; x < idx.length; x++) {
-					console.log(kommuner[idx[x].ref].label);
 					var node = document.createElement("li");
 					var textnode = document.createTextNode(kommuner[idx[x].ref].label);
 					node.appendChild(textnode);
@@ -94,7 +93,7 @@ $(document).ready(function() {
 	//Hacky solution that splits name and returns the muncipality based on string split
 	findMunicipality = function(array, input) {
 		for (let x = 0; x < array.length; x++) {
-			if (array[x]["kommune"].toLowerCase() === input.split(" ")[0].toLowerCase()) {
+			if (array[x]["kommune"].toLowerCase() === input.toLowerCase()) {
 				return array[x];
 			}
 		}
@@ -103,6 +102,9 @@ $(document).ready(function() {
 
 	//Get raw json-stat values, based on municipality name -> code
 	getValues = function(input) {
+		if(!input){
+			return;
+		}
 		if (dataset) {
 			let objects = [];
 			let code = dataset.Dimension('Region').id[input["index"]];
