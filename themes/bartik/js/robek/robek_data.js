@@ -5,6 +5,7 @@ $(document).ready(function() {
     getData = function() {
 
       robek_data = [{
+        "bokstaver": "c-d",
         "kommunenr": 101,
         "kommune": "Halden",
         "fylke": "Østfold",
@@ -17,6 +18,7 @@ $(document).ready(function() {
         "sist_inn": "01/08/12",
         "sist_ut": "18/11/02"
       }, {
+        "bokstaver": "",
         "kommunenr": 104,
         "kommune": "Moss",
         "fylke": "Østfold",
@@ -28,12 +30,14 @@ $(document).ready(function() {
         "sist_inn": "18/02/03",
         "sist_ut": "09/07/07"
       }, {
+        "bokstaver": "",
         "kommunenr": 105,
         "kommune": "Sarpsborg",
         "fylke": "Østfold",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 106,
         "kommune": "Fredrikstad",
         "fylke": "Østfold",
@@ -45,6 +49,7 @@ $(document).ready(function() {
         "sist_inn": "06/02/02",
         "sist_ut": "09/07/07"
       }, {
+        "bokstaver": "",
         "kommunenr": 111,
         "kommune": "Hvaler",
         "fylke": "Østfold",
@@ -58,12 +63,14 @@ $(document).ready(function() {
         "sist_inn": "25/08/04",
         "sist_ut": "03/08/06"
       }, {
+        "bokstaver": "",
         "kommunenr": 118,
         "kommune": "Aremark",
         "fylke": "Østfold",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 119,
         "kommune": "Marker",
         "fylke": "Østfold",
@@ -77,24 +84,28 @@ $(document).ready(function() {
         "sist_inn": "25/06/15",
         "sist_ut": "14/06/16"
       }, {
+        "bokstaver": "",
         "kommunenr": 121,
         "kommune": "Rømskog",
         "fylke": "Østfold",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 122,
         "kommune": "Trøgstad",
         "fylke": "Østfold",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 123,
         "kommune": "Spydeberg",
         "fylke": "Østfold",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 124,
         "kommune": "Askim",
         "fylke": "Østfold",
@@ -106,24 +117,28 @@ $(document).ready(function() {
         "sist_inn": "18/02/03",
         "sist_ut": "09/07/07"
       }, {
+        "bokstaver": "",
         "kommunenr": 125,
         "kommune": "Eidsberg",
         "fylke": "Østfold",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 127,
         "kommune": "Skiptvet",
         "fylke": "Østfold",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 128,
         "kommune": "Rakkestad",
         "fylke": "Østfold",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 135,
         "kommune": "Råde",
         "fylke": "Østfold",
@@ -139,18 +154,21 @@ $(document).ready(function() {
         "sist_inn": "20/02/09",
         "sist_ut": "14/08/14"
       }, {
+        "bokstaver": "",
         "kommunenr": 136,
         "kommune": "Rygge",
         "fylke": "Østfold",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 137,
         "kommune": "Våler",
         "fylke": "Østfold",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "c-d",
         "kommunenr": 138,
         "kommune": "Hobøl",
         "fylke": "Østfold",
@@ -162,6 +180,7 @@ $(document).ready(function() {
         "sist_inn": "07/02/05",
         "sist_ut": "30/05/16"
       }, {
+        "bokstaver": "",
         "kommunenr": 211,
         "kommune": "Vestby",
         "fylke": "Akershus",
@@ -173,24 +192,28 @@ $(document).ready(function() {
         "sist_inn": "14/08/03",
         "sist_ut": "05/07/06"
       }, {
+        "bokstaver": "",
         "kommunenr": 213,
         "kommune": "Ski",
         "fylke": "Akershus",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 214,
         "kommune": "Ås",
         "fylke": "Akershus",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 215,
         "kommune": "Frogn",
         "fylke": "Akershus",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 216,
         "kommune": "Nesodden",
         "fylke": "Akershus",
@@ -202,24 +225,28 @@ $(document).ready(function() {
         "sist_inn": "15/02/01",
         "sist_ut": "11/02/02"
       }, {
+        "bokstaver": "",
         "kommunenr": 217,
         "kommune": "Oppegård",
         "fylke": "Akershus",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 219,
         "kommune": "Bærum",
         "fylke": "Akershus",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 220,
         "kommune": "Asker",
         "fylke": "Akershus",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 221,
         "kommune": "Aurskog-Høland",
         "fylke": "Akershus",
@@ -231,12 +258,14 @@ $(document).ready(function() {
         "sist_inn": "26/02/02",
         "sist_ut": "01/04/03"
       }, {
+        "bokstaver": "",
         "kommunenr": 226,
         "kommune": "Sørum",
         "fylke": "Akershus",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 227,
         "kommune": "Fet",
         "fylke": "Akershus",
@@ -248,12 +277,14 @@ $(document).ready(function() {
         "sist_inn": "01/04/03",
         "sist_ut": "09/06/05"
       }, {
+        "bokstaver": "",
         "kommunenr": 228,
         "kommune": "Rælingen",
         "fylke": "Akershus",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 229,
         "kommune": "Enebakk",
         "fylke": "Akershus",
@@ -265,6 +296,7 @@ $(document).ready(function() {
         "sist_inn": "08/07/02",
         "sist_ut": "05/07/06"
       }, {
+        "bokstaver": "",
         "kommunenr": 230,
         "kommune": "Lørenskog",
         "fylke": "Akershus",
@@ -276,12 +308,14 @@ $(document).ready(function() {
         "sist_inn": "13/02/06",
         "sist_ut": "09/07/07"
       }, {
+        "bokstaver": "",
         "kommunenr": 231,
         "kommune": "Skedsmo",
         "fylke": "Akershus",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 233,
         "kommune": "Nittedal",
         "fylke": "Akershus",
@@ -293,12 +327,14 @@ $(document).ready(function() {
         "sist_inn": "15/02/01",
         "sist_ut": "05/07/06"
       }, {
+        "bokstaver": "",
         "kommunenr": 234,
         "kommune": "Gjerdrum",
         "fylke": "Akershus",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 235,
         "kommune": "Ullensaker",
         "fylke": "Akershus",
@@ -310,6 +346,7 @@ $(document).ready(function() {
         "sist_inn": "01/04/03",
         "sist_ut": "07/06/05"
       }, {
+        "bokstaver": "",
         "kommunenr": 236,
         "kommune": "Nes",
         "fylke": "Akershus",
@@ -321,6 +358,7 @@ $(document).ready(function() {
         "sist_inn": "09/09/09",
         "sist_ut": "30/07/12"
       }, {
+        "bokstaver": "",
         "kommunenr": 237,
         "kommune": "Eidsvoll",
         "fylke": "Akershus",
@@ -334,6 +372,7 @@ $(document).ready(function() {
         "sist_inn": "23/01/14",
         "sist_ut": "02/03/15"
       }, {
+        "bokstaver": "",
         "kommunenr": 238,
         "kommune": "Nannestad",
         "fylke": "Akershus",
@@ -347,18 +386,21 @@ $(document).ready(function() {
         "sist_inn": "08/09/09",
         "sist_ut": "30/07/12"
       }, {
+        "bokstaver": "",
         "kommunenr": 239,
         "kommune": "Hurdal",
         "fylke": "Akershus",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 301,
         "kommune": "Oslo",
         "fylke": "Oslo",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 402,
         "kommune": "Kongsvinger",
         "fylke": "Hedmark",
@@ -371,30 +413,35 @@ $(document).ready(function() {
         "sist_inn": "14/07/09",
         "sist_ut": "18/06/10"
       }, {
+        "bokstaver": "",
         "kommunenr": 403,
         "kommune": "Hamar",
         "fylke": "Hedmark",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 412,
         "kommune": "Ringsaker",
         "fylke": "Hedmark",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 415,
         "kommune": "Løten",
         "fylke": "Hedmark",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 417,
         "kommune": "Stange",
         "fylke": "Hedmark",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 418,
         "kommune": "Nord-Odal",
         "fylke": "Hedmark",
@@ -408,6 +455,7 @@ $(document).ready(function() {
         "sist_inn": "09/08/10",
         "sist_ut": "09/07/13"
       }, {
+        "bokstaver": "",
         "kommunenr": 419,
         "kommune": "Sør-Odal",
         "fylke": "Hedmark",
@@ -421,6 +469,7 @@ $(document).ready(function() {
         "sist_inn": "13/07/11",
         "sist_ut": "14/07/14"
       }, {
+        "bokstaver": "",
         "kommunenr": 420,
         "kommune": "Eidskog",
         "fylke": "Hedmark",
@@ -432,6 +481,7 @@ $(document).ready(function() {
         "sist_inn": "22/06/03",
         "sist_ut": "09/07/13"
       }, {
+        "bokstaver": "d",
         "kommunenr": 423,
         "kommune": "Grue",
         "fylke": "Hedmark",
@@ -446,6 +496,7 @@ $(document).ready(function() {
         "sist_inn": "24/06/16",
         "sist_ut": "14/07/09"
       }, {
+        "bokstaver": "c-d",
         "kommunenr": 425,
         "kommune": "Åsnes",
         "fylke": "Hedmark",
@@ -459,6 +510,7 @@ $(document).ready(function() {
         "sist_inn": "09/07/13",
         "sist_ut": "22/06/12"
       }, {
+        "bokstaver": "",
         "kommunenr": 426,
         "kommune": "Våler",
         "fylke": "Hedmark",
@@ -470,6 +522,7 @@ $(document).ready(function() {
         "sist_inn": "01/01/01",
         "sist_ut": "10/07/08"
       }, {
+        "bokstaver": "",
         "kommunenr": 427,
         "kommune": "Elverum",
         "fylke": "Hedmark",
@@ -481,12 +534,14 @@ $(document).ready(function() {
         "sist_inn": "01/01/01",
         "sist_ut": "15/07/05"
       }, {
+        "bokstaver": "",
         "kommunenr": 428,
         "kommune": "Trysil",
         "fylke": "Hedmark",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 429,
         "kommune": "Åmot",
         "fylke": "Hedmark",
@@ -500,30 +555,35 @@ $(document).ready(function() {
         "sist_inn": "18/02/03",
         "sist_ut": "10/02/04"
       }, {
+        "bokstaver": "",
         "kommunenr": 430,
         "kommune": "Stor-Elvdal",
         "fylke": "Hedmark",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 432,
         "kommune": "Rendalen",
         "fylke": "Hedmark",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 434,
         "kommune": "Engerdal",
         "fylke": "Hedmark",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 436,
         "kommune": "Tolga",
         "fylke": "Hedmark",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 437,
         "kommune": "Tynset",
         "fylke": "Hedmark",
@@ -535,12 +595,14 @@ $(document).ready(function() {
         "sist_inn": "18/02/03",
         "sist_ut": "10/02/04"
       }, {
+        "bokstaver": "",
         "kommunenr": 438,
         "kommune": "Alvdal",
         "fylke": "Hedmark",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 439,
         "kommune": "Folldal",
         "fylke": "Hedmark",
@@ -552,8 +614,9 @@ $(document).ready(function() {
         "sist_inn": "15/07/05",
         "sist_ut": "16/07/07"
       }, {
+        "bokstaver": "",
         "kommunenr": 441,
-        "kommune": "Os",
+        "kommune": "Os (Hedm.)",
         "fylke": "Hedmark",
         "2003-Inn": "18/02/03",
         "2004-Ut": "10/02/04",
@@ -563,12 +626,14 @@ $(document).ready(function() {
         "sist_inn": "18/02/03",
         "sist_ut": "10/02/04"
       }, {
+        "bokstaver": "",
         "kommunenr": 501,
         "kommune": "Lillehammer",
         "fylke": "Oppland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 502,
         "kommune": "Gjøvik",
         "fylke": "Oppland",
@@ -580,12 +645,14 @@ $(document).ready(function() {
         "sist_inn": "01/01/01",
         "sist_ut": "23/05/02"
       }, {
+        "bokstaver": "",
         "kommunenr": 511,
         "kommune": "Dovre",
         "fylke": "Oppland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 512,
         "kommune": "Lesja",
         "fylke": "Oppland",
@@ -597,48 +664,56 @@ $(document).ready(function() {
         "sist_inn": "22/09/15",
         "sist_ut": "14/06/16"
       }, {
+        "bokstaver": "",
         "kommunenr": 513,
         "kommune": "Skjåk",
         "fylke": "Oppland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 514,
         "kommune": "Lom",
         "fylke": "Oppland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 515,
         "kommune": "Vågå",
         "fylke": "Oppland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 516,
         "kommune": "Nord-Fron",
         "fylke": "Oppland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 517,
         "kommune": "Sel",
         "fylke": "Oppland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 519,
         "kommune": "Sør-Fron",
         "fylke": "Oppland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 520,
         "kommune": "Ringebu",
         "fylke": "Oppland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 521,
         "kommune": "Øyer",
         "fylke": "Oppland",
@@ -652,6 +727,7 @@ $(document).ready(function() {
         "sist_inn": "19/07/06",
         "sist_ut": "18/05/07"
       }, {
+        "bokstaver": "",
         "kommunenr": 522,
         "kommune": "Gausdal",
         "fylke": "Oppland",
@@ -663,12 +739,14 @@ $(document).ready(function() {
         "sist_inn": "15/02/01",
         "sist_ut": "25/01/02"
       }, {
+        "bokstaver": "",
         "kommunenr": 528,
         "kommune": "Østre Toten",
         "fylke": "Oppland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "c-d",
         "kommunenr": 529,
         "kommune": "Vestre Toten",
         "fylke": "Oppland",
@@ -681,36 +759,42 @@ $(document).ready(function() {
         "sist_inn": "11/07/11",
         "sist_ut": "07/07/05"
       }, {
+        "bokstaver": "",
         "kommunenr": 532,
         "kommune": "Jevnaker",
         "fylke": "Oppland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 533,
         "kommune": "Lunner",
         "fylke": "Oppland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 534,
         "kommune": "Gran",
         "fylke": "Oppland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 536,
         "kommune": "Søndre Land",
         "fylke": "Oppland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 538,
         "kommune": "Nordre Land",
         "fylke": "Oppland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 540,
         "kommune": "Sør-Aurdal",
         "fylke": "Oppland",
@@ -722,12 +806,14 @@ $(document).ready(function() {
         "sist_inn": "15/02/01",
         "sist_ut": "25/01/02"
       }, {
+        "bokstaver": "",
         "kommunenr": 541,
         "kommune": "Etnedal",
         "fylke": "Oppland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 542,
         "kommune": "Nord-Aurdal",
         "fylke": "Oppland",
@@ -739,30 +825,35 @@ $(document).ready(function() {
         "sist_inn": "25/06/03",
         "sist_ut": "09/07/07"
       }, {
+        "bokstaver": "",
         "kommunenr": 543,
         "kommune": "Vestre Slidre",
         "fylke": "Oppland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 544,
         "kommune": "Øystre Slidre",
         "fylke": "Oppland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 545,
         "kommune": "Vang",
         "fylke": "Oppland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 602,
         "kommune": "Drammen",
         "fylke": "Buskerud",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 604,
         "kommune": "Kongsberg",
         "fylke": "Buskerud",
@@ -774,6 +865,7 @@ $(document).ready(function() {
         "sist_inn": "10/07/03",
         "sist_ut": "14/06/10"
       }, {
+        "bokstaver": "",
         "kommunenr": 605,
         "kommune": "Ringerike",
         "fylke": "Buskerud",
@@ -783,6 +875,7 @@ $(document).ready(function() {
         "inne_naa": true,
         "sist_inn": "11/03/08"
       }, {
+        "bokstaver": "c-d",
         "kommunenr": 612,
         "kommune": "Hole",
         "fylke": "Buskerud",
@@ -792,6 +885,7 @@ $(document).ready(function() {
         "inne_naa": true,
         "sist_inn": "27/01/16"
       }, {
+        "bokstaver": "",
         "kommunenr": 615,
         "kommune": "Flå",
         "fylke": "Buskerud",
@@ -803,60 +897,70 @@ $(document).ready(function() {
         "sist_inn": "01/01/01",
         "sist_ut": "01/10/01"
       }, {
+        "bokstaver": "",
         "kommunenr": 616,
         "kommune": "Nes",
         "fylke": "Buskerud",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 617,
         "kommune": "Gol",
         "fylke": "Buskerud",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 618,
         "kommune": "Hemsedal",
         "fylke": "Buskerud",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 619,
         "kommune": "Ål",
         "fylke": "Buskerud",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 620,
         "kommune": "Hol",
         "fylke": "Buskerud",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 621,
         "kommune": "Sigdal",
         "fylke": "Buskerud",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 622,
         "kommune": "Krødsherad",
         "fylke": "Buskerud",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 623,
         "kommune": "Modum",
         "fylke": "Buskerud",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 624,
         "kommune": "Øvre Eiker",
         "fylke": "Buskerud",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "Eiker-og",
         "kommunenr": 625,
         "kommune": "Nedre Eiker",
         "fylke": "Buskerud",
@@ -871,12 +975,14 @@ $(document).ready(function() {
         "sist_inn": "23/06/14",
         "sist_ut": "18/06/12"
       }, {
+        "bokstaver": "",
         "kommunenr": 626,
         "kommune": "Lier",
         "fylke": "Buskerud",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 627,
         "kommune": "Røyken",
         "fylke": "Buskerud",
@@ -888,6 +994,7 @@ $(document).ready(function() {
         "sist_inn": "09/07/03",
         "sist_ut": "07/08/08"
       }, {
+        "bokstaver": "",
         "kommunenr": 628,
         "kommune": "Hurum",
         "fylke": "Buskerud",
@@ -899,6 +1006,7 @@ $(document).ready(function() {
         "sist_inn": "18/02/08",
         "sist_ut": "23/03/09"
       }, {
+        "bokstaver": "",
         "kommunenr": 631,
         "kommune": "Flesberg",
         "fylke": "Buskerud",
@@ -910,18 +1018,21 @@ $(document).ready(function() {
         "sist_inn": "26/02/04",
         "sist_ut": "06/09/11"
       }, {
+        "bokstaver": "",
         "kommunenr": 632,
         "kommune": "Rollag",
         "fylke": "Buskerud",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 633,
         "kommune": "Nore og Uvdal",
         "fylke": "Buskerud",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 701,
         "kommune": "Horten",
         "fylke": "Vestfold",
@@ -935,6 +1046,7 @@ $(document).ready(function() {
         "sist_inn": "01/06/10",
         "sist_ut": "06/07/12"
       }, {
+        "bokstaver": "",
         "kommunenr": 702,
         "kommune": "Holmestrand",
         "fylke": "Vestfold",
@@ -946,6 +1058,7 @@ $(document).ready(function() {
         "sist_inn": "11/02/02",
         "sist_ut": "09/06/06"
       }, {
+        "bokstaver": "",
         "kommunenr": 704,
         "kommune": "Tønsberg",
         "fylke": "Vestfold",
@@ -959,12 +1072,14 @@ $(document).ready(function() {
         "sist_inn": "29/05/13",
         "sist_ut": "02/06/16"
       }, {
+        "bokstaver": "",
         "kommunenr": 706,
         "kommune": "Sandefjord",
         "fylke": "Vestfold",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 709,
         "kommune": "Larvik",
         "fylke": "Vestfold",
@@ -978,6 +1093,7 @@ $(document).ready(function() {
         "sist_inn": "29/06/12",
         "sist_ut": "22/04/13"
       }, {
+        "bokstaver": "c-d",
         "kommunenr": 711,
         "kommune": "Svelvik",
         "fylke": "Vestfold",
@@ -990,12 +1106,14 @@ $(document).ready(function() {
         "sist_inn": "02/07/10",
         "sist_ut": "09/07/07"
       }, {
+        "bokstaver": "",
         "kommunenr": 713,
         "kommune": "Sande",
         "fylke": "Vestfold",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 714,
         "kommune": "Hof",
         "fylke": "Vestfold",
@@ -1007,42 +1125,49 @@ $(document).ready(function() {
         "sist_inn": "11/02/02",
         "sist_ut": "05/03/03"
       }, {
+        "bokstaver": "",
         "kommunenr": 716,
         "kommune": "Re",
         "fylke": "Vestfold",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 719,
         "kommune": "Andebu",
         "fylke": "Vestfold",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 720,
         "kommune": "Stokke",
         "fylke": "Vestfold",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 722,
         "kommune": "Nøtterøy",
         "fylke": "Vestfold",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 723,
         "kommune": "Tjøme",
         "fylke": "Vestfold",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 728,
         "kommune": "Lardal",
         "fylke": "Vestfold",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 805,
         "kommune": "Porsgrunn",
         "fylke": "Telemark",
@@ -1054,6 +1179,7 @@ $(document).ready(function() {
         "sist_inn": "13/02/02",
         "sist_ut": "29/06/06"
       }, {
+        "bokstaver": "",
         "kommunenr": 806,
         "kommune": "Skien",
         "fylke": "Telemark",
@@ -1065,6 +1191,7 @@ $(document).ready(function() {
         "sist_inn": "01/01/01",
         "sist_ut": "24/06/05"
       }, {
+        "bokstaver": "",
         "kommunenr": 807,
         "kommune": "Notodden",
         "fylke": "Telemark",
@@ -1080,18 +1207,21 @@ $(document).ready(function() {
         "sist_inn": "27/01/14",
         "sist_ut": "05/02/15"
       }, {
+        "bokstaver": "",
         "kommunenr": 811,
         "kommune": "Siljan",
         "fylke": "Telemark",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 814,
         "kommune": "Bamble",
         "fylke": "Telemark",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 815,
         "kommune": "Kragerø",
         "fylke": "Telemark",
@@ -1103,12 +1233,14 @@ $(document).ready(function() {
         "sist_inn": "01/01/01",
         "sist_ut": "11/07/06"
       }, {
+        "bokstaver": "",
         "kommunenr": 817,
         "kommune": "Drangedal",
         "fylke": "Telemark",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "d",
         "kommunenr": 819,
         "kommune": "Nome",
         "fylke": "Telemark",
@@ -1121,6 +1253,7 @@ $(document).ready(function() {
         "sist_inn": "24/06/16",
         "sist_ut": "06/06/11"
       }, {
+        "bokstaver": "c",
         "kommunenr": 821,
         "kommune": "Bø",
         "fylke": "Telemark",
@@ -1133,6 +1266,7 @@ $(document).ready(function() {
         "sist_inn": "11/06/13",
         "sist_ut": "17/06/10"
       }, {
+        "bokstaver": "c-d",
         "kommunenr": 822,
         "kommune": "Sauherad",
         "fylke": "Telemark",
@@ -1145,12 +1279,14 @@ $(document).ready(function() {
         "sist_inn": "01/02/10",
         "sist_ut": "10/07/08"
       }, {
+        "bokstaver": "",
         "kommunenr": 826,
         "kommune": "Tinn",
         "fylke": "Telemark",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 827,
         "kommune": "Hjartdal",
         "fylke": "Telemark",
@@ -1162,12 +1298,14 @@ $(document).ready(function() {
         "sist_inn": "01/09/04",
         "sist_ut": "30/05/06"
       }, {
+        "bokstaver": "",
         "kommunenr": 828,
         "kommune": "Seljord",
         "fylke": "Telemark",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 829,
         "kommune": "Kviteseid",
         "fylke": "Telemark",
@@ -1179,18 +1317,21 @@ $(document).ready(function() {
         "sist_inn": "17/02/04",
         "sist_ut": "31/07/07"
       }, {
+        "bokstaver": "",
         "kommunenr": 830,
         "kommune": "Nissedal",
         "fylke": "Telemark",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 831,
         "kommune": "Fyresdal",
         "fylke": "Telemark",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 833,
         "kommune": "Tokke",
         "fylke": "Telemark",
@@ -1202,18 +1343,21 @@ $(document).ready(function() {
         "sist_inn": "18/04/01",
         "sist_ut": "08/08/01"
       }, {
+        "bokstaver": "",
         "kommunenr": 834,
         "kommune": "Vinje",
         "fylke": "Telemark",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 901,
         "kommune": "Risør",
         "fylke": "Aust-Agder",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 904,
         "kommune": "Grimstad",
         "fylke": "Aust-Agder",
@@ -1225,6 +1369,7 @@ $(document).ready(function() {
         "sist_inn": "11/08/09",
         "sist_ut": "01/06/12"
       }, {
+        "bokstaver": "",
         "kommunenr": 906,
         "kommune": "Arendal",
         "fylke": "Aust-Agder",
@@ -1236,18 +1381,21 @@ $(document).ready(function() {
         "sist_inn": "01/01/01",
         "sist_ut": "07/05/02"
       }, {
+        "bokstaver": "",
         "kommunenr": 911,
         "kommune": "Gjerstad",
         "fylke": "Aust-Agder",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 912,
         "kommune": "Vegårshei",
         "fylke": "Aust-Agder",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "d",
         "kommunenr": 914,
         "kommune": "Tvedestrand",
         "fylke": "Aust-Agder",
@@ -1257,12 +1405,14 @@ $(document).ready(function() {
         "inne_naa": true,
         "sist_inn": "02/06/16"
       }, {
+        "bokstaver": "",
         "kommunenr": 919,
         "kommune": "Froland",
         "fylke": "Aust-Agder",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 926,
         "kommune": "Lillesand",
         "fylke": "Aust-Agder",
@@ -1274,6 +1424,7 @@ $(document).ready(function() {
         "sist_inn": "25/08/03",
         "sist_ut": "22/07/05"
       }, {
+        "bokstaver": "a-b",
         "kommunenr": 928,
         "kommune": "Birkenes",
         "fylke": "Aust-Agder",
@@ -1283,6 +1434,7 @@ $(document).ready(function() {
         "inne_naa": true,
         "sist_inn": "04/02/16"
       }, {
+        "bokstaver": "",
         "kommunenr": 929,
         "kommune": "Åmli",
         "fylke": "Aust-Agder",
@@ -1294,60 +1446,70 @@ $(document).ready(function() {
         "sist_inn": "15/02/01",
         "sist_ut": "11/02/02"
       }, {
+        "bokstaver": "",
         "kommunenr": 935,
         "kommune": "Iveland",
         "fylke": "Aust-Agder",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 937,
         "kommune": "Evje og Hornes",
         "fylke": "Aust-Agder",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 938,
         "kommune": "Bygland",
         "fylke": "Aust-Agder",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 940,
         "kommune": "Valle",
         "fylke": "Aust-Agder",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 941,
         "kommune": "Bykle",
         "fylke": "Aust-Agder",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1001,
         "kommune": "Kristiansand",
         "fylke": "Vest-Agder",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1002,
         "kommune": "Mandal",
         "fylke": "Vest-Agder",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1003,
         "kommune": "Farsund",
         "fylke": "Vest-Agder",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1004,
         "kommune": "Flekkefjord",
         "fylke": "Vest-Agder",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1014,
         "kommune": "Vennesla",
         "fylke": "Vest-Agder",
@@ -1359,36 +1521,42 @@ $(document).ready(function() {
         "sist_inn": "22/02/05",
         "sist_ut": "09/07/07"
       }, {
+        "bokstaver": "",
         "kommunenr": 1017,
         "kommune": "Songdalen",
         "fylke": "Vest-Agder",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1018,
         "kommune": "Søgne",
         "fylke": "Vest-Agder",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1021,
         "kommune": "Marnardal",
         "fylke": "Vest-Agder",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1026,
         "kommune": "Åseral",
         "fylke": "Vest-Agder",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1027,
         "kommune": "Audnedal",
         "fylke": "Vest-Agder",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1029,
         "kommune": "Lindesnes",
         "fylke": "Vest-Agder",
@@ -1402,30 +1570,35 @@ $(document).ready(function() {
         "sist_inn": "09/08/10",
         "sist_ut": "04/05/14"
       }, {
+        "bokstaver": "",
         "kommunenr": 1032,
         "kommune": "Lyngdal",
         "fylke": "Vest-Agder",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1034,
         "kommune": "Hægebostad",
         "fylke": "Vest-Agder",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1037,
         "kommune": "Kvinesdal",
         "fylke": "Vest-Agder",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1046,
         "kommune": "Sirdal",
         "fylke": "Vest-Agder",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1101,
         "kommune": "Eigersund",
         "fylke": "Rogaland",
@@ -1437,18 +1610,21 @@ $(document).ready(function() {
         "sist_inn": "01/04/03",
         "sist_ut": "07/06/06"
       }, {
+        "bokstaver": "",
         "kommunenr": 1102,
         "kommune": "Sandnes",
         "fylke": "Rogaland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1103,
         "kommune": "Stavanger",
         "fylke": "Rogaland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "c-d",
         "kommunenr": 1106,
         "kommune": "Haugesund",
         "fylke": "Rogaland",
@@ -1458,66 +1634,77 @@ $(document).ready(function() {
         "inne_naa": true,
         "sist_inn": "12/07/10"
       }, {
+        "bokstaver": "",
         "kommunenr": 1111,
         "kommune": "Sokndal",
         "fylke": "Rogaland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1112,
         "kommune": "Lund",
         "fylke": "Rogaland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1114,
         "kommune": "Bjerkreim",
         "fylke": "Rogaland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1119,
         "kommune": "Hå",
         "fylke": "Rogaland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1120,
         "kommune": "Klepp",
         "fylke": "Rogaland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1121,
         "kommune": "Time",
         "fylke": "Rogaland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1122,
         "kommune": "Gjesdal",
         "fylke": "Rogaland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1124,
         "kommune": "Sola",
         "fylke": "Rogaland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1127,
         "kommune": "Randaberg",
         "fylke": "Rogaland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1129,
         "kommune": "Forsand",
         "fylke": "Rogaland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1130,
         "kommune": "Strand",
         "fylke": "Rogaland",
@@ -1529,6 +1716,7 @@ $(document).ready(function() {
         "sist_inn": "14/03/05",
         "sist_ut": "24/03/06"
       }, {
+        "bokstaver": "d",
         "kommunenr": 1133,
         "kommune": "Hjelmeland",
         "fylke": "Rogaland",
@@ -1538,60 +1726,70 @@ $(document).ready(function() {
         "inne_naa": true,
         "sist_inn": "19/08/15"
       }, {
+        "bokstaver": "",
         "kommunenr": 1134,
         "kommune": "Suldal",
         "fylke": "Rogaland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1135,
         "kommune": "Sauda",
         "fylke": "Rogaland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1141,
         "kommune": "Finnøy",
         "fylke": "Rogaland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1142,
         "kommune": "Rennesøy",
         "fylke": "Rogaland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1144,
         "kommune": "Kvitsøy",
         "fylke": "Rogaland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1145,
         "kommune": "Bokn",
         "fylke": "Rogaland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1146,
         "kommune": "Tysvær",
         "fylke": "Rogaland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1149,
         "kommune": "Karmøy",
         "fylke": "Rogaland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1151,
         "kommune": "Utsira",
         "fylke": "Rogaland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1160,
         "kommune": "Vindafjord",
         "fylke": "Rogaland",
@@ -1603,6 +1801,7 @@ $(document).ready(function() {
         "sist_inn": "15/05/06",
         "sist_ut": "25/04/07"
       }, {
+        "bokstaver": "",
         "kommunenr": 1201,
         "kommune": "Bergen",
         "fylke": "Hordaland",
@@ -1614,6 +1813,7 @@ $(document).ready(function() {
         "sist_inn": "21/08/02",
         "sist_ut": "16/08/07"
       }, {
+        "bokstaver": "",
         "kommunenr": 1211,
         "kommune": "Etne",
         "fylke": "Hordaland",
@@ -1625,18 +1825,21 @@ $(document).ready(function() {
         "sist_inn": "15/02/01",
         "sist_ut": "21/08/02"
       }, {
+        "bokstaver": "",
         "kommunenr": 1216,
         "kommune": "Sveio",
         "fylke": "Hordaland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1219,
         "kommune": "Bømlo",
         "fylke": "Hordaland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1221,
         "kommune": "Stord",
         "fylke": "Hordaland",
@@ -1650,6 +1853,7 @@ $(document).ready(function() {
         "sist_inn": "17/03/11",
         "sist_ut": "03/07/15"
       }, {
+        "bokstaver": "",
         "kommunenr": 1222,
         "kommune": "Fitjar",
         "fylke": "Hordaland",
@@ -1661,12 +1865,14 @@ $(document).ready(function() {
         "sist_inn": "21/08/02",
         "sist_ut": "14/07/11"
       }, {
+        "bokstaver": "",
         "kommunenr": 1223,
         "kommune": "Tysnes",
         "fylke": "Hordaland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1224,
         "kommune": "Kvinnherad",
         "fylke": "Hordaland",
@@ -1682,12 +1888,14 @@ $(document).ready(function() {
         "sist_inn": "06/07/12",
         "sist_ut": "02/07/14"
       }, {
+        "bokstaver": "",
         "kommunenr": 1227,
         "kommune": "Jondal",
         "fylke": "Hordaland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1228,
         "kommune": "Odda",
         "fylke": "Hordaland",
@@ -1699,18 +1907,21 @@ $(document).ready(function() {
         "sist_inn": "14/07/05",
         "sist_ut": "30/07/08"
       }, {
+        "bokstaver": "",
         "kommunenr": 1231,
         "kommune": "Ullensvang",
         "fylke": "Hordaland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1232,
         "kommune": "Eidfjord",
         "fylke": "Hordaland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1233,
         "kommune": "Ulvik",
         "fylke": "Hordaland",
@@ -1722,12 +1933,14 @@ $(document).ready(function() {
         "sist_inn": "19/02/01",
         "sist_ut": "30/12/02"
       }, {
+        "bokstaver": "",
         "kommunenr": 1234,
         "kommune": "Granvin",
         "fylke": "Hordaland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1235,
         "kommune": "Voss",
         "fylke": "Hordaland",
@@ -1741,12 +1954,14 @@ $(document).ready(function() {
         "sist_inn": "14/07/05",
         "sist_ut": "16/08/07"
       }, {
+        "bokstaver": "",
         "kommunenr": 1238,
         "kommune": "Kvam",
         "fylke": "Hordaland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1241,
         "kommune": "Fusa",
         "fylke": "Hordaland",
@@ -1758,6 +1973,7 @@ $(document).ready(function() {
         "sist_inn": "15/02/01",
         "sist_ut": "14/07/05"
       }, {
+        "bokstaver": "",
         "kommunenr": 1242,
         "kommune": "Samnanger",
         "fylke": "Hordaland",
@@ -1769,12 +1985,14 @@ $(document).ready(function() {
         "sist_inn": "25/06/03",
         "sist_ut": "13/07/04"
       }, {
+        "bokstaver": "",
         "kommunenr": 1243,
-        "kommune": "Os",
+        "kommune": "Os (Hord.)",
         "fylke": "Hordaland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1244,
         "kommune": "Austevoll",
         "fylke": "Hordaland",
@@ -1786,6 +2004,7 @@ $(document).ready(function() {
         "sist_inn": "15/02/01",
         "sist_ut": "06/07/12"
       }, {
+        "bokstaver": "",
         "kommunenr": 1245,
         "kommune": "Sund",
         "fylke": "Hordaland",
@@ -1797,18 +2016,21 @@ $(document).ready(function() {
         "sist_inn": "26/03/01",
         "sist_ut": "16/08/07"
       }, {
+        "bokstaver": "",
         "kommunenr": 1246,
         "kommune": "Fjell",
         "fylke": "Hordaland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1247,
         "kommune": "Askøy",
         "fylke": "Hordaland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1251,
         "kommune": "Vaksdal",
         "fylke": "Hordaland",
@@ -1822,12 +2044,14 @@ $(document).ready(function() {
         "sist_inn": "13/07/04",
         "sist_ut": "14/07/05"
       }, {
+        "bokstaver": "",
         "kommunenr": 1252,
         "kommune": "Modalen",
         "fylke": "Hordaland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1253,
         "kommune": "Osterøy",
         "fylke": "Hordaland",
@@ -1839,6 +2063,7 @@ $(document).ready(function() {
         "sist_inn": "01/02/05",
         "sist_ut": "03/07/15"
       }, {
+        "bokstaver": "",
         "kommunenr": 1256,
         "kommune": "Meland",
         "fylke": "Hordaland",
@@ -1850,12 +2075,14 @@ $(document).ready(function() {
         "sist_inn": "18/07/01",
         "sist_ut": "02/07/14"
       }, {
+        "bokstaver": "",
         "kommunenr": 1259,
         "kommune": "Øygarden",
         "fylke": "Hordaland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1260,
         "kommune": "Radøy",
         "fylke": "Hordaland",
@@ -1867,6 +2094,7 @@ $(document).ready(function() {
         "sist_inn": "01/04/05",
         "sist_ut": "16/08/07"
       }, {
+        "bokstaver": "",
         "kommunenr": 1263,
         "kommune": "Lindås",
         "fylke": "Hordaland",
@@ -1878,6 +2106,7 @@ $(document).ready(function() {
         "sist_inn": "15/02/01",
         "sist_ut": "14/07/05"
       }, {
+        "bokstaver": "",
         "kommunenr": 1264,
         "kommune": "Austrheim",
         "fylke": "Hordaland",
@@ -1889,18 +2118,21 @@ $(document).ready(function() {
         "sist_inn": "28/02/03",
         "sist_ut": "30/07/08"
       }, {
+        "bokstaver": "",
         "kommunenr": 1265,
         "kommune": "Fedje",
         "fylke": "Hordaland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1266,
         "kommune": "Masfjord",
         "fylke": "Hordaland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1401,
         "kommune": "Flora",
         "fylke": "Sogn og Fjordane",
@@ -1916,6 +2148,7 @@ $(document).ready(function() {
         "sist_inn": "28/07/11",
         "sist_ut": "09/07/13"
       }, {
+        "bokstaver": "",
         "kommunenr": 1411,
         "kommune": "Gulen",
         "fylke": "Sogn og Fjordane",
@@ -1927,12 +2160,14 @@ $(document).ready(function() {
         "sist_inn": "06/05/02",
         "sist_ut": "09/07/07"
       }, {
+        "bokstaver": "",
         "kommunenr": 1412,
         "kommune": "Solund",
         "fylke": "Sogn og Fjordane",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1413,
         "kommune": "Hyllestad",
         "fylke": "Sogn og Fjordane",
@@ -1944,6 +2179,7 @@ $(document).ready(function() {
         "sist_inn": "19/06/03",
         "sist_ut": "05/10/10"
       }, {
+        "bokstaver": "",
         "kommunenr": 1416,
         "kommune": "Høyanger",
         "fylke": "Sogn og Fjordane",
@@ -1959,6 +2195,7 @@ $(document).ready(function() {
         "sist_inn": "12/03/14",
         "sist_ut": "01/06/15"
       }, {
+        "bokstaver": "",
         "kommunenr": 1417,
         "kommune": "Vik",
         "fylke": "Sogn og Fjordane",
@@ -1972,6 +2209,7 @@ $(document).ready(function() {
         "sist_inn": "09/07/07",
         "sist_ut": "30/05/16"
       }, {
+        "bokstaver": "",
         "kommunenr": 1418,
         "kommune": "Balestrand",
         "fylke": "Sogn og Fjordane",
@@ -1983,6 +2221,7 @@ $(document).ready(function() {
         "sist_inn": "15/10/02",
         "sist_ut": "12/07/07"
       }, {
+        "bokstaver": "",
         "kommunenr": 1419,
         "kommune": "Leikanger",
         "fylke": "Sogn og Fjordane",
@@ -1994,18 +2233,21 @@ $(document).ready(function() {
         "sist_inn": "25/02/03",
         "sist_ut": "07/03/06"
       }, {
+        "bokstaver": "",
         "kommunenr": 1420,
         "kommune": "Sogndal",
         "fylke": "Sogn og Fjordane",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1421,
         "kommune": "Aurland",
         "fylke": "Sogn og Fjordane",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1422,
         "kommune": "Lærdal",
         "fylke": "Sogn og Fjordane",
@@ -2019,6 +2261,7 @@ $(document).ready(function() {
         "sist_inn": "05/07/13",
         "sist_ut": "02/03/15"
       }, {
+        "bokstaver": "",
         "kommunenr": 1424,
         "kommune": "Årdal",
         "fylke": "Sogn og Fjordane",
@@ -2030,12 +2273,14 @@ $(document).ready(function() {
         "sist_inn": "27/05/13",
         "sist_ut": "08/06/16"
       }, {
+        "bokstaver": "",
         "kommunenr": 1426,
         "kommune": "Luster",
         "fylke": "Sogn og Fjordane",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1428,
         "kommune": "Askvoll",
         "fylke": "Sogn og Fjordane",
@@ -2049,6 +2294,7 @@ $(document).ready(function() {
         "sist_inn": "25/08/14",
         "sist_ut": "03/07/15"
       }, {
+        "bokstaver": "",
         "kommunenr": 1429,
         "kommune": "Fjaler",
         "fylke": "Sogn og Fjordane",
@@ -2060,6 +2306,7 @@ $(document).ready(function() {
         "sist_inn": "15/02/01",
         "sist_ut": "12/07/06"
       }, {
+        "bokstaver": "c",
         "kommunenr": 1430,
         "kommune": "Gaular",
         "fylke": "Sogn og Fjordane",
@@ -2072,6 +2319,7 @@ $(document).ready(function() {
         "sist_inn": "07/07/15",
         "sist_ut": "12/07/07"
       }, {
+        "bokstaver": "",
         "kommunenr": 1431,
         "kommune": "Jølster",
         "fylke": "Sogn og Fjordane",
@@ -2083,12 +2331,14 @@ $(document).ready(function() {
         "sist_inn": "20/06/03",
         "sist_ut": "14/07/09"
       }, {
+        "bokstaver": "",
         "kommunenr": 1432,
         "kommune": "Førde",
         "fylke": "Sogn og Fjordane",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1433,
         "kommune": "Naustdal",
         "fylke": "Sogn og Fjordane",
@@ -2102,6 +2352,7 @@ $(document).ready(function() {
         "sist_inn": "25/02/03",
         "sist_ut": "14/07/09"
       }, {
+        "bokstaver": "c",
         "kommunenr": 1438,
         "kommune": "Bremanger",
         "fylke": "Sogn og Fjordane",
@@ -2111,6 +2362,7 @@ $(document).ready(function() {
         "inne_naa": true,
         "sist_inn": "18/06/08"
       }, {
+        "bokstaver": "",
         "kommunenr": 1439,
         "kommune": "Vågsøy",
         "fylke": "Sogn og Fjordane",
@@ -2126,6 +2378,7 @@ $(document).ready(function() {
         "sist_inn": "05/02/09",
         "sist_ut": "18/10/10"
       }, {
+        "bokstaver": "c-d",
         "kommunenr": 1441,
         "kommune": "Selje",
         "fylke": "Sogn og Fjordane",
@@ -2140,6 +2393,7 @@ $(document).ready(function() {
         "sist_inn": "17/07/14",
         "sist_ut": "14/10/09"
       }, {
+        "bokstaver": "",
         "kommunenr": 1443,
         "kommune": "Eid",
         "fylke": "Sogn og Fjordane",
@@ -2151,12 +2405,14 @@ $(document).ready(function() {
         "sist_inn": "15/10/02",
         "sist_ut": "08/06/04"
       }, {
+        "bokstaver": "",
         "kommunenr": 1444,
         "kommune": "Hornindal",
         "fylke": "Sogn og Fjordane",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "b",
         "kommunenr": 1445,
         "kommune": "Gloppen",
         "fylke": "Sogn og Fjordane",
@@ -2170,12 +2426,14 @@ $(document).ready(function() {
         "sist_inn": "30/06/03",
         "sist_ut": "30/06/06"
       }, {
+        "bokstaver": "",
         "kommunenr": 1449,
         "kommune": "Stryn",
         "fylke": "Sogn og Fjordane",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1502,
         "kommune": "Molde",
         "fylke": "Møre og Romsdal",
@@ -2187,6 +2445,7 @@ $(document).ready(function() {
         "sist_inn": "21/08/02",
         "sist_ut": "16/06/05"
       }, {
+        "bokstaver": "c-d",
         "kommunenr": 1504,
         "kommune": "Ålesund",
         "fylke": "Møre og Romsdal",
@@ -2201,6 +2460,7 @@ $(document).ready(function() {
         "sist_inn": "01/09/14",
         "sist_ut": "10/03/09"
       }, {
+        "bokstaver": "d",
         "kommunenr": 1505,
         "kommune": "Kristiansund",
         "fylke": "Møre og Romsdal",
@@ -2215,6 +2475,7 @@ $(document).ready(function() {
         "sist_inn": "09/07/15",
         "sist_ut": "13/07/12"
       }, {
+        "bokstaver": "",
         "kommunenr": 1511,
         "kommune": "Vanylven",
         "fylke": "Møre og Romsdal",
@@ -2228,6 +2489,7 @@ $(document).ready(function() {
         "sist_inn": "02/10/12",
         "sist_ut": "22/07/13"
       }, {
+        "bokstaver": "",
         "kommunenr": 1514,
         "kommune": "Sande",
         "fylke": "Møre og Romsdal",
@@ -2241,6 +2503,7 @@ $(document).ready(function() {
         "sist_inn": "31/07/08",
         "sist_ut": "24/09/12"
       }, {
+        "bokstaver": "",
         "kommunenr": 1515,
         "kommune": "Herøy",
         "fylke": "Møre og Romsdal",
@@ -2252,6 +2515,7 @@ $(document).ready(function() {
         "sist_inn": "22/08/01",
         "sist_ut": "25/06/03"
       }, {
+        "bokstaver": "",
         "kommunenr": 1516,
         "kommune": "Ulstein",
         "fylke": "Møre og Romsdal",
@@ -2265,6 +2529,7 @@ $(document).ready(function() {
         "sist_inn": "13/02/04",
         "sist_ut": "01/07/05"
       }, {
+        "bokstaver": "c-d",
         "kommunenr": 1517,
         "kommune": "Hareid",
         "fylke": "Møre og Romsdal",
@@ -2277,6 +2542,7 @@ $(document).ready(function() {
         "sist_inn": "29/09/11",
         "sist_ut": "03/08/09"
       }, {
+        "bokstaver": "",
         "kommunenr": 1519,
         "kommune": "Volda",
         "fylke": "Møre og Romsdal",
@@ -2290,6 +2556,7 @@ $(document).ready(function() {
         "sist_inn": "23/01/14",
         "sist_ut": "20/02/15"
       }, {
+        "bokstaver": "",
         "kommunenr": 1520,
         "kommune": "Ørsta",
         "fylke": "Møre og Romsdal",
@@ -2303,12 +2570,14 @@ $(document).ready(function() {
         "sist_inn": "17/09/09",
         "sist_ut": "03/06/15"
       }, {
+        "bokstaver": "d",
         "kommunenr": 1523,
         "kommune": "Ørskog",
         "fylke": "Møre og Romsdal",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1524,
         "kommune": "Norddal",
         "fylke": "Møre og Romsdal",
@@ -2320,6 +2589,7 @@ $(document).ready(function() {
         "sist_inn": "23/02/01",
         "sist_ut": "22/01/02"
       }, {
+        "bokstaver": "c-d",
         "kommunenr": 1525,
         "kommune": "Stranda",
         "fylke": "Møre og Romsdal",
@@ -2332,12 +2602,14 @@ $(document).ready(function() {
         "sist_inn": "05/07/11",
         "sist_ut": "16/06/05"
       }, {
+        "bokstaver": "",
         "kommunenr": 1526,
         "kommune": "Stordal",
         "fylke": "Møre og Romsdal",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "c-d",
         "kommunenr": 1528,
         "kommune": "Sykkylven",
         "fylke": "Møre og Romsdal",
@@ -2350,6 +2622,7 @@ $(document).ready(function() {
         "sist_inn": "15/10/10",
         "sist_ut": "09/07/07"
       }, {
+        "bokstaver": "",
         "kommunenr": 1529,
         "kommune": "Skodje",
         "fylke": "Møre og Romsdal",
@@ -2361,6 +2634,7 @@ $(document).ready(function() {
         "sist_inn": "15/03/01",
         "sist_ut": "17/07/01"
       }, {
+        "bokstaver": "",
         "kommunenr": 1531,
         "kommune": "Sula",
         "fylke": "Møre og Romsdal",
@@ -2374,6 +2648,7 @@ $(document).ready(function() {
         "sist_inn": "27/02/08",
         "sist_ut": "05/03/09"
       }, {
+        "bokstaver": "",
         "kommunenr": 1532,
         "kommune": "Giske",
         "fylke": "Møre og Romsdal",
@@ -2385,12 +2660,14 @@ $(document).ready(function() {
         "sist_inn": "21/08/02",
         "sist_ut": "27/02/07"
       }, {
+        "bokstaver": "",
         "kommunenr": 1534,
         "kommune": "Haram",
         "fylke": "Møre og Romsdal",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1535,
         "kommune": "Vestnes",
         "fylke": "Møre og Romsdal",
@@ -2404,6 +2681,7 @@ $(document).ready(function() {
         "sist_inn": "03/08/09",
         "sist_ut": "19/08/13"
       }, {
+        "bokstaver": "d",
         "kommunenr": 1539,
         "kommune": "Rauma",
         "fylke": "Møre og Romsdal",
@@ -2415,6 +2693,7 @@ $(document).ready(function() {
         "sist_inn": "01/01/01",
         "sist_ut": "07/07/06"
       }, {
+        "bokstaver": "",
         "kommunenr": 1543,
         "kommune": "Nesset",
         "fylke": "Møre og Romsdal",
@@ -2426,6 +2705,7 @@ $(document).ready(function() {
         "sist_inn": "01/01/01",
         "sist_ut": "06/07/06"
       }, {
+        "bokstaver": "",
         "kommunenr": 1545,
         "kommune": "Midsund",
         "fylke": "Møre og Romsdal",
@@ -2437,18 +2717,21 @@ $(document).ready(function() {
         "sist_inn": "05/07/11",
         "sist_ut": "02/10/12"
       }, {
+        "bokstaver": "",
         "kommunenr": 1546,
         "kommune": "Sandøy",
         "fylke": "Møre og Romsdal",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1547,
         "kommune": "Aukra",
         "fylke": "Møre og Romsdal",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1548,
         "kommune": "Fræna",
         "fylke": "Møre og Romsdal",
@@ -2462,6 +2745,7 @@ $(document).ready(function() {
         "sist_inn": "01/09/09",
         "sist_ut": "06/05/16"
       }, {
+        "bokstaver": "",
         "kommunenr": 1551,
         "kommune": "Eide",
         "fylke": "Møre og Romsdal",
@@ -2473,12 +2757,14 @@ $(document).ready(function() {
         "sist_inn": "01/01/01",
         "sist_ut": "04/11/03"
       }, {
+        "bokstaver": "",
         "kommunenr": 1554,
         "kommune": "Averøy",
         "fylke": "Møre og Romsdal",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1556,
         "kommune": "Frei",
         "fylke": "Møre og Romsdal",
@@ -2490,6 +2776,7 @@ $(document).ready(function() {
         "sist_inn": "15/03/02",
         "sist_ut": "04/11/03"
       }, {
+        "bokstaver": "",
         "kommunenr": 1557,
         "kommune": "Gjemnes",
         "fylke": "Møre og Romsdal",
@@ -2503,6 +2790,7 @@ $(document).ready(function() {
         "sist_inn": "04/10/10",
         "sist_ut": "04/06/15"
       }, {
+        "bokstaver": "",
         "kommunenr": 1560,
         "kommune": "Tingvoll",
         "fylke": "Møre og Romsdal",
@@ -2516,42 +2804,49 @@ $(document).ready(function() {
         "sist_inn": "15/04/04",
         "sist_ut": "08/06/04"
       }, {
+        "bokstaver": "",
         "kommunenr": 1563,
         "kommune": "Sunndal",
         "fylke": "Møre og Romsdal",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1566,
         "kommune": "Surnadal",
         "fylke": "Møre og Romsdal",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1567,
         "kommune": "Rindal",
         "fylke": "Møre og Romsdal",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1571,
         "kommune": "Halsa",
         "fylke": "Møre og Romsdal",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1573,
         "kommune": "Smøla",
         "fylke": "Møre og Romsdal",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1576,
         "kommune": "Aure",
         "fylke": "Møre og Romsdal",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1601,
         "kommune": "Trondheim",
         "fylke": "Sør-Trøndelag",
@@ -2563,18 +2858,21 @@ $(document).ready(function() {
         "sist_inn": "19/02/01",
         "sist_ut": "20/02/02"
       }, {
+        "bokstaver": "",
         "kommunenr": 1612,
         "kommune": "Hemne",
         "fylke": "Sør-Trøndelag",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1613,
         "kommune": "Snillfjord",
         "fylke": "Sør-Trøndelag",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1617,
         "kommune": "Hitra",
         "fylke": "Sør-Trøndelag",
@@ -2586,6 +2884,7 @@ $(document).ready(function() {
         "sist_inn": "15/02/01",
         "sist_ut": "06/02/02"
       }, {
+        "bokstaver": "",
         "kommunenr": 1620,
         "kommune": "Frøya",
         "fylke": "Sør-Trøndelag",
@@ -2597,6 +2896,7 @@ $(document).ready(function() {
         "sist_inn": "01/01/01",
         "sist_ut": "08/07/05"
       }, {
+        "bokstaver": "",
         "kommunenr": 1621,
         "kommune": "Ørland",
         "fylke": "Sør-Trøndelag",
@@ -2608,12 +2908,14 @@ $(document).ready(function() {
         "sist_inn": "18/08/04",
         "sist_ut": "01/08/05"
       }, {
+        "bokstaver": "",
         "kommunenr": 1622,
         "kommune": "Agdenes",
         "fylke": "Sør-Trøndelag",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1624,
         "kommune": "Rissa",
         "fylke": "Sør-Trøndelag",
@@ -2625,6 +2927,7 @@ $(document).ready(function() {
         "sist_inn": "12/06/03",
         "sist_ut": "04/07/05"
       }, {
+        "bokstaver": "d",
         "kommunenr": 1627,
         "kommune": "Bjugn",
         "fylke": "Sør-Trøndelag",
@@ -2637,12 +2940,14 @@ $(document).ready(function() {
         "sist_inn": "13/08/14",
         "sist_ut": "02/02/09"
       }, {
+        "bokstaver": "",
         "kommunenr": 1630,
         "kommune": "Åfjord",
         "fylke": "Sør-Trøndelag",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "c",
         "kommunenr": 1632,
         "kommune": "Roan",
         "fylke": "Sør-Trøndelag",
@@ -2655,36 +2960,42 @@ $(document).ready(function() {
         "sist_inn": "23/08/13",
         "sist_ut": "04/07/05"
       }, {
+        "bokstaver": "",
         "kommunenr": 1633,
         "kommune": "Osen",
         "fylke": "Sør-Trøndelag",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1634,
         "kommune": "Oppdal",
         "fylke": "Sør-Trøndelag",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1635,
         "kommune": "Rennebu",
         "fylke": "Sør-Trøndelag",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1636,
         "kommune": "Meldal",
         "fylke": "Sør-Trøndelag",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1638,
         "kommune": "Orkdal",
         "fylke": "Sør-Trøndelag",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "d",
         "kommunenr": 1640,
         "kommune": "Røros",
         "fylke": "Sør-Trøndelag",
@@ -2694,6 +3005,7 @@ $(document).ready(function() {
         "inne_naa": true,
         "sist_inn": "13/08/14"
       }, {
+        "bokstaver": "a-b",
         "kommunenr": 1644,
         "kommune": "Holtålen",
         "fylke": "Sør-Trøndelag",
@@ -2708,6 +3020,7 @@ $(document).ready(function() {
         "sist_inn": "28/01/13",
         "sist_ut": "30/07/07"
       }, {
+        "bokstaver": "",
         "kommunenr": 1648,
         "kommune": "Midtre Gauldal",
         "fylke": "Sør-Trøndelag",
@@ -2719,12 +3032,14 @@ $(document).ready(function() {
         "sist_inn": "03/03/04",
         "sist_ut": "25/08/06"
       }, {
+        "bokstaver": "",
         "kommunenr": 1653,
         "kommune": "Melhus",
         "fylke": "Sør-Trøndelag",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1657,
         "kommune": "Skaun",
         "fylke": "Sør-Trøndelag",
@@ -2738,6 +3053,7 @@ $(document).ready(function() {
         "sist_inn": "07/10/09",
         "sist_ut": "23/08/10"
       }, {
+        "bokstaver": "",
         "kommunenr": 1662,
         "kommune": "Klæbu",
         "fylke": "Sør-Trøndelag",
@@ -2751,6 +3067,7 @@ $(document).ready(function() {
         "sist_inn": "26/10/09",
         "sist_ut": "23/08/10"
       }, {
+        "bokstaver": "",
         "kommunenr": 1663,
         "kommune": "Malvik",
         "fylke": "Sør-Trøndelag",
@@ -2762,6 +3079,7 @@ $(document).ready(function() {
         "sist_inn": "10/10/02",
         "sist_ut": "18/08/08"
       }, {
+        "bokstaver": "",
         "kommunenr": 1664,
         "kommune": "Selbu",
         "fylke": "Sør-Trøndelag",
@@ -2773,30 +3091,35 @@ $(document).ready(function() {
         "sist_inn": "14/08/03",
         "sist_ut": "25/08/06"
       }, {
+        "bokstaver": "",
         "kommunenr": 1665,
         "kommune": "Tydal",
         "fylke": "Sør-Trøndelag",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1702,
         "kommune": "Steinkjer",
         "fylke": "Nord-Trøndelag",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1703,
         "kommune": "Namsos",
         "fylke": "Nord-Trøndelag",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1711,
         "kommune": "Meråker",
         "fylke": "Nord-Trøndelag",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1714,
         "kommune": "Stjørdal",
         "fylke": "Nord-Trøndelag",
@@ -2810,12 +3133,14 @@ $(document).ready(function() {
         "sist_inn": "25/04/08",
         "sist_ut": "03/02/09"
       }, {
+        "bokstaver": "",
         "kommunenr": 1717,
         "kommune": "Frosta",
         "fylke": "Nord-Trøndelag",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1718,
         "kommune": "Leksvik",
         "fylke": "Nord-Trøndelag",
@@ -2830,6 +3155,7 @@ $(document).ready(function() {
         "sist_inn": "02/04/12",
         "sist_ut": "29/05/08"
       }, {
+        "bokstaver": "",
         "kommunenr": 1719,
         "kommune": "Levanger",
         "fylke": "Nord-Trøndelag",
@@ -2841,6 +3167,7 @@ $(document).ready(function() {
         "sist_inn": "01/01/01",
         "sist_ut": "09/07/07"
       }, {
+        "bokstaver": "",
         "kommunenr": 1721,
         "kommune": "Verdal",
         "fylke": "Nord-Trøndelag",
@@ -2852,6 +3179,7 @@ $(document).ready(function() {
         "sist_inn": "01/01/01",
         "sist_ut": "31/05/05"
       }, {
+        "bokstaver": "",
         "kommunenr": 1723,
         "kommune": "Mosvik",
         "fylke": "Nord-Trøndelag",
@@ -2865,6 +3193,7 @@ $(document).ready(function() {
         "sist_inn": "30/03/10",
         "sist_ut": "05/05/11"
       }, {
+        "bokstaver": "",
         "kommunenr": 1724,
         "kommune": "Verran",
         "fylke": "Nord-Trøndelag",
@@ -2876,6 +3205,7 @@ $(document).ready(function() {
         "sist_inn": "01/01/01",
         "sist_ut": "09/07/07"
       }, {
+        "bokstaver": "",
         "kommunenr": 1725,
         "kommune": "Namdalseid",
         "fylke": "Nord-Trøndelag",
@@ -2887,6 +3217,7 @@ $(document).ready(function() {
         "sist_inn": "01/01/01",
         "sist_ut": "10/07/03"
       }, {
+        "bokstaver": "",
         "kommunenr": 1729,
         "kommune": "Inderøy",
         "fylke": "Nord-Trøndelag",
@@ -2900,6 +3231,7 @@ $(document).ready(function() {
         "sist_inn": "29/06/06",
         "sist_ut": "12/08/08"
       }, {
+        "bokstaver": "",
         "kommunenr": 1736,
         "kommune": "Snåsa",
         "fylke": "Nord-Trøndelag",
@@ -2913,18 +3245,21 @@ $(document).ready(function() {
         "sist_inn": "19/05/03",
         "sist_ut": "31/05/05"
       }, {
+        "bokstaver": "",
         "kommunenr": 1738,
         "kommune": "Lierne",
         "fylke": "Nord-Trøndelag",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1739,
         "kommune": "Røyrvik",
         "fylke": "Nord-Trøndelag",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1740,
         "kommune": "Namsskogan",
         "fylke": "Nord-Trøndelag",
@@ -2934,6 +3269,7 @@ $(document).ready(function() {
         "inne_naa": true,
         "sist_inn": "."
       }, {
+        "bokstaver": "",
         "kommunenr": 1742,
         "kommune": "Grong",
         "fylke": "Nord-Trøndelag",
@@ -2945,30 +3281,35 @@ $(document).ready(function() {
         "sist_inn": "13/07/04",
         "sist_ut": "24/06/06"
       }, {
+        "bokstaver": "",
         "kommunenr": 1743,
         "kommune": "Høylandet",
         "fylke": "Nord-Trøndelag",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1744,
         "kommune": "Overhall",
         "fylke": "Nord-Trøndelag",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1748,
         "kommune": "Fosnes",
         "fylke": "Nord-Trøndelag",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1749,
         "kommune": "Flatanger",
         "fylke": "Nord-Trøndelag",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1750,
         "kommune": "Vikna",
         "fylke": "Nord-Trøndelag",
@@ -2980,6 +3321,7 @@ $(document).ready(function() {
         "sist_inn": "13/07/04",
         "sist_ut": "04/07/05"
       }, {
+        "bokstaver": "",
         "kommunenr": 1751,
         "kommune": "Nærøy",
         "fylke": "Nord-Trøndelag",
@@ -2991,6 +3333,7 @@ $(document).ready(function() {
         "sist_inn": "27/02/04",
         "sist_ut": "12/08/08"
       }, {
+        "bokstaver": "",
         "kommunenr": 1755,
         "kommune": "Leka",
         "fylke": "Nord-Trøndelag",
@@ -3004,12 +3347,14 @@ $(document).ready(function() {
         "sist_inn": "31/03/08",
         "sist_ut": "17/03/09"
       }, {
+        "bokstaver": "",
         "kommunenr": 1804,
         "kommune": "Bodø",
         "fylke": "Nordland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1805,
         "kommune": "Narvik",
         "fylke": "Nordland",
@@ -3023,6 +3368,7 @@ $(document).ready(function() {
         "sist_inn": "20/02/09",
         "sist_ut": "10/06/15"
       }, {
+        "bokstaver": "",
         "kommunenr": 1811,
         "kommune": "Bindal",
         "fylke": "Nordland",
@@ -3035,12 +3381,14 @@ $(document).ready(function() {
         "sist_inn": "04/03/03",
         "sist_ut": "22/08/05"
       }, {
+        "bokstaver": "",
         "kommunenr": 1812,
         "kommune": "Sømna",
         "fylke": "Nordland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "a-c",
         "kommunenr": 1813,
         "kommune": "Brønnøy",
         "fylke": "Nordland",
@@ -3052,6 +3400,7 @@ $(document).ready(function() {
         "sist_inn": "18/12/09",
         "sist_ut": "23/08/10"
       }, {
+        "bokstaver": "",
         "kommunenr": 1815,
         "kommune": "Vega",
         "fylke": "Nordland",
@@ -3063,6 +3412,7 @@ $(document).ready(function() {
         "sist_inn": "12/09/03",
         "sist_ut": "11/08/05"
       }, {
+        "bokstaver": "",
         "kommunenr": 1816,
         "kommune": "Vevelstad",
         "fylke": "Nordland",
@@ -3076,6 +3426,7 @@ $(document).ready(function() {
         "sist_inn": "14/06/04",
         "sist_ut": "14/07/05"
       }, {
+        "bokstaver": "",
         "kommunenr": 1818,
         "kommune": "Herøy",
         "fylke": "Nordland",
@@ -3087,6 +3438,7 @@ $(document).ready(function() {
         "sist_inn": "19/10/01",
         "sist_ut": "13/05/02"
       }, {
+        "bokstaver": "",
         "kommunenr": 1820,
         "kommune": "Alstahaug",
         "fylke": "Nordland",
@@ -3098,24 +3450,28 @@ $(document).ready(function() {
         "sist_inn": "01/01/01",
         "sist_ut": "03/10/03"
       }, {
+        "bokstaver": "",
         "kommunenr": 1822,
         "kommune": "Leirfjord",
         "fylke": "Nordland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1824,
         "kommune": "Vefsn",
         "fylke": "Nordland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1825,
         "kommune": "Grane",
         "fylke": "Nordland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1826,
         "kommune": "Hattfjelldal",
         "fylke": "Nordland",
@@ -3125,6 +3481,7 @@ $(document).ready(function() {
         "inne_naa": true,
         "sist_inn": "22/12/08"
       }, {
+        "bokstaver": "",
         "kommunenr": 1827,
         "kommune": "Dønna",
         "fylke": "Nordland",
@@ -3136,12 +3493,14 @@ $(document).ready(function() {
         "sist_inn": "05/03/01",
         "sist_ut": "10/07/03"
       }, {
+        "bokstaver": "",
         "kommunenr": 1828,
         "kommune": "Nesna",
         "fylke": "Nordland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "c",
         "kommunenr": 1832,
         "kommune": "Hemnes",
         "fylke": "Nordland",
@@ -3154,24 +3513,28 @@ $(document).ready(function() {
         "sist_inn": "13/03/09",
         "sist_ut": "07/11/02"
       }, {
+        "bokstaver": "",
         "kommunenr": 1833,
         "kommune": "Rana",
         "fylke": "Nordland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1834,
         "kommune": "Lurøy",
         "fylke": "Nordland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1835,
         "kommune": "Træna",
         "fylke": "Nordland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1836,
         "kommune": "Rødøy",
         "fylke": "Nordland",
@@ -3183,24 +3546,28 @@ $(document).ready(function() {
         "sist_inn": "06/05/02",
         "sist_ut": "25/09/05"
       }, {
+        "bokstaver": "",
         "kommunenr": 1837,
         "kommune": "Meløy",
         "fylke": "Nordland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1838,
         "kommune": "Gildeskål",
         "fylke": "Nordland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1839,
         "kommune": "Beiarn",
         "fylke": "Nordland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "a",
         "kommunenr": 1840,
         "kommune": "Saltdal",
         "fylke": "Nordland",
@@ -3213,6 +3580,7 @@ $(document).ready(function() {
         "sist_inn": "09/06/15",
         "sist_ut": "13/08/07"
       }, {
+        "bokstaver": "c",
         "kommunenr": 1841,
         "kommune": "Fauske",
         "fylke": "Nordland",
@@ -3227,12 +3595,14 @@ $(document).ready(function() {
         "sist_inn": "01/10/15",
         "sist_ut": "28/07/10"
       }, {
+        "bokstaver": "",
         "kommunenr": 1845,
         "kommune": "Sørfold",
         "fylke": "Nordland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "c",
         "kommunenr": 1848,
         "kommune": "Steigen",
         "fylke": "Nordland",
@@ -3245,6 +3615,7 @@ $(document).ready(function() {
         "sist_inn": "02/06/16",
         "sist_ut": "09/08/10"
       }, {
+        "bokstaver": "d",
         "kommunenr": 1849,
         "kommune": "Hamarøy",
         "fylke": "Nordland",
@@ -3259,6 +3630,7 @@ $(document).ready(function() {
         "sist_inn": "05/09/11",
         "sist_ut": "25/09/09"
       }, {
+        "bokstaver": "c",
         "kommunenr": 1850,
         "kommune": "Tysfjord",
         "fylke": "Nordland",
@@ -3271,6 +3643,7 @@ $(document).ready(function() {
         "sist_inn": "18/03/14",
         "sist_ut": "02/06/09"
       }, {
+        "bokstaver": "",
         "kommunenr": 1851,
         "kommune": "Lødingen",
         "fylke": "Nordland",
@@ -3282,18 +3655,21 @@ $(document).ready(function() {
         "sist_inn": "19/06/03",
         "sist_ut": "09/09/13"
       }, {
+        "bokstaver": "",
         "kommunenr": 1852,
         "kommune": "Tjeldsund",
         "fylke": "Nordland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1853,
         "kommune": "Evenes",
         "fylke": "Nordland",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "d",
         "kommunenr": 1854,
         "kommune": "Ballangen",
         "fylke": "Nordland",
@@ -3306,6 +3682,7 @@ $(document).ready(function() {
         "sist_inn": "15/11/13",
         "sist_ut": "03/08/09"
       }, {
+        "bokstaver": "",
         "kommunenr": 1856,
         "kommune": "Røst",
         "fylke": "Nordland",
@@ -3317,6 +3694,7 @@ $(document).ready(function() {
         "sist_inn": "03/01/11",
         "sist_ut": "18/06/15"
       }, {
+        "bokstaver": "",
         "kommunenr": 1857,
         "kommune": "Værøy",
         "fylke": "Nordland",
@@ -3328,6 +3706,7 @@ $(document).ready(function() {
         "sist_inn": "10/07/03",
         "sist_ut": "01/07/05"
       }, {
+        "bokstaver": "d",
         "kommunenr": 1859,
         "kommune": "Flakstad",
         "fylke": "Nordland",
@@ -3337,6 +3716,7 @@ $(document).ready(function() {
         "inne_naa": true,
         "sist_inn": "23/09/08"
       }, {
+        "bokstaver": "",
         "kommunenr": 1860,
         "kommune": "Vestvågøy",
         "fylke": "Nordland",
@@ -3350,6 +3730,7 @@ $(document).ready(function() {
         "sist_inn": "04/10/13",
         "sist_ut": "16/06/16"
       }, {
+        "bokstaver": "",
         "kommunenr": 1865,
         "kommune": "Vågan",
         "fylke": "Nordland",
@@ -3361,6 +3742,7 @@ $(document).ready(function() {
         "sist_inn": "05/01/05",
         "sist_ut": "14/07/05"
       }, {
+        "bokstaver": "",
         "kommunenr": 1866,
         "kommune": "Hadsel",
         "fylke": "Nordland",
@@ -3372,6 +3754,7 @@ $(document).ready(function() {
         "sist_inn": "18/11/03",
         "sist_ut": "27/08/10"
       }, {
+        "bokstaver": "",
         "kommunenr": 1867,
         "kommune": "Bø",
         "fylke": "Nordland",
@@ -3383,6 +3766,7 @@ $(document).ready(function() {
         "sist_inn": "02/05/11",
         "sist_ut": "01/12/15"
       }, {
+        "bokstaver": "",
         "kommunenr": 1868,
         "kommune": "Øksnes",
         "fylke": "Nordland",
@@ -3394,6 +3778,7 @@ $(document).ready(function() {
         "sist_inn": "23/09/08",
         "sist_ut": "10/09/13"
       }, {
+        "bokstaver": "",
         "kommunenr": 1870,
         "kommune": "Sortland",
         "fylke": "Nordland",
@@ -3407,6 +3792,7 @@ $(document).ready(function() {
         "sist_inn": "22/11/10",
         "sist_ut": "05/09/11"
       }, {
+        "bokstaver": "",
         "kommunenr": 1871,
         "kommune": "Andøy",
         "fylke": "Nordland",
@@ -3418,6 +3804,7 @@ $(document).ready(function() {
         "sist_inn": "20/10/09",
         "sist_ut": "09/10/13"
       }, {
+        "bokstaver": "c",
         "kommunenr": 1874,
         "kommune": "Moskenes",
         "fylke": "Nordland",
@@ -3427,18 +3814,21 @@ $(document).ready(function() {
         "inne_naa": true,
         "sist_inn": "10/07/12"
       }, {
+        "bokstaver": "",
         "kommunenr": 1903,
         "kommune": "Harstad",
         "fylke": "Troms",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1902,
         "kommune": "Tromsø",
         "fylke": "Troms",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "d",
         "kommunenr": 1911,
         "kommune": "Kvæfjord",
         "fylke": "Troms",
@@ -3451,6 +3841,7 @@ $(document).ready(function() {
         "sist_inn": "12/08/15",
         "sist_ut": "11/08/05"
       }, {
+        "bokstaver": "",
         "kommunenr": 1913,
         "kommune": "Skånland",
         "fylke": "Troms",
@@ -3462,18 +3853,21 @@ $(document).ready(function() {
         "sist_inn": "01/01/01",
         "sist_ut": "12/05/05"
       }, {
+        "bokstaver": "",
         "kommunenr": 1915,
         "kommune": "Bjarkøy",
         "fylke": "Troms",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1917,
         "kommune": "Ibestad",
         "fylke": "Troms",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1919,
         "kommune": "Gratangen",
         "fylke": "Troms",
@@ -3485,12 +3879,14 @@ $(document).ready(function() {
         "sist_inn": "23/07/03",
         "sist_ut": "04/11/04"
       }, {
+        "bokstaver": "",
         "kommunenr": 1920,
         "kommune": "Lavangen",
         "fylke": "Troms",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1922,
         "kommune": "Bardu",
         "fylke": "Troms",
@@ -3502,6 +3898,7 @@ $(document).ready(function() {
         "sist_inn": "11/07/02",
         "sist_ut": "28/06/06"
       }, {
+        "bokstaver": "",
         "kommunenr": 1923,
         "kommune": "Salangen",
         "fylke": "Troms",
@@ -3513,6 +3910,7 @@ $(document).ready(function() {
         "sist_inn": "01/01/01",
         "sist_ut": "31/07/07"
       }, {
+        "bokstaver": "",
         "kommunenr": 1924,
         "kommune": "Målselv",
         "fylke": "Troms",
@@ -3524,6 +3922,7 @@ $(document).ready(function() {
         "sist_inn": "18/10/04",
         "sist_ut": "13/12/11"
       }, {
+        "bokstaver": "",
         "kommunenr": 1925,
         "kommune": "Sørreisa",
         "fylke": "Troms",
@@ -3535,12 +3934,14 @@ $(document).ready(function() {
         "sist_inn": "09/04/10",
         "sist_ut": "05/09/11"
       }, {
+        "bokstaver": "",
         "kommunenr": 1926,
         "kommune": "Dyrøy",
         "fylke": "Troms",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 1927,
         "kommune": "Tranøy",
         "fylke": "Troms",
@@ -3552,6 +3953,7 @@ $(document).ready(function() {
         "sist_inn": "01/01/01",
         "sist_ut": "09/08/10"
       }, {
+        "bokstaver": "c-d",
         "kommunenr": 1928,
         "kommune": "Torsken",
         "fylke": "Troms",
@@ -3561,6 +3963,7 @@ $(document).ready(function() {
         "inne_naa": true,
         "sist_inn": "01/01/01"
       }, {
+        "bokstaver": "",
         "kommunenr": 1929,
         "kommune": "Berg",
         "fylke": "Troms",
@@ -3572,6 +3975,7 @@ $(document).ready(function() {
         "sist_inn": "01/01/01",
         "sist_ut": "08/07/01"
       }, {
+        "bokstaver": "",
         "kommunenr": 1931,
         "kommune": "Lenvik",
         "fylke": "Troms",
@@ -3584,6 +3988,7 @@ $(document).ready(function() {
         "sist_inn": "05/08/14",
         "sist_ut": "09/08/05"
       }, {
+        "bokstaver": "",
         "kommunenr": 1933,
         "kommune": "Balsfjord",
         "fylke": "Troms",
@@ -3595,6 +4000,7 @@ $(document).ready(function() {
         "sist_inn": "01/01/01",
         "sist_ut": "23/07/03"
       }, {
+        "bokstaver": "",
         "kommunenr": 1936,
         "kommune": "Karlsøy",
         "fylke": "Troms",
@@ -3608,6 +4014,7 @@ $(document).ready(function() {
         "sist_inn": "12/05/10",
         "sist_ut": "04/09/13"
       }, {
+        "bokstaver": "",
         "kommunenr": 1938,
         "kommune": "Lyngen",
         "fylke": "Troms",
@@ -3623,6 +4030,7 @@ $(document).ready(function() {
         "sist_inn": "06/11/09",
         "sist_ut": "22/06/12"
       }, {
+        "bokstaver": "",
         "kommunenr": 1939,
         "kommune": "Storfjord",
         "fylke": "Troms",
@@ -3635,6 +4043,7 @@ $(document).ready(function() {
         "sist_inn": "27/01/12",
         "sist_ut": "11/06/04"
       }, {
+        "bokstaver": "",
         "kommunenr": 1940,
         "kommune": "Kåfjord - Gaivuotna",
         "fylke": "Troms",
@@ -3646,6 +4055,7 @@ $(document).ready(function() {
         "sist_inn": "01/01/01",
         "sist_ut": "11/08/05"
       }, {
+        "bokstaver": "",
         "kommunenr": 1941,
         "kommune": "Skjervøy",
         "fylke": "Troms",
@@ -3657,6 +4067,7 @@ $(document).ready(function() {
         "sist_inn": "18/08/08",
         "sist_ut": "04/09/13"
       }, {
+        "bokstaver": "c-d",
         "kommunenr": 1942,
         "kommune": "Nordreisa",
         "fylke": "Troms",
@@ -3666,12 +4077,14 @@ $(document).ready(function() {
         "inne_naa": true,
         "sist_inn": "16/03/04"
       }, {
+        "bokstaver": "",
         "kommunenr": 1943,
         "kommune": "Kvænangen",
         "fylke": "Troms",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 2002,
         "kommune": "Vardø",
         "fylke": "Finnmark",
@@ -3683,6 +4096,7 @@ $(document).ready(function() {
         "sist_inn": "09/06/05",
         "sist_ut": "18/04/06"
       }, {
+        "bokstaver": "",
         "kommunenr": 2003,
         "kommune": "Vadsø",
         "fylke": "Finnmark",
@@ -3694,6 +4108,7 @@ $(document).ready(function() {
         "sist_inn": "01/01/01",
         "sist_ut": "15/08/02"
       }, {
+        "bokstaver": "",
         "kommunenr": 2004,
         "kommune": "Hammerfest",
         "fylke": "Finnmark",
@@ -3707,6 +4122,7 @@ $(document).ready(function() {
         "sist_inn": "08/12/03",
         "sist_ut": "07/04/05"
       }, {
+        "bokstaver": "d",
         "kommunenr": 2011,
         "kommune": "Kautokeino",
         "fylke": "Finnmark",
@@ -3719,12 +4135,14 @@ $(document).ready(function() {
         "sist_inn": "13/08/13",
         "sist_ut": "14/07/05"
       }, {
+        "bokstaver": "",
         "kommunenr": 2012,
         "kommune": "Alta",
         "fylke": "Finnmark",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 2014,
         "kommune": "Loppa",
         "fylke": "Finnmark",
@@ -3736,6 +4154,7 @@ $(document).ready(function() {
         "sist_inn": "26/01/04",
         "sist_ut": "31/05/05"
       }, {
+        "bokstaver": "",
         "kommunenr": 2015,
         "kommune": "Hasvik",
         "fylke": "Finnmark",
@@ -3747,6 +4166,7 @@ $(document).ready(function() {
         "sist_inn": "19/03/04",
         "sist_ut": "09/07/07"
       }, {
+        "bokstaver": "",
         "kommunenr": 2017,
         "kommune": "Kvalsund",
         "fylke": "Finnmark",
@@ -3758,12 +4178,14 @@ $(document).ready(function() {
         "sist_inn": "01/09/09",
         "sist_ut": "29/11/10"
       }, {
+        "bokstaver": "",
         "kommunenr": 2018,
         "kommune": "Måsøy",
         "fylke": "Finnmark",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 2019,
         "kommune": "Nordkapp",
         "fylke": "Finnmark",
@@ -3775,6 +4197,7 @@ $(document).ready(function() {
         "sist_inn": "06/08/09",
         "sist_ut": "05/09/11"
       }, {
+        "bokstaver": "c-d",
         "kommunenr": 2020,
         "kommune": "Porsanger",
         "fylke": "Finnmark",
@@ -3789,6 +4212,7 @@ $(document).ready(function() {
         "sist_inn": "13/08/14",
         "sist_ut": "03/09/10"
       }, {
+        "bokstaver": "",
         "kommunenr": 2021,
         "kommune": "Karasjohka-Karasjok",
         "fylke": "Finnmark",
@@ -3802,12 +4226,14 @@ $(document).ready(function() {
         "sist_inn": "30/04/12",
         "sist_ut": "06/10/15"
       }, {
+        "bokstaver": "",
         "kommunenr": 2022,
         "kommune": "Lebesby",
         "fylke": "Finnmark",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "d",
         "kommunenr": 2023,
         "kommune": "Gamvik",
         "fylke": "Finnmark",
@@ -3820,30 +4246,35 @@ $(document).ready(function() {
         "sist_inn": "03/01/11",
         "sist_ut": "03/09/08"
       }, {
+        "bokstaver": "",
         "kommunenr": 2024,
         "kommune": "Berlevåg",
         "fylke": "Finnmark",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 2025,
         "kommune": "Tana",
         "fylke": "Finnmark",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 2027,
         "kommune": "Nesseby",
         "fylke": "Finnmark",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 2028,
         "kommune": "Båtsfjord",
         "fylke": "Finnmark",
         "antall_aar": 0,
         "antall_ganger": 0
       }, {
+        "bokstaver": "",
         "kommunenr": 2030,
         "kommune": "Sør-Varanger",
         "fylke": "Finnmark",
@@ -3854,8 +4285,10 @@ $(document).ready(function() {
       return robek_data;
 
     }
+
+
     return {
-      getData: getData
+      getData: getData,
     }
 
   })();

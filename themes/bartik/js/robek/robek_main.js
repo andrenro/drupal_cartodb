@@ -1,22 +1,18 @@
 $(document).ready(function() {
 
-	/**
-	 * Lovhjemmel:  
-	 * a. kommunestyret eller fylkestinget har vedtatt å fastsette et årsbudsjett uten at alle utgifter er dekket inn på budsjettet,
-		b. kommunestyret eller fylkestinget har vedtatt å fastsette en økonomiplan uten at alle utgifter er dekket inn på økonomiplanen,
-		c. kommunestyret eller fylkestinget etter § 48 nr. 4 annet punktum har vedtatt at et regnskapsmessig underskudd skal fordeles ut over det påfølgende budsjettår etter at regnskapet er framlagt, eller
-		d. kommunen eller fylkeskommunen ikke følger vedtatt plan for dekning av underskudd.
-	 */
-	
-	const  laws = {
+
+	const lawLetters = {
 		"d": "kommunestyret eller fylkestinget har vedtatt å fastsette et årsbudsjett uten at alle utgifter er dekket inn på budsjettet",
 		"b": "kommunestyret eller fylkestinget har vedtatt å fastsette en økonomiplan uten at alle utgifter er dekket inn på økonomiplanen",
 		"c": "kommunestyret eller fylkestinget etter § 48 nr. 4 annet punktum har vedtatt at et regnskapsmessig underskudd skal fordeles ut over det påfølgende budsjettår etter at regnskapet er framlagt",
-		"d": "kommunen eller fylkeskommunen ikke følger vedtatt plan for dekning av underskudd"
+		"d": "at kommunen eller fylkeskommunen ikke følger vedtatt plan for dekning av underskudd"
 	}
 
+	$("#showTopLists").css("visibility", "hidden");
+	$("#no-results").css("visibility", "hidden");
+
 	function percentageIncrease(offset, end) {
-		var diff = (end - offset);
+		let diff = (end - offset);
 		return (diff / offset) * 100;
 	}
 
@@ -28,29 +24,14 @@ $(document).ready(function() {
 		var robek_data = DataManager.getData();
 
 
-	// 	if (robek_data) {
-	// 		for (let x = 0; x < robek_data.length; x++) {
-	// 			for (var obj in robek_data[x]){
-	// 					if(obj.search("Inn") > -1){
-	// 						robek_data[x]["inne_naa"] = true;
-	// 						robek_data[x]["sist_inn"] = robek_data[x][obj]
-	// 					}else if(obj.search("Ut") > -1){
-	// 						robek_data[x]["inne_naa"] = false;
-	// 						robek_data[x]["sist_ut"] = robek_data[x][obj]
-	// 					}
-	// 			}
-	 		
-	 		for (let x = 0; x < robek_data.length;x++){
-	 			//Top list would not be populated ..
-				if (robek_data[x]["antall_aar"] > 0) {
-					reduced.push(robek_data[x]);
-				}
+
+		for (let x = 0; x < robek_data.length; x++) {
+			//Top list would not be populated ..
+			if (robek_data[x]["antall_aar"] > 0) {
+				reduced.push(robek_data[x]);
 			}
-	// 		global_robek.push(robek_data[x]);
-	// 		}
-	// 	}
-	// 	return reduced;
-	
+		}
+
 		return reduced;
 	};
 
@@ -63,15 +44,16 @@ $(document).ready(function() {
 			this.field("kommunenr");
 		});
 
-
 		if (index) {
 			for (let x = 0; x < input.length; x++) {
+
 				let temp = {
 					"id": x,
 					"kommune": input[x]["kommune"],
 					"fylke": input[x]["fylke"],
 					"kommunenr": input[x]["kommunenr"]
 				}
+				console.log(temp);
 				index.add(temp);
 			}
 		}
@@ -82,7 +64,6 @@ $(document).ready(function() {
 	function initLayout() {
 		$("#robek-comments").html("<div class='col-lg-12'>De 10 kommunene som har vært lengst inne på ROBEK.</div>");
 		$("#robek-comments-top").html("<div class='col-lg-12'>De 8 kommunene som har vært kortest inne på ROBEK.</div>")
-		$("#no-results").css("visibility", "hidden");
 	};
 
 
@@ -183,8 +164,10 @@ $(document).ready(function() {
 
 	//Kommuner that has been in ROBEK the longest period of time
 	function singleMunicipality(input) {
-		$("#showBottomList").css("visibility", "visible");
-
+		$("#showTopLists").css("visibility", "visible");
+		$("#robek-comments-top").css("visibility", "hidden");
+		let letters = "";
+		let explanation = ""; 
 		// var barChart = document.getElementById("canvas").getContext("2d");
 
 		var barChart = prepareCanvas("#canvas-container-bottom", "canvas");
@@ -214,12 +197,22 @@ $(document).ready(function() {
 			}
 		});
 
+		let in_or_out  = input["inne_naa"] ? "registrert i ROBEK. Kommunen ble sist oppført den <strong>"+input["sist_inn"]+"</strong>." : "ikke registrert i ROBEK. Kommunen gikk sist ut av ROBEK den <strong>"+input["sist_ut"]+"</strong>.";
+
 
 		//Comments?
+		if(input["bokstaver"] !== ""){
+			letters = input["bokstaver"].split("-");
 
+			if (letters.length > 1) {
+				explanation = "<strong>"+input["kommune"]+"</strong> er oppført i ROBEK med hjemmel i kommunelovens §60, bokstav: <strong>"+letters[0]+".</strong> "+lawLetters[letters[0]]+ " og <strong>" + letters[1]+".</strong> "+lawLetters[letters[1]]+" .";
+			}else{
+				explanation = "<strong>"+input["kommune"]+"</strong> er oppført i ROBEK med hjemmel i kommunelovens §60, bokstav: <strong>"+letters[0]+".</strong> "+lawLetters[letters[0]]+".";
+			}
+		}	
 		var percentageDiff = percentageIncrease(input["nasjonalt_snitt"], input["antall_aar"]);
 		var diffHTML = percentageDiff > 0 ? "<strong>" + Math.abs(percentageDiff.toFixed(2)) + "%</strong> lengre" : "<strong>" + Math.abs(percentageDiff.toFixed(2)) + "%</strong> kortere";
-		$("#robek-comments").html("<strong>" + input["kommune"] + "</strong> har til nå ligget <strong>" + input["antall_aar"] + " år</strong> på ROBEK. Dette er " + diffHTML + " enn det nasjonale snittet på <strong>" + input["nasjonalt_snitt"].toFixed(2) + "</strong> år.");
+		$("#robek-comments").html("<br><strong>"+input["kommune"]+"</strong> er for øyeblikket "+in_or_out+" <strong>" + input["kommune"] + "</strong> har totalt ligget <strong>" + input["antall_aar"] + " år</strong> på ROBEK. Dette er " + diffHTML + " enn det nasjonale snittet på <strong>" + input["nasjonalt_snitt"].toFixed(2) + "</strong> år.<br>&nbsp;<p>"+explanation+"</p>");
 
 	}
 
@@ -253,42 +246,42 @@ $(document).ready(function() {
 		}
 		formValue = e.target.value;
 		var indices = indexedSearch.search(formValue);
+		var stemmed = lunr.stemmer(formValue);
+		console.log(indices[0].score);
 		if (indices.length == 1) {
-			if (globalData[indices[0].ref]["antall_aar"] < 1) {
-				var response = globalData[indices[0].ref]["kommune"] + " har til nå aldri vært oppført i ROBEK.";
-				$("#no-results").html(response);
-				$("#no-results").css("visibility", "visible");
-				setTimeout(function() {
-					$("#no-results").css("visibility", "hidden");
-					return;
-				}, 2000);
-			} else {
+			// if (globalData[indices[0].ref]["antall_aar"] < 1) {
+			// 	var response = globalData[indices[0].ref]["kommune"] + " har til nå aldri vært oppført i ROBEK.";
+			// 	$("#no-results").html(response);
+			// 	$("#no-results").css("visibility", "visible");
+			// 	setTimeout(function() {
+			// 		$("#no-results").css("visibility", "hidden");
+			// 		return;
+			// 	}, 2000);
+			// } else {
 
 				var nationalM = nationalMean(globalData, "antall_aar");
-
-
 
 				var obj = {
 					"kommune": globalData[indices[0].ref]["kommune"],
 					"antall_aar": globalData[indices[0].ref]["antall_aar"],
-					"nasjonalt_snitt": nationalM
+					"nasjonalt_snitt": nationalM,
+					"bokstaver": globalData[indices[0].ref]["bokstaver"],
+					"inne_naa": globalData[indices[0].ref]["inne_naa"],
+					"sist_inn": globalData[indices[0].ref]["sist_inn"],
+					"sist_ut": globalData[indices[0].ref]["sist_ut"]
 				};
-
-
 				singleMunicipality(obj);
 
-
-
-			}
+			// }
 		} else if (indices.length == 0) {
-			$("#no-results").html("Ooops! Søket ga ingen treff");
+			$("#no-results").html("Ooops! Søket ga ingen treff, kommunen har til nå aldri vært oppført i ROBEK.");
 			$("#no-results").css("visibility", "visible");
 			setTimeout(function() {
 				$("#no-results").css("visibility", "hidden");
 				return undefined;
 			}, 2000);
 		} else if (indices.length > 1) {
-			populateResultSuggestions(indices, "kommune", "lunr-index", "lunr-list");
+			populateResultSuggestions(indices.slice(1,5), "kommune", "lunr-index", "lunr-list");
 		}
 	});
 
@@ -296,6 +289,7 @@ $(document).ready(function() {
 	function populateResultSuggestions(input, key, container, htmlID) {
 		//Populate list of search words
 		document.getElementById(container).innerHTML = "Fant flere treff på søket,vennligst prøv et av disse søkeordene: <ul style='font-weight:bold;list-style-type:none' id='" + htmlID + "'></ul>";
+		
 		for (let x = 0; x < input.length; x++) {
 			var node = document.createElement("li");
 			var textnode = document.createTextNode(globalData[input[x].ref][key]);
@@ -305,7 +299,7 @@ $(document).ready(function() {
 	};
 
 	function showBottomList() {
-		$("#showBottomList").css("visibility", "hidden");
+		$("#showTopLists").css("visibility", "hidden");
 		var sort = fetchData();
 		var sortedBottom = createBottomList(getSortedList(sort, "antall_aar"));
 		bottomListChart(sortedBottom.reverse());
@@ -320,10 +314,11 @@ $(document).ready(function() {
 	};
 
 	//INIT
-	var url = "https://andreasroeed.carto.com/viz/67b7b754-62bc-11e6-91cc-0e3ebc282e83/embed_map";
+	var url = "https://andreasroeed.carto.com/viz/abbb8a44-6464-11e6-a199-0e233c30368f/embed_map";
 	var mapFrame = document.getElementById("carto");
 	document.getElementById("carto").src = url;
 	mapFrame.addEventListener("load", function() {
+
 		showBottomList();
 		showTopList();
 		initLayout();
@@ -331,8 +326,11 @@ $(document).ready(function() {
 	});
 
 	//When in Single Municipality Mode
-	$("#showBottomList").on("click", function() {
+	$("#showTopLists").on("click", function() {
+		$("#robek-comments").html("");
+		initLayout();
 		showBottomList();
+		showTopList();
 	});
 
 });
