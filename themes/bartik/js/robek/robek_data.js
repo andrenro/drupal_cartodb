@@ -4286,7 +4286,6 @@ $(document).ready(function() {
 
     }
 
-
     return {
       getData: getData,
     }

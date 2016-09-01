@@ -45,8 +45,6 @@ scripts[] = js/folketall/chart.min.js
 
 scripts[] = js/robek/robek_data.js
 scripts[] = js/robek/robek_main.js
-scripts[] = js/robek/hjemmel.js
-
 
 #scripts[] = js/havner/data_handler.js
 #scripts[] = js/havner/layers_handler.js

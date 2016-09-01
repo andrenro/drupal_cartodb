@@ -8,3 +8,25 @@
   font: 10px sans-serif;
   text-anchor: end;
 }
+
+.lunr-element{
+	color: #264B6F;
+}
+
+.lunr-element:hover{
+
+	text-decoration:underline;
+	cursor:pointer;	
+}
+
+.lunr-ul{
+	list-style-type: none;
+	font-weight: bold;
+}
+
+#robek-comments{
+	font-size:1.2em;
+}
+#robek-comments-top{
+	font-size:1.2em;
+}
