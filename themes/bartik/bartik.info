@@ -43,6 +43,7 @@ scripts[] = js/folketall/chart.min.js
 #scripts[] = js/folketall/stat_charts.js
 #scripts[] = js/folketall/ssb_handler.js
 
+scripts[] = js/robek/moment.js
 scripts[] = js/robek/robek_data.js
 scripts[] = js/robek/robek_main.js
 

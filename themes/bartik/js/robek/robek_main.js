@@ -1,7 +1,8 @@
 $(document).ready(function() {
 
 	initUI();
-	var searchField = document.getElementById('search');
+	let searchField = document.getElementById('search');
+	let searchButton = document.getElementById('search-button');
 
 	const lawLetters = {
 		"d": "kommunestyret eller fylkestinget har vedtatt å fastsette et årsbudsjett uten at alle utgifter er dekket inn på budsjettet",
@@ -9,6 +10,76 @@ $(document).ready(function() {
 		"c": "kommunestyret eller fylkestinget etter § 48 nr. 4 annet punktum har vedtatt at et regnskapsmessig underskudd skal fordeles ut over det påfølgende budsjettår etter at regnskapet er framlagt",
 		"d": "at kommunen eller fylkeskommunen ikke følger vedtatt plan for dekning av underskudd"
 	}
+
+
+	// datas = DataManager.getData();
+
+	// for(let x = 0; x < datas.length;x++){
+
+	// 	if(datas[x]["antall_aar"] > 0){
+	// 		datas[x]["sist_ut"] = moment(datas[x]["sist_ut"], "DD/MM/YY").format("MM/DD/YY");
+	// 		datas[x]["sist_inn"] = moment(datas[x]["sist_inn"], "DD/MM/YY").format("MM/DD/YY");
+	// 	}else{
+	// 		datas[x]["sist_inn"] = "";
+	// 		datas[x]["sist_ut"] = "";
+	// 	}
+
+
+	// }
+
+	// console.log(datas);
+
+
+
+
+	function latestChanges(){
+		let data = DataManager.getData();
+		let changes = undefined;
+
+		//Yields 01/01/1970 which is smaller than all relevant ROBEK dates.
+		let latestInDate = new Date("01/01/70");
+		let latestOutDate = new Date("01/01/70");
+
+		let latestMunicipalityIn = {};
+		let latestMunicipalityOut = {};
+
+		for (let x = 0;x < data.length; x++){
+			if(data[x]["antall_aar"] > 0){
+
+				let lastOut = new Date(data[x]["sist_ut"]);
+				let lastIn = new Date(data[x]["sist_inn"]);
+
+				if(lastOut > latestOutDate){
+					latestOutDate = lastOut;
+					latestMunicipalityOut = data[x];
+				}
+				if(lastIn > latestInDate){
+					latestInDate = lastIn;
+					latestMunicipalityIn= data[x];
+				}
+			}
+		}
+
+		// changes = {
+		// 	"latestMunicipalityOut": latestMunicipalityOut,
+		// 	"latestMunicipalityIn": latestMunicipalityIn
+		// }
+		// console.log(changes);
+		// 
+		// 
+		// 
+		let inHTML = document.getElementById("latest-in");
+		let outHTML = document.getElementById("latest-out");
+
+		//TODO: more info?
+		inHTML.innerHTML = "<strong>"+latestMunicipalityIn["kommune"] + "</strong> er den kommunen som nyligst gikk inn i ROBEK. Kommunen ble oppført den <strong>"+latestMunicipalityIn["sist_inn"]+"</strong>. <strong>"+latestMunicipalityIn["kommune"]+"</strong> har vært i registeret <strong>"+latestMunicipalityIn["antall_aar"]+"</strong> år totalt, fordelt på <strong>"+latestMunicipalityIn["antall_ganger"]+"</strong> periode(r).";
+		outHTML.innerHTML = "<strong>"+latestMunicipalityOut["kommune"] + "</strong> er den kommunen som sist gikk ut av ROBEK. Kommunen ble fjernet fra listen den <strong>"+latestMunicipalityOut["sist_ut"]+"</strong> etter å ha vært inne siden <strong>"+latestMunicipalityOut["sist_inn"]+"</strong>. Kommunen har vært i registeret i <strong>"+latestMunicipalityOut["antall_aar"]+"</strong> år totalt, fordelt på <strong>"+latestMunicipalityOut["antall_ganger"]+"</strong> periode(r).";
+
+	}
+
+	// let newest = latestChanges();
+
+	latestChanges();
 
 
 	function percentageIncrease(offset, end) {
@@ -289,11 +360,12 @@ $(document).ready(function() {
 
 	var indexedSearch = setupLunrSearch(globalData);
 
-	searchField.addEventListener('change', function(e) {
+
+	searchButton.addEventListener('click', function(e) {
 
 		clearSearch("lunr-index");
+		let formValue = searchField.value;
 
-		let formValue = e.target.value;
 		if (formValue !== "") {
 
 			var indices = indexedSearch.search(formValue);
