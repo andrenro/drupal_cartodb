@@ -31,8 +31,22 @@
 }
 
 #latest-in{
+	margin-top: 0.5em;
 	font-size:1.2em;	
 }
 #latest-out{
+	margin-top: 0.5em;
 	font-size:1.2em;
+}
+#total-in-register{
+	font-size:1.2em;
+}
+
+.dates-li{
+	font-weight: bold;
+}
+
+.li-elem{
+	font-size:1.2em;
+	font-weight: bold;
 }

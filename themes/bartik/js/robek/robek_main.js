@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
 	initUI();
+
 	let searchField = document.getElementById('search');
 	let searchButton = document.getElementById('search-button');
 
@@ -11,6 +12,43 @@ $(document).ready(function() {
 		"d": "at kommunen eller fylkeskommunen ikke følger vedtatt plan for dekning av underskudd"
 	}
 
+
+	/**
+	 * Cleanup functions
+	 */
+	//Aggregates data on the form "2003-Inn" to an array containing all dates when the muni got registered in ROBEK.
+	// function clean() {
+
+	// 	let data = DataManager.getData();
+
+	// 	for(let x = 0; x < data.length; x++){
+	// 		let properties = Object.keys(data[x]);
+	// 		let inn = [];
+	// 		let ut = [];
+	// 		data[x]["inn"]= [];
+	// 		data[x]["ut"]= [];
+
+	// 		for(let y = 0; y < properties.length; y++){
+	// 			if(properties[y].split("-")[1] === "Inn"){
+	// 				let dateIn = moment(data[x][properties[y]],"DD/MM/YY").format("MM/DD/YY");
+	// 				inn.push(dateIn);
+	// 				delete data[x][properties[y]];
+	// 			}
+	// 			if(properties[y].split("-")[1] === "Ut"){
+	// 				let dateOut= moment(data[x][properties[y]],"DD/MM/YY").format("MM/DD/YY");
+	// 				ut.push(dateOut);
+	// 				delete data[x][properties[y]];
+	// 			}
+	// 		}
+
+	// 		data[x]["inn"] = inn;
+	// 		data[x]["ut"] = ut;
+	// 	}
+
+	// 	console.log(data);
+	// }
+
+	// clean();
 
 	// datas = DataManager.getData();
 
@@ -23,16 +61,68 @@ $(document).ready(function() {
 	// 		datas[x]["sist_inn"] = "";
 	// 		datas[x]["sist_ut"] = "";
 	// 	}
-
-
 	// }
-
 	// console.log(datas);
 
+	//The arrays must be sorted.. 
+	function getTotalNumberOfMilliseconds(inArr, outArr, inRegNow) {
+		let today = new Date();
+		let millis = 0;
+
+		for (let x = 0; x < inArr.length; x++) {
+
+			//If the muni is out of the ROBEK, this will be the case for all values of x
+			if (inArr[x] && outArr[x]) {
+				millis += (new Date(outArr[x]) - new Date(inArr[x]));
+
+			}
+		}
+
+		//The muni is still in ROBEK, so outArr.length < inArr.length -> So we add todays date with the latest date in inArr to get the number of days  the Muni has been in ROBEK since it was registered.
+		if (inRegNow) {
+			let lastIn = new Date(inArr[inArr.length - 1]);
+			//Add days from today to last time the municipality was added to the register.
+			millis += (today - lastIn);
+			return millis;
+		}
+		return millis;
+	}
+
+	function getYears(millis) {
+		return millis / (1000 * 60 * 60 * 24) / 365;
+	}
+
+	function getDays(millis) {
+		return millis / (1000 * 60 * 60 * 24);
+	}
+
+	function getYearsAndDays(millis) {
+		let years = getYears(millis);
+
+		let obj = {
+			"inputMillis": millis,
+			"years": Math.floor(years),
+			"days": Math.floor((years % 1) * 365)
+		}
+		return obj;
+	}
+
+	function getNationalAverageMillis(data) {
+		let sum = 0;
+		let counter = 0;
+		for (let x = 0; x < data.length; x++) {
+			sum += getTotalNumberOfMilliseconds(data[x]["inn"], data[x]["ut"], data[x]["inne_naa"]);
+			counter++;
+		}
+		//Skip decimals
+		return Math.floor(sum / counter);
+	}
 
 
+	var nationalMeanYearsAndDays = getYearsAndDays(getNationalAverageMillis(fetchData()));
 
-	function latestChanges(){
+
+	function latestChanges() {
 		let data = DataManager.getData();
 		let changes = undefined;
 
@@ -40,54 +130,58 @@ $(document).ready(function() {
 		let latestInDate = new Date("01/01/70");
 		let latestOutDate = new Date("01/01/70");
 
+		let totalInRegister = 0;
+
 		let latestMunicipalityIn = {};
 		let latestMunicipalityOut = {};
 
-		for (let x = 0;x < data.length; x++){
-			if(data[x]["antall_aar"] > 0){
+		for (let x = 0; x < data.length; x++) {
+			if (data[x]["inne_naa"]) {
+				totalInRegister++;
+			}
+
+
+			if (data[x]["antall_aar"] > 0) {
 
 				let lastOut = new Date(data[x]["sist_ut"]);
 				let lastIn = new Date(data[x]["sist_inn"]);
 
-				if(lastOut > latestOutDate){
+				if (lastOut > latestOutDate) {
 					latestOutDate = lastOut;
 					latestMunicipalityOut = data[x];
 				}
-				if(lastIn > latestInDate){
+				if (lastIn > latestInDate) {
 					latestInDate = lastIn;
-					latestMunicipalityIn= data[x];
+					latestMunicipalityIn = data[x];
 				}
 			}
 		}
 
-		// changes = {
-		// 	"latestMunicipalityOut": latestMunicipalityOut,
-		// 	"latestMunicipalityIn": latestMunicipalityIn
-		// }
-		// console.log(changes);
-		// 
-		// 
-		// 
+		let millisOut = getTotalNumberOfMilliseconds(latestMunicipalityOut["inn"], latestMunicipalityOut["ut"], latestMunicipalityOut["inne_naa"]);
+		let millisIn = getTotalNumberOfMilliseconds(latestMunicipalityIn["inn"], latestMunicipalityIn["ut"], latestMunicipalityIn["inne_naa"]);
+
+		let yearsAndDaysOut = getYearsAndDays(millisOut);
+		let yearsAndDaysIn = getYearsAndDays(millisIn);
+
+
 		let inHTML = document.getElementById("latest-in");
 		let outHTML = document.getElementById("latest-out");
+		let numberInROBEK = document.getElementById("total-in-register");
+
+		numberInROBEK.innerHTML = "Antall kommuner i registeret nå: <strong>" + totalInRegister + "</strong>";
 
 		//TODO: more info?
-		inHTML.innerHTML = "<strong>"+latestMunicipalityIn["kommune"] + "</strong> er den kommunen som nyligst gikk inn i ROBEK. Kommunen ble oppført den <strong>"+latestMunicipalityIn["sist_inn"]+"</strong>. <strong>"+latestMunicipalityIn["kommune"]+"</strong> har vært i registeret <strong>"+latestMunicipalityIn["antall_aar"]+"</strong> år totalt, fordelt på <strong>"+latestMunicipalityIn["antall_ganger"]+"</strong> periode(r).";
-		outHTML.innerHTML = "<strong>"+latestMunicipalityOut["kommune"] + "</strong> er den kommunen som sist gikk ut av ROBEK. Kommunen ble fjernet fra listen den <strong>"+latestMunicipalityOut["sist_ut"]+"</strong> etter å ha vært inne siden <strong>"+latestMunicipalityOut["sist_inn"]+"</strong>. Kommunen har vært i registeret i <strong>"+latestMunicipalityOut["antall_aar"]+"</strong> år totalt, fordelt på <strong>"+latestMunicipalityOut["antall_ganger"]+"</strong> periode(r).";
-
+		inHTML.innerHTML = "<strong>" + latestMunicipalityIn["kommune"] + "</strong> er den kommunen som nyligst gikk inn i ROBEK. Kommunen ble oppført den <strong>" + latestMunicipalityIn["sist_inn"] + "</strong>. <strong>" + latestMunicipalityIn["kommune"] + "</strong> har vært i registeret <strong>" + yearsAndDaysIn["years"] + " år</strong> og <strong>" + yearsAndDaysIn["days"] + " dager</strong> totalt, fordelt på <strong>" + latestMunicipalityIn["antall_ganger"] + "</strong> periode(r). <p>Perioder kommunen har vært i ROBEK: </p><ul id='latest-in-periods'></ul>";
+		outHTML.innerHTML = "<strong>" + latestMunicipalityOut["kommune"] + "</strong> er den kommunen som sist gikk ut av ROBEK. Kommunen ble fjernet fra listen den <strong>" + latestMunicipalityOut["sist_ut"] + "</strong> etter å ha vært inne siden <strong>" + latestMunicipalityOut["sist_inn"] + "</strong>. Kommunen har vært i registeret i <strong>" + yearsAndDaysOut["years"] + " år</strong>  og <strong>" + yearsAndDaysIn["days"] + " dager</strong>  totalt, fordelt på <strong>" + latestMunicipalityOut["antall_ganger"] + "</strong> periode(r). <p>Perioder kommunen har vært i ROBEK: </p><ul id='latest-out-periods'></ul>";
+		createListFromArrays(latestMunicipalityIn["inn"],latestMunicipalityIn["ut"],"dates-li","latest-in-periods");
+		createListFromArrays(latestMunicipalityOut["inn"],latestMunicipalityOut["ut"],"dates-li","latest-out-periods");
 	}
 
-	// let newest = latestChanges();
-
-	latestChanges();
-
-
-	function percentageIncrease(offset, end) {
+	function percentageChange(offset, end) {
 		let diff = (end - offset);
 		return (diff / offset) * 100;
 	}
 
-	//TODO: make this data available before app starts
 	function fetchData() {
 		var reduced = [];
 		//Fetches the big json-datafile
@@ -103,7 +197,7 @@ $(document).ready(function() {
 		return reduced;
 	};
 
-	//Manual text-search in array, due to weird weights in lunr.js
+	//Manual text-search in array, due to weird weighting of some words in lunr.js
 	function basicSearch(array, key, searchValue) {
 		for (let x = 0; x < array.length; x++) {
 			if (array[x][key].toLowerCase() === searchValue.toLowerCase()) {
@@ -138,22 +232,19 @@ $(document).ready(function() {
 		return index;
 	};
 
-	//Sets proper visibility for fields
-	// function toggleListHeaders(){
-	// 	$("#robek-comments-top").css("visibility","visible");
-	// 	$("#robek-comments").css("visibility","visible");
-	// }
-	// 
+	//Removes bar charts for single municipalities, and the relevant comments attached to it.
 	function removeSingleMunicipality() {
 		$("#single-canvas").remove();
 		$("#robek-comments").css("display", "none");
 	}
 
+	//Hides the containers which shows the lists of top/bottom municipalities
 	function hideLists() {
 		$("#canvas-container-bottom").css("display", "none");
 		$("#canvas-container-top").css("display", "none");
 
 	}
+
 
 	function showLists() {
 		$("#canvas-container-bottom").css("display", "inline");
@@ -161,6 +252,7 @@ $(document).ready(function() {
 		$("#showTopLists").css("visibility", "hidden");
 
 	}
+
 
 	function initUI() {
 		$("#createTopLists").css("visibility", "hidden");
@@ -263,13 +355,16 @@ $(document).ready(function() {
 	};
 
 
-
 	//Kommuner that has been in ROBEK the longest period of time
 	function singleMunicipality(input) {
 
+		if (nationalMeanYearsAndDays) {
+			var nMean = nationalMeanYearsAndDays;
+		}
+
 		let letters = "";
 		let explanation = "";
-		if (input["antall_aar"] < 1) {
+		if (input["antall_aar"] === 0) {
 			$("#no-results").html(input["kommune"] + " har til nå aldri vært oppført i ROBEK.");
 			$("#no-results").css("visibility", "visible");
 			setTimeout(function() {
@@ -280,6 +375,9 @@ $(document).ready(function() {
 		} else {
 			$("#createTopLists").css("visibility", "visible");
 			$("#showTopLists").css("visibility", "visible");
+
+			let milliSecondsTotal = getTotalNumberOfMilliseconds(input["inn"], input["ut"], input["inne_naa"]);
+			let yearsAndDays = getYearsAndDays(milliSecondsTotal);
 
 			hideLists();
 
@@ -309,8 +407,9 @@ $(document).ready(function() {
 				}
 			});
 
-			let in_or_out = input["inne_naa"] ? "registrert i ROBEK. Kommunen ble sist oppført den <strong>" + input["sist_inn"] + "</strong>." : "ikke registrert i ROBEK. Kommunen gikk sist ut av ROBEK den <strong>" + input["sist_ut"] + "</strong>.";
 
+
+			let in_or_out = input["inne_naa"] ? "registrert i ROBEK. Kommunen ble sist oppført den <strong>" + input["sist_inn"] + "</strong>." : "ikke registrert i ROBEK. Kommunen gikk sist ut av ROBEK den <strong>" + input["sist_ut"] + "</strong>.";
 
 			//Comments?
 			if (input["bokstaver"] !== "") {
@@ -322,11 +421,33 @@ $(document).ready(function() {
 					explanation = "<strong>" + input["kommune"] + "</strong> er oppført i ROBEK med hjemmel i kommunelovens §60, bokstav: <strong>" + letters[0] + ".</strong> " + lawLetters[letters[0]] + ".";
 				}
 			}
-			var percentageDiff = percentageIncrease(nationalMean, input["antall_aar"]);
+
+
+
+			var percentageDiff = percentageChange(nMean["inputMillis"], milliSecondsTotal);
 			var diffHTML = percentageDiff > 0 ? "<strong>" + Math.abs(percentageDiff.toFixed(2)) + "%</strong> lengre" : "<strong>" + Math.abs(percentageDiff.toFixed(2)) + "%</strong> kortere";
-			$("#robek-comments").html("<br><strong>" + input["kommune"] + "</strong> er for øyeblikket " + in_or_out + " <strong>" + input["kommune"] + "</strong> har totalt ligget <strong>" + input["antall_aar"] + " år</strong> på ROBEK. Dette er " + diffHTML + " enn det nasjonale snittet på <strong>" + nationalMean.toFixed(2) + "</strong> år.<br>&nbsp;<p>" + explanation + "</p>");
+			$("#robek-comments").html("<br><strong>" + input["kommune"] + "</strong> er for øyeblikket " + in_or_out + " <strong>" + input["kommune"] + "</strong> har totalt ligget <strong>" + yearsAndDays["years"] + " år</strong> og <strong>" + yearsAndDays["days"] + " dager</strong> på ROBEK. Dette er " + diffHTML + " enn det nasjonale snittet på <strong>" + nMean["years"] + " år</strong> og <strong>"+nMean["days"]+" dager</strong>. <p>Perioder kommunen har vært i ROBEK: </p> <ul id='date-ul'></ul><p>" + explanation + "</p>");
+
+			createListFromArrays(input["inn"],input["ut"],"dates-li","date-ul");
+
 			$("#robek-comments").css("display", "block");
 
+		}
+	}
+
+	function createListFromArrays(array1,array2,liClass,ulId){
+
+		var ul = document.getElementById(ulId);
+
+		for(let x = 0; x < array1.length;x++){
+			let li = document.createElement("li");
+			li.setAttribute("class",liClass);
+			if(array1[x] && array2[x]){
+				li.appendChild(document.createTextNode("Inn: "+array1[x]+" - Ut: "+array2[x]));
+			}else{
+				li.appendChild(document.createTextNode("Inn: "+array1[x]+" - Fortsatt i registeret."));
+			}
+			ul.appendChild(li);
 		}
 	}
 
@@ -360,7 +481,6 @@ $(document).ready(function() {
 
 	var indexedSearch = setupLunrSearch(globalData);
 
-
 	searchButton.addEventListener('click', function(e) {
 
 		clearSearch("lunr-index");
@@ -377,7 +497,9 @@ $(document).ready(function() {
 					"bokstaver": globalData[indices[0].ref]["bokstaver"],
 					"inne_naa": globalData[indices[0].ref]["inne_naa"],
 					"sist_inn": globalData[indices[0].ref]["sist_inn"],
-					"sist_ut": globalData[indices[0].ref]["sist_ut"]
+					"sist_ut": globalData[indices[0].ref]["sist_ut"],
+					"inn": globalData[indices[0].ref]["inn"],
+					"ut": globalData[indices[0].ref]["ut"]
 				};
 
 				singleMunicipality(obj);
@@ -418,10 +540,24 @@ $(document).ready(function() {
 			node.appendChild(textnode);
 			document.getElementById(htmlID).appendChild(node);
 		}
-
 		handleResultClicks("." + liClass);
 
 	};
+
+	function createRegionList(){
+		var regions = DataManager.getRegionList();
+
+		var ul = document.getElementById("region-list");
+
+		for(let x = 0; x < 5;x++){
+			let li = document.createElement("li");
+			li.setAttribute("class","li-elem");
+			if(regions[x]){
+				li.appendChild(document.createTextNode(regions[x]["fylke"]+": "+regions[x]["antall_inne"]));
+			}
+			ul.appendChild(li);
+		}
+	}
 
 	function createBottomList() {
 		var sort = fetchData();
@@ -440,9 +576,13 @@ $(document).ready(function() {
 	var mapFrame = document.getElementById("carto");
 	document.getElementById("carto").src = url;
 
+	//INIT
+	latestChanges();
 	//Looks better.. Refactor
 	mapFrame.addEventListener("load", function() {
 
+		createRegionList();
+		
 		createBottomList();
 		createTopList();
 		showLists();
