@@ -3208,7 +3208,7 @@ $(document).ready(function() {
                     "07/28/11"
                 ],
                 "ut": [
-                    "04/08/00",
+                    "08/15/04",
                     "07/14/09",
                     "07/09/13"
                 ]
@@ -4777,12 +4777,10 @@ $(document).ready(function() {
                 "fylke": "Nord-Trøndelag",
                 "antall_aar": 0,
                 "antall_ganger": 0,
-                "inne_naa": true,
+                "inne_naa": false,
                 "sist_inn": "",
                 "sist_ut": "",
-                "inn": [
-                    "Invalid date"
-                ],
+                "inn": [],
                 "ut": []
             }, {
                 "bokstaver": "",
@@ -5247,9 +5245,9 @@ $(document).ready(function() {
                 "fylke": "Nordland",
                 "antall_aar": 8.3,
                 "antall_ganger": 3,
-                "inne_naa": true,
+                "inne_naa": false,
                 "sist_inn": "10/01/15",
-                "sist_ut": "07/28/10",
+                "sist_ut": "09/06/16",
                 "inn": [
                     "03/05/01",
                     "09/22/03",
@@ -5257,7 +5255,8 @@ $(document).ready(function() {
                 ],
                 "ut": [
                     "07/11/02",
-                    "07/28/10"
+                    "07/28/10",
+                    "09/06/16"
                 ]
             }, {
                 "bokstaver": "",
@@ -6261,14 +6260,183 @@ $(document).ready(function() {
                     return 0;
                 }
             }).reverse();
-
         }
 
+        //Data cleaner - generate new data regularily 
+        function getTimeSeries() {
+            var data = getData();
+            var years = [];
+            var cleaned = [];
 
+            // for (let x = 0; x < data.length; x++) {
+            //     for (let y = 0; y < data[x]["inn"].length; y++) {
+            //         if(data[x]["inn"].length > 0 ){
+            //             // console.log(data[x]["inn"][y]);
+            //             console.log("20"+data[x]["inn"][y].split("/")[2]);
+            //             years.push("20" + data[x]["inn"][y].split("/")[2]);
+            //         }
+            //     }
+            // }
+
+
+
+            // for (let x = 0; x < data.length; x++) {
+            //     for (let y = 0; y < data[x]["ut"].length; y++) {
+            //         if(data[x]["ut"].length > 0){
+            //             let year = "20" + data[x]["ut"][y].split("/")[2]
+            //             // console.log(data[x]["ut"][y]);
+            //             years.push(year);
+            //         }
+            //     }
+            // }
+
+            // let counter = 0;
+            // let obj = {};
+
+            // for (let m = 0; m < years.length; m++) {
+            //     // console.log(years[m]); console.log(m);
+            //     if (!obj[years[m]]) {
+            //         obj[years[m]] = 1;
+            //     } else {
+            //         obj[years[m]] += 1;
+            //     }
+            // }
+            // console.log(obj);
+            // return obj;
+        }
+
+        /**
+         * Cleanup functions
+         */
+        //Aggregates data on the form "2003-Inn" to an array containing all dates when the muni got registered in ROBEK.
+        // function clean() {
+
+        //  let data = DataManager.getData();
+
+        //  for(let x = 0; x < data.length; x++){
+        //      let properties = Object.keys(data[x]);
+        //      let inn = [];
+        //      let ut = [];
+        //      data[x]["inn"]= [];
+        //      data[x]["ut"]= [];
+
+        //      for(let y = 0; y < properties.length; y++){
+        //          if(properties[y].split("-")[1] === "Inn"){
+        //              let dateIn = moment(data[x][properties[y]],"DD/MM/YY").format("MM/DD/YY");
+        //              inn.push(dateIn);
+        //              delete data[x][properties[y]];
+        //          }
+        //          if(properties[y].split("-")[1] === "Ut"){
+        //              let dateOut= moment(data[x][properties[y]],"DD/MM/YY").format("MM/DD/YY");
+        //              ut.push(dateOut);
+        //              delete data[x][properties[y]];
+        //          }
+        //      }
+
+        //      data[x]["inn"] = inn;
+        //      data[x]["ut"] = ut;
+        //  }
+
+        //  console.log(data);
+        // }
+
+        // clean();
+
+        // datas = DataManager.getData();
+
+        // for(let x = 0; x < datas.length;x++){
+
+        //  if(datas[x]["antall_aar"] > 0){
+        //      datas[x]["sist_ut"] = moment(datas[x]["sist_ut"], "DD/MM/YY").format("MM/DD/YY");
+        //      datas[x]["sist_inn"] = moment(datas[x]["sist_inn"], "DD/MM/YY").format("MM/DD/YY");
+        //  }else{
+        //      datas[x]["sist_inn"] = "";
+        //      datas[x]["sist_ut"] = "";
+        //  }
+        // }
+        // console.log(datas);
+
+        //How many went into robek -> Update this
+        function inRobek() {
+            return {
+                "2001": 93,
+                "2002": 25,
+                "2003": 50,
+                "2004": 24,
+                "2005": 17,
+                "2006": 7,
+                "2007": 3,
+                "2008": 15,
+                "2009": 20,
+                "2010": 16,
+                "2011": 11,
+                "2012": 8,
+                "2013": 10,
+                "2014": 13,
+                "2015": 8,
+                "2016": 9
+            };
+        }
+        //How many went out of robek - > Update this
+        function outRobek() {
+            return {
+                "2001": 12,
+                "2002": 28,
+                "2003": 20,
+                "2004": 13,
+                "2005": 45,
+                "2006": 23,
+                "2007": 35,
+                "2008": 13,
+                "2009": 16,
+                "2010": 15,
+                "2011": 8,
+                "2012": 11,
+                "2013": 11,
+                "2014": 5,
+                "2015": 14,
+                "2016": 12
+            };
+        }
+
+        //Calculates 
+        //TODO: create as object instead of calculating..
+        function totalInRobek(){
+            var inn = inRobek();
+            var out = outRobek();
+            var years = Object.keys(inn);
+            var balanced = []
+            var results = {}
+            var h = []
+            let obj = {}      
+            for (let x = 0; x < years.length; x++){
+                let i=  inn[years[x]];
+                let o= out[years[x]];
+                let add = parseInt(i - o);
+
+                let key = years[x];
+            
+                if(x === 0) {
+                    obj[key] = add;
+                    balanced.push(obj);
+                    h.push(obj[key]);
+                }else{
+                    obj[key] = (h[x - 1] + add);
+                    balanced.push(obj);
+                    h.push(obj[key]);
+
+                }
+            }
+            return obj;
+        }
 
         return {
             getData: getData,
-            getRegionList: getRegionList
+            getRegionList: getRegionList,
+            getTimeSeries: getTimeSeries,
+            outRobek: outRobek,
+            inRobek: inRobek,
+            totalInRobek: totalInRobek
         }
 
     })();
