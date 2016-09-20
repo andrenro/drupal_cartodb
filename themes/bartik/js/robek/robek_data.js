@@ -3,7 +3,7 @@ $(document).ready(function() {
     DataManager = (function() {
         //Converted the dates on the sist_ut / sist_inn for comparison reasons.
         getData = function() {
-            let robek_data = [{
+            var robek_data = [{
                 "bokstaver": "c-d",
                 "kommunenr": 101,
                 "kommune": "Halden",
@@ -11,14 +11,14 @@ $(document).ready(function() {
                 "antall_aar": 5.3,
                 "antall_ganger": 2,
                 "inne_naa": true,
-                "sist_inn": "08/01/12",
-                "sist_ut": "11/18/02",
+                "sist_inn": "08/01/2012",
+                "sist_ut": "11/18/2002",
                 "inn": [
-                    "01/01/01",
-                    "08/01/12"
+                    "01/01/2001",
+                    "08/01/2012"
                 ],
                 "ut": [
-                    "11/18/02"
+                    "11/18/2002"
                 ]
             }, {
                 "bokstaver": "",
@@ -28,13 +28,13 @@ $(document).ready(function() {
                 "antall_aar": 4.39,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "02/18/03",
-                "sist_ut": "07/09/07",
+                "sist_inn": "02/18/2003",
+                "sist_ut": "07/09/2007",
                 "inn": [
-                    "02/18/03"
+                    "02/18/2003"
                 ],
                 "ut": [
-                    "07/09/07"
+                    "07/09/2007"
                 ]
             }, {
                 "bokstaver": "",
@@ -56,13 +56,13 @@ $(document).ready(function() {
                 "antall_aar": 5.42,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "02/06/02",
-                "sist_ut": "07/09/07",
+                "sist_inn": "02/06/2002",
+                "sist_ut": "07/09/2007",
                 "inn": [
-                    "02/06/02"
+                    "02/06/2002"
                 ],
                 "ut": [
-                    "07/09/07"
+                    "07/09/2007"
                 ]
             }, {
                 "bokstaver": "",
@@ -72,15 +72,15 @@ $(document).ready(function() {
                 "antall_aar": 2.93,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "08/25/04",
-                "sist_ut": "08/03/06",
+                "sist_inn": "08/25/2004",
+                "sist_ut": "08/03/2006",
                 "inn": [
-                    "02/18/03",
-                    "08/25/04"
+                    "02/18/2003",
+                    "08/25/2004"
                 ],
                 "ut": [
-                    "02/13/04",
-                    "08/03/06"
+                    "02/13/2004",
+                    "08/03/2006"
                 ]
             }, {
                 "bokstaver": "",
@@ -102,15 +102,15 @@ $(document).ready(function() {
                 "antall_aar": 2,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "06/25/15",
-                "sist_ut": "06/14/16",
+                "sist_inn": "06/25/2015",
+                "sist_ut": "06/14/2016",
                 "inn": [
-                    "02/06/02",
-                    "06/25/15"
+                    "02/06/2002",
+                    "06/25/2015"
                 ],
                 "ut": [
-                    "02/18/03",
-                    "06/14/16"
+                    "02/18/2003",
+                    "06/14/2016"
                 ]
             }, {
                 "bokstaver": "",
@@ -156,13 +156,13 @@ $(document).ready(function() {
                 "antall_aar": 4.39,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "02/18/03",
-                "sist_ut": "07/09/07",
+                "sist_inn": "02/18/2003",
+                "sist_ut": "07/09/2007",
                 "inn": [
-                    "02/18/03"
+                    "02/18/2003"
                 ],
                 "ut": [
-                    "07/09/07"
+                    "07/09/2007"
                 ]
             }, {
                 "bokstaver": "",
@@ -208,17 +208,17 @@ $(document).ready(function() {
                 "antall_aar": 11.24,
                 "antall_ganger": 3,
                 "inne_naa": false,
-                "sist_inn": "02/20/09",
-                "sist_ut": "08/14/14",
+                "sist_inn": "02/20/2009",
+                "sist_ut": "08/14/2014",
                 "inn": [
-                    "02/15/01",
-                    "10/08/03",
-                    "02/20/09"
+                    "02/15/2001",
+                    "10/08/2003",
+                    "02/20/2009"
                 ],
                 "ut": [
-                    "02/18/03",
-                    "07/09/07",
-                    "08/14/14"
+                    "02/18/2003",
+                    "07/09/2007",
+                    "08/14/2014"
                 ]
             }, {
                 "bokstaver": "",
@@ -252,13 +252,13 @@ $(document).ready(function() {
                 "antall_aar": 11,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "02/07/05",
-                "sist_ut": "05/30/16",
+                "sist_inn": "02/07/2005",
+                "sist_ut": "05/30/2016",
                 "inn": [
-                    "02/07/05"
+                    "02/07/2005"
                 ],
                 "ut": [
-                    "05/30/16"
+                    "05/30/2016"
                 ]
             }, {
                 "bokstaver": "",
@@ -268,13 +268,13 @@ $(document).ready(function() {
                 "antall_aar": 2.91,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "08/14/03",
-                "sist_ut": "07/05/06",
+                "sist_inn": "08/14/2003",
+                "sist_ut": "07/05/2006",
                 "inn": [
-                    "08/14/03"
+                    "08/14/2003"
                 ],
                 "ut": [
-                    "07/05/06"
+                    "07/05/2006"
                 ]
             }, {
                 "bokstaver": "",
@@ -320,13 +320,13 @@ $(document).ready(function() {
                 "antall_aar": 1,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "02/15/01",
-                "sist_ut": "02/11/02",
+                "sist_inn": "02/15/2001",
+                "sist_ut": "02/11/2002",
                 "inn": [
-                    "02/15/01"
+                    "02/15/2001"
                 ],
                 "ut": [
-                    "02/11/02"
+                    "02/11/2002"
                 ]
             }, {
                 "bokstaver": "",
@@ -372,13 +372,13 @@ $(document).ready(function() {
                 "antall_aar": 1.1,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "02/26/02",
-                "sist_ut": "04/01/03",
+                "sist_inn": "02/26/2002",
+                "sist_ut": "04/01/2003",
                 "inn": [
-                    "02/26/02"
+                    "02/26/2002"
                 ],
                 "ut": [
-                    "04/01/03"
+                    "04/01/2003"
                 ]
             }, {
                 "bokstaver": "",
@@ -400,13 +400,13 @@ $(document).ready(function() {
                 "antall_aar": 2.19,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "04/01/03",
-                "sist_ut": "06/09/05",
+                "sist_inn": "04/01/2003",
+                "sist_ut": "06/09/2005",
                 "inn": [
-                    "04/01/03"
+                    "04/01/2003"
                 ],
                 "ut": [
-                    "06/09/05"
+                    "06/09/2005"
                 ]
             }, {
                 "bokstaver": "",
@@ -428,13 +428,13 @@ $(document).ready(function() {
                 "antall_aar": 4.01,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "07/08/02",
-                "sist_ut": "07/05/06",
+                "sist_inn": "07/08/2002",
+                "sist_ut": "07/05/2006",
                 "inn": [
-                    "07/08/02"
+                    "07/08/2002"
                 ],
                 "ut": [
-                    "07/05/06"
+                    "07/05/2006"
                 ]
             }, {
                 "bokstaver": "",
@@ -444,13 +444,13 @@ $(document).ready(function() {
                 "antall_aar": 1.4,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "02/13/06",
-                "sist_ut": "07/09/07",
+                "sist_inn": "02/13/2006",
+                "sist_ut": "07/09/2007",
                 "inn": [
-                    "02/13/06"
+                    "02/13/2006"
                 ],
                 "ut": [
-                    "07/09/07"
+                    "07/09/2007"
                 ]
             }, {
                 "bokstaver": "",
@@ -472,13 +472,13 @@ $(document).ready(function() {
                 "antall_aar": 5.41,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "02/15/01",
-                "sist_ut": "07/05/06",
+                "sist_inn": "02/15/2001",
+                "sist_ut": "07/05/2006",
                 "inn": [
-                    "02/15/01"
+                    "02/15/2001"
                 ],
                 "ut": [
-                    "07/05/06"
+                    "07/05/2006"
                 ]
             }, {
                 "bokstaver": "",
@@ -500,13 +500,13 @@ $(document).ready(function() {
                 "antall_aar": 2.18,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "04/01/03",
-                "sist_ut": "06/07/05",
+                "sist_inn": "04/01/2003",
+                "sist_ut": "06/07/2005",
                 "inn": [
-                    "04/01/03"
+                    "04/01/2003"
                 ],
                 "ut": [
-                    "06/07/05"
+                    "06/07/2005"
                 ]
             }, {
                 "bokstaver": "",
@@ -516,13 +516,13 @@ $(document).ready(function() {
                 "antall_aar": 2.88,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "09/09/09",
-                "sist_ut": "07/30/12",
+                "sist_inn": "09/09/2009",
+                "sist_ut": "07/30/2012",
                 "inn": [
-                    "09/09/09"
+                    "09/09/2009"
                 ],
                 "ut": [
-                    "07/30/12"
+                    "07/30/2012"
                 ]
             }, {
                 "bokstaver": "",
@@ -532,15 +532,15 @@ $(document).ready(function() {
                 "antall_aar": 2.06,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "01/23/14",
-                "sist_ut": "03/02/15",
+                "sist_inn": "01/23/2014",
+                "sist_ut": "03/02/2015",
                 "inn": [
-                    "02/26/02",
-                    "01/23/14"
+                    "02/26/2002",
+                    "01/23/2014"
                 ],
                 "ut": [
-                    "02/10/03",
-                    "03/02/15"
+                    "02/10/2003",
+                    "03/02/2015"
                 ]
             }, {
                 "bokstaver": "",
@@ -550,15 +550,15 @@ $(document).ready(function() {
                 "antall_aar": 3.9,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "09/08/09",
-                "sist_ut": "07/30/12",
+                "sist_inn": "09/08/2009",
+                "sist_ut": "07/30/2012",
                 "inn": [
-                    "02/11/02",
-                    "09/08/09"
+                    "02/11/2002",
+                    "09/08/2009"
                 ],
                 "ut": [
-                    "02/10/03",
-                    "07/30/12"
+                    "02/10/2003",
+                    "07/30/2012"
                 ]
             }, {
                 "bokstaver": "",
@@ -592,14 +592,14 @@ $(document).ready(function() {
                 "antall_aar": 4.93,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "07/14/09",
-                "sist_ut": "06/18/10",
+                "sist_inn": "07/14/2009",
+                "sist_ut": "06/18/2010",
                 "inn": [
-                    "07/15/05",
-                    "07/14/09"
+                    "07/15/2005",
+                    "07/14/2009"
                 ],
                 "ut": [
-                    "06/18/10"
+                    "06/18/2010"
                 ]
             }, {
                 "bokstaver": "",
@@ -657,15 +657,15 @@ $(document).ready(function() {
                 "antall_aar": 4.9,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "08/09/10",
-                "sist_ut": "07/09/13",
+                "sist_inn": "08/09/2010",
+                "sist_ut": "07/09/2013",
                 "inn": [
-                    "06/22/03",
-                    "08/09/10"
+                    "06/22/2003",
+                    "08/09/2010"
                 ],
                 "ut": [
-                    "07/15/05",
-                    "07/09/13"
+                    "07/15/2005",
+                    "07/09/2013"
                 ]
             }, {
                 "bokstaver": "",
@@ -675,15 +675,15 @@ $(document).ready(function() {
                 "antall_aar": 6.54,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "07/13/11",
-                "sist_ut": "07/14/14",
+                "sist_inn": "07/13/2011",
+                "sist_ut": "07/14/2014",
                 "inn": [
-                    "01/01/01",
-                    "07/13/11"
+                    "01/01/2001",
+                    "07/13/2011"
                 ],
                 "ut": [
-                    "07/15/05",
-                    "07/14/14"
+                    "07/15/2005",
+                    "07/14/2014"
                 ]
             }, {
                 "bokstaver": "",
@@ -693,13 +693,13 @@ $(document).ready(function() {
                 "antall_aar": 9.96,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "06/22/03",
-                "sist_ut": "07/09/13",
+                "sist_inn": "06/22/2003",
+                "sist_ut": "07/09/2013",
                 "inn": [
-                    "06/22/03"
+                    "06/22/2003"
                 ],
                 "ut": [
-                    "07/09/13"
+                    "07/09/2013"
                 ]
             }, {
                 "bokstaver": "d",
@@ -709,16 +709,16 @@ $(document).ready(function() {
                 "antall_aar": 6.33,
                 "antall_ganger": 3,
                 "inne_naa": true,
-                "sist_inn": "06/24/16",
-                "sist_ut": "07/14/09",
+                "sist_inn": "06/24/2016",
+                "sist_ut": "07/14/2009",
                 "inn": [
-                    "02/15/01",
-                    "06/22/03",
-                    "06/24/16"
+                    "02/15/2001",
+                    "06/22/2003",
+                    "06/24/2016"
                 ],
                 "ut": [
-                    "07/09/01",
-                    "07/14/09"
+                    "07/09/2001",
+                    "07/14/2009"
                 ]
             }, {
                 "bokstaver": "c-d",
@@ -728,15 +728,15 @@ $(document).ready(function() {
                 "antall_aar": 9.42,
                 "antall_ganger": 2,
                 "inne_naa": true,
-                "sist_inn": "07/09/13",
-                "sist_ut": "06/22/12",
+                "sist_inn": "07/09/2013",
+                "sist_ut": "06/22/2012",
                 "inn": [
-                    "07/15/05",
-                    "04/27/10",
-                    "07/09/13"
+                    "07/15/2005",
+                    "04/27/2010",
+                    "07/09/2013"
                 ],
                 "ut": [
-                    "06/22/12"
+                    "06/22/2012"
                 ]
             }, {
                 "bokstaver": "",
@@ -746,13 +746,13 @@ $(document).ready(function() {
                 "antall_aar": 7.53,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "01/01/01",
-                "sist_ut": "07/10/08",
+                "sist_inn": "01/01/2001",
+                "sist_ut": "07/10/2008",
                 "inn": [
-                    "01/01/01"
+                    "01/01/2001"
                 ],
                 "ut": [
-                    "07/10/08"
+                    "07/10/2008"
                 ]
             }, {
                 "bokstaver": "",
@@ -762,13 +762,13 @@ $(document).ready(function() {
                 "antall_aar": 4.54,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "01/01/01",
-                "sist_ut": "07/15/05",
+                "sist_inn": "01/01/2001",
+                "sist_ut": "07/15/2005",
                 "inn": [
-                    "01/01/01"
+                    "01/01/2001"
                 ],
                 "ut": [
-                    "07/15/05"
+                    "07/15/2005"
                 ]
             }, {
                 "bokstaver": "",
@@ -790,15 +790,15 @@ $(document).ready(function() {
                 "antall_aar": 1.99,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "02/18/03",
-                "sist_ut": "02/10/04",
+                "sist_inn": "02/18/2003",
+                "sist_ut": "02/10/2004",
                 "inn": [
-                    "02/15/01",
-                    "02/18/03"
+                    "02/15/2001",
+                    "02/18/2003"
                 ],
                 "ut": [
-                    "02/18/02",
-                    "02/10/04"
+                    "02/18/2002",
+                    "02/10/2004"
                 ]
             }, {
                 "bokstaver": "",
@@ -856,13 +856,13 @@ $(document).ready(function() {
                 "antall_aar": 0.98,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "02/18/03",
-                "sist_ut": "02/10/04",
+                "sist_inn": "02/18/2003",
+                "sist_ut": "02/10/2004",
                 "inn": [
-                    "02/18/03"
+                    "02/18/2003"
                 ],
                 "ut": [
-                    "02/10/04"
+                    "02/10/2004"
                 ]
             }, {
                 "bokstaver": "",
@@ -884,13 +884,13 @@ $(document).ready(function() {
                 "antall_aar": 2.01,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "07/15/05",
-                "sist_ut": "07/16/07",
+                "sist_inn": "07/15/2005",
+                "sist_ut": "07/16/2007",
                 "inn": [
-                    "07/15/05"
+                    "07/15/2005"
                 ],
                 "ut": [
-                    "07/16/07"
+                    "07/16/2007"
                 ]
             }, {
                 "bokstaver": "",
@@ -900,13 +900,13 @@ $(document).ready(function() {
                 "antall_aar": 0.98,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "02/18/03",
-                "sist_ut": "02/10/04",
+                "sist_inn": "02/18/2003",
+                "sist_ut": "02/10/2004",
                 "inn": [
-                    "02/18/03"
+                    "02/18/2003"
                 ],
                 "ut": [
-                    "02/10/04"
+                    "02/10/2004"
                 ]
             }, {
                 "bokstaver": "",
@@ -928,13 +928,13 @@ $(document).ready(function() {
                 "antall_aar": 1.39,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "01/01/01",
-                "sist_ut": "05/23/02",
+                "sist_inn": "01/01/2001",
+                "sist_ut": "05/23/2002",
                 "inn": [
-                    "01/01/01"
+                    "01/01/2001"
                 ],
                 "ut": [
-                    "05/23/02"
+                    "05/23/2002"
                 ]
             }, {
                 "bokstaver": "",
@@ -956,13 +956,13 @@ $(document).ready(function() {
                 "antall_aar": 0.73,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "09/22/15",
-                "sist_ut": "06/14/16",
+                "sist_inn": "09/22/2015",
+                "sist_ut": "06/14/2016",
                 "inn": [
-                    "09/22/15"
+                    "09/22/2015"
                 ],
                 "ut": [
-                    "06/14/16"
+                    "06/14/2016"
                 ]
             }, {
                 "bokstaver": "",
@@ -1056,15 +1056,15 @@ $(document).ready(function() {
                 "antall_aar": 1.26,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "07/19/06",
-                "sist_ut": "05/18/07",
+                "sist_inn": "07/19/2006",
+                "sist_ut": "05/18/2007",
                 "inn": [
-                    "02/15/01",
-                    "07/19/06"
+                    "02/15/2001",
+                    "07/19/2006"
                 ],
                 "ut": [
-                    "07/17/01",
-                    "05/18/07"
+                    "07/17/2001",
+                    "05/18/2007"
                 ]
             }, {
                 "bokstaver": "",
@@ -1074,13 +1074,13 @@ $(document).ready(function() {
                 "antall_aar": 0.95,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "02/15/01",
-                "sist_ut": "01/25/02",
+                "sist_inn": "02/15/2001",
+                "sist_ut": "01/25/2002",
                 "inn": [
-                    "02/15/01"
+                    "02/15/2001"
                 ],
                 "ut": [
-                    "01/25/02"
+                    "01/25/2002"
                 ]
             }, {
                 "bokstaver": "",
@@ -1102,14 +1102,14 @@ $(document).ready(function() {
                 "antall_aar": 9,
                 "antall_ganger": 2,
                 "inne_naa": true,
-                "sist_inn": "07/11/11",
-                "sist_ut": "07/07/05",
+                "sist_inn": "07/11/2011",
+                "sist_ut": "07/07/2005",
                 "inn": [
-                    "01/01/01",
-                    "07/11/11"
+                    "01/01/2001",
+                    "07/11/2011"
                 ],
                 "ut": [
-                    "07/07/05"
+                    "07/07/2005"
                 ]
             }, {
                 "bokstaver": "",
@@ -1179,13 +1179,13 @@ $(document).ready(function() {
                 "antall_aar": 0.95,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "02/15/01",
-                "sist_ut": "01/25/02",
+                "sist_inn": "02/15/2001",
+                "sist_ut": "01/25/2002",
                 "inn": [
-                    "02/15/01"
+                    "02/15/2001"
                 ],
                 "ut": [
-                    "01/25/02"
+                    "01/25/2002"
                 ]
             }, {
                 "bokstaver": "",
@@ -1207,13 +1207,13 @@ $(document).ready(function() {
                 "antall_aar": 4.04,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "06/25/03",
-                "sist_ut": "07/09/07",
+                "sist_inn": "06/25/2003",
+                "sist_ut": "07/09/2007",
                 "inn": [
-                    "06/25/03"
+                    "06/25/2003"
                 ],
                 "ut": [
-                    "07/09/07"
+                    "07/09/2007"
                 ]
             }, {
                 "bokstaver": "",
@@ -1271,13 +1271,13 @@ $(document).ready(function() {
                 "antall_aar": 6.97,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "07/10/03",
-                "sist_ut": "06/14/10",
+                "sist_inn": "07/10/2003",
+                "sist_ut": "06/14/2010",
                 "inn": [
-                    "07/10/03"
+                    "07/10/2003"
                 ],
                 "ut": [
-                    "06/14/10"
+                    "06/14/2010"
                 ]
             }, {
                 "bokstaver": "",
@@ -1287,10 +1287,10 @@ $(document).ready(function() {
                 "antall_aar": 7.81,
                 "antall_ganger": 1,
                 "inne_naa": true,
-                "sist_inn": "03/11/08",
+                "sist_inn": "03/11/2008",
                 "sist_ut": "",
                 "inn": [
-                    "03/11/08"
+                    "03/11/2008"
                 ],
                 "ut": []
             }, {
@@ -1304,7 +1304,7 @@ $(document).ready(function() {
                 "sist_inn": "",
                 "sist_ut": "",
                 "inn": [
-                    "01/27/16"
+                    "01/27/2016"
                 ],
                 "ut": []
             }, {
@@ -1315,13 +1315,13 @@ $(document).ready(function() {
                 "antall_aar": 0.75,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "01/01/01",
-                "sist_ut": "10/01/01",
+                "sist_inn": "01/01/2001",
+                "sist_ut": "10/01/2001",
                 "inn": [
-                    "01/01/01"
+                    "01/01/2001"
                 ],
                 "ut": [
-                    "10/01/01"
+                    "10/01/2001"
                 ]
             }, {
                 "bokstaver": "",
@@ -1439,16 +1439,16 @@ $(document).ready(function() {
                 "antall_aar": 5.01,
                 "antall_ganger": 3,
                 "inne_naa": true,
-                "sist_inn": "06/23/14",
-                "sist_ut": "06/18/12",
+                "sist_inn": "06/23/2014",
+                "sist_ut": "06/18/2012",
                 "inn": [
-                    "07/09/03",
-                    "10/18/10",
-                    "06/23/14"
+                    "07/09/2003",
+                    "10/18/2010",
+                    "06/23/2014"
                 ],
                 "ut": [
-                    "04/29/05",
-                    "06/18/12"
+                    "04/29/2005",
+                    "06/18/2012"
                 ]
             }, {
                 "bokstaver": "",
@@ -1470,13 +1470,13 @@ $(document).ready(function() {
                 "antall_aar": 5.11,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "07/09/03",
-                "sist_ut": "08/07/08",
+                "sist_inn": "07/09/2003",
+                "sist_ut": "08/07/2008",
                 "inn": [
-                    "07/09/03"
+                    "07/09/2003"
                 ],
                 "ut": [
-                    "08/07/08"
+                    "08/07/2008"
                 ]
             }, {
                 "bokstaver": "",
@@ -1486,13 +1486,13 @@ $(document).ready(function() {
                 "antall_aar": 1.09,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "02/18/08",
-                "sist_ut": "03/23/09",
+                "sist_inn": "02/18/2008",
+                "sist_ut": "03/23/2009",
                 "inn": [
-                    "02/18/08"
+                    "02/18/2008"
                 ],
                 "ut": [
-                    "03/23/09"
+                    "03/23/2009"
                 ]
             }, {
                 "bokstaver": "",
@@ -1502,13 +1502,13 @@ $(document).ready(function() {
                 "antall_aar": 7.53,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "02/26/04",
-                "sist_ut": "09/06/11",
+                "sist_inn": "02/26/2004",
+                "sist_ut": "09/06/2011",
                 "inn": [
-                    "02/26/04"
+                    "02/26/2004"
                 ],
                 "ut": [
-                    "09/06/11"
+                    "09/06/2011"
                 ]
             }, {
                 "bokstaver": "",
@@ -1542,15 +1542,15 @@ $(document).ready(function() {
                 "antall_aar": 3.66,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "06/01/10",
-                "sist_ut": "07/06/12",
+                "sist_inn": "06/01/2010",
+                "sist_ut": "07/06/2012",
                 "inn": [
-                    "01/01/01",
-                    "06/01/10"
+                    "01/01/2001",
+                    "06/01/2010"
                 ],
                 "ut": [
-                    "07/25/02",
-                    "07/06/12"
+                    "07/25/2002",
+                    "07/06/2012"
                 ]
             }, {
                 "bokstaver": "",
@@ -1560,13 +1560,13 @@ $(document).ready(function() {
                 "antall_aar": 4.4,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "02/11/02",
-                "sist_ut": "06/09/06",
+                "sist_inn": "02/11/2002",
+                "sist_ut": "06/09/2006",
                 "inn": [
-                    "02/11/02"
+                    "02/11/2002"
                 ],
                 "ut": [
-                    "06/09/06"
+                    "06/09/2006"
                 ]
             }, {
                 "bokstaver": "",
@@ -1576,15 +1576,15 @@ $(document).ready(function() {
                 "antall_aar": 4.55,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "05/29/13",
-                "sist_ut": "06/02/16",
+                "sist_inn": "05/29/2013",
+                "sist_ut": "06/02/2016",
                 "inn": [
-                    "01/01/01",
-                    "05/29/13"
+                    "01/01/2001",
+                    "05/29/2013"
                 ],
                 "ut": [
-                    "07/17/02",
-                    "06/02/16"
+                    "07/17/2002",
+                    "06/02/2016"
                 ]
             }, {
                 "bokstaver": "",
@@ -1606,15 +1606,15 @@ $(document).ready(function() {
                 "antall_aar": 4.74,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "06/29/12",
-                "sist_ut": "04/22/13",
+                "sist_inn": "06/29/2012",
+                "sist_ut": "04/22/2013",
                 "inn": [
-                    "08/14/03",
-                    "06/29/12"
+                    "08/14/2003",
+                    "06/29/2012"
                 ],
                 "ut": [
-                    "07/09/07",
-                    "04/22/13"
+                    "07/09/2007",
+                    "04/22/2013"
                 ]
             }, {
                 "bokstaver": "c-d",
@@ -1624,14 +1624,14 @@ $(document).ready(function() {
                 "antall_aar": 8.4,
                 "antall_ganger": 2,
                 "inne_naa": true,
-                "sist_inn": "07/02/10",
-                "sist_ut": "07/09/07",
+                "sist_inn": "07/02/2010",
+                "sist_ut": "07/09/2007",
                 "inn": [
-                    "08/16/04",
-                    "07/02/10"
+                    "08/16/2004",
+                    "07/02/2010"
                 ],
                 "ut": [
-                    "07/09/07"
+                    "07/09/2007"
                 ]
             }, {
                 "bokstaver": "",
@@ -1653,13 +1653,13 @@ $(document).ready(function() {
                 "antall_aar": 1.07,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "02/11/02",
-                "sist_ut": "03/05/03",
+                "sist_inn": "02/11/2002",
+                "sist_ut": "03/05/2003",
                 "inn": [
-                    "02/11/02"
+                    "02/11/2002"
                 ],
                 "ut": [
-                    "03/05/03"
+                    "03/05/2003"
                 ]
             }, {
                 "bokstaver": "",
@@ -1741,13 +1741,13 @@ $(document).ready(function() {
                 "antall_aar": 4.39,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "02/13/02",
-                "sist_ut": "06/29/06",
+                "sist_inn": "02/13/2002",
+                "sist_ut": "06/29/2006",
                 "inn": [
-                    "02/13/02"
+                    "02/13/2002"
                 ],
                 "ut": [
-                    "06/29/06"
+                    "06/29/2006"
                 ]
             }, {
                 "bokstaver": "",
@@ -1757,13 +1757,13 @@ $(document).ready(function() {
                 "antall_aar": 4.48,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "01/01/01",
-                "sist_ut": "06/24/05",
+                "sist_inn": "01/01/2001",
+                "sist_ut": "06/24/2005",
                 "inn": [
-                    "01/01/01"
+                    "01/01/2001"
                 ],
                 "ut": [
-                    "06/24/05"
+                    "06/24/2005"
                 ]
             }, {
                 "bokstaver": "",
@@ -1773,17 +1773,17 @@ $(document).ready(function() {
                 "antall_aar": 6.65,
                 "antall_ganger": 3,
                 "inne_naa": false,
-                "sist_inn": "01/27/14",
-                "sist_ut": "02/05/15",
+                "sist_inn": "01/27/2014",
+                "sist_ut": "02/05/2015",
                 "inn": [
-                    "02/19/01",
-                    "11/06/03",
-                    "01/27/14"
+                    "02/19/2001",
+                    "11/06/2003",
+                    "01/27/2014"
                 ],
                 "ut": [
-                    "01/30/02",
-                    "07/10/08",
-                    "02/05/15"
+                    "01/30/2002",
+                    "07/10/2008",
+                    "02/05/2015"
                 ]
             }, {
                 "bokstaver": "",
@@ -1817,13 +1817,13 @@ $(document).ready(function() {
                 "antall_aar": 5.53,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "01/01/01",
-                "sist_ut": "07/11/06",
+                "sist_inn": "01/01/2001",
+                "sist_ut": "07/11/2006",
                 "inn": [
-                    "01/01/01"
+                    "01/01/2001"
                 ],
                 "ut": [
-                    "07/11/06"
+                    "07/11/2006"
                 ]
             }, {
                 "bokstaver": "",
@@ -1845,14 +1845,14 @@ $(document).ready(function() {
                 "antall_aar": 1.22,
                 "antall_ganger": 2,
                 "inne_naa": true,
-                "sist_inn": "06/24/16",
-                "sist_ut": "06/06/11",
+                "sist_inn": "06/24/2016",
+                "sist_ut": "06/06/2011",
                 "inn": [
-                    "02/18/10",
-                    "06/24/16"
+                    "02/18/2010",
+                    "06/24/2016"
                 ],
                 "ut": [
-                    "06/06/11"
+                    "06/06/2011"
                 ]
             }, {
                 "bokstaver": "c",
@@ -1862,14 +1862,14 @@ $(document).ready(function() {
                 "antall_aar": 12.02,
                 "antall_ganger": 2,
                 "inne_naa": true,
-                "sist_inn": "06/11/13",
-                "sist_ut": "06/17/10",
+                "sist_inn": "06/11/2013",
+                "sist_ut": "06/17/2010",
                 "inn": [
-                    "01/01/01",
-                    "06/11/13"
+                    "01/01/2001",
+                    "06/11/2013"
                 ],
                 "ut": [
-                    "06/17/10"
+                    "06/17/2010"
                 ]
             }, {
                 "bokstaver": "c-d",
@@ -1879,14 +1879,14 @@ $(document).ready(function() {
                 "antall_aar": 13.45,
                 "antall_ganger": 2,
                 "inne_naa": true,
-                "sist_inn": "02/01/10",
-                "sist_ut": "07/10/08",
+                "sist_inn": "02/01/2010",
+                "sist_ut": "07/10/2008",
                 "inn": [
-                    "01/01/01",
-                    "02/01/10"
+                    "01/01/2001",
+                    "02/01/2010"
                 ],
                 "ut": [
-                    "07/10/08"
+                    "07/10/2008"
                 ]
             }, {
                 "bokstaver": "",
@@ -1908,13 +1908,13 @@ $(document).ready(function() {
                 "antall_aar": 1.74,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "09/01/04",
-                "sist_ut": "05/30/06",
+                "sist_inn": "09/01/2004",
+                "sist_ut": "05/30/2006",
                 "inn": [
-                    "09/01/04"
+                    "09/01/2004"
                 ],
                 "ut": [
-                    "05/30/06"
+                    "05/30/2006"
                 ]
             }, {
                 "bokstaver": "",
@@ -1936,13 +1936,13 @@ $(document).ready(function() {
                 "antall_aar": 3.45,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "02/17/04",
-                "sist_ut": "07/31/07",
+                "sist_inn": "02/17/2004",
+                "sist_ut": "07/31/2007",
                 "inn": [
-                    "02/17/04"
+                    "02/17/2004"
                 ],
                 "ut": [
-                    "07/31/07"
+                    "07/31/2007"
                 ]
             }, {
                 "bokstaver": "",
@@ -1976,13 +1976,13 @@ $(document).ready(function() {
                 "antall_aar": 0.3,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "04/18/01",
-                "sist_ut": "08/08/01",
+                "sist_inn": "04/18/2001",
+                "sist_ut": "08/08/2001",
                 "inn": [
-                    "04/18/01"
+                    "04/18/2001"
                 ],
                 "ut": [
-                    "08/08/01"
+                    "08/08/2001"
                 ]
             }, {
                 "bokstaver": "",
@@ -2016,13 +2016,13 @@ $(document).ready(function() {
                 "antall_aar": 2.8,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "08/11/09",
-                "sist_ut": "06/01/12",
+                "sist_inn": "08/11/2009",
+                "sist_ut": "06/01/2012",
                 "inn": [
-                    "08/11/09"
+                    "08/11/2009"
                 ],
                 "ut": [
-                    "06/01/12"
+                    "06/01/2012"
                 ]
             }, {
                 "bokstaver": "",
@@ -2032,13 +2032,13 @@ $(document).ready(function() {
                 "antall_aar": 1.35,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "01/01/01",
-                "sist_ut": "05/07/02",
+                "sist_inn": "01/01/2001",
+                "sist_ut": "05/07/2002",
                 "inn": [
-                    "01/01/01"
+                    "01/01/2001"
                 ],
                 "ut": [
-                    "05/07/02"
+                    "05/07/2002"
                 ]
             }, {
                 "bokstaver": "",
@@ -2075,7 +2075,7 @@ $(document).ready(function() {
                 "sist_inn": "",
                 "sist_ut": "",
                 "inn": [
-                    "06/02/16"
+                    "06/02/2016"
                 ],
                 "ut": []
             }, {
@@ -2098,13 +2098,13 @@ $(document).ready(function() {
                 "antall_aar": 1.91,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "08/25/03",
-                "sist_ut": "07/22/05",
+                "sist_inn": "08/25/2003",
+                "sist_ut": "07/22/2005",
                 "inn": [
-                    "08/25/03"
+                    "08/25/2003"
                 ],
                 "ut": [
-                    "07/22/05"
+                    "07/22/2005"
                 ]
             }, {
                 "bokstaver": "a-b",
@@ -2117,7 +2117,7 @@ $(document).ready(function() {
                 "sist_inn": "",
                 "sist_ut": "",
                 "inn": [
-                    "02/04/16"
+                    "02/04/2016"
                 ],
                 "ut": []
             }, {
@@ -2128,13 +2128,13 @@ $(document).ready(function() {
                 "antall_aar": 1,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "02/15/01",
-                "sist_ut": "02/11/02",
+                "sist_inn": "02/15/2001",
+                "sist_ut": "02/11/2002",
                 "inn": [
-                    "02/15/01"
+                    "02/15/2001"
                 ],
                 "ut": [
-                    "02/11/02"
+                    "02/11/2002"
                 ]
             }, {
                 "bokstaver": "",
@@ -2252,13 +2252,13 @@ $(document).ready(function() {
                 "antall_aar": 2.38,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "02/22/05",
-                "sist_ut": "07/09/07",
+                "sist_inn": "02/22/2005",
+                "sist_ut": "07/09/2007",
                 "inn": [
-                    "02/22/05"
+                    "02/22/2005"
                 ],
                 "ut": [
-                    "07/09/07"
+                    "07/09/2007"
                 ]
             }, {
                 "bokstaver": "",
@@ -2328,15 +2328,15 @@ $(document).ready(function() {
                 "antall_aar": 5.26,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "08/09/10",
-                "sist_ut": "05/04/14",
+                "sist_inn": "08/09/2010",
+                "sist_ut": "05/04/2014",
                 "inn": [
-                    "01/01/01",
-                    "08/09/10"
+                    "01/01/2001",
+                    "08/09/2010"
                 ],
                 "ut": [
-                    "07/08/02",
-                    "05/04/14"
+                    "07/08/2002",
+                    "05/04/2014"
                 ]
             }, {
                 "bokstaver": "",
@@ -2394,13 +2394,13 @@ $(document).ready(function() {
                 "antall_aar": 3.34,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "04/01/03",
-                "sist_ut": "06/07/06",
+                "sist_inn": "04/01/2003",
+                "sist_ut": "06/07/2006",
                 "inn": [
-                    "04/01/03"
+                    "04/01/2003"
                 ],
                 "ut": [
-                    "06/07/06"
+                    "06/07/2006"
                 ]
             }, {
                 "bokstaver": "",
@@ -2434,10 +2434,10 @@ $(document).ready(function() {
                 "antall_aar": 5.47,
                 "antall_ganger": 1,
                 "inne_naa": true,
-                "sist_inn": "07/12/10",
+                "sist_inn": "07/12/2010",
                 "sist_ut": "",
                 "inn": [
-                    "07/12/10"
+                    "07/12/2010"
                 ],
                 "ut": []
             }, {
@@ -2568,13 +2568,13 @@ $(document).ready(function() {
                 "antall_aar": 1,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "03/14/05",
-                "sist_ut": "03/24/06",
+                "sist_inn": "03/14/2005",
+                "sist_ut": "03/24/2006",
                 "inn": [
-                    "03/14/05"
+                    "03/14/2005"
                 ],
                 "ut": [
-                    "03/24/06"
+                    "03/24/2006"
                 ]
             }, {
                 "bokstaver": "d",
@@ -2584,10 +2584,10 @@ $(document).ready(function() {
                 "antall_aar": 0.37,
                 "antall_ganger": 1,
                 "inne_naa": true,
-                "sist_inn": "08/19/15",
+                "sist_inn": "08/19/2015",
                 "sist_ut": "",
                 "inn": [
-                    "08/19/15"
+                    "08/19/2015"
                 ],
                 "ut": []
             }, {
@@ -2706,13 +2706,13 @@ $(document).ready(function() {
                 "antall_aar": 0.95,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "05/15/06",
-                "sist_ut": "04/25/07",
+                "sist_inn": "05/15/2006",
+                "sist_ut": "04/25/2007",
                 "inn": [
-                    "05/15/06"
+                    "05/15/2006"
                 ],
                 "ut": [
-                    "04/25/07"
+                    "04/25/2007"
                 ]
             }, {
                 "bokstaver": "",
@@ -2722,13 +2722,13 @@ $(document).ready(function() {
                 "antall_aar": 4.98,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "08/21/02",
-                "sist_ut": "08/16/07",
+                "sist_inn": "08/21/2002",
+                "sist_ut": "08/16/2007",
                 "inn": [
-                    "08/21/02"
+                    "08/21/2002"
                 ],
                 "ut": [
-                    "08/16/07"
+                    "08/16/2007"
                 ]
             }, {
                 "bokstaver": "",
@@ -2738,13 +2738,13 @@ $(document).ready(function() {
                 "antall_aar": 1.52,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "02/15/01",
-                "sist_ut": "08/21/02",
+                "sist_inn": "02/15/2001",
+                "sist_ut": "08/21/2002",
                 "inn": [
-                    "02/15/01"
+                    "02/15/2001"
                 ],
                 "ut": [
-                    "08/21/02"
+                    "08/21/2002"
                 ]
             }, {
                 "bokstaver": "",
@@ -2778,15 +2778,15 @@ $(document).ready(function() {
                 "antall_aar": 9.28,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "03/17/11",
-                "sist_ut": "07/03/15",
+                "sist_inn": "03/17/2011",
+                "sist_ut": "07/03/2015",
                 "inn": [
-                    "08/21/02",
-                    "03/17/11"
+                    "08/21/2002",
+                    "03/17/2011"
                 ],
                 "ut": [
-                    "08/16/07",
-                    "07/03/15"
+                    "08/16/2007",
+                    "07/03/2015"
                 ]
             }, {
                 "bokstaver": "",
@@ -2796,13 +2796,13 @@ $(document).ready(function() {
                 "antall_aar": 8.89,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "08/21/02",
-                "sist_ut": "07/14/11",
+                "sist_inn": "08/21/2002",
+                "sist_ut": "07/14/2011",
                 "inn": [
-                    "08/21/02"
+                    "08/21/2002"
                 ],
                 "ut": [
-                    "07/14/11"
+                    "07/14/2011"
                 ]
             }, {
                 "bokstaver": "",
@@ -2824,17 +2824,17 @@ $(document).ready(function() {
                 "antall_aar": 4.5,
                 "antall_ganger": 3,
                 "inne_naa": false,
-                "sist_inn": "07/06/12",
-                "sist_ut": "07/02/14",
+                "sist_inn": "07/06/2012",
+                "sist_ut": "07/02/2014",
                 "inn": [
-                    "01/01/01",
-                    "08/03/09",
-                    "07/06/12"
+                    "01/01/2001",
+                    "08/03/2009",
+                    "07/06/2012"
                 ],
                 "ut": [
-                    "08/21/02",
-                    "06/14/10",
-                    "07/02/14"
+                    "08/21/2002",
+                    "06/14/2010",
+                    "07/02/2014"
                 ]
             }, {
                 "bokstaver": "",
@@ -2856,13 +2856,13 @@ $(document).ready(function() {
                 "antall_aar": 3.05,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "07/14/05",
-                "sist_ut": "07/30/08",
+                "sist_inn": "07/14/2005",
+                "sist_ut": "07/30/2008",
                 "inn": [
-                    "07/14/05"
+                    "07/14/2005"
                 ],
                 "ut": [
-                    "07/30/08"
+                    "07/30/2008"
                 ]
             }, {
                 "bokstaver": "",
@@ -2896,13 +2896,13 @@ $(document).ready(function() {
                 "antall_aar": 1.87,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "02/19/01",
-                "sist_ut": "12/30/02",
+                "sist_inn": "02/19/2001",
+                "sist_ut": "12/30/2002",
                 "inn": [
-                    "02/19/01"
+                    "02/19/2001"
                 ],
                 "ut": [
-                    "12/30/02"
+                    "12/30/2002"
                 ]
             }, {
                 "bokstaver": "",
@@ -2924,15 +2924,15 @@ $(document).ready(function() {
                 "antall_aar": 4.63,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "07/14/05",
-                "sist_ut": "08/16/07",
+                "sist_inn": "07/14/2005",
+                "sist_ut": "08/16/2007",
                 "inn": [
-                    "01/01/01",
-                    "07/14/05"
+                    "01/01/2001",
+                    "07/14/2005"
                 ],
                 "ut": [
-                    "07/16/03",
-                    "08/16/07"
+                    "07/16/2003",
+                    "08/16/2007"
                 ]
             }, {
                 "bokstaver": "",
@@ -2954,13 +2954,13 @@ $(document).ready(function() {
                 "antall_aar": 4.41,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "02/15/01",
-                "sist_ut": "07/14/05",
+                "sist_inn": "02/15/2001",
+                "sist_ut": "07/14/2005",
                 "inn": [
-                    "02/15/01"
+                    "02/15/2001"
                 ],
                 "ut": [
-                    "07/14/05"
+                    "07/14/2005"
                 ]
             }, {
                 "bokstaver": "",
@@ -2970,13 +2970,13 @@ $(document).ready(function() {
                 "antall_aar": 1.05,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "06/25/03",
-                "sist_ut": "07/13/04",
+                "sist_inn": "06/25/2003",
+                "sist_ut": "07/13/2004",
                 "inn": [
-                    "06/25/03"
+                    "06/25/2003"
                 ],
                 "ut": [
-                    "07/13/04"
+                    "07/13/2004"
                 ]
             }, {
                 "bokstaver": "",
@@ -2998,13 +2998,13 @@ $(document).ready(function() {
                 "antall_aar": 9.36,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "02/15/01",
-                "sist_ut": "07/06/12",
+                "sist_inn": "02/15/2001",
+                "sist_ut": "07/06/2012",
                 "inn": [
-                    "02/15/01"
+                    "02/15/2001"
                 ],
                 "ut": [
-                    "07/06/12"
+                    "07/06/2012"
                 ]
             }, {
                 "bokstaver": "",
@@ -3014,13 +3014,13 @@ $(document).ready(function() {
                 "antall_aar": 6.39,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "03/26/01",
-                "sist_ut": "08/16/07",
+                "sist_inn": "03/26/2001",
+                "sist_ut": "08/16/2007",
                 "inn": [
-                    "03/26/01"
+                    "03/26/2001"
                 ],
                 "ut": [
-                    "08/16/07"
+                    "08/16/2007"
                 ]
             }, {
                 "bokstaver": "",
@@ -3054,15 +3054,15 @@ $(document).ready(function() {
                 "antall_aar": 2.15,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "07/13/04",
-                "sist_ut": "07/14/05",
+                "sist_inn": "07/13/2004",
+                "sist_ut": "07/14/2005",
                 "inn": [
-                    "01/30/02",
-                    "07/13/04"
+                    "01/30/2002",
+                    "07/13/2004"
                 ],
                 "ut": [
-                    "03/25/03",
-                    "07/14/05"
+                    "03/25/2003",
+                    "07/14/2005"
                 ]
             }, {
                 "bokstaver": "",
@@ -3084,13 +3084,13 @@ $(document).ready(function() {
                 "antall_aar": 10.42,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "02/01/05",
-                "sist_ut": "07/03/15",
+                "sist_inn": "02/01/2005",
+                "sist_ut": "07/03/2015",
                 "inn": [
-                    "02/01/05"
+                    "02/01/2005"
                 ],
                 "ut": [
-                    "07/03/15"
+                    "07/03/2015"
                 ]
             }, {
                 "bokstaver": "",
@@ -3100,13 +3100,13 @@ $(document).ready(function() {
                 "antall_aar": 12.96,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "07/18/01",
-                "sist_ut": "07/02/14",
+                "sist_inn": "07/18/2001",
+                "sist_ut": "07/02/2014",
                 "inn": [
-                    "07/18/01"
+                    "07/18/2001"
                 ],
                 "ut": [
-                    "07/02/14"
+                    "07/02/2014"
                 ]
             }, {
                 "bokstaver": "",
@@ -3128,13 +3128,13 @@ $(document).ready(function() {
                 "antall_aar": 2.37,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "04/01/05",
-                "sist_ut": "08/16/07",
+                "sist_inn": "04/01/2005",
+                "sist_ut": "08/16/2007",
                 "inn": [
-                    "04/01/05"
+                    "04/01/2005"
                 ],
                 "ut": [
-                    "08/16/07"
+                    "08/16/2007"
                 ]
             }, {
                 "bokstaver": "",
@@ -3144,13 +3144,13 @@ $(document).ready(function() {
                 "antall_aar": 4.41,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "02/15/01",
-                "sist_ut": "07/14/05",
+                "sist_inn": "02/15/2001",
+                "sist_ut": "07/14/2005",
                 "inn": [
-                    "02/15/01"
+                    "02/15/2001"
                 ],
                 "ut": [
-                    "07/14/05"
+                    "07/14/2005"
                 ]
             }, {
                 "bokstaver": "",
@@ -3160,13 +3160,13 @@ $(document).ready(function() {
                 "antall_aar": 5.42,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "02/28/03",
-                "sist_ut": "07/30/08",
+                "sist_inn": "02/28/2003",
+                "sist_ut": "07/30/2008",
                 "inn": [
-                    "02/28/03"
+                    "02/28/2003"
                 ],
                 "ut": [
-                    "07/30/08"
+                    "07/30/2008"
                 ]
             }, {
                 "bokstaver": "",
@@ -3200,17 +3200,17 @@ $(document).ready(function() {
                 "antall_aar": 8.02,
                 "antall_ganger": 3,
                 "inne_naa": false,
-                "sist_inn": "07/28/11",
-                "sist_ut": "07/09/13",
+                "sist_inn": "07/28/2011",
+                "sist_ut": "07/09/2013",
                 "inn": [
-                    "06/19/03",
-                    "08/25/06",
-                    "07/28/11"
+                    "06/19/2003",
+                    "08/25/2006",
+                    "07/28/2011"
                 ],
                 "ut": [
-                    "08/15/04",
-                    "07/14/09",
-                    "07/09/13"
+                    "08/15/2004",
+                    "07/14/2009",
+                    "07/09/2013"
                 ]
             }, {
                 "bokstaver": "",
@@ -3220,13 +3220,13 @@ $(document).ready(function() {
                 "antall_aar": 5.18,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "05/06/02",
-                "sist_ut": "07/09/07",
+                "sist_inn": "05/06/2002",
+                "sist_ut": "07/09/2007",
                 "inn": [
-                    "05/06/02"
+                    "05/06/2002"
                 ],
                 "ut": [
-                    "07/09/07"
+                    "07/09/2007"
                 ]
             }, {
                 "bokstaver": "",
@@ -3248,13 +3248,13 @@ $(document).ready(function() {
                 "antall_aar": 7.3,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "06/19/03",
-                "sist_ut": "10/05/10",
+                "sist_inn": "06/19/2003",
+                "sist_ut": "10/05/2010",
                 "inn": [
-                    "06/19/03"
+                    "06/19/2003"
                 ],
                 "ut": [
-                    "10/05/10"
+                    "10/05/2010"
                 ]
             }, {
                 "bokstaver": "",
@@ -3264,17 +3264,17 @@ $(document).ready(function() {
                 "antall_aar": 4.05,
                 "antall_ganger": 3,
                 "inne_naa": false,
-                "sist_inn": "03/12/14",
-                "sist_ut": "06/01/15",
+                "sist_inn": "03/12/2014",
+                "sist_ut": "06/01/2015",
                 "inn": [
-                    "02/25/03",
-                    "08/25/06",
-                    "03/12/14"
+                    "02/25/2003",
+                    "08/25/2006",
+                    "03/12/2014"
                 ],
                 "ut": [
-                    "02/06/04",
-                    "07/10/08",
-                    "06/01/15"
+                    "02/06/2004",
+                    "07/10/2008",
+                    "06/01/2015"
                 ]
             }, {
                 "bokstaver": "",
@@ -3284,15 +3284,15 @@ $(document).ready(function() {
                 "antall_aar": 13.82,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "07/09/07",
-                "sist_ut": "05/30/16",
+                "sist_inn": "07/09/2007",
+                "sist_ut": "05/30/2016",
                 "inn": [
-                    "08/10/01",
-                    "07/09/07"
+                    "08/10/2001",
+                    "07/09/2007"
                 ],
                 "ut": [
-                    "07/06/06",
-                    "05/30/16"
+                    "07/06/2006",
+                    "05/30/2016"
                 ]
             }, {
                 "bokstaver": "",
@@ -3302,13 +3302,13 @@ $(document).ready(function() {
                 "antall_aar": 4.74,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "10/15/02",
-                "sist_ut": "07/12/07",
+                "sist_inn": "10/15/2002",
+                "sist_ut": "07/12/2007",
                 "inn": [
-                    "10/15/02"
+                    "10/15/2002"
                 ],
                 "ut": [
-                    "07/12/07"
+                    "07/12/2007"
                 ]
             }, {
                 "bokstaver": "",
@@ -3318,13 +3318,13 @@ $(document).ready(function() {
                 "antall_aar": 3.03,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "02/25/03",
-                "sist_ut": "03/07/06",
+                "sist_inn": "02/25/2003",
+                "sist_ut": "03/07/2006",
                 "inn": [
-                    "02/25/03"
+                    "02/25/2003"
                 ],
                 "ut": [
-                    "03/07/06"
+                    "03/07/2006"
                 ]
             }, {
                 "bokstaver": "",
@@ -3358,15 +3358,15 @@ $(document).ready(function() {
                 "antall_aar": 3.41,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "07/05/13",
-                "sist_ut": "03/02/15",
+                "sist_inn": "07/05/2013",
+                "sist_ut": "03/02/2015",
                 "inn": [
-                    "07/10/03",
-                    "07/05/13"
+                    "07/10/2003",
+                    "07/05/2013"
                 ],
                 "ut": [
-                    "04/08/05",
-                    "03/02/15"
+                    "04/08/2005",
+                    "03/02/2015"
                 ]
             }, {
                 "bokstaver": "",
@@ -3376,13 +3376,13 @@ $(document).ready(function() {
                 "antall_aar": 3.04,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "05/27/13",
-                "sist_ut": "06/08/16",
+                "sist_inn": "05/27/2013",
+                "sist_ut": "06/08/2016",
                 "inn": [
-                    "05/27/13"
+                    "05/27/2013"
                 ],
                 "ut": [
-                    "06/08/16"
+                    "06/08/2016"
                 ]
             }, {
                 "bokstaver": "",
@@ -3404,15 +3404,15 @@ $(document).ready(function() {
                 "antall_aar": 6.77,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "08/25/14",
-                "sist_ut": "07/03/15",
+                "sist_inn": "08/25/2014",
+                "sist_ut": "07/03/2015",
                 "inn": [
-                    "08/10/01",
-                    "08/25/14"
+                    "08/10/2001",
+                    "08/25/2014"
                 ],
                 "ut": [
-                    "07/12/07",
-                    "07/03/15"
+                    "07/12/2007",
+                    "07/03/2015"
                 ]
             }, {
                 "bokstaver": "",
@@ -3422,13 +3422,13 @@ $(document).ready(function() {
                 "antall_aar": 5.41,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "02/15/01",
-                "sist_ut": "07/12/06",
+                "sist_inn": "02/15/2001",
+                "sist_ut": "07/12/2006",
                 "inn": [
-                    "02/15/01"
+                    "02/15/2001"
                 ],
                 "ut": [
-                    "07/12/06"
+                    "07/12/2006"
                 ]
             }, {
                 "bokstaver": "c",
@@ -3438,14 +3438,14 @@ $(document).ready(function() {
                 "antall_aar": 4.54,
                 "antall_ganger": 2,
                 "inne_naa": true,
-                "sist_inn": "07/07/15",
-                "sist_ut": "07/12/07",
+                "sist_inn": "07/07/2015",
+                "sist_ut": "07/12/2007",
                 "inn": [
-                    "07/01/03",
-                    "07/07/15"
+                    "07/01/2003",
+                    "07/07/2015"
                 ],
                 "ut": [
-                    "07/12/07"
+                    "07/12/2007"
                 ]
             }, {
                 "bokstaver": "",
@@ -3455,13 +3455,13 @@ $(document).ready(function() {
                 "antall_aar": 6.07,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "06/20/03",
-                "sist_ut": "07/14/09",
+                "sist_inn": "06/20/2003",
+                "sist_ut": "07/14/2009",
                 "inn": [
-                    "06/20/03"
+                    "06/20/2003"
                 ],
                 "ut": [
-                    "07/14/09"
+                    "07/14/2009"
                 ]
             }, {
                 "bokstaver": "",
@@ -3483,16 +3483,16 @@ $(document).ready(function() {
                 "antall_aar": 6.97,
                 "antall_ganger": 3,
                 "inne_naa": true,
-                "sist_inn": "08/26/16",
-                "sist_ut": "07/14/09",
+                "sist_inn": "08/26/2016",
+                "sist_ut": "07/14/2009",
                 "inn": [
-                    "01/01/01",
-                    "02/25/03",
-                    "08/26/16"
+                    "01/01/2001",
+                    "02/25/2003",
+                    "08/26/2016"
                 ],
                 "ut": [
-                    "08/06/01",
-                    "07/14/09"
+                    "08/06/2001",
+                    "07/14/2009"
                 ]
             }, {
                 "bokstaver": "c",
@@ -3502,10 +3502,10 @@ $(document).ready(function() {
                 "antall_aar": 7.54,
                 "antall_ganger": 1,
                 "inne_naa": true,
-                "sist_inn": "06/18/08",
+                "sist_inn": "06/18/2008",
                 "sist_ut": "",
                 "inn": [
-                    "06/18/08"
+                    "06/18/2008"
                 ],
                 "ut": []
             }, {
@@ -3516,17 +3516,17 @@ $(document).ready(function() {
                 "antall_aar": 5.31,
                 "antall_ganger": 3,
                 "inne_naa": false,
-                "sist_inn": "02/05/09",
-                "sist_ut": "10/18/10",
+                "sist_inn": "02/05/2009",
+                "sist_ut": "10/18/2010",
                 "inn": [
-                    "01/01/01",
-                    "07/10/03",
-                    "02/05/09"
+                    "01/01/2001",
+                    "07/10/2003",
+                    "02/05/2009"
                 ],
                 "ut": [
-                    "08/06/02",
-                    "07/12/05",
-                    "10/18/10"
+                    "08/06/2002",
+                    "07/12/2005",
+                    "10/18/2010"
                 ]
             }, {
                 "bokstaver": "c-d",
@@ -3536,16 +3536,16 @@ $(document).ready(function() {
                 "antall_aar": 8.1,
                 "antall_ganger": 3,
                 "inne_naa": true,
-                "sist_inn": "07/17/14",
-                "sist_ut": "10/14/09",
+                "sist_inn": "07/17/2014",
+                "sist_ut": "10/14/2009",
                 "inn": [
-                    "02/15/01",
-                    "07/19/05",
-                    "07/17/14"
+                    "02/15/2001",
+                    "07/19/2005",
+                    "07/17/2014"
                 ],
                 "ut": [
-                    "07/10/03",
-                    "10/14/09"
+                    "07/10/2003",
+                    "10/14/2009"
                 ]
             }, {
                 "bokstaver": "",
@@ -3555,13 +3555,13 @@ $(document).ready(function() {
                 "antall_aar": 1.65,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "10/15/02",
-                "sist_ut": "06/08/04",
+                "sist_inn": "10/15/2002",
+                "sist_ut": "06/08/2004",
                 "inn": [
-                    "10/15/02"
+                    "10/15/2002"
                 ],
                 "ut": [
-                    "06/08/04"
+                    "06/08/2004"
                 ]
             }, {
                 "bokstaver": "",
@@ -3583,16 +3583,16 @@ $(document).ready(function() {
                 "antall_aar": 4.97,
                 "antall_ganger": 3,
                 "inne_naa": true,
-                "sist_inn": "07/08/16",
-                "sist_ut": "06/30/06",
+                "sist_inn": "07/08/2016",
+                "sist_ut": "06/30/2006",
                 "inn": [
-                    "02/15/01",
-                    "06/30/03",
-                    "07/08/16"
+                    "02/15/2001",
+                    "06/30/2003",
+                    "07/08/2016"
                 ],
                 "ut": [
-                    "02/06/02",
-                    "06/30/06"
+                    "02/06/2002",
+                    "06/30/2006"
                 ]
             }, {
                 "bokstaver": "",
@@ -3614,13 +3614,13 @@ $(document).ready(function() {
                 "antall_aar": 2.82,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "08/21/02",
-                "sist_ut": "06/16/05",
+                "sist_inn": "08/21/2002",
+                "sist_ut": "06/16/2005",
                 "inn": [
-                    "08/21/02"
+                    "08/21/2002"
                 ],
                 "ut": [
-                    "06/16/05"
+                    "06/16/2005"
                 ]
             }, {
                 "bokstaver": "c-d",
@@ -3630,16 +3630,16 @@ $(document).ready(function() {
                 "antall_aar": 8.61,
                 "antall_ganger": 3,
                 "inne_naa": true,
-                "sist_inn": "09/01/14",
-                "sist_ut": "03/10/09",
+                "sist_inn": "09/01/2014",
+                "sist_ut": "03/10/2009",
                 "inn": [
-                    "05/02/01",
-                    "02/18/08",
-                    "09/01/14"
+                    "05/02/2001",
+                    "02/18/2008",
+                    "09/01/2014"
                 ],
                 "ut": [
-                    "07/20/07",
-                    "03/10/09"
+                    "07/20/2007",
+                    "03/10/2009"
                 ]
             }, {
                 "bokstaver": "d",
@@ -3649,16 +3649,16 @@ $(document).ready(function() {
                 "antall_aar": 2.83,
                 "antall_ganger": 3,
                 "inne_naa": true,
-                "sist_inn": "07/09/15",
-                "sist_ut": "07/13/12",
+                "sist_inn": "07/09/2015",
+                "sist_ut": "07/13/2012",
                 "inn": [
-                    "07/30/08",
-                    "10/17/10",
-                    "07/09/15"
+                    "07/30/2008",
+                    "10/17/2010",
+                    "07/09/2015"
                 ],
                 "ut": [
-                    "03/10/09",
-                    "07/13/12"
+                    "03/10/2009",
+                    "07/13/2012"
                 ]
             }, {
                 "bokstaver": "",
@@ -3668,33 +3668,34 @@ $(document).ready(function() {
                 "antall_aar": 4.01,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "10/02/12",
-                "sist_ut": "07/22/13",
+                "sist_inn": "10/02/2012",
+                "sist_ut": "07/22/2013",
                 "inn": [
-                    "01/01/01",
-                    "10/02/12"
+                    "01/01/2001",
+                    "10/02/2012"
                 ],
                 "ut": [
-                    "03/16/04",
-                    "07/22/13"
+                    "03/16/2004",
+                    "07/22/2013"
                 ]
             }, {
-                "bokstaver": "",
+                "bokstaver": "c",
                 "kommunenr": 1514,
-                "kommune": "Sande",
+                "kommune": "Sande (M. og R.)",
                 "fylke": "Møre og Romsdal",
                 "antall_aar": 7.77,
-                "antall_ganger": 0,
-                "inne_naa": false,
-                "sist_inn": "07/31/08",
-                "sist_ut": "09/24/12",
+                "antall_ganger": 2,
+                "inne_naa": true,
+                "sist_inn": "09/16/2016",
+                "sist_ut": "09/24/2012",
                 "inn": [
-                    "11/04/03",
-                    "07/31/08"
+                    "11/04/2003",
+                    "07/31/2008",
+                    "09/16/2016"
                 ],
                 "ut": [
-                    "07/17/07",
-                    "09/24/12"
+                    "07/17/2007",
+                    "09/24/2012"
                 ]
             }, {
                 "bokstaver": "",
@@ -3704,13 +3705,13 @@ $(document).ready(function() {
                 "antall_aar": 0.81,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "08/22/01",
-                "sist_ut": "06/25/03",
+                "sist_inn": "08/22/2001",
+                "sist_ut": "06/25/2003",
                 "inn": [
-                    "08/22/01"
+                    "08/22/2001"
                 ],
                 "ut": [
-                    "06/25/03"
+                    "06/25/2003"
                 ]
             }, {
                 "bokstaver": "",
@@ -3720,15 +3721,15 @@ $(document).ready(function() {
                 "antall_aar": 2.01,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "02/13/04",
-                "sist_ut": "07/01/05",
+                "sist_inn": "02/13/2004",
+                "sist_ut": "07/01/2005",
                 "inn": [
-                    "01/01/01",
-                    "02/13/04"
+                    "01/01/2001",
+                    "02/13/2004"
                 ],
                 "ut": [
-                    "08/22/01",
-                    "07/01/05"
+                    "08/22/2001",
+                    "07/01/2005"
                 ]
             }, {
                 "bokstaver": "c-d",
@@ -3738,14 +3739,14 @@ $(document).ready(function() {
                 "antall_aar": 12.6,
                 "antall_ganger": 2,
                 "inne_naa": true,
-                "sist_inn": "09/29/11",
-                "sist_ut": "08/03/09",
+                "sist_inn": "09/29/2011",
+                "sist_ut": "08/03/2009",
                 "inn": [
-                    "05/02/01",
-                    "09/29/11"
+                    "05/02/2001",
+                    "09/29/2011"
                 ],
                 "ut": [
-                    "08/03/09"
+                    "08/03/2009"
                 ]
             }, {
                 "bokstaver": "",
@@ -3755,15 +3756,15 @@ $(document).ready(function() {
                 "antall_aar": 3.87,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "01/23/14",
-                "sist_ut": "02/20/15",
+                "sist_inn": "01/23/2014",
+                "sist_ut": "02/20/2015",
                 "inn": [
-                    "08/21/02",
-                    "01/23/14"
+                    "08/21/2002",
+                    "01/23/2014"
                 ],
                 "ut": [
-                    "06/06/05",
-                    "02/20/15"
+                    "06/06/2005",
+                    "02/20/2015"
                 ]
             }, {
                 "bokstaver": "",
@@ -3773,15 +3774,15 @@ $(document).ready(function() {
                 "antall_aar": 6.96,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "09/17/09",
-                "sist_ut": "06/03/15",
+                "sist_inn": "09/17/2009",
+                "sist_ut": "06/03/2015",
                 "inn": [
-                    "04/05/04",
-                    "09/17/09"
+                    "04/05/2004",
+                    "09/17/2009"
                 ],
                 "ut": [
-                    "07/05/05",
-                    "06/03/15"
+                    "07/05/2005",
+                    "06/03/2015"
                 ]
             }, {
                 "bokstaver": "d",
@@ -3803,13 +3804,13 @@ $(document).ready(function() {
                 "antall_aar": 0.91,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "02/23/01",
-                "sist_ut": "01/22/02",
+                "sist_inn": "02/23/2001",
+                "sist_ut": "01/22/2002",
                 "inn": [
-                    "02/23/01"
+                    "02/23/2001"
                 ],
                 "ut": [
-                    "01/22/02"
+                    "01/22/2002"
                 ]
             }, {
                 "bokstaver": "c-d",
@@ -3819,14 +3820,14 @@ $(document).ready(function() {
                 "antall_aar": 8.95,
                 "antall_ganger": 2,
                 "inne_naa": true,
-                "sist_inn": "07/05/11",
-                "sist_ut": "06/16/05",
+                "sist_inn": "07/05/2011",
+                "sist_ut": "06/16/2005",
                 "inn": [
-                    "01/01/01",
-                    "07/05/11"
+                    "01/01/2001",
+                    "07/05/2011"
                 ],
                 "ut": [
-                    "06/16/05"
+                    "06/16/2005"
                 ]
             }, {
                 "bokstaver": "",
@@ -3848,14 +3849,14 @@ $(document).ready(function() {
                 "antall_aar": 12.4,
                 "antall_ganger": 2,
                 "inne_naa": true,
-                "sist_inn": "10/15/10",
-                "sist_ut": "07/09/07",
+                "sist_inn": "10/15/2010",
+                "sist_ut": "07/09/2007",
                 "inn": [
-                    "01/01/01",
-                    "10/15/10"
+                    "01/01/2001",
+                    "10/15/2010"
                 ],
                 "ut": [
-                    "07/09/07"
+                    "07/09/2007"
                 ]
             }, {
                 "bokstaver": "",
@@ -3865,13 +3866,13 @@ $(document).ready(function() {
                 "antall_aar": 0.33,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "03/15/01",
-                "sist_ut": "07/17/01",
+                "sist_inn": "03/15/2001",
+                "sist_ut": "07/17/2001",
                 "inn": [
-                    "03/15/01"
+                    "03/15/2001"
                 ],
                 "ut": [
-                    "07/17/01"
+                    "07/17/2001"
                 ]
             }, {
                 "bokstaver": "",
@@ -3881,31 +3882,32 @@ $(document).ready(function() {
                 "antall_aar": 5.54,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "02/27/08",
-                "sist_ut": "03/05/09",
+                "sist_inn": "02/27/2008",
+                "sist_ut": "03/05/2009",
                 "inn": [
-                    "01/01/01",
-                    "02/27/08"
+                    "01/01/2001",
+                    "02/27/2008"
                 ],
                 "ut": [
-                    "07/05/05",
-                    "03/05/09"
+                    "07/05/2005",
+                    "03/05/2009"
                 ]
             }, {
-                "bokstaver": "",
+                "bokstaver": "d",
                 "kommunenr": 1532,
                 "kommune": "Giske",
                 "fylke": "Møre og Romsdal",
                 "antall_aar": 4.52,
                 "antall_ganger": 1,
-                "inne_naa": false,
-                "sist_inn": "08/21/02",
-                "sist_ut": "02/27/07",
+                "inne_naa": true,
+                "sist_inn": "09/16/2016",
+                "sist_ut": "02/27/2007",
                 "inn": [
-                    "08/21/02"
+                    "08/21/2002",
+                    "09/16/2016"
                 ],
                 "ut": [
-                    "02/27/07"
+                    "02/27/2007"
                 ]
             }, {
                 "bokstaver": "",
@@ -3927,15 +3929,15 @@ $(document).ready(function() {
                 "antall_aar": 4.92,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "08/03/09",
-                "sist_ut": "08/19/13",
+                "sist_inn": "08/03/2009",
+                "sist_ut": "08/19/2013",
                 "inn": [
-                    "04/10/03",
-                    "08/03/09"
+                    "04/10/2003",
+                    "08/03/2009"
                 ],
                 "ut": [
-                    "02/24/04",
-                    "08/19/13"
+                    "02/24/2004",
+                    "08/19/2013"
                 ]
             }, {
                 "bokstaver": "d",
@@ -3945,13 +3947,13 @@ $(document).ready(function() {
                 "antall_aar": 5.53,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "01/01/01",
-                "sist_ut": "07/07/06",
+                "sist_inn": "01/01/2001",
+                "sist_ut": "07/07/2006",
                 "inn": [
-                    "01/01/01"
+                    "01/01/2001"
                 ],
                 "ut": [
-                    "07/07/06"
+                    "07/07/2006"
                 ]
             }, {
                 "bokstaver": "",
@@ -3961,13 +3963,13 @@ $(document).ready(function() {
                 "antall_aar": 5.53,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "01/01/01",
-                "sist_ut": "07/06/06",
+                "sist_inn": "01/01/2001",
+                "sist_ut": "07/06/2006",
                 "inn": [
-                    "01/01/01"
+                    "01/01/2001"
                 ],
                 "ut": [
-                    "07/06/06"
+                    "07/06/2006"
                 ]
             }, {
                 "bokstaver": "",
@@ -3977,25 +3979,25 @@ $(document).ready(function() {
                 "antall_aar": 1.24,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "07/05/11",
-                "sist_ut": "10/02/12",
+                "sist_inn": "07/05/2011",
+                "sist_ut": "10/02/2012",
                 "inn": [
-                    "07/05/11"
+                    "07/05/2011"
                 ],
                 "ut": [
-                    "10/02/12"
+                    "10/02/2012"
                 ]
             }, {
-                "bokstaver": "",
+                "bokstaver": "d",
                 "kommunenr": 1546,
                 "kommune": "Sandøy",
                 "fylke": "Møre og Romsdal",
                 "antall_aar": 0,
-                "antall_ganger": 0,
-                "inne_naa": false,
-                "sist_inn": "",
+                "antall_ganger": 1,
+                "inne_naa": true,
+                "sist_inn": "09/16/2016",
                 "sist_ut": "",
-                "inn": [],
+                "inn": ["09/16/2016"],
                 "ut": []
             }, {
                 "bokstaver": "",
@@ -4017,15 +4019,15 @@ $(document).ready(function() {
                 "antall_aar": 11.18,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "09/01/09",
-                "sist_ut": "05/06/16",
+                "sist_inn": "09/01/2009",
+                "sist_ut": "05/06/2016",
                 "inn": [
-                    "01/01/01",
-                    "09/01/09"
+                    "01/01/2001",
+                    "09/01/2009"
                 ],
                 "ut": [
-                    "07/01/06",
-                    "05/06/16"
+                    "07/01/2006",
+                    "05/06/2016"
                 ]
             }, {
                 "bokstaver": "",
@@ -4035,13 +4037,13 @@ $(document).ready(function() {
                 "antall_aar": 2.65,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "01/01/01",
-                "sist_ut": "11/04/03",
+                "sist_inn": "01/01/2001",
+                "sist_ut": "11/04/2003",
                 "inn": [
-                    "01/01/01"
+                    "01/01/2001"
                 ],
                 "ut": [
-                    "11/04/03"
+                    "11/04/2003"
                 ]
             }, {
                 "bokstaver": "",
@@ -4063,13 +4065,13 @@ $(document).ready(function() {
                 "antall_aar": 1.64,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "03/15/02",
-                "sist_ut": "11/04/03",
+                "sist_inn": "03/15/2002",
+                "sist_ut": "11/04/2003",
                 "inn": [
-                    "03/15/02"
+                    "03/15/2002"
                 ],
                 "ut": [
-                    "11/04/03"
+                    "11/04/2003"
                 ]
             }, {
                 "bokstaver": "",
@@ -4079,15 +4081,15 @@ $(document).ready(function() {
                 "antall_aar": 9.07,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "10/04/10",
-                "sist_ut": "06/04/15",
+                "sist_inn": "10/04/2010",
+                "sist_ut": "06/04/2015",
                 "inn": [
-                    "01/01/01",
-                    "10/04/10"
+                    "01/01/2001",
+                    "10/04/2010"
                 ],
                 "ut": [
-                    "05/31/05",
-                    "06/04/15"
+                    "05/31/2005",
+                    "06/04/2015"
                 ]
             }, {
                 "bokstaver": "",
@@ -4097,15 +4099,15 @@ $(document).ready(function() {
                 "antall_aar": 1.57,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "04/15/04",
-                "sist_ut": "06/08/04",
+                "sist_inn": "04/15/2004",
+                "sist_ut": "06/08/2004",
                 "inn": [
-                    "01/01/01",
-                    "04/15/04"
+                    "01/01/2001",
+                    "04/15/2004"
                 ],
                 "ut": [
-                    "06/13/02",
-                    "06/08/04"
+                    "06/13/2002",
+                    "06/08/2004"
                 ]
             }, {
                 "bokstaver": "",
@@ -4187,13 +4189,13 @@ $(document).ready(function() {
                 "antall_aar": 1.01,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "02/19/01",
-                "sist_ut": "02/20/02",
+                "sist_inn": "02/19/2001",
+                "sist_ut": "02/20/2002",
                 "inn": [
-                    "02/19/01"
+                    "02/19/2001"
                 ],
                 "ut": [
-                    "02/20/02"
+                    "02/20/2002"
                 ]
             }, {
                 "bokstaver": "",
@@ -4227,13 +4229,13 @@ $(document).ready(function() {
                 "antall_aar": 0.98,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "02/15/01",
-                "sist_ut": "02/06/02",
+                "sist_inn": "02/15/2001",
+                "sist_ut": "02/06/2002",
                 "inn": [
-                    "02/15/01"
+                    "02/15/2001"
                 ],
                 "ut": [
-                    "02/06/02"
+                    "02/06/2002"
                 ]
             }, {
                 "bokstaver": "",
@@ -4243,13 +4245,13 @@ $(document).ready(function() {
                 "antall_aar": 4.52,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "01/01/01",
-                "sist_ut": "07/08/05",
+                "sist_inn": "01/01/2001",
+                "sist_ut": "07/08/2005",
                 "inn": [
-                    "01/01/01"
+                    "01/01/2001"
                 ],
                 "ut": [
-                    "07/08/05"
+                    "07/08/2005"
                 ]
             }, {
                 "bokstaver": "",
@@ -4259,13 +4261,13 @@ $(document).ready(function() {
                 "antall_aar": 0.95,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "08/18/04",
-                "sist_ut": "08/01/05",
+                "sist_inn": "08/18/2004",
+                "sist_ut": "08/01/2005",
                 "inn": [
-                    "08/18/04"
+                    "08/18/2004"
                 ],
                 "ut": [
-                    "08/01/05"
+                    "08/01/2005"
                 ]
             }, {
                 "bokstaver": "",
@@ -4287,13 +4289,13 @@ $(document).ready(function() {
                 "antall_aar": 2.07,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "06/12/03",
-                "sist_ut": "07/04/05",
+                "sist_inn": "06/12/2003",
+                "sist_ut": "07/04/2005",
                 "inn": [
-                    "06/12/03"
+                    "06/12/2003"
                 ],
                 "ut": [
-                    "07/04/05"
+                    "07/04/2005"
                 ]
             }, {
                 "bokstaver": "d",
@@ -4303,14 +4305,14 @@ $(document).ready(function() {
                 "antall_aar": 2.33,
                 "antall_ganger": 2,
                 "inne_naa": true,
-                "sist_inn": "08/13/14",
-                "sist_ut": "02/02/09",
+                "sist_inn": "08/13/2014",
+                "sist_ut": "02/02/2009",
                 "inn": [
-                    "02/27/08",
-                    "08/13/14"
+                    "02/27/2008",
+                    "08/13/2014"
                 ],
                 "ut": [
-                    "02/02/09"
+                    "02/02/2009"
                 ]
             }, {
                 "bokstaver": "",
@@ -4332,14 +4334,14 @@ $(document).ready(function() {
                 "antall_aar": 6.35,
                 "antall_ganger": 2,
                 "inne_naa": true,
-                "sist_inn": "08/23/13",
-                "sist_ut": "07/04/05",
+                "sist_inn": "08/23/2013",
+                "sist_ut": "07/04/2005",
                 "inn": [
-                    "07/09/01",
-                    "08/23/13"
+                    "07/09/2001",
+                    "08/23/2013"
                 ],
                 "ut": [
-                    "07/04/05"
+                    "07/04/2005"
                 ]
             }, {
                 "bokstaver": "",
@@ -4409,10 +4411,10 @@ $(document).ready(function() {
                 "antall_aar": 1.39,
                 "antall_ganger": 1,
                 "inne_naa": true,
-                "sist_inn": "08/13/14",
+                "sist_inn": "08/13/2014",
                 "sist_ut": "",
                 "inn": [
-                    "08/13/14"
+                    "08/13/2014"
                 ],
                 "ut": []
             }, {
@@ -4423,17 +4425,17 @@ $(document).ready(function() {
                 "antall_aar": 6.32,
                 "antall_ganger": 3,
                 "inne_naa": false,
-                "sist_inn": "01/28/13",
-                "sist_ut": "08/23/16",
+                "sist_inn": "01/28/2013",
+                "sist_ut": "08/23/2016",
                 "inn": [
-                    "01/01/01",
-                    "08/18/04",
-                    "01/28/13"
+                    "01/01/2001",
+                    "08/18/2004",
+                    "01/28/2013"
                 ],
                 "ut": [
-                    "06/14/01",
-                    "07/30/07",
-                    "08/23/16"
+                    "06/14/2001",
+                    "07/30/2007",
+                    "08/23/2016"
                 ]
             }, {
                 "bokstaver": "",
@@ -4443,13 +4445,13 @@ $(document).ready(function() {
                 "antall_aar": 2.48,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "03/03/04",
-                "sist_ut": "08/25/06",
+                "sist_inn": "03/03/2004",
+                "sist_ut": "08/25/2006",
                 "inn": [
-                    "03/03/04"
+                    "03/03/2004"
                 ],
                 "ut": [
-                    "08/25/06"
+                    "08/25/2006"
                 ]
             }, {
                 "bokstaver": "",
@@ -4471,15 +4473,15 @@ $(document).ready(function() {
                 "antall_aar": 1.86,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "10/07/09",
-                "sist_ut": "08/23/10",
+                "sist_inn": "10/07/2009",
+                "sist_ut": "08/23/2010",
                 "inn": [
-                    "02/15/01",
-                    "10/07/09"
+                    "02/15/2001",
+                    "10/07/2009"
                 ],
                 "ut": [
-                    "02/06/02",
-                    "08/23/10"
+                    "02/06/2002",
+                    "08/23/2010"
                 ]
             }, {
                 "bokstaver": "",
@@ -4489,15 +4491,15 @@ $(document).ready(function() {
                 "antall_aar": 1.26,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "10/26/09",
-                "sist_ut": "08/23/10",
+                "sist_inn": "10/26/2009",
+                "sist_ut": "08/23/2010",
                 "inn": [
-                    "01/01/01",
-                    "10/26/09"
+                    "01/01/2001",
+                    "10/26/2009"
                 ],
                 "ut": [
-                    "06/14/01",
-                    "08/23/10"
+                    "06/14/2001",
+                    "08/23/2010"
                 ]
             }, {
                 "bokstaver": "",
@@ -4507,13 +4509,13 @@ $(document).ready(function() {
                 "antall_aar": 5.86,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "10/10/02",
-                "sist_ut": "08/18/08",
+                "sist_inn": "10/10/2002",
+                "sist_ut": "08/18/2008",
                 "inn": [
-                    "10/10/02"
+                    "10/10/2002"
                 ],
                 "ut": [
-                    "08/18/08"
+                    "08/18/2008"
                 ]
             }, {
                 "bokstaver": "",
@@ -4523,13 +4525,13 @@ $(document).ready(function() {
                 "antall_aar": 3.03,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "08/14/03",
-                "sist_ut": "08/25/06",
+                "sist_inn": "08/14/2003",
+                "sist_ut": "08/25/2006",
                 "inn": [
-                    "08/14/03"
+                    "08/14/2003"
                 ],
                 "ut": [
-                    "08/25/06"
+                    "08/25/2006"
                 ]
             }, {
                 "bokstaver": "",
@@ -4587,15 +4589,15 @@ $(document).ready(function() {
                 "antall_aar": 1.85,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "04/25/08",
-                "sist_ut": "02/03/09",
+                "sist_inn": "04/25/2008",
+                "sist_ut": "02/03/2009",
                 "inn": [
-                    "06/29/06",
-                    "04/25/08"
+                    "06/29/2006",
+                    "04/25/2008"
                 ],
                 "ut": [
-                    "07/30/07",
-                    "02/03/09"
+                    "07/30/2007",
+                    "02/03/2009"
                 ]
             }, {
                 "bokstaver": "",
@@ -4617,16 +4619,16 @@ $(document).ready(function() {
                 "antall_aar": 9.04,
                 "antall_ganger": 3,
                 "inne_naa": true,
-                "sist_inn": "04/02/12",
-                "sist_ut": "05/29/08",
+                "sist_inn": "04/02/2012",
+                "sist_ut": "05/29/2008",
                 "inn": [
-                    "01/01/01",
-                    "08/23/05",
-                    "04/02/12"
+                    "01/01/2001",
+                    "08/23/2005",
+                    "04/02/2012"
                 ],
                 "ut": [
-                    "07/10/03",
-                    "05/29/08"
+                    "07/10/2003",
+                    "05/29/2008"
                 ]
             }, {
                 "bokstaver": "",
@@ -4636,13 +4638,13 @@ $(document).ready(function() {
                 "antall_aar": 6.52,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "01/01/01",
-                "sist_ut": "07/09/07",
+                "sist_inn": "01/01/2001",
+                "sist_ut": "07/09/2007",
                 "inn": [
-                    "01/01/01"
+                    "01/01/2001"
                 ],
                 "ut": [
-                    "07/09/07"
+                    "07/09/2007"
                 ]
             }, {
                 "bokstaver": "",
@@ -4652,13 +4654,13 @@ $(document).ready(function() {
                 "antall_aar": 4.41,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "01/01/01",
-                "sist_ut": "05/31/05",
+                "sist_inn": "01/01/2001",
+                "sist_ut": "05/31/2005",
                 "inn": [
-                    "01/01/01"
+                    "01/01/2001"
                 ],
                 "ut": [
-                    "05/31/05"
+                    "05/31/2005"
                 ]
             }, {
                 "bokstaver": "",
@@ -4668,15 +4670,15 @@ $(document).ready(function() {
                 "antall_aar": 3.36,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "03/30/10",
-                "sist_ut": "05/05/11",
+                "sist_inn": "03/30/2010",
+                "sist_ut": "05/05/2011",
                 "inn": [
-                    "04/01/03",
-                    "03/30/10"
+                    "04/01/2003",
+                    "03/30/2010"
                 ],
                 "ut": [
-                    "07/04/05",
-                    "05/05/11"
+                    "07/04/2005",
+                    "05/05/2011"
                 ]
             }, {
                 "bokstaver": "",
@@ -4686,13 +4688,13 @@ $(document).ready(function() {
                 "antall_aar": 6.52,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "01/01/01",
-                "sist_ut": "07/09/07",
+                "sist_inn": "01/01/2001",
+                "sist_ut": "07/09/2007",
                 "inn": [
-                    "01/01/01"
+                    "01/01/2001"
                 ],
                 "ut": [
-                    "07/09/07"
+                    "07/09/2007"
                 ]
             }, {
                 "bokstaver": "",
@@ -4702,13 +4704,13 @@ $(document).ready(function() {
                 "antall_aar": 2.52,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "01/01/01",
-                "sist_ut": "07/10/03",
+                "sist_inn": "01/01/2001",
+                "sist_ut": "07/10/2003",
                 "inn": [
-                    "01/01/01"
+                    "01/01/2001"
                 ],
                 "ut": [
-                    "07/10/03"
+                    "07/10/2003"
                 ]
             }, {
                 "bokstaver": "",
@@ -4718,15 +4720,15 @@ $(document).ready(function() {
                 "antall_aar": 3.63,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "06/29/06",
-                "sist_ut": "08/12/08",
+                "sist_inn": "06/29/2006",
+                "sist_ut": "08/12/2008",
                 "inn": [
-                    "01/01/01",
-                    "06/29/06"
+                    "01/01/2001",
+                    "06/29/2006"
                 ],
                 "ut": [
-                    "07/08/02",
-                    "08/12/08"
+                    "07/08/2002",
+                    "08/12/2008"
                 ]
             }, {
                 "bokstaver": "",
@@ -4736,15 +4738,15 @@ $(document).ready(function() {
                 "antall_aar": 3.39,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "05/19/03",
-                "sist_ut": "05/31/05",
+                "sist_inn": "05/19/2003",
+                "sist_ut": "05/31/2005",
                 "inn": [
-                    "01/01/01",
-                    "05/19/03"
+                    "01/01/2001",
+                    "05/19/2003"
                 ],
                 "ut": [
-                    "07/08/02",
-                    "05/31/05"
+                    "07/08/2002",
+                    "05/31/2005"
                 ]
             }, {
                 "bokstaver": "",
@@ -4790,13 +4792,13 @@ $(document).ready(function() {
                 "antall_aar": 1.98,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "07/13/04",
-                "sist_ut": "06/24/06",
+                "sist_inn": "07/13/2004",
+                "sist_ut": "06/24/2006",
                 "inn": [
-                    "07/13/04"
+                    "07/13/2004"
                 ],
                 "ut": [
-                    "06/24/06"
+                    "06/24/2006"
                 ]
             }, {
                 "bokstaver": "",
@@ -4854,13 +4856,13 @@ $(document).ready(function() {
                 "antall_aar": 0.98,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "07/13/04",
-                "sist_ut": "07/04/05",
+                "sist_inn": "07/13/2004",
+                "sist_ut": "07/04/2005",
                 "inn": [
-                    "07/13/04"
+                    "07/13/2004"
                 ],
                 "ut": [
-                    "07/04/05"
+                    "07/04/2005"
                 ]
             }, {
                 "bokstaver": "",
@@ -4870,13 +4872,13 @@ $(document).ready(function() {
                 "antall_aar": 4.47,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "02/27/04",
-                "sist_ut": "08/12/08",
+                "sist_inn": "02/27/2004",
+                "sist_ut": "08/12/2008",
                 "inn": [
-                    "02/27/04"
+                    "02/27/2004"
                 ],
                 "ut": [
-                    "08/12/08"
+                    "08/12/2008"
                 ]
             }, {
                 "bokstaver": "",
@@ -4886,15 +4888,15 @@ $(document).ready(function() {
                 "antall_aar": 3.25,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "03/31/08",
-                "sist_ut": "03/17/09",
+                "sist_inn": "03/31/2008",
+                "sist_ut": "03/17/2009",
                 "inn": [
-                    "05/31/05",
-                    "03/31/08"
+                    "05/31/2005",
+                    "03/31/2008"
                 ],
                 "ut": [
-                    "07/09/07",
-                    "03/17/09"
+                    "07/09/2007",
+                    "03/17/2009"
                 ]
             }, {
                 "bokstaver": "",
@@ -4916,15 +4918,15 @@ $(document).ready(function() {
                 "antall_aar": 6.89,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "02/20/09",
-                "sist_ut": "06/10/15",
+                "sist_inn": "02/20/2009",
+                "sist_ut": "06/10/2015",
                 "inn": [
-                    "01/01/01",
-                    "02/20/09"
+                    "01/01/2001",
+                    "02/20/2009"
                 ],
                 "ut": [
-                    "07/17/01",
-                    "06/10/15"
+                    "07/17/2001",
+                    "06/10/2015"
                 ]
             }, {
                 "bokstaver": "",
@@ -4934,14 +4936,14 @@ $(document).ready(function() {
                 "antall_aar": 4.54,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "03/04/03",
-                "sist_ut": "08/22/05",
+                "sist_inn": "03/04/2003",
+                "sist_ut": "08/22/2005",
                 "inn": [
-                    "02/15/01",
-                    "03/04/03"
+                    "02/15/2001",
+                    "03/04/2003"
                 ],
                 "ut": [
-                    "08/22/05"
+                    "08/22/2005"
                 ]
             }, {
                 "bokstaver": "",
@@ -4963,14 +4965,14 @@ $(document).ready(function() {
                 "antall_aar": 0.68,
                 "antall_ganger": 2,
                 "inne_naa": true,
-                "sist_inn": "07/14/16",
-                "sist_ut": "08/23/10",
+                "sist_inn": "07/14/2016",
+                "sist_ut": "08/23/2010",
                 "inn": [
-                    "12/18/09",
-                    "07/14/16"
+                    "12/18/2009",
+                    "07/14/2016"
                 ],
                 "ut": [
-                    "08/23/10"
+                    "08/23/2010"
                 ]
             }, {
                 "bokstaver": "",
@@ -4980,13 +4982,13 @@ $(document).ready(function() {
                 "antall_aar": 1.91,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "09/12/03",
-                "sist_ut": "08/11/05",
+                "sist_inn": "09/12/2003",
+                "sist_ut": "08/11/2005",
                 "inn": [
-                    "09/12/03"
+                    "09/12/2003"
                 ],
                 "ut": [
-                    "08/11/05"
+                    "08/11/2005"
                 ]
             }, {
                 "bokstaver": "",
@@ -4996,15 +4998,15 @@ $(document).ready(function() {
                 "antall_aar": 1.61,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "06/14/04",
-                "sist_ut": "07/14/05",
+                "sist_inn": "06/14/2004",
+                "sist_ut": "07/14/2005",
                 "inn": [
-                    "08/09/02",
-                    "06/14/04"
+                    "08/09/2002",
+                    "06/14/2004"
                 ],
                 "ut": [
-                    "02/18/03",
-                    "07/14/05"
+                    "02/18/2003",
+                    "07/14/2005"
                 ]
             }, {
                 "bokstaver": "",
@@ -5014,13 +5016,13 @@ $(document).ready(function() {
                 "antall_aar": 0.6,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "10/19/01",
-                "sist_ut": "05/13/02",
+                "sist_inn": "10/19/2001",
+                "sist_ut": "05/13/2002",
                 "inn": [
-                    "10/19/01"
+                    "10/19/2001"
                 ],
                 "ut": [
-                    "05/13/02"
+                    "05/13/2002"
                 ]
             }, {
                 "bokstaver": "",
@@ -5030,13 +5032,13 @@ $(document).ready(function() {
                 "antall_aar": 2.76,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "01/01/01",
-                "sist_ut": "10/03/03",
+                "sist_inn": "01/01/2001",
+                "sist_ut": "10/03/2003",
                 "inn": [
-                    "01/01/01"
+                    "01/01/2001"
                 ],
                 "ut": [
-                    "10/03/03"
+                    "10/03/2003"
                 ]
             }, {
                 "bokstaver": "",
@@ -5082,10 +5084,10 @@ $(document).ready(function() {
                 "antall_aar": 7.3,
                 "antall_ganger": 1,
                 "inne_naa": true,
-                "sist_inn": "12/22/08",
+                "sist_inn": "12/22/2008",
                 "sist_ut": "",
                 "inn": [
-                    "12/22/08"
+                    "12/22/2008"
                 ],
                 "ut": []
             }, {
@@ -5096,13 +5098,13 @@ $(document).ready(function() {
                 "antall_aar": 2.35,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "03/05/01",
-                "sist_ut": "07/10/03",
+                "sist_inn": "03/05/2001",
+                "sist_ut": "07/10/2003",
                 "inn": [
-                    "03/05/01"
+                    "03/05/2001"
                 ],
                 "ut": [
-                    "07/10/03"
+                    "07/10/2003"
                 ]
             }, {
                 "bokstaver": "",
@@ -5124,14 +5126,14 @@ $(document).ready(function() {
                 "antall_aar": 8.66,
                 "antall_ganger": 2,
                 "inne_naa": true,
-                "sist_inn": "03/13/09",
-                "sist_ut": "11/07/02",
+                "sist_inn": "03/13/2009",
+                "sist_ut": "11/07/2002",
                 "inn": [
-                    "01/01/01",
-                    "03/13/09"
+                    "01/01/2001",
+                    "03/13/2009"
                 ],
                 "ut": [
-                    "11/07/02"
+                    "11/07/2002"
                 ]
             }, {
                 "bokstaver": "",
@@ -5177,13 +5179,13 @@ $(document).ready(function() {
                 "antall_aar": 3.39,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "05/06/02",
-                "sist_ut": "09/25/05",
+                "sist_inn": "05/06/2002",
+                "sist_ut": "09/25/2005",
                 "inn": [
-                    "05/06/02"
+                    "05/06/2002"
                 ],
                 "ut": [
-                    "09/25/05"
+                    "09/25/2005"
                 ]
             }, {
                 "bokstaver": "",
@@ -5229,14 +5231,14 @@ $(document).ready(function() {
                 "antall_aar": 7.1,
                 "antall_ganger": 2,
                 "inne_naa": true,
-                "sist_inn": "06/09/15",
-                "sist_ut": "08/13/07",
+                "sist_inn": "06/09/2015",
+                "sist_ut": "08/13/2007",
                 "inn": [
-                    "12/15/01",
-                    "06/09/15"
+                    "12/15/2001",
+                    "06/09/2015"
                 ],
                 "ut": [
-                    "08/13/07"
+                    "08/13/2007"
                 ]
             }, {
                 "bokstaver": "c",
@@ -5246,17 +5248,17 @@ $(document).ready(function() {
                 "antall_aar": 8.3,
                 "antall_ganger": 3,
                 "inne_naa": false,
-                "sist_inn": "10/01/15",
-                "sist_ut": "09/06/16",
+                "sist_inn": "10/01/2015",
+                "sist_ut": "09/06/2016",
                 "inn": [
-                    "03/05/01",
-                    "09/22/03",
-                    "10/01/15"
+                    "03/05/2001",
+                    "09/22/2003",
+                    "10/01/2015"
                 ],
                 "ut": [
-                    "07/11/02",
-                    "07/28/10",
-                    "09/06/16"
+                    "07/11/2002",
+                    "07/28/2010",
+                    "09/06/2016"
                 ]
             }, {
                 "bokstaver": "",
@@ -5278,14 +5280,14 @@ $(document).ready(function() {
                 "antall_aar": 3.41,
                 "antall_ganger": 2,
                 "inne_naa": true,
-                "sist_inn": "06/02/16",
-                "sist_ut": "08/09/10",
+                "sist_inn": "06/02/2016",
+                "sist_ut": "08/09/2010",
                 "inn": [
-                    "03/16/07",
-                    "06/02/16"
+                    "03/16/2007",
+                    "06/02/2016"
                 ],
                 "ut": [
-                    "08/09/10"
+                    "08/09/2010"
                 ]
             }, {
                 "bokstaver": "d",
@@ -5295,16 +5297,16 @@ $(document).ready(function() {
                 "antall_aar": 5.6,
                 "antall_ganger": 3,
                 "inne_naa": true,
-                "sist_inn": "09/05/11",
-                "sist_ut": "09/25/09",
+                "sist_inn": "09/05/2011",
+                "sist_ut": "09/25/2009",
                 "inn": [
-                    "07/01/05",
-                    "08/10/09",
-                    "09/05/11"
+                    "07/01/2005",
+                    "08/10/2009",
+                    "09/05/2011"
                 ],
                 "ut": [
-                    "08/25/06",
-                    "09/25/09"
+                    "08/25/2006",
+                    "09/25/2009"
                 ]
             }, {
                 "bokstaver": "c",
@@ -5314,14 +5316,14 @@ $(document).ready(function() {
                 "antall_aar": 10.21,
                 "antall_ganger": 2,
                 "inne_naa": true,
-                "sist_inn": "03/18/14",
-                "sist_ut": "06/02/09",
+                "sist_inn": "03/18/2014",
+                "sist_ut": "06/02/2009",
                 "inn": [
-                    "01/01/01",
-                    "03/18/14"
+                    "01/01/2001",
+                    "03/18/2014"
                 ],
                 "ut": [
-                    "06/02/09"
+                    "06/02/2009"
                 ]
             }, {
                 "bokstaver": "",
@@ -5331,13 +5333,13 @@ $(document).ready(function() {
                 "antall_aar": 10.23,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "06/19/03",
-                "sist_ut": "09/09/13",
+                "sist_inn": "06/19/2003",
+                "sist_ut": "09/09/2013",
                 "inn": [
-                    "06/19/03"
+                    "06/19/2003"
                 ],
                 "ut": [
-                    "09/09/13"
+                    "09/09/2013"
                 ]
             }, {
                 "bokstaver": "",
@@ -5371,14 +5373,14 @@ $(document).ready(function() {
                 "antall_aar": 4.23,
                 "antall_ganger": 2,
                 "inne_naa": true,
-                "sist_inn": "11/15/13",
-                "sist_ut": "08/03/09",
+                "sist_inn": "11/15/2013",
+                "sist_ut": "08/03/2009",
                 "inn": [
-                    "07/09/07",
-                    "11/15/13"
+                    "07/09/2007",
+                    "11/15/2013"
                 ],
                 "ut": [
-                    "08/03/09"
+                    "08/03/2009"
                 ]
             }, {
                 "bokstaver": "",
@@ -5388,13 +5390,13 @@ $(document).ready(function() {
                 "antall_aar": 4.45,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "01/03/11",
-                "sist_ut": "06/18/15",
+                "sist_inn": "01/03/2011",
+                "sist_ut": "06/18/2015",
                 "inn": [
-                    "01/03/11"
+                    "01/03/2011"
                 ],
                 "ut": [
-                    "06/18/15"
+                    "06/18/2015"
                 ]
             }, {
                 "bokstaver": "",
@@ -5404,13 +5406,13 @@ $(document).ready(function() {
                 "antall_aar": 1.98,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "07/10/03",
-                "sist_ut": "07/01/05",
+                "sist_inn": "07/10/2003",
+                "sist_ut": "07/01/2005",
                 "inn": [
-                    "07/10/03"
+                    "07/10/2003"
                 ],
                 "ut": [
-                    "07/01/05"
+                    "07/01/2005"
                 ]
             }, {
                 "bokstaver": "d",
@@ -5420,10 +5422,10 @@ $(document).ready(function() {
                 "antall_aar": 7.27,
                 "antall_ganger": 1,
                 "inne_naa": true,
-                "sist_inn": "09/23/08",
+                "sist_inn": "09/23/2008",
                 "sist_ut": "",
                 "inn": [
-                    "09/23/08"
+                    "09/23/2008"
                 ],
                 "ut": []
             }, {
@@ -5434,15 +5436,15 @@ $(document).ready(function() {
                 "antall_aar": 3.68,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "10/04/13",
-                "sist_ut": "06/16/16",
+                "sist_inn": "10/04/2013",
+                "sist_ut": "06/16/2016",
                 "inn": [
-                    "08/18/04",
-                    "10/04/13"
+                    "08/18/2004",
+                    "10/04/2013"
                 ],
                 "ut": [
-                    "08/11/05",
-                    "06/16/16"
+                    "08/11/2005",
+                    "06/16/2016"
                 ]
             }, {
                 "bokstaver": "",
@@ -5452,13 +5454,13 @@ $(document).ready(function() {
                 "antall_aar": 0.52,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "01/05/05",
-                "sist_ut": "07/14/05",
+                "sist_inn": "01/05/2005",
+                "sist_ut": "07/14/2005",
                 "inn": [
-                    "01/05/05"
+                    "01/05/2005"
                 ],
                 "ut": [
-                    "07/14/05"
+                    "07/14/2005"
                 ]
             }, {
                 "bokstaver": "",
@@ -5468,13 +5470,13 @@ $(document).ready(function() {
                 "antall_aar": 6.24,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "11/18/03",
-                "sist_ut": "08/27/10",
+                "sist_inn": "11/18/2003",
+                "sist_ut": "08/27/2010",
                 "inn": [
-                    "11/18/03"
+                    "11/18/2003"
                 ],
                 "ut": [
-                    "08/27/10"
+                    "08/27/2010"
                 ]
             }, {
                 "bokstaver": "",
@@ -5484,13 +5486,13 @@ $(document).ready(function() {
                 "antall_aar": 4.59,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "05/02/11",
-                "sist_ut": "12/01/15",
+                "sist_inn": "05/02/2011",
+                "sist_ut": "12/01/2015",
                 "inn": [
-                    "05/02/11"
+                    "05/02/2011"
                 ],
                 "ut": [
-                    "12/01/15"
+                    "12/01/2015"
                 ]
             }, {
                 "bokstaver": "",
@@ -5500,13 +5502,13 @@ $(document).ready(function() {
                 "antall_aar": 4.96,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "09/23/08",
-                "sist_ut": "09/10/13",
+                "sist_inn": "09/23/2008",
+                "sist_ut": "09/10/2013",
                 "inn": [
-                    "09/23/08"
+                    "09/23/2008"
                 ],
                 "ut": [
-                    "09/10/13"
+                    "09/10/2013"
                 ]
             }, {
                 "bokstaver": "",
@@ -5516,15 +5518,15 @@ $(document).ready(function() {
                 "antall_aar": 1.77,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "11/22/10",
-                "sist_ut": "09/05/11",
+                "sist_inn": "11/22/2010",
+                "sist_ut": "09/05/2011",
                 "inn": [
-                    "08/18/04",
-                    "11/22/10"
+                    "08/18/2004",
+                    "11/22/2010"
                 ],
                 "ut": [
-                    "08/11/05",
-                    "09/05/11"
+                    "08/11/2005",
+                    "09/05/2011"
                 ]
             }, {
                 "bokstaver": "",
@@ -5534,13 +5536,13 @@ $(document).ready(function() {
                 "antall_aar": 3.97,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "10/20/09",
-                "sist_ut": "10/09/13",
+                "sist_inn": "10/20/2009",
+                "sist_ut": "10/09/2013",
                 "inn": [
-                    "10/20/09"
+                    "10/20/2009"
                 ],
                 "ut": [
-                    "10/09/13"
+                    "10/09/2013"
                 ]
             }, {
                 "bokstaver": "c",
@@ -5550,10 +5552,10 @@ $(document).ready(function() {
                 "antall_aar": 3.48,
                 "antall_ganger": 1,
                 "inne_naa": true,
-                "sist_inn": "07/10/12",
+                "sist_inn": "07/10/2012",
                 "sist_ut": "",
                 "inn": [
-                    "07/10/12"
+                    "07/10/2012"
                 ],
                 "ut": []
             }, {
@@ -5588,14 +5590,14 @@ $(document).ready(function() {
                 "antall_aar": 2.53,
                 "antall_ganger": 2,
                 "inne_naa": true,
-                "sist_inn": "08/12/15",
-                "sist_ut": "08/11/05",
+                "sist_inn": "08/12/2015",
+                "sist_ut": "08/11/2005",
                 "inn": [
-                    "06/23/03",
-                    "08/12/15"
+                    "06/23/2003",
+                    "08/12/2015"
                 ],
                 "ut": [
-                    "08/11/05"
+                    "08/11/2005"
                 ]
             }, {
                 "bokstaver": "",
@@ -5605,13 +5607,13 @@ $(document).ready(function() {
                 "antall_aar": 4.36,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "01/01/01",
-                "sist_ut": "05/12/05",
+                "sist_inn": "01/01/2001",
+                "sist_ut": "05/12/2005",
                 "inn": [
-                    "01/01/01"
+                    "01/01/2001"
                 ],
                 "ut": [
-                    "05/12/05"
+                    "05/12/2005"
                 ]
             }, {
                 "bokstaver": "",
@@ -5645,13 +5647,13 @@ $(document).ready(function() {
                 "antall_aar": 1.29,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "07/23/03",
-                "sist_ut": "11/04/04",
+                "sist_inn": "07/23/2003",
+                "sist_ut": "11/04/2004",
                 "inn": [
-                    "07/23/03"
+                    "07/23/2003"
                 ],
                 "ut": [
-                    "11/04/04"
+                    "11/04/2004"
                 ]
             }, {
                 "bokstaver": "",
@@ -5673,13 +5675,13 @@ $(document).ready(function() {
                 "antall_aar": 3.99,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "07/11/02",
-                "sist_ut": "06/28/06",
+                "sist_inn": "07/11/2002",
+                "sist_ut": "06/28/2006",
                 "inn": [
-                    "07/11/02"
+                    "07/11/2002"
                 ],
                 "ut": [
-                    "06/28/06"
+                    "06/28/2006"
                 ]
             }, {
                 "bokstaver": "",
@@ -5689,13 +5691,13 @@ $(document).ready(function() {
                 "antall_aar": 6.58,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "01/01/01",
-                "sist_ut": "07/31/07",
+                "sist_inn": "01/01/2001",
+                "sist_ut": "07/31/2007",
                 "inn": [
-                    "01/01/01"
+                    "01/01/2001"
                 ],
                 "ut": [
-                    "07/31/07"
+                    "07/31/2007"
                 ]
             }, {
                 "bokstaver": "",
@@ -5705,13 +5707,13 @@ $(document).ready(function() {
                 "antall_aar": 7.16,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "10/18/04",
-                "sist_ut": "12/13/11",
+                "sist_inn": "10/18/2004",
+                "sist_ut": "12/13/2011",
                 "inn": [
-                    "10/18/04"
+                    "10/18/2004"
                 ],
                 "ut": [
-                    "12/13/11"
+                    "12/13/2011"
                 ]
             }, {
                 "bokstaver": "",
@@ -5721,13 +5723,13 @@ $(document).ready(function() {
                 "antall_aar": 1.41,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "04/09/10",
-                "sist_ut": "09/05/11",
+                "sist_inn": "04/09/2010",
+                "sist_ut": "09/05/2011",
                 "inn": [
-                    "04/09/10"
+                    "04/09/2010"
                 ],
                 "ut": [
-                    "09/05/11"
+                    "09/05/2011"
                 ]
             }, {
                 "bokstaver": "",
@@ -5749,13 +5751,13 @@ $(document).ready(function() {
                 "antall_aar": 9.61,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "01/01/01",
-                "sist_ut": "08/09/10",
+                "sist_inn": "01/01/2001",
+                "sist_ut": "08/09/2010",
                 "inn": [
-                    "01/01/01"
+                    "01/01/2001"
                 ],
                 "ut": [
-                    "08/09/10"
+                    "08/09/2010"
                 ]
             }, {
                 "bokstaver": "c-d",
@@ -5765,10 +5767,10 @@ $(document).ready(function() {
                 "antall_aar": 15,
                 "antall_ganger": 1,
                 "inne_naa": true,
-                "sist_inn": "01/01/01",
+                "sist_inn": "01/01/2001",
                 "sist_ut": "",
                 "inn": [
-                    "01/01/01"
+                    "01/01/2001"
                 ],
                 "ut": []
             }, {
@@ -5779,13 +5781,13 @@ $(document).ready(function() {
                 "antall_aar": 0.43,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "01/01/01",
-                "sist_ut": "07/08/01",
+                "sist_inn": "01/01/2001",
+                "sist_ut": "07/08/2001",
                 "inn": [
-                    "01/01/01"
+                    "01/01/2001"
                 ],
                 "ut": [
-                    "07/08/01"
+                    "07/08/2001"
                 ]
             }, {
                 "bokstaver": "",
@@ -5795,15 +5797,15 @@ $(document).ready(function() {
                 "antall_aar": 6.02,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "08/05/14",
-                "sist_ut": "08/08/16",
+                "sist_inn": "08/05/2014",
+                "sist_ut": "08/08/2016",
                 "inn": [
-                    "01/01/01",
-                    "08/05/14"
+                    "01/01/2001",
+                    "08/05/2014"
                 ],
                 "ut": [
-                    "08/09/05",
-                    "08/08/16"
+                    "08/09/2005",
+                    "08/08/2016"
                 ]
             }, {
                 "bokstaver": "",
@@ -5813,13 +5815,13 @@ $(document).ready(function() {
                 "antall_aar": 2.56,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "01/01/01",
-                "sist_ut": "07/23/03",
+                "sist_inn": "01/01/2001",
+                "sist_ut": "07/23/2003",
                 "inn": [
-                    "01/01/01"
+                    "01/01/2001"
                 ],
                 "ut": [
-                    "07/23/03"
+                    "07/23/2003"
                 ]
             }, {
                 "bokstaver": "",
@@ -5829,15 +5831,15 @@ $(document).ready(function() {
                 "antall_aar": 4.35,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "05/12/10",
-                "sist_ut": "09/04/13",
+                "sist_inn": "05/12/2010",
+                "sist_ut": "09/04/2013",
                 "inn": [
-                    "07/11/02",
-                    "05/12/10"
+                    "07/11/2002",
+                    "05/12/2010"
                 ],
                 "ut": [
-                    "07/23/03",
-                    "09/04/13"
+                    "07/23/2003",
+                    "09/04/2013"
                 ]
             }, {
                 "bokstaver": "",
@@ -5847,17 +5849,17 @@ $(document).ready(function() {
                 "antall_aar": 7.28,
                 "antall_ganger": 3,
                 "inne_naa": false,
-                "sist_inn": "11/06/09",
-                "sist_ut": "06/22/12",
+                "sist_inn": "11/06/2009",
+                "sist_ut": "06/22/2012",
                 "inn": [
-                    "01/01/01",
-                    "02/18/08",
-                    "11/06/09"
+                    "01/01/2001",
+                    "02/18/2008",
+                    "11/06/2009"
                 ],
                 "ut": [
-                    "07/01/05",
-                    "04/25/08",
-                    "06/22/12"
+                    "07/01/2005",
+                    "04/25/2008",
+                    "06/22/2012"
                 ]
             }, {
                 "bokstaver": "",
@@ -5867,15 +5869,15 @@ $(document).ready(function() {
                 "antall_aar": 4.2,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "01/27/12",
-                "sist_ut": "08/08/16",
+                "sist_inn": "01/27/2012",
+                "sist_ut": "08/08/2016",
                 "inn": [
-                    "03/03/04",
-                    "01/27/12"
+                    "03/03/2004",
+                    "01/27/2012"
                 ],
                 "ut": [
-                    "06/11/04",
-                    "08/08/16"
+                    "06/11/2004",
+                    "08/08/2016"
                 ]
             }, {
                 "bokstaver": "",
@@ -5885,13 +5887,13 @@ $(document).ready(function() {
                 "antall_aar": 4.61,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "01/01/01",
-                "sist_ut": "08/11/05",
+                "sist_inn": "01/01/2001",
+                "sist_ut": "08/11/2005",
                 "inn": [
-                    "01/01/01"
+                    "01/01/2001"
                 ],
                 "ut": [
-                    "08/11/05"
+                    "08/11/2005"
                 ]
             }, {
                 "bokstaver": "",
@@ -5901,13 +5903,13 @@ $(document).ready(function() {
                 "antall_aar": 5.04,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "08/18/08",
-                "sist_ut": "09/04/13",
+                "sist_inn": "08/18/2008",
+                "sist_ut": "09/04/2013",
                 "inn": [
-                    "08/18/08"
+                    "08/18/2008"
                 ],
                 "ut": [
-                    "09/04/13"
+                    "09/04/2013"
                 ]
             }, {
                 "bokstaver": "c-d",
@@ -5917,10 +5919,10 @@ $(document).ready(function() {
                 "antall_aar": 11.8,
                 "antall_ganger": 1,
                 "inne_naa": true,
-                "sist_inn": "03/16/04",
+                "sist_inn": "03/16/2004",
                 "sist_ut": "",
                 "inn": [
-                    "03/16/04"
+                    "03/16/2004"
                 ],
                 "ut": []
             }, {
@@ -5943,13 +5945,13 @@ $(document).ready(function() {
                 "antall_aar": 0.86,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "06/09/05",
-                "sist_ut": "04/18/06",
+                "sist_inn": "06/09/2005",
+                "sist_ut": "04/18/2006",
                 "inn": [
-                    "06/09/05"
+                    "06/09/2005"
                 ],
                 "ut": [
-                    "04/18/06"
+                    "04/18/2006"
                 ]
             }, {
                 "bokstaver": "",
@@ -5959,13 +5961,13 @@ $(document).ready(function() {
                 "antall_aar": 1.62,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "01/01/01",
-                "sist_ut": "08/15/02",
+                "sist_inn": "01/01/2001",
+                "sist_ut": "08/15/2002",
                 "inn": [
-                    "01/01/01"
+                    "01/01/2001"
                 ],
                 "ut": [
-                    "08/15/02"
+                    "08/15/2002"
                 ]
             }, {
                 "bokstaver": "",
@@ -5975,15 +5977,15 @@ $(document).ready(function() {
                 "antall_aar": 1.7,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "12/08/03",
-                "sist_ut": "04/07/05",
+                "sist_inn": "12/08/2003",
+                "sist_ut": "04/07/2005",
                 "inn": [
-                    "01/01/01",
-                    "12/08/03"
+                    "01/01/2001",
+                    "12/08/2003"
                 ],
                 "ut": [
-                    "05/16/01",
-                    "04/07/05"
+                    "05/16/2001",
+                    "04/07/2005"
                 ]
             }, {
                 "bokstaver": "d",
@@ -5993,14 +5995,14 @@ $(document).ready(function() {
                 "antall_aar": 4.67,
                 "antall_ganger": 2,
                 "inne_naa": true,
-                "sist_inn": "08/13/13",
-                "sist_ut": "07/14/05",
+                "sist_inn": "08/13/2013",
+                "sist_ut": "07/14/2005",
                 "inn": [
-                    "04/01/03",
-                    "08/13/13"
+                    "04/01/2003",
+                    "08/13/2013"
                 ],
                 "ut": [
-                    "07/14/05"
+                    "07/14/2005"
                 ]
             }, {
                 "bokstaver": "",
@@ -6022,13 +6024,13 @@ $(document).ready(function() {
                 "antall_aar": 1.34,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "01/26/04",
-                "sist_ut": "05/31/05",
+                "sist_inn": "01/26/2004",
+                "sist_ut": "05/31/2005",
                 "inn": [
-                    "01/26/04"
+                    "01/26/2004"
                 ],
                 "ut": [
-                    "05/31/05"
+                    "05/31/2005"
                 ]
             }, {
                 "bokstaver": "",
@@ -6038,13 +6040,13 @@ $(document).ready(function() {
                 "antall_aar": 3.31,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "03/19/04",
-                "sist_ut": "07/09/07",
+                "sist_inn": "03/19/2004",
+                "sist_ut": "07/09/2007",
                 "inn": [
-                    "03/19/04"
+                    "03/19/2004"
                 ],
                 "ut": [
-                    "07/09/07"
+                    "07/09/2007"
                 ]
             }, {
                 "bokstaver": "",
@@ -6054,13 +6056,13 @@ $(document).ready(function() {
                 "antall_aar": 1.24,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "09/01/09",
-                "sist_ut": "11/29/10",
+                "sist_inn": "09/01/2009",
+                "sist_ut": "11/29/2010",
                 "inn": [
-                    "09/01/09"
+                    "09/01/2009"
                 ],
                 "ut": [
-                    "11/29/10"
+                    "11/29/2010"
                 ]
             }, {
                 "bokstaver": "",
@@ -6082,13 +6084,13 @@ $(document).ready(function() {
                 "antall_aar": 2.06,
                 "antall_ganger": 1,
                 "inne_naa": false,
-                "sist_inn": "08/06/09",
-                "sist_ut": "09/05/11",
+                "sist_inn": "08/06/2009",
+                "sist_ut": "09/05/2011",
                 "inn": [
-                    "08/06/09"
+                    "08/06/2009"
                 ],
                 "ut": [
-                    "09/05/11"
+                    "09/05/2011"
                 ]
             }, {
                 "bokstaver": "c-d",
@@ -6098,16 +6100,16 @@ $(document).ready(function() {
                 "antall_aar": 9.85,
                 "antall_ganger": 3,
                 "inne_naa": true,
-                "sist_inn": "08/13/14",
-                "sist_ut": "09/03/10",
+                "sist_inn": "08/13/2014",
+                "sist_ut": "09/03/2010",
                 "inn": [
-                    "01/01/01",
-                    "09/10/04",
-                    "08/13/14"
+                    "01/01/2001",
+                    "09/10/2004",
+                    "08/13/2014"
                 ],
                 "ut": [
-                    "06/25/03",
-                    "09/03/10"
+                    "06/25/2003",
+                    "09/03/2010"
                 ]
             }, {
                 "bokstaver": "",
@@ -6117,15 +6119,15 @@ $(document).ready(function() {
                 "antall_aar": 5.52,
                 "antall_ganger": 2,
                 "inne_naa": false,
-                "sist_inn": "04/30/12",
-                "sist_ut": "10/06/15",
+                "sist_inn": "04/30/2012",
+                "sist_ut": "10/06/2015",
                 "inn": [
-                    "06/08/05",
-                    "04/30/12"
+                    "06/08/2005",
+                    "04/30/2012"
                 ],
                 "ut": [
-                    "07/09/07",
-                    "10/06/15"
+                    "07/09/2007",
+                    "10/06/2015"
                 ]
             }, {
                 "bokstaver": "",
@@ -6147,14 +6149,14 @@ $(document).ready(function() {
                 "antall_aar": 10.57,
                 "antall_ganger": 2,
                 "inne_naa": true,
-                "sist_inn": "01/03/11",
-                "sist_ut": "09/03/08",
+                "sist_inn": "01/03/2011",
+                "sist_ut": "09/03/2008",
                 "inn": [
-                    "02/07/03",
-                    "01/03/11"
+                    "02/07/2003",
+                    "01/03/2011"
                 ],
                 "ut": [
-                    "09/03/08"
+                    "09/03/2008"
                 ]
             }, {
                 "bokstaver": "",
@@ -6232,11 +6234,11 @@ $(document).ready(function() {
             //Set first region
             var region = data[0]["fylke"];
 
-            for (let x = 0; x < data.length; x++) {
+            for (var x = 0; x < data.length; x++) {
                 //Either new region or last region
                 if (data[x]["fylke"] !== region || x === data.length - 1) {
 
-                    let obj = {
+                    var obj = {
                         "fylke": region,
                         "antall_inne": counter
                     };
@@ -6263,47 +6265,47 @@ $(document).ready(function() {
         }
 
         //Data cleaner - generate new data regularily 
-        function getTimeSeries() {
-            var data = getData();
-            var years = [];
-            var cleaned = [];
+        // function getTimeSeries() {
+        //     var data = getData();
+        //     var years = [];
+        //     var cleaned = [];
 
-            // for (let x = 0; x < data.length; x++) {
-            //     for (let y = 0; y < data[x]["inn"].length; y++) {
-            //         if(data[x]["inn"].length > 0 ){
-            //             // console.log(data[x]["inn"][y]);
-            //             console.log("20"+data[x]["inn"][y].split("/")[2]);
-            //             years.push("20" + data[x]["inn"][y].split("/")[2]);
-            //         }
-            //     }
-            // }
+        //     for (var x = 0; x < data.length; x++) {
+        //         for (var y = 0; y < data[x]["inn"].length; y++) {
+        //             if(data[x]["inn"].length > 0 ){
+        //                 // console.log(data[x]["inn"][y]);
+        //                 console.log("20"+data[x]["inn"][y].split("/")[2]);
+        //                 years.push("20" + data[x]["inn"][y].split("/")[2]);
+        //             }
+        //         }
+        //     }
 
 
 
-            // for (let x = 0; x < data.length; x++) {
-            //     for (let y = 0; y < data[x]["ut"].length; y++) {
-            //         if(data[x]["ut"].length > 0){
-            //             let year = "20" + data[x]["ut"][y].split("/")[2]
-            //             // console.log(data[x]["ut"][y]);
-            //             years.push(year);
-            //         }
-            //     }
-            // }
+        //     for (var x = 0; x < data.length; x++) {
+        //         for (var y = 0; y < data[x]["ut"].length; y++) {
+        //             if(data[x]["ut"].length > 0){
+        //                 var year = "20" + data[x]["ut"][y].split("/")[2]
+        //                 // console.log(data[x]["ut"][y]);
+        //                 years.push(year);
+        //             }
+        //         }
+        //     }
 
-            // let counter = 0;
-            // let obj = {};
+        //     var counter = 0;
+        //     var obj = {};
 
-            // for (let m = 0; m < years.length; m++) {
-            //     // console.log(years[m]); console.log(m);
-            //     if (!obj[years[m]]) {
-            //         obj[years[m]] = 1;
-            //     } else {
-            //         obj[years[m]] += 1;
-            //     }
-            // }
-            // console.log(obj);
-            // return obj;
-        }
+        //     for (var m = 0; m < years.length; m++) {
+        //         // console.log(years[m]); console.log(m);
+        //         if (!obj[years[m]]) {
+        //             obj[years[m]] = 1;
+        //         } else {
+        //             obj[years[m]] += 1;
+        //         }
+        //     }
+        //     console.log(obj);
+        //     return obj;
+        // }
 
         /**
          * Cleanup functions
@@ -6311,23 +6313,23 @@ $(document).ready(function() {
         //Aggregates data on the form "2003-Inn" to an array containing all dates when the muni got registered in ROBEK.
         // function clean() {
 
-        //  let data = DataManager.getData();
+        //  var data = DataManager.getData();
 
-        //  for(let x = 0; x < data.length; x++){
-        //      let properties = Object.keys(data[x]);
-        //      let inn = [];
-        //      let ut = [];
+        //  for(var x = 0; x < data.length; x++){
+        //      var properties = Object.keys(data[x]);
+        //      var inn = [];
+        //      var ut = [];
         //      data[x]["inn"]= [];
         //      data[x]["ut"]= [];
 
-        //      for(let y = 0; y < properties.length; y++){
+        //      for(var y = 0; y < properties.length; y++){
         //          if(properties[y].split("-")[1] === "Inn"){
-        //              let dateIn = moment(data[x][properties[y]],"DD/MM/YY").format("MM/DD/YY");
+        //              var dateIn = moment(data[x][properties[y]],"DD/MM/YY").format("MM/DD/YY");
         //              inn.push(dateIn);
         //              delete data[x][properties[y]];
         //          }
         //          if(properties[y].split("-")[1] === "Ut"){
-        //              let dateOut= moment(data[x][properties[y]],"DD/MM/YY").format("MM/DD/YY");
+        //              var dateOut= moment(data[x][properties[y]],"DD/MM/YY").format("MM/DD/YY");
         //              ut.push(dateOut);
         //              delete data[x][properties[y]];
         //          }
@@ -6344,7 +6346,7 @@ $(document).ready(function() {
 
         // datas = DataManager.getData();
 
-        // for(let x = 0; x < datas.length;x++){
+        // for(var x = 0; x < datas.length;x++){
 
         //  if(datas[x]["antall_aar"] > 0){
         //      datas[x]["sist_ut"] = moment(datas[x]["sist_ut"], "DD/MM/YY").format("MM/DD/YY");
@@ -6354,7 +6356,6 @@ $(document).ready(function() {
         //      datas[x]["sist_ut"] = "";
         //  }
         // }
-        // console.log(datas);
 
         //How many went into robek -> Update this
         function inRobek() {
@@ -6374,7 +6375,7 @@ $(document).ready(function() {
                 "2013": 10,
                 "2014": 13,
                 "2015": 8,
-                "2016": 9
+                "2016": 12
             };
         }
         //How many went out of robek - > Update this
@@ -6408,13 +6409,13 @@ $(document).ready(function() {
             var balanced = []
             var results = {}
             var h = []
-            let obj = {}      
-            for (let x = 0; x < years.length; x++){
-                let i=  inn[years[x]];
-                let o= out[years[x]];
-                let add = parseInt(i - o);
+            var obj = {}      
+            for (var x = 0; x < years.length; x++){
+                var i=  inn[years[x]];
+                var o= out[years[x]];
+                var add = parseInt(i - o);
 
-                let key = years[x];
+                var key = years[x];
             
                 if(x === 0) {
                     obj[key] = add;
@@ -6433,7 +6434,6 @@ $(document).ready(function() {
         return {
             getData: getData,
             getRegionList: getRegionList,
-            getTimeSeries: getTimeSeries,
             outRobek: outRobek,
             inRobek: inRobek,
             totalInRobek: totalInRobek

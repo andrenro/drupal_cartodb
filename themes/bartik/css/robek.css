@@ -50,3 +50,16 @@
 	font-size:1.2em;
 	font-weight: bold;
 }
+
+canvas{
+	z-index:1000;
+}
+
+#map{
+	z-index:1000;
+}
+
+#search-button{
+	padding-left:2em;
+	padding-right:2em;
+}
