@@ -198,8 +198,8 @@ $(document).ready(function() {
 	}
 
 	function showLists() {
-		$("#canvas-container-bottom").css("display", "inline");
-		$("#canvas-container-top").css("display", "inline");
+		$("#canvas-container-bottom").css("display", "block");
+		$("#canvas-container-top").css("display", "block");
 		$("#showTopLists").css("visibility", "hidden");
 	}
 
