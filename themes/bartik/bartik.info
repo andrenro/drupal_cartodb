@@ -15,11 +15,12 @@ stylesheets[all][]=css/bootstrap.min.css
 stylesheets[all][]=css/jquery-ui.css
 stylesheets[all][]=css/bootstrap-slider.css
 stylesheets[all][]=css/custom.css
-stylesheets[all][]=css/robek.css
-stylesheets[all][]=css/framtidsbarometeret.css
+#stylesheets[all][]=css/folketall.css
+#stylesheets[all][]=css/robek.css
+#stylesheets[all][]=css/framtidsbarometeret.css
 
 scripts[]=js/jquery-2.2.3.js
-scripts[]=js/framtidsbarometeret/d3.js
+#scripts[]=js/framtidsbarometeret/d3.js
 scripts[]=js/bootstrap.min.js
 scripts[]=js/folketall/lunr.min.js
 
@@ -38,11 +39,11 @@ scripts[]=js/folketall/lunr.min.js
 
 #scripts[]=js/folketall/json-stat.js
 #scripts[]=js/folketall/json-stat.utils.js
-scripts[]=js/folketall/chart.min.js
-#scripts[]=js/folketall/next_ten_years.js
+#scripts[]=js/folketall/chart.min.js
+#scripts[]=js/folketall/next_ten_years_v2.js
 #scripts[]=js/folketall/math_handler.js
-#scripts[]=js/folketall/stat_charts.js
-#scripts[]=js/folketall/ssb_handler.js
+#scripts[]=js/folketall/stat_charts_v2.js
+#scripts[]=js/folketall/ssb_handler_v5.js
 
 #scripts[]=js/robek/robek_data.js
 #scripts[]=js/robek/robek_main.js
@@ -52,9 +53,11 @@ scripts[]=js/folketall/chart.min.js
 #scripts[]=js/havner/init_carto.js
 
 
-scripts[]=js/framtidsbarometeret/framtidsbarometeret.js
+#scripts[]=js/framtidsbarometeret/framtidsbarometeret.js
 
 
+
+scripts[] = js/skattetall/apimanager.js
 
 
 regions[header]=Header

@@ -1,0 +1,14 @@
+
+.lunr-hits{
+	color: #264B6F;
+}
+
+.lunr-hits:hover{
+
+	text-decoration:underline;
+	cursor:pointer;	
+}
+
+.bigger-font{
+	font-size:1.2em !important;
+}

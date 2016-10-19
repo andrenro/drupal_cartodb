@@ -5,13 +5,58 @@ td{
   text-align:center !important;
 }
 
-thead th:hover{
+td:hover{
   cursor:pointer;
 
 }
 
+thead th:hover{
+  cursor:pointer;
+}
+/*
+ KR -loader
+ */
+.loader {
+    border-bottom: 4px solid #003762; /* Blue */
+    border-top: 4px solid #940E19; /* Red */
+    border-right: 4px solid #FFFFFF; 
+    border-left: 4px solid #FFFFFF; /* Red */
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    animation: spin 2s linear infinite;
+    text-align: center;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 .string{
   background:#005799;
+}
+
+table tr th{
+  background: rgba(0, 0, 0, 0.50) !important;
+  padding: 12px 12px !important;
+  border: 1px solid #ffffff !important;
+  color: #ffffff !important;
+}
+
+thead th{
+  text-align: center;
+}
+thead th:hover{
+  background: #686868;
+}
+
+tr td{
+  padding:8px 9px !important;
+}
+
+.stringSkip{
+  background: #0074cc;
 }
 
 .one{

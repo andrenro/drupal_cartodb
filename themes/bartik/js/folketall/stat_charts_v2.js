@@ -61,6 +61,36 @@ $(document).ready(function() {
     }
 
     /**
+     * sets step value and max value for graph
+     */
+
+    function setStepAndMax(inputVal){
+
+        var values = {};
+
+        var stepSize = 0;
+        var closestWhole = 0;
+
+        if(inputVal >= 100000){
+           values["max"] = 1000000;
+           stepSize = 100000;
+        }else if(inputVal >= 10000){
+          values["max"] = 100000;
+          stepSize = 10000;
+        }else if(inputVal >= 1000){
+          values["max"] = 10000;
+          stepSize = 1000;
+        }else if(inputVal < 1000){
+          values["max"] = 1000;
+          stepSize = 100;
+        }
+
+
+        closestWhole = inputVal - (inputVal % stepSize)
+        values["stepSize"] = stepSize;
+        return values;
+    }
+    /**
      * [Shows a graph of the year by year growth in population for the next ten years]
      * @param  {[type]} data [json data fetched from the file 'next_ten_years']
      * @return {[undefined]} 
@@ -71,7 +101,7 @@ $(document).ready(function() {
 
       if (data) {
 
-        var fillColor = data[0] > data[9] ? "rgba(148,14,25,0.8)" : "rgba(0,55,98,0.8)";
+        var fillColor = data[0] > data[9] ? "rgba(148,14,25,0.1)" : "rgba(0,55,98,0.1)";
         var strokeColor = data[0] > data[9] ? "rgba(148,14,25,1)" : "rgba(0,55,98,1)";
 
         var dataObj = {
@@ -82,6 +112,7 @@ $(document).ready(function() {
             data: data.slice(0, 9)
           }]
         };
+       var stepValues = setStepAndMax(data[0]);
 
         var myLineChart = new Chart(ctx, {
           type: 'line',
@@ -90,6 +121,15 @@ $(document).ready(function() {
             hover: {
               // Overrides the global setting
               mode: 'label'
+            },
+            scales: {
+              yAxes: [{
+                ticks: {
+                  min: 0,
+                  max: stepValues["max"],
+                  stepSize: stepValues["stepSize"]
+                }
+              }]
             }
           }
         });
@@ -104,20 +144,20 @@ $(document).ready(function() {
         datasets: [{
           label: "Innbyggertilskudd, i norske kroner",
           backgroundColor: ["rgba(148,14,25,0.8)", "rgba(0,55,98,0.8)"],
-          data: [data[0].toFixed(2),data[1].toFixed(2)]
+          data: [data[0].toFixed(2), data[1].toFixed(2)]
         }]
       };
 
       var fundingBarChart = new Chart(barChart, {
-        type: "bar",
+        type: "horizontalBar",
         data: dataObj,
         options: {
           scales: {
-            yAxes: [{
+            xAxes: [{
               ticks: {
                 max: data[0] > data[1] ? data[0] : data[1],
                 min: 0,
-                stepSize: 5000
+                stepSize: 10000
               }
             }]
           }

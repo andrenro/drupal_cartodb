@@ -8,6 +8,26 @@ html, body {
   text-align: center;
 }
 
+/*
+ KR -loader
+ */
+.loader {
+    border-bottom: 4px solid #003762; /* Blue */
+    border-top: 4px solid #940E19; /* Red */
+    border-right: 4px solid #FFFFFF; 
+    border-left: 4px solid #FFFFFF; /* Red */
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    animation: spin 2s linear infinite;
+    text-align: center;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 
 #map {
     float:left;
