@@ -8,14 +8,27 @@ $(document).ready(function() {
 
 		function create() {
 			var obj = new Object();
-			obj.setYears = setYears;
+			obj.setOnClick = setOnClick;
+			obj.setOnChange = setOnChange;
+			obj.setEnterClick = setEnterClick;
 			return obj;
 		}
 
+		setOnClick = function(id, callback) {
+			$("#" + id).on("click", callback);
+		}
 
-		setYears = function(){
+		setOnChange = function(id, callback) {
+			$("#" + id).on("change", callback);
+		}
 
-			return; 
+		//Handles click from the enter button
+		setEnterClick = function(textBox, button) {
+			$("#" + textBox).keyup(function(event) {
+				if (event.keyCode == 13) {
+					$("#" + button).click();
+				}
+			});
 		}
 
 		return {
@@ -26,9 +39,6 @@ $(document).ready(function() {
 				return instance;
 			},
 		}
-
-
-
 	})();
 
 
@@ -43,21 +53,47 @@ $(document).ready(function() {
 			//Functions
 			obj.prepareCanvas = prepareCanvas;
 			obj.populateLineChart = populateLineChart;
+			obj.percentageIncrease = percentageIncrease;
 
 			return obj;
 		}
 
+		percentageIncrease = function(num1, num2) {
+			var diff = (num2 - num1);
+			return (diff / num1) * 100;
+		}
 
-		populateLineChart = function(data, container, canvas, title) {
 
+		populateLineChart = function(data, container, canvas, label, dataPoints, title) {
 			var chart = prepareCanvas(container, canvas);
 
+			var whole_year = data;
+			var labels = [];
+			var sum = [];
+
+			var step = 0;
+
+
+			for (var x = 0; x < whole_year.length; x++) {
+				labels.push(whole_year[x][label]);
+				sum.push(whole_year[x][dataPoints]);
+			}
+
+			if(sum[0] < 500){
+				step = 10;
+			}else if (sum[0] > 10000){
+				step = 1000;
+			}else if (sum[0] > 100000){
+				step = 10000;
+			}
+
+
 			var dataObj = {
-				labels: [],
+				labels: labels,
 				datasets: [{
 					label: title,
-					backgroundColor: "rgba(148,14,25,0.3)",
-					data: []
+					backgroundColor: "rgba(0,55,98,0.7)",
+					data: sum
 				}]
 			};
 
@@ -69,7 +105,7 @@ $(document).ready(function() {
 						yAxes: [{
 							ticks: {
 								min: 0,
-								stepSize: 10
+								stepSize: step
 							}
 						}]
 					}
