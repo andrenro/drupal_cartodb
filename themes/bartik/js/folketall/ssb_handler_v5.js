@@ -2,7 +2,7 @@ $(document).ready(function() {
     //Links to CDN-stored json-data
     var datasets = {
         "folketall_kvartal": "http://data.ssb.no/api/v0/dataset/1108.json?lang=no",
-        "framskrevet_folketall_2026": "https://cdn.rawgit.com/andrenro/project_source_files/ssb_api/folketall/framskrevet_2026.json"
+        "framskrevet_folketall_2026": "https://cdn.jsdelivr.net/gh/andrenro/project_source_files@ssb_api/folketall/framskrevet_2026.json"
     };
 
     var dataset = JSONstat(datasets["folketall_kvartal"]).Dataset(0);

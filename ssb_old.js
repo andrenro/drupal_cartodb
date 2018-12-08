@@ -1,10 +1,10 @@
 $(document).ready(function() {
 	var datasets = {
-	"folketall_kvartal": "https://cdn.rawgit.com/andrenro/project_source_files/ssb_api/folketall/kvartalstall.json",
+	"folketall_kvartal": "https://cdn.jsdelivr.net/gh/andrenro/project_source_files@ssb_api/folketall/kvartalstall.json",
 	"folketall_aarlig_alder":'http://data.ssb.no/api/v0/dataset/1080.json?lang=no'
 };
 
-	var dataset = JSONstat("https://cdn.rawgit.com/andrenro/project_source_files/ssb_api/folketall/kvartalstall.json").Dataset(0);
+	var dataset = JSONstat("https://cdn.jsdelivr.net/gh/andrenro/project_source_files@ssb_api/folketall/kvartalstall.json").Dataset(0);
   var dd = JSONstat(datasets["folketall_aarlig_alder"]).Dataset(0);
 
 	console.log(dataset);
